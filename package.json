@@ -8,7 +8,14 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@materializecss/materialize": "workspace:*",
+    "glob": "^10.3.3",
+    "material-icons": "^1.13.8",
+    "vite-plugin-handlebars": "^1.6.0"
+  },
   "devDependencies": {
+    "sass": "^1.35.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }

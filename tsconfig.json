@@ -7,17 +7,20 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    //"allowImportingTsExtensions": true,
+    //"resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
 
     /* Linting */
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
+  },
+  "paths": {
+    "packages/*": ["packages/*"]
   },
   "include": ["src"]
 }
