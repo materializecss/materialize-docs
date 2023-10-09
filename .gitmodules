@@ -1,0 +1,3 @@
+[submodule "packages/materialize"]
+	path = packages/materialize
+	url = https://github.com/materializecss/materialize.git
