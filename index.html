@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="description"
+  content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
+<title>Documentation - Materialize</title>
+<!-- Favicons-->
+<link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+<link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+<!--  Android 5 Chrome Color-->
+<meta name="theme-color" content="#EE6E73">
+<!-- CSS-->
+<!-- <link href="css/prism.css" rel="stylesheet"> -->
+<!-- <link href="css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection"> -->
+<script>
+  const theme = localStorage.getItem('theme');
+  if (theme) document.documentElement.setAttribute('theme', theme);
+</script>   <script type="module" crossorigin src="/assets/main-9f187a5c.js"></script>
+   <link rel="stylesheet" href="/assets/main-e6377b8a.css">
+ </head>
+  <body>
+    <header>
+        <div class="search-results card"></div>
+        <div class="navbar-fixed">
+          <nav>
+            <div class="nav-wrapper"><a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
+              <ul class="left hide-on-small-only">
+                <li>
+                  <div class="searchbar has-sidebar"><span class="prefix"><i class="material-icons">search</i></span>
+                    <input class="search-docs" id="searchbar" type="search" required autofocus placeholder="Search..." autocomplete="off">
+                  </div>
+                </li>
+              </ul>
+              <ul class="right">
+                <li><a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a></li>
+                <li><a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"><img src="images/github.svg" style="transform: scale(0.8);"></a></li>
+                <li><a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg"></a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <ul class="sidenav sidenav-fixed" id="nav-mobile">
+          <li class="logo"><a class="brand-logo" id="logo-container" href="/">
+              <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a></li>
+          <li class="version"><a class="dropdown-trigger" href="#" data-target="version-dropdown">
+              2.0.0-alpha<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></a>
+            <ul class="dropdown-content" id="version-dropdown">
+              <li><a>2.0.0-alpha</a></li>
+              <li><a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a></li>
+            </ul>
+          </li>
+          <li class="search hide-on-med-and-up">
+            <div class="search-wrapper">
+              <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off"><i class="material-icons">search</i>
+            </div>
+          </li>
+          <li class="bold"><a class="waves-effect" href="about.html">About</a></li>
+          <li class="bold"><a class="waves-effect" href="getting-started.html">Getting Started</a></li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li class="bold"><a class="collapsible-header waves-effect">Styles</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="color.html">Color</a></li>
+                    <li><a href="grid.html">Grid</a></li>
+                    <li><a href="helpers.html">Helpers</a></li>
+                    <li><a href="media-css.html">Media</a></li>
+                    <li><a href="pulse.html">Pulse</a></li>
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="shadow.html">Shadow</a></li>
+                    <li><a href="../table.html">Table</a></li>
+                    <li><a href="css-transitions.html">Transitions</a></li>
+                    <li><a href="typography.html">Typography</a></li>
+                    <li><a href="themes.html">Themes</a></li>
+                    <li><a href="waves.html">Waves</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="bold"><a class="collapsible-header waves-effect">Components</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="badges.html">Badges</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="floating-action-button.html">Floating Action Button</a></li>
+                    <li><a href="footer.html">Footer</a></li>
+                    <li><a href="icons.html">Icons</a></li>
+                    <li><a href="navbar.html">Navbar</a></li>
+                    <li><a href="pagination.html">Pagination</a></li>
+                    <li><a href="preloader.html">Preloader</a></li>
+                    <li><a href="auto-init.html">Auto Init</a></li>
+                    <li><a href="carousel.html">Carousel</a></li>
+                    <li><a href="collapsible.html">Collapsible</a></li>
+                    <li><a href="dropdown.html">Dropdown</a></li>
+                    <li><a href="feature-discovery.html">Feature Discovery</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modals.html">Modals</a></li>
+                    <li><a href="parallax.html">Parallax</a></li>
+                    <li><a href="pushpin.html">Pushpin</a></li>
+                    <li><a href="scrollspy.html">Scrollspy</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="toasts.html">Toasts</a></li>
+                    <li><a href="tooltips.html">Tooltips</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="bold"><a class="collapsible-header waves-effect">Forms</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="autocomplete.html">Autocomplete</a></li>
+                    <li><a href="checkboxes.html">Checkboxes</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="pickers.html">Pickers</a></li>
+                    <li><a href="radio-buttons.html">Radio Buttons</a></li>
+                    <li><a href="range.html">Range</a></li>
+                    <li><a href="select.html">Select</a></li>
+                    <li><a href="switches.html">Switches</a></li>
+                    <li><a href="text-inputs.html">Text Inputs</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="bold"><a class="waves-effect" href="mobile.html">Mobile</a></li>
+        </ul>
+      </header>    <main>      <div id="index-banner">
+
+        <!-- Intro -->
+        <div class="intro" style="padding: 5rem; background-image: radial-gradient(circle, #05a0be 0%, #5c0067 100%);">
+          <div class="container row center">
+
+            <div class="s12 m10 offset-m1">              
+              <img id="logo" src="materialize.svg" style="height: 100px;" alt="Materialize"/>
+              <h1 class="header white-text" style="margin-bottom: 0;">Materialize</h1>
+              <a class="current-version-number white-text" target="_blank" href="https://github.com/materializecss/materialize">2.0.0-alpha</a>
+            </div>
+
+            <div class="s12 m8 offset-m2">
+              <h2 class="light white-text">Simple. Built on open source. The responsive front-end library based on Material Design from Google.</h2>
+              <img src="vite.svg">
+            </div>
+
+            <!-- Call to Action -->
+            <div class="s12 center call-to-action">
+              <a href="getting-started.html" id="download-button" class="btn-large waves-effect waves-light">Get started</a>
+              <a href="https://github.com/materializecss/materialize" target="_blank" id="github-button" class="btn-large btn-flat waves-effect waves-light">GitHub</a>
+              <a href="https://opencollective.com/materialize" target="_blank" class="btn-large btn-flat waves-effect waves-light">OpenCollective</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ads -->
+        <div class="row center">
+          <div class="s12 m4 offset-m2">
+            <!-- Main Sponsor -->
+          </div>
+          <div class="s12 m4">
+            <!-- Advertisment -->
+          </div>
+        </div>
+
+        <!-- Development Info -->
+        <div class="github-commit">
+          <div class="container">
+            <div class="row">
+              <div class="s12 m10 offset-m1">
+                <div class="commit">
+                  Latest Commit on Github:&nbsp;
+                  <a href="" class="sha" title="Click here to see changes" target="_blank"></a>
+                  &nbsp;
+                  <span class="date"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="s12 m10 offset-m1">
+            <p class="grey-text" style="font-size: 0.8em;">Note: This is a community-managed fork of the official MaterializeCSS library.
+              Since the project's support has been dropped by the original team, this version is 100% community-powered, meaning that bug fixes or new features
+              are implemented by volunteers but are not official.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sponsors -->
+      <div class="container sponsors">
+        <div class="section">
+          <div class="row">
+            <div class="s12 m10 offset-m1">
+              <h3>Sponsors</h3>
+              <div class="row" style="gap:1rem; margin-bottom:1rem;">
+                <div class="s6 m2 center">
+                  <a href="https://wuda.io">
+                    <img src="https://www.wuda.io/img/wuda-logo.png" height="50px" alt="Wuda Software Logo">
+                    <div>Wuda Software</div>
+                  </a>
+                </div>
+                <div class="s6 m2"></div>
+                <div class="s6 m2"></div>
+                <div class="s6 m2"></div>
+                <div class="s6 m2"></div>
+                <div class="s6 m2"></div>
+              </div>
+              <a class="btn" target="_blank" href="https://opencollective.com/materialize">Become a sponsor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section">
+          
+          <div class="row">
+            <div class="s12 m10 offset-m1">
+              
+              <div>
+                <h3>Why use Materialize</h3>
+                <p>Here are some of the benefits why you should use Materialize. If you want to add something or give use some critic, we are open for a discussion on our GitHub page and are glad to learn and move forward. Thanks for using Materialize!</p>
+              </div>              
+              <div class="row materialize-benefits" style="gap: 1rem;">
+                <div class="s12 m6 card" style="padding: 0 1rem;">
+                  <h4>Ultra Fast</h4>
+                  <p>Using VanillaJS and as less dependecies as possible to keep it fast and simple. We use TypeScript since it builds upon JavaScript and it enhances the type- and code safety.</p>
+                </div>
+                <div class="s12 m6 card" style="padding: 0 1rem;">
+                  <h4>No Framework required</h4>
+                  <p>You dont have to learn or integrate any new or crappy stuff. Goal here is to stick to the roots. Just copy and paste from our documentation and you are good to go!</p>
+                </div>
+                <div class="s12 m6 card" style="padding: 0 1rem;">
+                  <h4>Responsive and Clean</h4>
+                  <p>Features which does not neccesary require JavaScript to work should be created with CSS only and even work without JS! Also every feature should be useable by mobile devices too.</p>
+                </div>
+                <div class="s12 m6 card" style="padding: 0 1rem;">
+                  <h4>Designed for Users</h4>
+                  <p>We keep the User in Mind. Our Components should meet all standards and also be accessible via keyboard. Also secure for Users. No innerHTML or Code Injection should be done, to stay safe. Our goal is to close all possibilities of placing untrused code anywhere in the system.</p>
+                </div>
+                <div class="s12 m6 card" style="padding: 0 1rem;">
+                  <h4>Easy and Clean</h4>
+                  <p>User centric approach with established design principles mainly from <a target="_blank" href="https://m3.material.io">Googles Material guidelines</a>. Our Components should work on nearly every device with a monitor.</p>
+                </div>
+                <div class="s12 m6 card" style="padding: 0 1rem;">
+                  <h4>Extensible</h4>
+                  <p>Component cutsomization should be possible by yourself. To help growing this project,
+                    you can <a href="https://github.com/materializecss/materialize" target="_blank">join the community</a>
+                    and ask for support or you can easily <a target="_blank" href="https://github.com/materializecss/materialize/issues">create an issue</a> to move Materialize forward.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Promo Section -->
+              <!--
+              <div class="row">
+                <div class="s12 m4">
+                  <div class="center promo">
+                    <i class="material-icons">flash_on</i>
+                    <p class="promo-caption">Speeds up development</p>
+                    <p class="light left-align">Most of the heavy lifting is done for you to provide a default stylings that incorporate our custom components. We also refined animations and transitions to provide a smoother experience for developers.</p>
+                  </div>
+                </div>
+                <div class="s12 m4">
+                  <div class="center promo">
+                    <i class="material-icons">group</i>
+                    <p class="promo-caption">User Experience Focused</p>
+                    <p class="light left-align">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                  </div>
+                </div>
+                <div class="s12 m4">
+                  <div class="center promo">
+                    <i class="material-icons">settings</i>
+                    <p class="promo-caption">Easy to work with</p>
+                    <p class="light left-align">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                  </div>
+                </div>
+              </div>
+              -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <footer class="page-footer docs-footer">
+        <div class="container">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="s12 m10 offset-m1">
+              <div class="row" style="gap:2rem;">
+                <div class="s12 l4">
+                  <h5>Help Materialize Grow</h5>
+                  <p class="grey-text text-darken-2">
+                    We hope you have enjoyed using Materialize and if you feel like it has helped you out and want to support
+                    the team you can help us by opening issues or contributing on GitHub.
+                  </p><a class="btn waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
+                </div>
+                <div class="s12 l4">
+                  <h5>Join the Discussion</h5>
+                  <p class="grey-text text-darken-2">
+                    We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features,
+                    future goals, general problems or questions, or anything else you can think of.
+                  </p><a class="btn waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
+                </div>
+                <div class="s12 l4" style="overflow: hidden;">
+                  <h5>Star us</h5>
+                  <iframe src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+                </div>
+              </div>
+              <div class="footer-copyright">© 2014-
+                <noscript>2018</noscript>
+                <script>document.write(new Date().getFullYear());</script>&nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>        
+    <!-- <script src="js/timeago.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/lunr.min.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script> -->
+  </body>
+</html>
