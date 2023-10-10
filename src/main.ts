@@ -1,5 +1,6 @@
-import './style.css'
+import './style.scss'
 import { M }  from '@materializecss/materialize'
+
 
 document.addEventListener("DOMContentLoaded", function() {
   
