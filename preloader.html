@@ -376,74 +376,7 @@
         </div>
       </div>
     </main>
-    <footer class="page-footer docs-footer">
-      <div class="container">
-        <div class="row" style="margin-bottom: 0;">
-          <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
-              <div class="s12 l4">
-                <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel
-                  like it has helped you out and want to support the team you
-                  can help us by opening issues or contributing on GitHub.
-                </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
-              </div>
-              <div class="s12 l4">
-                <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly
-                  with us. Come in and discuss new features, future goals,
-                  general problems or questions, or anything else you can think
-                  of.
-                </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
-              </div>
-              <div class="s12 l4" style="overflow: hidden;">
-                <h5>Star us</h5>
-                <iframe
-                  src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                  allowtransparency="true"
-                  frameborder="0"
-                  scrolling="0"
-                  width="170"
-                  height="30"
-                ></iframe>
-              </div>
-            </div>
-            <div class="footer-copyright">
-              © 2014-
-              <noscript>2018</noscript>
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="js/timeago.min.js"></script>
-    <script src="js/prism.js"></script>
-    <script src="js/lunr.min.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
+    {{> footer }}
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
