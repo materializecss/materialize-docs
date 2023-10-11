@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head }}
+  </head>
+  <body>
+    {{> navbar }}
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+            <div id="introduction" class="section scrollspy">
+              <p class="caption">
+                Pushpin is our fixed positioning plugin. Use this to pin
+                elements to your page during specific scroll ranges. You can
+                check out our live example: the fixed table of contents on the
+                right.
+              </p>
+
+              <a
+                href="pushpin-demo.html"
+                target="_blank"
+                class="btn-large waves-effect waves-light"
+                >Open Demo</a
+              >
+
+              <h5>Demo Code</h5>
+              <pre><code class="language-javascript">
+// Pushpin Demo Init
+const pushPinDemoNavElems = document.querySelectorAll('.pushpin-demo-nav');
+pushPinDemoNavElems.forEach(navElem => {
+  const navBox = navElem.getBoundingClientRect();    
+  const contentElem = document.querySelector('#'+navElem.getAttribute('data-target'));
+  const contentBox = contentElem.getBoundingClientRect();
+  const offsetTop = Math.floor(contentBox.top + window.scrollY - document.documentElement.clientTop);
+  M.Pushpin.init(navElem, {
+    top: offsetTop,
+    bottom: offsetTop + contentBox.height - navBox.height
+  });
+});
+
+</code></pre>
+              <pre><code class="language-css">
+  // Only necessary for window height sized blocks.
+  html, body {
+    height: 100%;
+  }
+        </code></pre>
+            </div>
+
+            <div id="initialization" class="section scrollspy">
+              <h3 class="header">Initialization</h3>
+              <p>
+                Here is a sample initialization of pushpin. Take a look at what
+                the options are and customize them to your needs.
+              </p>
+              <pre><code class="language-javascript col s12">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.pushpin');
+    var instances = M.Pushpin.init(elems, {
+      // specify options here
+    });
+  });
+        </code></pre>
+            </div>
+
+            <div id="options" class="section scrollspy">
+              <h3 class="header">Options</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>top</td>
+                    <td>Number</td>
+                    <td>0</td>
+                    <td>
+                      The distance in pixels from the top of the page where the
+                      element becomes fixed.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>bottom</td>
+                    <td>Number</td>
+                    <td>Infinity</td>
+                    <td>
+                      The distance in pixels from the top of the page where the
+                      elements stops being fixed.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>offset</td>
+                    <td>Number</td>
+                    <td>0</td>
+                    <td>
+                      The offset from the top the element will be fixed at.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>onPositionChange</td>
+                    <td>Function</td>
+                    <td>null</td>
+                    <td>
+                      Callback function called when pushpin position changes.
+                      You are provided with a position string.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="methods" class="scrollspy section">
+              <h3 class="header">Methods</h3>
+              <blockquote>
+                <p>
+                  All the methods are called on the plugin instance. You can get
+                  the plugin instance like this:
+                </p>
+                <pre><code class="language-javascript col s12">
+  var instance = M.Pushpin.getInstance(elem);
+        </code></pre>
+              </blockquote>
+
+              <h5 class="method-header">
+                .destroy();
+              </h5>
+              <p>Destroy plugin instance and teardown</p>
+              <pre><code class="language-javascript col s12">
+instance.destroy();
+      </code></pre>
+            </div>
+
+            <div id="properties" class="scrollspy section">
+              <h3 class="header">Properties</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>el</td>
+                    <td>Element</td>
+                    <td>The DOM element the plugin was initialized with.</td>
+                  </tr>
+                  <tr>
+                    <td>options</td>
+                    <td>Object</td>
+                    <td>The options the instance was initialized with.</td>
+                  </tr>
+                  <tr>
+                    <td>originalOffset</td>
+                    <td>Number</td>
+                    <td>Original offsetTop of element.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="classes" class="section scrollspy">
+              <h3 class="header">CSS Classes</h3>
+              <p class="caption">
+                A pushpinned element has 3 states. One above and below the
+                scrolling threshold, and the pinned state where the element
+                becomes fixed. Because pushpin changes positioning, chances are
+                your element will look different when the states change. Use
+                these css classes to correctly style your 3 states.
+              </p>
+              <pre><code class="language-css col s12">
+  // Class for when element is above threshold
+  .pin-top {
+    position: relative;
+  }
+
+  // Class for when element is below threshold
+  .pin-bottom {
+    position: relative;
+  }
+
+  // Class for when element is pinned
+  .pinned {
+    position: fixed !important;
+  }
+        </code></pre>
+            </div>
+          </div>
+
+          <!-- Table of Contents -->
+          <div class="col hide-on-small-only m3 xl3">
+            <div class="toc-wrapper">
+              <div style="height: 1px;">
+                <ul class="section table-of-contents">
+                  <li>
+                    <a href="#introduction">Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#initialization">Initialization</a>
+                  </li>
+                  <li>
+                    <a href="#options">Options</a>
+                  </li>
+                  <li>
+                    <a href="#methods">Methods</a>
+                  </li>
+                  <li>
+                    <a href="#properties">Properties</a>
+                  </li>
+                  <li>
+                    <a href="#classes">CSS classes</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer docs-footer">
+      <div class="container">
+        <div class="row" style="margin-bottom: 0;">
+          <div class="s12 m10 offset-m1">
+            <div class="row" style="gap:2rem;">
+              <div class="s12 l4">
+                <h5>Help Materialize Grow</h5>
+                <p class="grey-text text-darken-2">
+                  We hope you have enjoyed using Materialize and if you feel
+                  like it has helped you out and want to support the team you
+                  can help us by opening issues or contributing on GitHub.
+                </p>
+                <a
+                  class="btn waves-effect waves-light"
+                  target="_blank"
+                  href="https://github.com/materializecss/materialize"
+                  >Contribute</a
+                >
+              </div>
+              <div class="s12 l4">
+                <h5>Join the Discussion</h5>
+                <p class="grey-text text-darken-2">
+                  We have a Gitter chat room set up where you can talk directly
+                  with us. Come in and discuss new features, future goals,
+                  general problems or questions, or anything else you can think
+                  of.
+                </p>
+                <a
+                  class="btn waves-effect waves-light"
+                  href="https://gitter.im/materializecss/materialize"
+                  target="_blank"
+                  >Chat</a
+                >
+              </div>
+              <div class="s12 l4" style="overflow: hidden;">
+                <h5>Star us</h5>
+                <iframe
+                  src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
+                  allowtransparency="true"
+                  frameborder="0"
+                  scrolling="0"
+                  width="170"
+                  height="30"
+                ></iframe>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              © 2014-
+              <noscript>2018</noscript>
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              &nbsp;Materialize, All rights reserved.<a
+                class="right"
+                target="_blank"
+                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
+                >MIT License</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/timeago.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/lunr.min.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>
