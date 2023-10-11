@@ -169,208 +169,286 @@
         </li>
       </ul>
     </header>    <main>
-      <div class="section" id="index-banner">
-        <div class="container">
-          <div class="row" style="margin-bottom: 0;">
-            <div
-              class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only"
-            >
-              <h1 class="header">About</h1>
-              <h4 class="light">
-                Learn about Material Design and our Project Team.
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="container">
-        <!--  Outer row  -->
         <div class="row">
-          <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <!--  Material Design -->
-            <div id="materialdesign" class="section scrollspy">
-              <h2 class="header">Material Design</h2>
-              <p class="caption">
-                Created and designed by Google, Material Design is a design
-                language that combines the classic principles of successful
-                design along with innovation and technology. Google's goal is to
-                develop a system of design that allows for a unified user
-                experience across all their products on any platform.
+          <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+            <!-- Tooltip Section -->
+            <div id="introduction" class="scrollspy section">
+              <p>
+                Tooltips are small, interactive, textual hints for mainly
+                graphical elements. When using icons for actions you can use a
+                tooltip to give people clarification on its function.
               </p>
-              <div class="video-container">
-                <iframe
-                  width="853"
-                  height="480"
-                  src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
+              <div class="row">
+                <a
+                  href="#!"
+                  class="btn tooltipped col s4 offset-s4 l2 offset-l1"
+                  data-html="true"
+                  data-position="bottom"
+                  data-tooltip="I am a tooltip"
+                >
+                  Bottom</a
+                >
+                <a
+                  href="#!"
+                  class="btn tooltipped col s4 offset-s4 l2 offset-l1"
+                  data-position="top"
+                  data-tooltip="I am a tooltip"
+                >
+                  Top</a
+                >
+                <a
+                  href="#!"
+                  class="btn tooltipped col s4 offset-s4 l2 offset-l1"
+                  data-position="left"
+                  data-tooltip="I am a tooltip"
+                >
+                  Left</a
+                >
+                <a
+                  href="#!"
+                  class="btn tooltipped col s4 offset-s4 l2 offset-l1"
+                  data-position="right"
+                  data-tooltip="I am a tooltip"
+                >
+                  Right</a
+                >
               </div>
-              <div class="section">
-                <h3 class="header light">Principles</h3>
-                <div class="row">
-                  <div class="col s12 l4">
-                    <img class="promo" src="images/metaphor.png" />
-                    <h4 class="center">Material is the metaphor</h4>
-                    <p>
-                      The metaphor of material defines the relationship between
-                      space and motion. The idea is that the technology is
-                      inspired by paper and ink and is utilized to facilitate
-                      creativity and innovation. Surfaces and edges provide
-                      familiar visual cues that allow users to quickly
-                      understand the technology beyond the physical world.
-                    </p>
-                  </div>
 
-                  <div class="col s12 l4">
-                    <img class="promo" src="images/bold.png" />
-                    <h4 class="center">Bold, graphic, intentional</h4>
-                    <p>
-                      Elements and components such as grids, typography, color,
-                      and imagery are not only visually pleasing, but also
-                      create a sense of hierarchy, meaning, and focus. Emphasis
-                      on different actions and components create a visual guide
-                      for users.
-                    </p>
-                  </div>
-
-                  <div class="col s12 l4">
-                    <img class="promo" src="images/motion.png" />
-                    <h4 class="center">Motion provides meaning</h4>
-                    <p>
-                      Motion allows the user to draw a parallel between what
-                      they see on the screen and in real life. By providing both
-                      feedback and familiarity, this allows the user to fully
-                      immerse him or herself into unfamiliar technology. Motion
-                      contains consistency and continuity in addition to giving
-                      users additional subconscious information about objects
-                      and transformations.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <p>
+                Add the Tooltipped class to your element and add either top,
+                bottom, left, right on data-tooltip to control the position.
+              </p>
+              <pre><code class="language-markup">
+  &lt;!-- data-position can be : bottom, top, left, or right -->
+  &lt;!-- data-tooltip defines the tooltip text -->
+  &lt;a class="btn tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Hover me!&lt;/a>
+        </code></pre>
             </div>
 
-            <!--  About the Team-->
-            <div id="team" class="section scrollspy">
-              <h2 class="header">Meet the Team</h2>
+            <div id="initialization" class="scrollspy section">
+              <h3 class="header">Initialization</h3>
+              <pre><code class="language-javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems, {
+      // specify options here
+    });
+  });
+        </code></pre>
+            </div>
 
-              <h5>The community</h5>
+            <div id="options" class="section scrollspy">
+              <h3 class="header">Options</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
 
-              <p class="caption">
-                Due to inactivity of the original developers, MaterializeCSS has
-                been forked by a community of enthusiasts, which continues to be
-                fully maintained by open source principes since 2021. Without
-                the many contributors who participated in this fork, this
-                project would probably not have received any updates anymore :
-              </p>
+                <tbody>
+                  <tr>
+                    <td>exitDelay</td>
+                    <td>Number</td>
+                    <td>200</td>
+                    <td>Delay time before tooltip disappears.</td>
+                  </tr>
+                  <tr>
+                    <td>enterDelay</td>
+                    <td>Number</td>
+                    <td>0</td>
+                    <td>Delay time before tooltip appears.</td>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>String</td>
+                    <td></td>
+                    <td>Text string for the tooltip.</td>
+                  </tr>
+                  <tr>
+                    <td>unsafeHTML</td>
+                    <td>String</td>
+                    <td>null</td>
+                    <td>
+                      HTML content that will be appended to to
+                      <code class="language-javascript">text</code>. Only use
+                      properly sanitized or otherwise trusted data for
+                      <code class="language-javascript">unsafeHTML</code>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>html</td>
+                    <td>String</td>
+                    <td>null</td>
+                    <td>
+                      <p>
+                        (DEPRECATED): will be removed in a later release.
+                      </p>
+                      <p>
+                        HTML content that will be appended to
+                        <code class="language-javascript">text</code>. Only use
+                        properly sanitized or otherwise trusted data for
+                        <code class="language-javascript">html</code>.
+                      </p>
+                      <p>
+                        Will be ignored if
+                        <code class="language-javascript">unsafeHTML</code> is
+                        set.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>margin</td>
+                    <td>Number</td>
+                    <td>5</td>
+                    <td>
+                      Set distance tooltip appears away from its activator
+                      excluding transitionMovement.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>inDuration</td>
+                    <td>Number</td>
+                    <td>300</td>
+                    <td>Enter transition duration.</td>
+                  </tr>
+                  <tr>
+                    <td>opacity</td>
+                    <td>Number</td>
+                    <td>1</td>
+                    <td>Opacity of the tooltip.</td>
+                  </tr>
+                  <tr>
+                    <td>outDuration</td>
+                    <td>Number</td>
+                    <td>250</td>
+                    <td>Exit transition duration.</td>
+                  </tr>
+                  <tr>
+                    <td>position</td>
+                    <td>String</td>
+                    <td>'bottom'</td>
+                    <td>
+                      Set the direction of the tooltip. 'top', 'right',
+                      'bottom', 'left'.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>transitionMovement</td>
+                    <td>Number</td>
+                    <td>10</td>
+                    <td>
+                      Amount in px that the tooltip moves during its transition.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <div class="center">
-                <div class="image-container">
-                  <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-                  <!-- prettier-ignore-start -->
-                  <!-- markdownlint-disable -->
-                  <!-- markdownlint-restore -->
-                  <!-- prettier-ignore-end -->
-                  <!-- ALL-CONTRIBUTORS-LIST:END -->
-                </div>
-              </div>
+            <div id="methods" class="section scrollspy">
+              <h3 class="header">Methods</h3>
+              <blockquote>
+                <p>
+                  All the methods are called on the plugin instance. You can get
+                  the plugin instance like this:
+                </p>
+                <pre><code class="language-javascript col s12">
+  var instance = M.Tooltip.getInstance(elem);
+          </code></pre>
+              </blockquote>
+              <h5 class="method-header">
+                .open();
+              </h5>
+              <p>Show tooltip.</p>
+              <pre><code class="language-javascript col s12">
+instance.open();
+        </code></pre>
 
-              <h5>The original team</h5>
-              <p class="caption">
-                MaterializeCSS was originally launched in 2014 by a team of
-                students from Carnegie Mellon University. After 4 years of
-                development, the latest official release was released in
-                September 2018 and received more than 38K stars on github.
-              </p>
+              <h5 class="method-header">
+                .close();
+              </h5>
+              <p>Hide tooltip.</p>
+              <pre><code class="language-javascript col s12">
+instance.close();
+        </code></pre>
 
-              <div class="center">
-                <div class="image-container">
-                  <img src="images/materialize_team.jpeg" style="width:100%;" />
-                </div>
-              </div>
-              <br />
+              <h5 class="method-header">
+                .destroy();
+              </h5>
+              <p>Destroy plugin instance and teardown</p>
+              <pre><code class="language-javascript col s12">
+instance.destroy();
+        </code></pre>
+            </div>
 
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/alvin.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Alvin Wang</h4>
-                  <p>
-                    Alvin is an Information Systems and Human Computer
-                    Interaction Major. He worked as a Software Engineer at
-                    Fidelity Investments this past summer.
-                  </p>
-                </div>
-              </div>
+            <div id="properties" class="scrollspy section">
+              <h3 class="header">Properties</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
 
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/Alan.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Alan Chang</h4>
-                  <p>
-                    Alan is an Information Systems major with a minor in
-                    computer science. He worked at as a Front End Developer at
-                    Shift Collaborative this past summer.
-                  </p>
-                </div>
-              </div>
+                <tbody>
+                  <tr>
+                    <td>el</td>
+                    <td>Element</td>
+                    <td>The DOM element the plugin was initialized with.</td>
+                  </tr>
+                  <tr>
+                    <td>options</td>
+                    <td>Object</td>
+                    <td>The options the instance was initialized with.</td>
+                  </tr>
+                  <tr>
+                    <td>isOpen</td>
+                    <td>Boolean</td>
+                    <td>If tooltip is open.</td>
+                  </tr>
 
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/alex.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Alex Mark</h4>
-                  <p>
-                    Alex is an Information Systems major with a minor in Human
-                    Computer Interaction. He worked as a software developer for
-                    Intuit this past summer.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/kevin.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Kevin Louie</h4>
-                  <p>
-                    Kevin is an Information Systems major with a minor in Human
-                    Computer Interaction. This past summer, he worked as a
-                    technology analyst at PPG Industries.
-                  </p>
-                </div>
-              </div>
+                  <tr>
+                    <td>isHovered</td>
+                    <td>Boolean</td>
+                    <td>If tooltip is hovered.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
+
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
               <div style="height: 1px;">
                 <ul class="section table-of-contents">
-                  <li><a href="#materialdesign">Material Design</a></li>
-                  <li><a href="#team">Meet the Team</a></li>
+                  <li>
+                    <a href="#introduction">Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#initialization">Initialization</a>
+                  </li>
+                  <li>
+                    <a href="#options">Options</a>
+                  </li>
+                  <li>
+                    <a href="#methods">Methods</a>
+                  </li>
+                  <li>
+                    <a href="#properties">Properties</a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- End Container -->
     </main>
     <footer class="page-footer docs-footer">
       <div class="container">

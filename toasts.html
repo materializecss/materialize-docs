@@ -169,208 +169,282 @@
         </li>
       </ul>
     </header>    <main>
-      <div class="section" id="index-banner">
-        <div class="container">
-          <div class="row" style="margin-bottom: 0;">
-            <div
-              class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only"
-            >
-              <h1 class="header">About</h1>
-              <h4 class="light">
-                Learn about Material Design and our Project Team.
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="container">
-        <!--  Outer row  -->
         <div class="row">
-          <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <!--  Material Design -->
-            <div id="materialdesign" class="section scrollspy">
-              <h2 class="header">Material Design</h2>
-              <p class="caption">
-                Created and designed by Google, Material Design is a design
-                language that combines the classic principles of successful
-                design along with innovation and technology. Google's goal is to
-                develop a system of design that allows for a unified user
-                experience across all their products on any platform.
+          <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+            <div id="introduction" class="section scrollspy">
+              <p>
+                Materialize provides an easy way for you to send unobtrusive
+                alerts to your users through toasts. These toasts are also
+                placed and sized responsively, try it out by clicking the button
+                below on different device sizes.
               </p>
-              <div class="video-container">
-                <iframe
-                  width="853"
-                  height="480"
-                  src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="section">
-                <h3 class="header light">Principles</h3>
-                <div class="row">
-                  <div class="col s12 l4">
-                    <img class="promo" src="images/metaphor.png" />
-                    <h4 class="center">Material is the metaphor</h4>
-                    <p>
-                      The metaphor of material defines the relationship between
-                      space and motion. The idea is that the technology is
-                      inspired by paper and ink and is utilized to facilitate
-                      creativity and innovation. Surfaces and edges provide
-                      familiar visual cues that allow users to quickly
-                      understand the technology beyond the physical world.
-                    </p>
-                  </div>
-
-                  <div class="col s12 l4">
-                    <img class="promo" src="images/bold.png" />
-                    <h4 class="center">Bold, graphic, intentional</h4>
-                    <p>
-                      Elements and components such as grids, typography, color,
-                      and imagery are not only visually pleasing, but also
-                      create a sense of hierarchy, meaning, and focus. Emphasis
-                      on different actions and components create a visual guide
-                      for users.
-                    </p>
-                  </div>
-
-                  <div class="col s12 l4">
-                    <img class="promo" src="images/motion.png" />
-                    <h4 class="center">Motion provides meaning</h4>
-                    <p>
-                      Motion allows the user to draw a parallel between what
-                      they see on the screen and in real life. By providing both
-                      feedback and familiarity, this allows the user to fully
-                      immerse him or herself into unfamiliar technology. Motion
-                      contains consistency and continuity in addition to giving
-                      users additional subconscious information about objects
-                      and transformations.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <button
+                type="button"
+                class="waves-effect waves-light btn"
+                onclick="M.toast({text: 'I am a toast'})"
+              >
+                Toast!
+              </button>
+              <p>
+                To do this, call the M.toast() function programmatically in
+                JavaScript.
+              </p>
+              <pre><code class="language-javascript">
+  M.toast({text: 'I am a toast!'})
+        </code></pre>
+              <p>
+                One way to add this into your application is to add this as an
+                onclick event to a button.
+              </p>
+              <pre><code class="language-markup">
+  &lt;button type="button" onclick="M.toast({text: 'I am a toast'})" class="btn">Toast!&lt;/button>
+        </code></pre>
             </div>
 
-            <!--  About the Team-->
-            <div id="team" class="section scrollspy">
-              <h2 class="header">Meet the Team</h2>
+            <div id="options" class="scrollspy section">
+              <h3 class="header">Options</h3>
+              <p>
+                You can customize the behavior of each Toast using these
+                options.
+              </p>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
 
-              <h5>The community</h5>
+                <tbody>
+                  <tr>
+                    <td>text</td>
+                    <td>String</td>
+                    <td>''</td>
+                    <td>The content of the Toast.</td>
+                  </tr>
+                  <tr>
+                    <td>unsafeHTML</td>
+                    <td>String, HTMLElement</td>
+                    <td>''</td>
+                    <td>
+                      HTML content that will be appended to to
+                      <code class="language-javascript">text</code>. Only use
+                      properly sanitized or otherwise trusted data for
+                      <code class="language-javascript">unsafeHTML</code>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>html</td>
+                    <td>String</td>
+                    <td>''</td>
+                    <td>
+                      <p>
+                        (DEPRECATED): will be removed in a later release.
+                      </p>
+                      <p>
+                        HTML content that will be appended to
+                        <code class="language-javascript">text</code>. Only use
+                        properly sanitized or otherwise trusted data for
+                        <code class="language-javascript">html</code>.
+                      </p>
+                      <p>
+                        Will be ignored if
+                        <code class="language-javascript">unsafeHTML</code> is
+                        set.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>displayLength</td>
+                    <td>Number</td>
+                    <td>4000</td>
+                    <td>Length in ms the Toast stays before dismissal.</td>
+                  </tr>
+                  <tr>
+                    <td>inDuration</td>
+                    <td>Number</td>
+                    <td>300</td>
+                    <td>Transition in duration in milliseconds.</td>
+                  </tr>
+                  <tr>
+                    <td>outDuration</td>
+                    <td>Number</td>
+                    <td>375</td>
+                    <td>Transition out duration in milliseconds.</td>
+                  </tr>
+                  <tr>
+                    <td>classes</td>
+                    <td>String</td>
+                    <td>''</td>
+                    <td>Classes to be added to the toast element.</td>
+                  </tr>
+                  <tr>
+                    <td>completeCallback</td>
+                    <td>Function</td>
+                    <td>null</td>
+                    <td>Callback function called when toast is dismissed.</td>
+                  </tr>
+                  <tr>
+                    <td>activationPercent</td>
+                    <td>Number</td>
+                    <td>0.8</td>
+                    <td>
+                      The percentage of the toast's width it takes for a drag to
+                      dismiss a Toast.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <p class="caption">
-                Due to inactivity of the original developers, MaterializeCSS has
-                been forked by a community of enthusiasts, which continues to be
-                fully maintained by open source principes since 2021. Without
-                the many contributors who participated in this fork, this
-                project would probably not have received any updates anymore :
+            <div id="properties" class="scrollspy section">
+              <h3 class="header">Properties</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>el</td>
+                    <td>Element</td>
+                    <td>The toast element.</td>
+                  </tr>
+                  <tr>
+                    <td>options</td>
+                    <td>Object</td>
+                    <td>The options the instance was initialized with.</td>
+                  </tr>
+                  <tr>
+                    <td>panning</td>
+                    <td>Boolean</td>
+                    <td>Describes the current pan state of the Toast.</td>
+                  </tr>
+                  <tr>
+                    <td>timeRemaining</td>
+                    <td>Number</td>
+                    <td>
+                      The remaining amount of time in ms that the toast will
+                      stay before dismissal.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="custom-html" class="section scrollspy">
+              <h3 class="header">Custom HTML</h3>
+              <p>
+                You can pass in an HTML String as the first argument as well.
+                Take a look at the example below, where we pass in text as well
+                as a flat button. If you call an external function instead of
+                in-line JavaScript, you will not need to escape quotation marks.
+              </p>
+              <p>
+                Only use a properly sanitized or otherwise trusted HTML string.
+              </p>
+              <button
+                type="button"
+                class="waves-effect waves-light btn"
+                onclick="displayCustomHTMLToast()"
+              >
+                Toast with Action
+              </button>
+              <pre><code class="language-javascript">
+  var toastHTML = '&lt;span>I am toast content&lt;/span>&lt;button class="btn-flat toast-action">Undo&lt;/button>';
+  M.toast({unsafeHTML: toastHTML});
+        </code></pre>
+            </div>
+
+            <div id="callback" class="scrollspy section">
+              <h3 class="header">Callback</h3>
+              <p>
+                You can have the toast callback a function when it has been
+                dismissed.
+              </p>
+              <button
+                type="button"
+                class="btn"
+                onclick="M.toast({text: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})"
+              >
+                Toast!
+              </button>
+              <pre><code class="language-markup">
+  &lt;button type="button" class="btn" onclick="M.toast({text: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})">Toast!&lt;/button>
+        </code></pre>
+            </div>
+
+            <div id="styling" class="scrollspy section">
+              <h3 class="header">Styling Toasts</h3>
+              <p>
+                We've added the ability to customize your toasts easily. You can
+                pass in classes as an optional parameter into the toast
+                function. We've added a rounded class for you, but you can
+                create your own CSS classes and apply them to toasts. Checkout
+                out our full example below.
               </p>
 
-              <div class="center">
-                <div class="image-container">
-                  <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-                  <!-- prettier-ignore-start -->
-                  <!-- markdownlint-disable -->
-                  <!-- markdownlint-restore -->
-                  <!-- prettier-ignore-end -->
-                  <!-- ALL-CONTRIBUTORS-LIST:END -->
-                </div>
-              </div>
+              <button
+                type="button"
+                class="waves-effect waves-light btn"
+                onclick="M.toast({text: 'I am a toast!', classes: 'rounded'})"
+              >
+                Round Toast!
+              </button>
 
-              <h5>The original team</h5>
-              <p class="caption">
-                MaterializeCSS was originally launched in 2014 by a team of
-                students from Carnegie Mellon University. After 4 years of
-                development, the latest official release was released in
-                September 2018 and received more than 38K stars on github.
+              <pre><code class="language-javascript">
+  // 'rounded' is the class I'm applying to the toast
+  M.toast({text: 'I am a toast!', classes: 'rounded'});
+        </code></pre>
+            </div>
+
+            <div id="dismissal" class="scrollspy section">
+              <h3 class="header">Dismiss a Toast Programmatically</h3>
+              <p>
+                To remove a specific toast using JavaScript, access the
+                <code class="language-javascript">M_Toast</code> toast HTML
+                element and call the dismiss function
               </p>
 
-              <div class="center">
-                <div class="image-container">
-                  <img src="images/materialize_team.jpeg" style="width:100%;" />
-                </div>
-              </div>
-              <br />
+              <pre><code class="language-javascript">
+  // Get toast DOM Element, get instance, then call dismiss function
+  var toastElement = document.querySelector('.toast');
+  var toastInstance = M.Toast.getInstance(toastElement);
+  toastInstance.dismiss();
+        </code></pre>
 
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/alvin.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Alvin Wang</h4>
-                  <p>
-                    Alvin is an Information Systems and Human Computer
-                    Interaction Major. He worked as a Software Engineer at
-                    Fidelity Investments this past summer.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/Alan.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Alan Chang</h4>
-                  <p>
-                    Alan is an Information Systems major with a minor in
-                    computer science. He worked at as a Front End Developer at
-                    Shift Collaborative this past summer.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/alex.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Alex Mark</h4>
-                  <p>
-                    Alex is an Information Systems major with a minor in Human
-                    Computer Interaction. He worked as a software developer for
-                    Intuit this past summer.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/kevin.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Kevin Louie</h4>
-                  <p>
-                    Kevin is an Information Systems major with a minor in Human
-                    Computer Interaction. This past summer, he worked as a
-                    technology analyst at PPG Industries.
-                  </p>
-                </div>
-              </div>
+              <h5>Dismiss all Toasts</h5>
+              <pre><code class="language-javascript">
+  M.Toast.dismissAll();
+        </code></pre>
             </div>
           </div>
+
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
               <div style="height: 1px;">
                 <ul class="section table-of-contents">
-                  <li><a href="#materialdesign">Material Design</a></li>
-                  <li><a href="#team">Meet the Team</a></li>
+                  <li><a href="#introduction">Introduction</a></li>
+                  <li><a href="#options">Options</a></li>
+                  <li><a href="#properties">Properties</a></li>
+                  <li><a href="#custom-html">Custom HTML</a></li>
+                  <li><a href="#callback">Callback</a></li>
+                  <li><a href="#styling">Styling Toasts</a></li>
+                  <li><a href="#dismissal">Dismissing Toasts</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- End Container -->
     </main>
     <footer class="page-footer docs-footer">
       <div class="container">
@@ -436,4 +510,11 @@
     </footer>
     
   </body>
+  <script type="text/javascript">
+    var displayCustomHTMLToast = function() {
+      var toastHTML =
+        '<span>I am toast content</span><button class="btn-flat toast-action">Undo</button>';
+      M.toast({ html: toastHTML });
+    };
+  </script>
 </html>

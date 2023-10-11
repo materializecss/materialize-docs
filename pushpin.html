@@ -169,208 +169,225 @@
         </li>
       </ul>
     </header>    <main>
-      <div class="section" id="index-banner">
-        <div class="container">
-          <div class="row" style="margin-bottom: 0;">
-            <div
-              class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only"
-            >
-              <h1 class="header">About</h1>
-              <h4 class="light">
-                Learn about Material Design and our Project Team.
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="container">
-        <!--  Outer row  -->
         <div class="row">
-          <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <!--  Material Design -->
-            <div id="materialdesign" class="section scrollspy">
-              <h2 class="header">Material Design</h2>
+          <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+            <div id="introduction" class="section scrollspy">
               <p class="caption">
-                Created and designed by Google, Material Design is a design
-                language that combines the classic principles of successful
-                design along with innovation and technology. Google's goal is to
-                develop a system of design that allows for a unified user
-                experience across all their products on any platform.
+                Pushpin is our fixed positioning plugin. Use this to pin
+                elements to your page during specific scroll ranges. You can
+                check out our live example: the fixed table of contents on the
+                right.
               </p>
-              <div class="video-container">
-                <iframe
-                  width="853"
-                  height="480"
-                  src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="section">
-                <h3 class="header light">Principles</h3>
-                <div class="row">
-                  <div class="col s12 l4">
-                    <img class="promo" src="images/metaphor.png" />
-                    <h4 class="center">Material is the metaphor</h4>
-                    <p>
-                      The metaphor of material defines the relationship between
-                      space and motion. The idea is that the technology is
-                      inspired by paper and ink and is utilized to facilitate
-                      creativity and innovation. Surfaces and edges provide
-                      familiar visual cues that allow users to quickly
-                      understand the technology beyond the physical world.
-                    </p>
-                  </div>
 
-                  <div class="col s12 l4">
-                    <img class="promo" src="images/bold.png" />
-                    <h4 class="center">Bold, graphic, intentional</h4>
-                    <p>
-                      Elements and components such as grids, typography, color,
-                      and imagery are not only visually pleasing, but also
-                      create a sense of hierarchy, meaning, and focus. Emphasis
-                      on different actions and components create a visual guide
-                      for users.
-                    </p>
-                  </div>
+              <a
+                href="pushpin-demo.html"
+                target="_blank"
+                class="btn-large waves-effect waves-light"
+                >Open Demo</a
+              >
 
-                  <div class="col s12 l4">
-                    <img class="promo" src="images/motion.png" />
-                    <h4 class="center">Motion provides meaning</h4>
-                    <p>
-                      Motion allows the user to draw a parallel between what
-                      they see on the screen and in real life. By providing both
-                      feedback and familiarity, this allows the user to fully
-                      immerse him or herself into unfamiliar technology. Motion
-                      contains consistency and continuity in addition to giving
-                      users additional subconscious information about objects
-                      and transformations.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <h5>Demo Code</h5>
+              <pre><code class="language-javascript">
+// Pushpin Demo Init
+const pushPinDemoNavElems = document.querySelectorAll('.pushpin-demo-nav');
+pushPinDemoNavElems.forEach(navElem => {
+  const navBox = navElem.getBoundingClientRect();    
+  const contentElem = document.querySelector('#'+navElem.getAttribute('data-target'));
+  const contentBox = contentElem.getBoundingClientRect();
+  const offsetTop = Math.floor(contentBox.top + window.scrollY - document.documentElement.clientTop);
+  M.Pushpin.init(navElem, {
+    top: offsetTop,
+    bottom: offsetTop + contentBox.height - navBox.height
+  });
+});
+
+</code></pre>
+              <pre><code class="language-css">
+  // Only necessary for window height sized blocks.
+  html, body {
+    height: 100%;
+  }
+        </code></pre>
             </div>
 
-            <!--  About the Team-->
-            <div id="team" class="section scrollspy">
-              <h2 class="header">Meet the Team</h2>
-
-              <h5>The community</h5>
-
-              <p class="caption">
-                Due to inactivity of the original developers, MaterializeCSS has
-                been forked by a community of enthusiasts, which continues to be
-                fully maintained by open source principes since 2021. Without
-                the many contributors who participated in this fork, this
-                project would probably not have received any updates anymore :
+            <div id="initialization" class="section scrollspy">
+              <h3 class="header">Initialization</h3>
+              <p>
+                Here is a sample initialization of pushpin. Take a look at what
+                the options are and customize them to your needs.
               </p>
+              <pre><code class="language-javascript col s12">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.pushpin');
+    var instances = M.Pushpin.init(elems, {
+      // specify options here
+    });
+  });
+        </code></pre>
+            </div>
 
-              <div class="center">
-                <div class="image-container">
-                  <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-                  <!-- prettier-ignore-start -->
-                  <!-- markdownlint-disable -->
-                  <!-- markdownlint-restore -->
-                  <!-- prettier-ignore-end -->
-                  <!-- ALL-CONTRIBUTORS-LIST:END -->
-                </div>
-              </div>
+            <div id="options" class="section scrollspy">
+              <h3 class="header">Options</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
 
-              <h5>The original team</h5>
+                <tbody>
+                  <tr>
+                    <td>top</td>
+                    <td>Number</td>
+                    <td>0</td>
+                    <td>
+                      The distance in pixels from the top of the page where the
+                      element becomes fixed.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>bottom</td>
+                    <td>Number</td>
+                    <td>Infinity</td>
+                    <td>
+                      The distance in pixels from the top of the page where the
+                      elements stops being fixed.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>offset</td>
+                    <td>Number</td>
+                    <td>0</td>
+                    <td>
+                      The offset from the top the element will be fixed at.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>onPositionChange</td>
+                    <td>Function</td>
+                    <td>null</td>
+                    <td>
+                      Callback function called when pushpin position changes.
+                      You are provided with a position string.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="methods" class="scrollspy section">
+              <h3 class="header">Methods</h3>
+              <blockquote>
+                <p>
+                  All the methods are called on the plugin instance. You can get
+                  the plugin instance like this:
+                </p>
+                <pre><code class="language-javascript col s12">
+  var instance = M.Pushpin.getInstance(elem);
+        </code></pre>
+              </blockquote>
+
+              <h5 class="method-header">
+                .destroy();
+              </h5>
+              <p>Destroy plugin instance and teardown</p>
+              <pre><code class="language-javascript col s12">
+instance.destroy();
+      </code></pre>
+            </div>
+
+            <div id="properties" class="scrollspy section">
+              <h3 class="header">Properties</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>el</td>
+                    <td>Element</td>
+                    <td>The DOM element the plugin was initialized with.</td>
+                  </tr>
+                  <tr>
+                    <td>options</td>
+                    <td>Object</td>
+                    <td>The options the instance was initialized with.</td>
+                  </tr>
+                  <tr>
+                    <td>originalOffset</td>
+                    <td>Number</td>
+                    <td>Original offsetTop of element.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="classes" class="section scrollspy">
+              <h3 class="header">CSS Classes</h3>
               <p class="caption">
-                MaterializeCSS was originally launched in 2014 by a team of
-                students from Carnegie Mellon University. After 4 years of
-                development, the latest official release was released in
-                September 2018 and received more than 38K stars on github.
+                A pushpinned element has 3 states. One above and below the
+                scrolling threshold, and the pinned state where the element
+                becomes fixed. Because pushpin changes positioning, chances are
+                your element will look different when the states change. Use
+                these css classes to correctly style your 3 states.
               </p>
+              <pre><code class="language-css col s12">
+  // Class for when element is above threshold
+  .pin-top {
+    position: relative;
+  }
 
-              <div class="center">
-                <div class="image-container">
-                  <img src="images/materialize_team.jpeg" style="width:100%;" />
-                </div>
-              </div>
-              <br />
+  // Class for when element is below threshold
+  .pin-bottom {
+    position: relative;
+  }
 
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/alvin.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Alvin Wang</h4>
-                  <p>
-                    Alvin is an Information Systems and Human Computer
-                    Interaction Major. He worked as a Software Engineer at
-                    Fidelity Investments this past summer.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/Alan.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Alan Chang</h4>
-                  <p>
-                    Alan is an Information Systems major with a minor in
-                    computer science. He worked at as a Front End Developer at
-                    Shift Collaborative this past summer.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/alex.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Alex Mark</h4>
-                  <p>
-                    Alex is an Information Systems major with a minor in Human
-                    Computer Interaction. He worked as a software developer for
-                    Intuit this past summer.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12 m3 center-on-small-only">
-                  <div class="image-container">
-                    <img src="images/kevin.png" />
-                  </div>
-                </div>
-                <div class="col s12 m9">
-                  <h4>Kevin Louie</h4>
-                  <p>
-                    Kevin is an Information Systems major with a minor in Human
-                    Computer Interaction. This past summer, he worked as a
-                    technology analyst at PPG Industries.
-                  </p>
-                </div>
-              </div>
+  // Class for when element is pinned
+  .pinned {
+    position: fixed !important;
+  }
+        </code></pre>
             </div>
           </div>
+
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
               <div style="height: 1px;">
                 <ul class="section table-of-contents">
-                  <li><a href="#materialdesign">Material Design</a></li>
-                  <li><a href="#team">Meet the Team</a></li>
+                  <li>
+                    <a href="#introduction">Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#initialization">Initialization</a>
+                  </li>
+                  <li>
+                    <a href="#options">Options</a>
+                  </li>
+                  <li>
+                    <a href="#methods">Methods</a>
+                  </li>
+                  <li>
+                    <a href="#properties">Properties</a>
+                  </li>
+                  <li>
+                    <a href="#classes">CSS classes</a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- End Container -->
     </main>
     <footer class="page-footer docs-footer">
       <div class="container">
