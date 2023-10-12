@@ -43,24 +43,59 @@
   <body>
     <header>
       <div class="search-results card"></div>
+    
       <div class="navbar-fixed">
         <nav class="primary">
-          <div class="nav-wrapper"><a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
+          <div class="nav-wrapper">
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
+              ><i class="material-icons">menu</i></a
+            >
             <ul class="left hide-on-small-only">
               <li>
-                <div class="searchbar has-sidebar"><span class="prefix"><i class="material-icons">search</i></span>
-                  <input class="search-docs" id="searchbar" type="search" required autofocus placeholder="Search..." autocomplete="off">
+                <div class="searchbar has-sidebar">
+                  <span class="prefix"><i class="material-icons">search</i></span>
+                  <input
+                    class="search-docs"
+                    id="searchbar"
+                    type="search"
+                    required
+                    autofocus
+                    placeholder="Search..."
+                    autocomplete="off"
+                  />
                 </div>
               </li>
             </ul>
             <ul class="right">
-              <li><a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a></li>
-              <li><a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"><img src="images/github.svg" style="transform: scale(0.8);"></a></li>
-              <li><a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg"></a></li>
+              <li>
+                <a id="theme-switch" href="#"
+                  ><i class="material-icons">dark_mode</i></a
+                >
+              </li>
+              <li>
+                <a
+                  class="ext-link"
+                  href="https://github.com/materializecss/materialize"
+                  target="_blank"
+                  title="Check out our GitHub"
+                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                /></a>
+              </li>
+              <li>
+                <a
+                  class="ext-link"
+                  href="https://opencollective.com/materialize"
+                  target="_blank"
+                  title="Support us via OpenCollective"
+                  ><img src="images/opencollective.svg"
+                /></a>
+              </li>
             </ul>
           </div>
         </nav>
       </div>
+    
+      <!--
       <nav class="top-nav">
         <div class="container">
           <div class="nav-wrapper">
@@ -72,19 +107,50 @@
           </div>
         </div>
       </nav>
+      -->
+    
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
-        <li class="logo"><a class="brand-logo" id="logo-container" href="/">
-            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a></li>
+        <li class="logo">
+          <a class="brand-logo" id="logo-container" href="/">
+            <object
+              id="front-page-logo"
+              type="image/svg+xml"
+              data="images/materialize.svg"
+              >Your browser does not support SVG</object
+            >Materialize</a
+          >
+        </li>
+    
         <li class="search hide-on-med-and-up">
           <div class="search-wrapper">
-            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off"><i class="material-icons">search</i>
+            <input
+              class="search-docs"
+              id="search"
+              type="search"
+              placeholder="Search"
+              autocomplete="off"
+            /><i class="material-icons">search</i>
           </div>
         </li>
-        <li><a class="waves-effect" href="about.html"><span class="material-icons">info</span>About</a></li>
-        <li><a class="waves-effect" href="getting-started.html"><span class="material-icons">apps</span>Getting Started</a></li>
+    
+        <li>
+          <a class="waves-effect" href="about.html"
+            ><span class="material-icons">info</span>About</a
+          >
+        </li>
+    
+        <li>
+          <a class="waves-effect" href="getting-started.html"
+            ><span class="material-icons">apps</span>Getting Started</a
+          >
+        </li>
+    
         <li>
           <ul class="collapsible collapsible-accordion">
-            <li><a class="collapsible-header waves-effect"><span class="material-icons">palette</span>Styles</a>
+            <li>
+              <a class="collapsible-header waves-effect"
+                ><span class="material-icons">palette</span>Styles</a
+              >
               <div class="collapsible-body">
                 <ul>
                   <li><a href="color.html">Color</a></li>
@@ -104,9 +170,13 @@
             </li>
           </ul>
         </li>
+    
         <li>
           <ul class="collapsible collapsible-accordion">
-            <li class="active"><a class="collapsible-header waves-effect"><span class="material-icons">add_circle</span>Components</a>
+            <li class="active">
+              <a class="collapsible-header waves-effect"
+                ><span class="material-icons">add_circle</span>Components</a
+              >
               <div class="collapsible-body">
                 <ul>
                   <li><a href="badges.html">Badges</a></li>
@@ -114,7 +184,9 @@
                   <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
                   <li class="active"><a href="cards.html">Cards</a></li>
                   <li><a href="collections.html">Collections</a></li>
-                  <li><a href="floating-action-button.html">Floating Action Button</a></li>
+                  <li>
+                    <a href="floating-action-button.html">Floating Action Button</a>
+                  </li>
                   <li><a href="footer.html">Footer</a></li>
                   <li><a href="icons.html">Icons</a></li>
                   <li><a href="navbar.html">Navbar</a></li>
@@ -139,9 +211,13 @@
             </li>
           </ul>
         </li>
+    
         <li>
           <ul class="collapsible collapsible-accordion">
-            <li><a class="collapsible-header waves-effect"><span class="material-icons">text_fields</span>Forms</a>
+            <li>
+              <a class="collapsible-header waves-effect"
+                ><span class="material-icons">text_fields</span>Forms</a
+              >
               <div class="collapsible-body">
                 <ul>
                   <li><a href="autocomplete.html">Autocomplete</a></li>
@@ -158,16 +234,40 @@
             </li>
           </ul>
         </li>
-        <li><a class="waves-effect" href="mobile.html"><span class="material-icons">mobile_friendly</span>Mobile</a></li>
-        <li class="version"><a class="dropdown-trigger" href="#" data-target="version-dropdown">
-            2.0.3-alpha<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></a>
+    
+        <li>
+          <a class="waves-effect" href="mobile.html"
+            ><span class="material-icons">mobile_friendly</span>Mobile</a
+          >
+        </li>
+    
+        <li class="version">
+          <a class="dropdown-trigger" href="#" data-target="version-dropdown">
+            2.0.3-alpha<svg
+              class="caret"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M7 10l5 5 5-5z"></path>
+              <path d="M0 0h24v24H0z" fill="none"></path></svg
+          ></a>
           <ul class="dropdown-content" id="version-dropdown">
             <li><a>2.0.3-alpha</a></li>
-            <li><a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a></li>
+            <li>
+              <a
+                href="https://materializecss.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >1.0.0 (not maintained)</a
+              >
+            </li>
           </ul>
         </li>
       </ul>
-    </header>    <main><div class="container">
+    </header>
+    <main><div class="container">
   <div class="row">
     <div class="s12 m8 offset-m1 xl7 offset-xl1">
       <div id="introduction" class="section scrollspy">
