@@ -7,6 +7,11 @@ export default {
   base: "./",
   plugins: [
     handlebars({
+      context(pagePath) {
+        return {
+          title: pagePath,
+        };
+      },
       partialDirectory: resolve(__dirname, "partials"),
     }),
   ],
