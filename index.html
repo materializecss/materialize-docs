@@ -38,8 +38,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-26db33ce.js"></script>
-    <link rel="stylesheet" href="./assets/main-28d71a6b.css">
+    <script type="module" crossorigin src="./assets/main-63ef50fe.js"></script>
+    <link rel="stylesheet" href="./assets/main-ee676d25.css">
   </head>
   <body>
     <header>
@@ -290,17 +290,11 @@
                 style="height: 100px;"
                 alt="Materialize"
               />
-              <h1 class="header" style="margin-bottom: 0;">Materialize</h1>
-              <a
-                class="current-version-number"
-                target="_blank"
-                href="https://github.com/materializecss/materialize"
-                >2.0.3-alpha</a
-              >
-              <h2 class="light">
+              <h1 class="header mb-0">Materialize</h1>
+              <p class="slogan">
                 Simple. Built on open source. The responsive front-end library
                 based on Material Design from Google.
-              </h2>
+              </p>
             </div>
             <!-- Call to Action -->
             <div
@@ -317,13 +311,7 @@
                 href="https://github.com/materializecss/materialize"
                 target="_blank"
                 id="github-button"
-                >GitHub</a
-              >
-              <a
-                class="btn rounded outlined btn-large waves-effect waves-light"
-                href="https://opencollective.com/materialize"
-                target="_blank"
-                >OpenCollective</a
+                >View on GitHub</a
               >
             </div>
           </div>
@@ -342,7 +330,7 @@
         </div>
 
         <!-- Development Info -->
-        <div class="github-commit">
+        <div class="github-commit mb-5">
           <div class="container">
             <div class="row">
               <div class="s12 m10 offset-m1">
@@ -361,106 +349,43 @@
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="s12 m10 offset-m1">
-            <p class="grey-text" style="font-size: 0.8em;">
-              This is a community-managed fork of the official MaterializeCSS
-              library. Since the project support has been dropped by the
-              original team, this version is 100% community-powered, meaning
-              that fixes or features are implemented by volunteers.
-            </p>
-          </div>
-        </div>
       </div>
 
-      <!-- Sponsors -->
-      <div
-        class="container sponsors"
-        style="background-color: var(--background-color);"
-      >
+      <!-- Benefits -->
+      <div class="container">
         <div class="section">
           <div class="row">
             <div class="s12 m10 offset-m1">
-              <h3>Sponsors</h3>
-              <div class="row" style="gap:1rem; margin-bottom:1rem;">
-                <div class="s6 m2 center">
-                  <a href="https://wuda.io">
-                    <img
-                      src="https://www.wuda.io/img/wuda-logo.png"
-                      height="50px"
-                      alt="Wuda Software Logo"
-                    />
-                    <div>Wuda Software</div>
-                  </a>
-                </div>
-                <div class="s6 m2"></div>
-                <div class="s6 m2"></div>
-                <div class="s6 m2"></div>
-                <div class="s6 m2"></div>
-                <div class="s6 m2"></div>
-              </div>
-              <a
-                class="btn"
-                target="_blank"
-                href="https://opencollective.com/materialize"
-                >Become a sponsor</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container" style="background-color: var(--background-color);">
-        <div class="section">
-          <div class="row">
-            <div class="s12 m10 offset-m1">
-              <div>
-                <h3>Why use Materialize</h3>
-                <p>
-                  Here are some of the benefits why you should use Materialize.
-                  If you want to add something or give use some critic, we are
-                  open for a discussion on our GitHub page and are glad to learn
-                  and move forward. Thanks for using Materialize!
-                </p>
-              </div>
               <div class="row materialize-benefits" style="gap: 1rem;">
-                <div class="s12 m6 card" style="padding: 0 1rem;">
-                  <h4>Ultra Fast</h4>
+                <div class="s12 m6 l4 card">
+                  <h2>Ultra Fast</h2>
                   <p>
                     Using VanillaJS and as less dependecies as possible to keep
                     it fast and simple. We use TypeScript since it builds upon
                     JavaScript and it enhances the type- and code safety.
                   </p>
                 </div>
-                <div class="s12 m6 card" style="padding: 0 1rem;">
-                  <h4>No Framework required</h4>
+
+                <div class="s12 m6 l4 card">
+                  <h2>Quick integration</h2>
                   <p>
                     You dont have to learn or integrate any new or crappy stuff.
                     Goal here is to stick to the roots. Just copy and paste from
-                    our documentation and you are good to go!
+                    the documentation and you are good to go!
                   </p>
                 </div>
-                <div class="s12 m6 card" style="padding: 0 1rem;">
-                  <h4>Responsive and Clean</h4>
+
+                <div class="s12 m6 l4 card">
+                  <h2>Responsive and accessible</h2>
                   <p>
-                    Features which does not neccesary require JavaScript to work
-                    should be created with CSS only and even work without JS!
-                    Also every feature should be useable by mobile devices too.
+                    Most of the Features which work event without JavaScript.
+                    Components should be useable by mobile devices and easily
+                    accessible by keyboard too. Try it out!
                   </p>
                 </div>
-                <div class="s12 m6 card" style="padding: 0 1rem;">
-                  <h4>Designed for Users</h4>
-                  <p>
-                    We keep the User in Mind. Our Components should meet all
-                    standards and also be accessible via keyboard. Also secure
-                    for Users. No innerHTML or Code Injection should be done, to
-                    stay safe. Our goal is to close all possibilities of placing
-                    untrused code anywhere in the system.
-                  </p>
-                </div>
-                <div class="s12 m6 card" style="padding: 0 1rem;">
-                  <h4>Easy and Clean</h4>
+
+                <div class="s12 m6 l4 card">
+                  <h2>Simple and clean Design</h2>
                   <p>
                     User centric approach with established design principles
                     mainly from
@@ -470,8 +395,18 @@
                     monitor.
                   </p>
                 </div>
-                <div class="s12 m6 card" style="padding: 0 1rem;">
-                  <h4>Extensible</h4>
+
+                <div class="s12 m6 l4 card">
+                  <h2>Awesome Community</h2>
+                  <p>
+                    User centric approach with many members all around the
+                    world, which help bring Materialize forward and improve
+                    usability for everyone on the web. You can be a part too!
+                  </p>
+                </div>
+
+                <div class="s12 m6 l4 card">
+                  <h2>Extensible</h2>
                   <p>
                     Component cutsomization should be possible by yourself. To
                     help growing this project, you can
@@ -490,33 +425,45 @@
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-              <!-- Promo Section -->
-              <!--
-              <div class="row">
-                <div class="s12 m4">
-                  <div class="center promo">
-                    <i class="material-icons">flash_on</i>
-                    <p class="promo-caption">Speeds up development</p>
-                    <p class="light left-align">Most of the heavy lifting is done for you to provide a default stylings that incorporate our custom components. We also refined animations and transitions to provide a smoother experience for developers.</p>
-                  </div>
-                </div>
-                <div class="s12 m4">
-                  <div class="center promo">
-                    <i class="material-icons">group</i>
-                    <p class="promo-caption">User Experience Focused</p>
-                    <p class="light left-align">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-                  </div>
-                </div>
-                <div class="s12 m4">
-                  <div class="center promo">
-                    <i class="material-icons">settings</i>
-                    <p class="promo-caption">Easy to work with</p>
-                    <p class="light left-align">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-                  </div>
+      <!-- Sponsors -->
+      <div class="container sponsors">
+        <div class="section">
+          <div class="row">
+            <div class="s12 m10 offset-m1">
+              <h3>
+                Materialize is free and open-source. This is made possible by
+                our awesome sponsors.
+              </h3>
+
+              <div class="row mb-3" style="gap:1rem;">
+                <div class="s6 m2 offset-m5 center">
+                  <a href="https://wuda.io" target="_blank">
+                    <img
+                      src="https://www.wuda.io/img/wuda-logo.png"
+                      style="height:50px"
+                      alt="Wuda Software Logo"
+                    />
+                    <div>Wuda Software</div>
+                  </a>
                 </div>
               </div>
-              -->
+              <div class="center">
+                <a
+                  class="btn"
+                  target="_blank"
+                  href="https://opencollective.com/materialize"
+                  >Become a sponsor</a
+                >
+              </div>
+              <p class="center">
+                Materialize development is provided by an international team.
+                Thanks for supporting us! ❤️
+              </p>
             </div>
           </div>
         </div>
