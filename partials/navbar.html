@@ -78,8 +78,6 @@
       >
     </li>
 
-    <li><small>{{title}}</small></li>
-
     <li class="search hide-on-med-and-up">
       <div class="search-wrapper">
         <input
@@ -92,18 +90,9 @@
       </div>
     </li>
 
-    <li>
-      <a class="waves-effect" href="about.html"
-        ><span class="material-icons">info</span>About</a
-      >
-    </li>
+    {{#each items as |item|}} {{> (lookup . item) }} {{/each}}
 
-    <li>
-      <a class="waves-effect" href="getting-started.html"
-        ><span class="material-icons">apps</span>Getting Started</a
-      >
-    </li>
-
+    <!--
     <li>
       <ul class="collapsible collapsible-accordion">
         <li>
@@ -131,7 +120,7 @@
         </li>
       </ul>
     </li>
-
+    
     <li>
       <ul class="collapsible collapsible-accordion">
         <li class="active">
@@ -143,7 +132,7 @@
               <li><a href="badges.html">Badges</a></li>
               <li><a href="buttons.html">Buttons</a></li>
               <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
-              <li class="active"><a href="cards.html">Cards</a></li>
+              <li><a href="cards.html">Cards</a></li>
               <li><a href="collections.html">Collections</a></li>
               <li>
                 <a href="floating-action-button.html">Floating Action Button</a>
@@ -196,11 +185,9 @@
       </ul>
     </li>
 
-    <li>
-      <a class="waves-effect" href="mobile.html"
-        ><span class="material-icons">mobile_friendly</span>Mobile</a
-      >
-    </li>
+
+    {{> menuitem mobile}}
+    -->
 
     <li class="version">
       <a class="dropdown-trigger" href="#" data-target="version-dropdown">

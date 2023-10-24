@@ -1,0 +1,14 @@
+<li>
+  <ul class="collapsible collapsible-accordion">
+    <li>
+      <a class="collapsible-header waves-effect">
+        {{#icon}}{{/icon}}{{name}}
+      </a>
+      <div class="collapsible-body">
+        <ul>
+          {{#each items as |item|}} {{> menuitem item}} {{/each}}
+        </ul>
+      </div>
+    </li>
+  </ul>
+</li>
