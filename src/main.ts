@@ -1,6 +1,7 @@
 import { M } from "@materializecss/materialize";
 import Prism from "prismjs";
 import "./style.scss";
+import "prismjs/themes/prism.min.css";
 
 document.addEventListener("DOMContentLoaded", function() {
   function rgb2hex(rgb: string) {
@@ -12,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     return "#" + hex(rgbMatch[1]) + hex(rgbMatch[2]) + hex(rgbMatch[3]);
   }
-
   // Detect touch screen and enable scrollbar if necessary
   function is_touch_device() {
     try {
@@ -205,6 +205,18 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 2000);
     });
   });
+
+  Prism.highlightAll();
+  /*
+  document.querySelectorAll(".language-markup").forEach((codeElem) => {
+    //const html =
+    (
+      codeElem.innerHTML,
+      Prism.languages.javascript
+    );
+    //codeElem.replaceChildren(html);
+  });
+  */
 
   // Materialize Components
 
