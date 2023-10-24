@@ -101,8 +101,7 @@ export default {
       },
       helpers: {
         lookup: function(item) {
-          return item.items ? "menucollapsible" : "menuitem"; //  JSON.stringify(item);
-          //return "menuitem";
+          return item.items ? "menucollapsible" : "menuitem";
         },
         icon: function() {
           if (!this.icon) return "";
@@ -110,6 +109,14 @@ export default {
         },
         isActive: function(ctx) {
           const currentRoute = ctx.data.root.currentRoute;
+          // child element?
+          if (this.items) {
+            const isChild = this.items.some(
+              (e) => currentRoute === "/" + e.url
+            );
+            if (isChild) return "active";
+          }
+          // self?
           return currentRoute === "/" + this.url ? "active" : "";
         },
       },

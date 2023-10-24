@@ -12,6 +12,7 @@
     "@materializecss/materialize": "workspace:*",
     "glob": "^10.3.3",
     "material-icons": "^1.13.8",
+    "prismjs": "^1.29.0",
     "vite-plugin-handlebars": "^1.6.0"
   },
   "devDependencies": {

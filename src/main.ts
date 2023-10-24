@@ -1,7 +1,6 @@
-import "./style.scss";
-import "./prism.css";
-import "./prism.js";
 import { M } from "@materializecss/materialize";
+import Prism from "prismjs";
+import "./style.scss";
 
 document.addEventListener("DOMContentLoaded", function() {
   function rgb2hex(rgb: string) {
