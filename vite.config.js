@@ -5,6 +5,9 @@ import { fileURLToPath } from "node:url";
 
 const config = {
   currentRoute: "",
+  name: "Documentation",
+  description:
+    "Materialize is a modern responsive CSS framework based on Material Design by Google.",
   items: [
     {
       url: "about.html",
@@ -15,6 +18,8 @@ const config = {
     {
       url: "getting-started.html",
       name: "Getting started",
+      description:
+        "Get started with Materialize and integrate it into your project.",
       icon: "apps",
     },
     {
@@ -65,8 +70,6 @@ const config = {
         { url: "toasts.html", name: "Toasts" },
         { url: "tooltips.html", name: "Tooltips" },
       ],
-      badges: { url: "/badges.html", name: "Badges" },
-      grid: { url: "/grid.html", name: "Grid" },
     },
     {
       name: "Forms",
@@ -91,6 +94,19 @@ const config = {
   ],
 };
 
+function findItemByUrl(data, url) {
+  function iter(elem) {
+    if (elem.url === url) {
+      result = elem;
+      return true;
+    }
+    return Array.isArray(elem.items) && elem.items.some(iter);
+  }
+  let result;
+  data.some(iter);
+  return result;
+}
+
 export default {
   base: "./",
   plugins: [
@@ -100,6 +116,12 @@ export default {
         return config;
       },
       helpers: {
+        metaData: function(property) {
+          const route = this.currentRoute?.toString();
+          const searchUrl = route.substring(1);
+          const foundItem = findItemByUrl(this.items, searchUrl);
+          return foundItem?.[property] || this[property];
+        },
         lookup: function(item) {
           return item.items ? "menucollapsible" : "menuitem";
         },
