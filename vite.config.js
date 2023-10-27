@@ -19,7 +19,7 @@ const config = {
       url: "getting-started.html",
       name: "Getting started",
       description:
-        "Get started with Materialize and integrate it into your project.",
+        "Learn how to easily start using Materialize and integrate it into your project.",
       icon: "apps",
     },
     {
