@@ -34,7 +34,7 @@
   const theme = localStorage.getItem("theme");
   if (theme) document.documentElement.setAttribute("theme", theme);
 </script>
-   <script type="module" crossorigin src="./assets/main-140b0dc6.js"></script>
+   <script type="module" crossorigin src="./assets/main-fcdcb5f2.js"></script>
    <link rel="stylesheet" href="./assets/main-ee676d25.css">
  </head>
   <body>
@@ -373,6 +373,15 @@
               >
             </li>
           </ul>
+        </li>
+    
+        <!-- Ad Placements -->
+        <li
+          class="surface"
+          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
+        >
+          <small>Advertisment</small>
+          <div style="border: 1px dotted red; height: 90px; width: 100%; "></div>
         </li>
       </ul>
     </header>
@@ -742,7 +751,7 @@ instance.destroy();
         <div class="row" style="margin-bottom: 0;">
           <div class="s12 m10 offset-m1">
             <div class="row" style="gap:2rem;">
-              <div class="s12 l4">
+              <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
                 <p class="grey-text text-darken-2">
                   We hope you have enjoyed using Materialize and if you feel like it
@@ -756,7 +765,8 @@ instance.destroy();
                   >Contribute</a
                 >
               </div>
-              <div class="s12 l4">
+    
+              <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
                 <p class="grey-text text-darken-2">
                   We have a Gitter chat room set up where you can talk directly with
@@ -770,18 +780,30 @@ instance.destroy();
                   >Chat</a
                 >
               </div>
-              <div class="s12 l4" style="overflow: hidden;">
+    
+              <div class="s12 m6 l4" style="overflow: hidden;">
                 <h5>Star us</h5>
-                <iframe
-                  src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                  allowtransparency="true"
-                  frameborder="0"
-                  scrolling="0"
-                  width="170"
-                  height="30"
-                ></iframe>
+                <div>
+                  <iframe
+                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
+                    allowtransparency="true"
+                    frameborder="0"
+                    scrolling="0"
+                    width="170"
+                    height="30"
+                  ></iframe>
+                </div>
+    
+                <!-- Ad Placements -->
+                <div style="width: 100%;">
+                  <small>Advertisment</small>
+                  <div
+                    style="border: 1px dotted red; height: 90px; width: 100%; "
+                  ></div>
+                </div>
               </div>
             </div>
+    
             <div class="footer-copyright">
               © 2014-
               <noscript>2018</noscript>
