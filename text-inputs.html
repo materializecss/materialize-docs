@@ -34,7 +34,7 @@
   const theme = localStorage.getItem("theme");
   if (theme) document.documentElement.setAttribute("theme", theme);
 </script>
-   <script type="module" crossorigin src="./assets/main-d1fe2c29.js"></script>
+   <script type="module" crossorigin src="./assets/main-105cc7a5.js"></script>
    <link rel="stylesheet" href="./assets/main-ee676d25.css">
  </head>
   <body>
@@ -377,62 +377,58 @@
         <p>The validate class leverages HTML5 validation and will add a <code class="language-markup">valid</code> and <code class="language-markup">invalid</code> class accordingly. If you don't want the Green and Red validation states, just remove the <code class="language-markup">validate</code> class from your inputs.</p>
         
           <form>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; margin-bottom: 3em;">
-              <div class="input-field">
-                <input id="first_name" type="text" placeholder=" ">
+            <div class="row" style="gap: 1em;">
+              <div class="s12 m6 input-field">
+                <input id="first_name" type="text" placeholder=" " maxlength="20">
                 <label for="first_name">First Name</label>
                 <span class="supporting-text">Supporting Text</span>
-                <span class="character-counter">0/20</span>
               </div>
 
-              <div class="input-field outlined">
-                <input id="last_name" type="text" placeholder=" ">
+              <div class="s12 m6 input-field outlined">
+                <input id="last_name" type="text" placeholder=" " maxlength="20">
                 <label for="last_name">Last Name</label>
                 <!--<span class="supporting-text">Supporting Text</span>-->
-                <span class="character-counter">0/20</span>
               </div>
 
-              <div class="input-field">
+              <div class="s12 m6 input-field">
                 <input id="disabled" type="text" placeholder=" " value="I am not editable" disabled>
                 <label for="disabled">Disabled</label>
               </div>
 
-              <div class="input-field outlined">
+              <div class="s12 m6 input-field outlined">
                 <input id="disabled" type="text" placeholder=" " value="Not editable too" disabled>
                 <label for="disabled">Disabled</label>
               </div>
 
-              <div class="input-field">
+              <div class="s12 m6 input-field">
                 <div class="prefix"><i class="material-icons">place</i></div>
                 <div class="suffix"><i class="material-icons">gps_fixed</i></div>
                 <input id="inp-location" type="text" placeholder=" " value="Planet Earth">
                 <label for="inp-location">Location</label>
               </div>
 
-              <div class="input-field outlined error">
+              <div class="s12 m6 input-field outlined error" maxlength="20">
                 <div class="prefix"><i class="material-icons">bubble_chart</i></div>
                 <div class="suffix"><i class="material-icons">error</i></div>
                 <input id="inp-error" type="text" placeholder=" " value="$%/'#sdf">
                 <label for="inp-error">Failing Input</label>
                 <span class="supporting-text">Invalid characters! Please use 0-9 only.</span>
-                <span class="character-counter">0/20</span>
               </div>
             </div>
 
-            <div class="input-field">
-              <input id="password" type="password" class="validate" placeholder=" ">
-              <label for="password">Password</label>
-              <span class="character-counter">0/20</span>
+            <div class="row" style="gap: 1em;">            
+              <div class="s12 m6 input-field">
+                <input id="password" type="password" class="validate" placeholder=" " maxlength="20">
+                <label for="password">Password</label>
+              </div>
+              <div class="s12 m6 input-field">
+                <input id="email" type="email" class="validate" placeholder=" ">
+                <label for="email">Email</label>
+                <span class="supporting-text" data-error="wrong" data-success="right">Supporting text for additional information</span>
+              </div>
             </div>
 
-            <div class="input-field">
-              <input id="email" type="email" class="validate" placeholder=" ">
-              <label for="email">Email</label>
-              <span class="supporting-text" data-error="wrong" data-success="right">Supporting text for additional information</span>
-            </div>
-
-            <div class="row" style="margin-top: 2em;">
+            <div class="row">
               <div class="col s12">
                 This is an inline input field:
                 <div class="input-field inline">
@@ -441,53 +437,76 @@
                   <span class="helper-text" data-error="wrong" data-success="right"></span>
                 </div>
               </div>
-            </div>
-
+            </div>            
           </form>
+
         <pre><code class="language-markup">
-  &lt;div class="row">
-    &lt;form class="col s12">
-      &lt;div class="row">
-        &lt;div class="input-field col s6">
-          &lt;input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          &lt;label for="first_name">First Name&lt;/label>
-        &lt;/div>
-        &lt;div class="input-field col s6">
-          &lt;input id="last_name" type="text" class="validate">
-          &lt;label for="last_name">Last Name&lt;/label>
-        &lt;/div>
-      &lt;/div>
-      &lt;div class="row">
-        &lt;div class="input-field col s12">
-          &lt;input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          &lt;label for="disabled">Disabled&lt;/label>
-        &lt;/div>
-      &lt;/div>
-      &lt;div class="row">
-        &lt;div class="input-field col s12">
-          &lt;input id="password" type="password" class="validate">
-          &lt;label for="password">Password&lt;/label>
-        &lt;/div>
-      &lt;/div>
-      &lt;div class="row">
-        &lt;div class="input-field col s12">
-          &lt;input id="email" type="email" class="validate">
-          &lt;label for="email">Email&lt;/label>
-        &lt;/div>
-      &lt;/div>
-      &lt;div class="row">
-        &lt;div class="col s12">
-          This is an inline input field:
-          &lt;div class="input-field inline">
-            &lt;input id="email_inline" type="email" class="validate">
-            &lt;label for="email_inline">Email&lt;/label>
-            &lt;span class="helper-text" data-error="wrong" data-success="right">Helper text&lt;/span>
-          &lt;/div>
-        &lt;/div>
-      &lt;/div>
-    &lt;/form>
-  &lt;/div>
+<xmp>
+<div class="row" style="gap: 1em;">
+  <div class="s12 m6 input-field">
+    <input id="first_name" type="text" placeholder=" " maxlength="20">
+    <label for="first_name">First Name</label>
+    <span class="supporting-text">Supporting Text</span>
+  </div>
+
+  <div class="s12 m6 input-field outlined">
+    <input id="last_name" type="text" placeholder=" " maxlength="20">
+    <label for="last_name">Last Name</label>
+    <!--<span class="supporting-text">Supporting Text</span>-->
+  </div>
+
+  <div class="s12 m6 input-field">
+    <input id="disabled" type="text" placeholder=" " value="I am not editable" disabled>
+    <label for="disabled">Disabled</label>
+  </div>
+
+  <div class="s12 m6 input-field outlined">
+    <input id="disabled" type="text" placeholder=" " value="Not editable too" disabled>
+    <label for="disabled">Disabled</label>
+  </div>
+
+  <div class="s12 m6 input-field">
+    <div class="prefix"><i class="material-icons">place</i></div>
+    <div class="suffix"><i class="material-icons">gps_fixed</i></div>
+    <input id="inp-location" type="text" placeholder=" " value="Planet Earth">
+    <label for="inp-location">Location</label>
+  </div>
+
+  <div class="s12 m6 input-field outlined error" maxlength="20">
+    <div class="prefix"><i class="material-icons">bubble_chart</i></div>
+    <div class="suffix"><i class="material-icons">error</i></div>
+    <input id="inp-error" type="text" placeholder=" " value="$%/'#sdf">
+    <label for="inp-error">Failing Input</label>
+    <span class="supporting-text">Invalid characters! Please use 0-9 only.</span>
+  </div>
+</div>
+
+<div class="row" style="gap: 1em;">            
+  <div class="s12 m6 input-field">
+    <input id="password" type="password" class="validate" placeholder=" " maxlength="20">
+    <label for="password">Password</label>
+  </div>
+  <div class="s12 m6 input-field">
+    <input id="email" type="email" class="validate" placeholder=" ">
+    <label for="email">Email</label>
+    <span class="supporting-text" data-error="wrong" data-success="right">Supporting text for additional information</span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    This is an inline input field:
+    <div class="input-field inline">
+      <input id="email_inline" type="email" class="validate" placeholder=" ">
+      <label for="email_inline">Email</label>
+      <span class="helper-text" data-error="wrong" data-success="right"></span>
+    </div>
+  </div>
+</div>
+</xmp>
         </code></pre>
+
+        <!-- Section -->
         <h5 id="floating-labels">Floating Labels</h5>
         <p>
           Since <b>MaterializeCSS v2</b>, floating Labels are rendered with CSS only by default.
@@ -531,6 +550,7 @@
 &lt;/div>
         </code></pre>
 
+        <!-- Section -->
         <h5>Icon Prefixes</h5>
         <p>You can add an icon prefix to make the form input label even more clear. Just add an icon with the class <code class="language-markup">prefix</code> before the input and label.</p>
         <div class="row">
