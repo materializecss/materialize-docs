@@ -2,6 +2,7 @@ import { M } from "@materializecss/materialize";
 import Prism from "prismjs";
 import "./style.scss";
 import "prismjs/themes/prism.min.css";
+import { config } from "../config.materialize";
 
 document.addEventListener("DOMContentLoaded", function() {
   function rgb2hex(rgb: string) {
@@ -33,6 +34,28 @@ document.addEventListener("DOMContentLoaded", function() {
       (el as any).style.color = "rgba(255,255,255,.87";
     else (el as any).style.color = "rgba(0, 0, 0, .87";
   });
+
+  const searchInput = document.querySelector(".search-docs");
+  if (searchInput) {
+    const mappedData = config;
+    // Init Autocomplete for internal Search
+    M.Autocomplete.init(searchInput, {
+      minLength: 1,
+      data: mappedData,
+    });
+  }
+
+  // const debounce = function(fn) {
+  //   let timeout;
+  //   return function() {
+  //     const args = Array.prototype.slice.call(arguments),
+  //       ctx = this;
+  //     clearTimeout(timeout);
+  //     timeout = setTimeout(function() {
+  //       fn.apply(ctx, args);
+  //     }, 100);
+  //   };
+  // };
 
   // Github Latest Commit
   const githubCommitElem = document.querySelector(".github-commit");
