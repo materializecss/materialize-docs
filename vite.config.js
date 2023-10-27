@@ -58,10 +58,10 @@ export default {
       context(pagePath) {
         currentRoute = pagePath;
         const searchUrl = pagePath.substring(1);
-        const index = config.pages.find((page) => page.url === "index.html");
+        const index = config.pages.find((page) => page.id === "index");
         const page = config.pages.find((page) => page.url === searchUrl);
         // Use default Values if they are not set
-        page.description = index.description;
+        if (page && !page.description) page.description = index.description;
         return { page, config };
       },
       helpers: {

@@ -35,27 +35,26 @@ document.addEventListener("DOMContentLoaded", function() {
     else (el as any).style.color = "rgba(0, 0, 0, .87";
   });
 
+  // Search Materialize Docs
   const searchInput = document.querySelector(".search-docs");
   if (searchInput) {
-    const mappedData = config;
-    // Init Autocomplete for internal Search
+    const pages = config.pages.map((el) => ({
+      id: el.id,
+      text: el.name,
+      description: el.description,
+      url: el.url,
+    }));
     M.Autocomplete.init(searchInput, {
       minLength: 1,
-      data: mappedData,
+      data: pages,
+      onAutocomplete: (items) => {
+        if (items.length === 1) {
+          const targetItem = items[0];
+          document.location.assign("/" + targetItem.url);
+        }
+      },
     });
   }
-
-  // const debounce = function(fn) {
-  //   let timeout;
-  //   return function() {
-  //     const args = Array.prototype.slice.call(arguments),
-  //       ctx = this;
-  //     clearTimeout(timeout);
-  //     timeout = setTimeout(function() {
-  //       fn.apply(ctx, args);
-  //     }, 100);
-  //   };
-  // };
 
   // Github Latest Commit
   const githubCommitElem = document.querySelector(".github-commit");

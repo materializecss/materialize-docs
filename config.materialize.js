@@ -1,6 +1,7 @@
 export const config = {
   pages: [
     {
+      id: "index",
       url: "index.html",
       name: "Documentation",
       description:
@@ -75,6 +76,8 @@ export const config = {
     { id: "textinputs", url: "text-inputs.html", name: "Text Inputs" },
     { id: "mobile", url: "mobile.html", name: "Mobile" },
   ],
+
+  // Navigation Menu as Tree Structure
 
   items: [
     { id: "about", icon: "info" },
