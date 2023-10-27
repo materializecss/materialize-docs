@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
       onAutocomplete: (items) => {
         if (items.length === 1) {
           const targetItem = items[0];
-          document.location.assign("/" + targetItem.url);
+          document.location.href = targetItem.url;
         }
       },
     });
@@ -84,11 +84,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const footerElem = document.querySelector("body > footer");
   const footerOffset = footerElem
-    ? // https://youmightnotneedjquery.com/#offset
-      footerElem.getBoundingClientRect().top -
+    ? footerElem.getBoundingClientRect().top -
       window.scrollY +
       document.documentElement.clientTop
     : 0;
+
   const bottomOffset =
     footerOffset - socialHeight - tocHeight - tocWrapperHeight;
 
