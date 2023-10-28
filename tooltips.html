@@ -411,35 +411,42 @@
                 graphical elements. When using icons for actions you can use a
                 tooltip to give people clarification on its function.
               </p>
-              <div class="row">
+
+              <div>
                 <a
-                  href="#!"
-                  class="btn tooltipped col s4 offset-s4 l2 offset-l1"
+                  href="#"
+                  class="btn tooltipped"
                   data-html="true"
                   data-position="bottom"
-                  data-tooltip="I am a tooltip"
+                  data-tooltip-id="tooltip-content"
                 >
                   Bottom</a
                 >
+                <div id="tooltip-content" style="display: none;">
+                  This is a tooltip with a
+                  <a href="https://github.com/materializecss">link</a> and a
+                  <i class="material-icons icon-demo">insert_chart</i>
+                </div>
+
                 <a
-                  href="#!"
-                  class="btn tooltipped col s4 offset-s4 l2 offset-l1"
+                  href="#"
+                  class="btn tooltipped"
                   data-position="top"
                   data-tooltip="I am a tooltip"
                 >
                   Top</a
                 >
                 <a
-                  href="#!"
-                  class="btn tooltipped col s4 offset-s4 l2 offset-l1"
+                  href="#"
+                  class="btn tooltipped"
                   data-position="left"
                   data-tooltip="I am a tooltip"
                 >
                   Left</a
                 >
                 <a
-                  href="#!"
-                  class="btn tooltipped col s4 offset-s4 l2 offset-l1"
+                  href="#"
+                  class="btn tooltipped"
                   data-position="right"
                   data-tooltip="I am a tooltip"
                 >
@@ -455,6 +462,24 @@
   &lt;!-- data-position can be : bottom, top, left, or right -->
   &lt;!-- data-tooltip defines the tooltip text -->
   &lt;a class="btn tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Hover me!&lt;/a>
+        </code></pre>
+
+              <p>
+                Also HTML-Elements can be added with the attribute
+                <code>data-tooltip-id="tooltip-content"</code>
+              </p>
+              <pre><code class="language-markup">
+<xmp>            
+  <a href="#" class="btn tooltipped" data-html="true" data-position="bottom" data-tooltip-id="tooltip-content">
+    Bottom
+  </a>
+  
+  <div id="tooltip-content" style="display: none;">
+    This is a tooltip with a
+    <a href="https://github.com/materializecss">link</a> and a
+    <i class="material-icons icon-demo">insert_chart</i>
+  </div>
+</xmp>
         </code></pre>
             </div>
 
