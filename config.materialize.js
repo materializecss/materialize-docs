@@ -23,7 +23,13 @@ export const config = {
     { id: "color", url: "color.html", name: "Color" },
     { id: "grid", url: "grid.html", name: "Grid" },
     { id: "helpers", url: "helpers.html", name: "Helpers" },
-    { id: "media", url: "media-css.html", name: "Media" },
+    {
+      id: "mediacss",
+      url: "media-css.html",
+      name: "Media Styles",
+      description:
+        "Responsive images and videos ready to be seen on many devices.",
+    },
     { id: "pulse", url: "pulse.html", name: "Pulse" },
     { id: "sass", url: "sass.html", name: "Sass" },
     { id: "shadow", url: "shadow.html", name: "Shadow" },
@@ -56,7 +62,13 @@ export const config = {
       url: "feature-discovery.html",
       name: "Feature Discovery",
     },
-    { id: "media", url: "media.html", name: "Media" },
+    {
+      id: "media",
+      url: "media.html",
+      name: "Media",
+      description:
+        "Use Box and Slider to present your media content in a cool way.",
+    },
     { id: "modals", url: "modals.html", name: "Modals" },
     { id: "parallax", url: "parallax.html", name: "Parallax" },
     { id: "pushpin", url: "pushpin.html", name: "Pushpin" },
@@ -89,7 +101,7 @@ export const config = {
         { id: "color" },
         { id: "grid" },
         { id: "helpers" },
-        { id: "media" },
+        { id: "mediacss" },
         { id: "pulse" },
         { id: "sass" },
         { id: "shadow" },
