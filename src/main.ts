@@ -4,6 +4,8 @@ import "./style.scss";
 import "prismjs/themes/prism.min.css";
 import { config } from "../config.materialize";
 
+globalThis.M = M  
+
 document.addEventListener("DOMContentLoaded", function() {
   function rgb2hex(rgb: string) {
     if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
