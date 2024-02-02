@@ -21,7 +21,11 @@
     />
     <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" />
     <!--  Android 5 Chrome Color-->
-    <meta name="theme-color" content="#EE6E73" />
+    <!--<meta name="theme-color" content="#EE6E73" />-->
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i");
+    </style>
+    
     <!-- CSS-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -35,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-e61ff940.js"></script>
-    <link rel="stylesheet" href="./assets/main-2049a737.css">
+    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
   </head>
   <body>
     <header>
@@ -469,34 +473,12 @@
                     <td>The content of the Toast.</td>
                   </tr>
                   <tr>
-                    <td>unsafeHTML</td>
-                    <td>String, HTMLElement</td>
-                    <td>''</td>
-                    <td>
-                      HTML content that will be appended to to
-                      <code class="language-javascript">text</code>. Only use
-                      properly sanitized or otherwise trusted data for
-                      <code class="language-javascript">unsafeHTML</code>.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>html</td>
+                    <td>toastId</td>
                     <td>String</td>
                     <td>''</td>
                     <td>
                       <p>
-                        (DEPRECATED): will be removed in a later release.
-                      </p>
-                      <p>
-                        HTML content that will be appended to
-                        <code class="language-javascript">text</code>. Only use
-                        properly sanitized or otherwise trusted data for
-                        <code class="language-javascript">html</code>.
-                      </p>
-                      <p>
-                        Will be ignored if
-                        <code class="language-javascript">unsafeHTML</code> is
-                        set.
+                        Id of an HTML element that will be used as tootip content.
                       </p>
                     </td>
                   </tr>
@@ -585,27 +567,34 @@
             <div id="custom-html" class="section scrollspy">
               <h3 class="header">Custom HTML</h3>
               <p>
-                You can pass in an HTML String as the first argument as well.
-                Take a look at the example below, where we pass in text as well
-                as a flat button. If you call an external function instead of
-                in-line JavaScript, you will not need to escape quotation marks.
-              </p>
-              <p>
-                Only use a properly sanitized or otherwise trusted HTML string.
-              </p>
+                You can pass in an toastId as the argument as well.
+                This toastId should refer to some element in the HTML that will be used as toast content.
+              </p>              
               <button
-                type="button"
-                class="waves-effect waves-light btn"
-                onclick="displayCustomHTMLToast()"
-              >
-                Toast with Action
+                  type="button"
+                  class="waves-effect waves-light btn"
+                  onclick="M.toast({toastId: 'my-toast-1'})"
+                >Toast 1!
               </button>
-              <pre><code class="language-javascript">
-  var toastHTML = '&lt;span>I am toast content&lt;/span>&lt;button class="btn-flat toast-action">Undo&lt;/button>';
-  M.toast({unsafeHTML: toastHTML});
-        </code></pre>
+              <div id="my-toast-1" style="display: none;">
+                  This is toast nº1 with a
+                  <a href="https://github.com/materializecss"> link </a>
+              </div>
+              <button
+                  type="button"
+                  class="waves-effect waves-light btn"
+                  onclick="M.toast({toastId: 'my-toast-2', classes: 'primary'})"
+                >Toast 2!
+              </button>
+              <div id="my-toast-2" style="display: none;">
+                  This is toast nº2 with a <i class="material-icons icon-demo">insert_chart</i>
+              </div>
+              <pre><code class="language-markup">
+<xmp><button type="button" class="btn" onclick="M.toast({toastId: 'my-toast-1'})">Toast 2!</button>
+<div id="my-toast-1" style="display: none;">
+  This is toast nº1 with a <a href="https://github.com/materializecss">link</a>
+</div></xmp></code></pre>
             </div>
-
             <div id="callback" class="scrollspy section">
               <h3 class="header">Callback</h3>
               <p>
