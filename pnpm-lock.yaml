@@ -35,10 +35,6 @@ importers:
         version: 4.4.11(sass@1.69.0)
 
   packages/materialize:
-    dependencies:
-      animejs:
-        specifier: ^3.2.1
-        version: 3.2.1
     devDependencies:
       '@commitlint/cli':
         specifier: ^17.0.3
@@ -975,10 +971,6 @@ packages:
       require-from-string: 2.0.2
       uri-js: 4.4.1
     dev: true
-
-  /animejs@3.2.1:
-    resolution: {integrity: sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==}
-    dev: false
 
   /ansi-escapes@3.2.0:
     resolution: {integrity: sha512-cBhpre4ma+U0T1oM5fXg7Dy1Jw7zzwv7lt/GoCpr+hDQJoYnKVPLL4dCvSEFMmQurOQvSrwT7SL/DAlhBI97RQ==}
