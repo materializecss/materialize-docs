@@ -53,6 +53,12 @@ function getMenuItem(item) {
 
 export default {
   base: "./",
+  resolve: {
+    alias: {
+      '@materializecss/materialize/sass': path.resolve(__dirname, './packages/materialize/sass/'),   
+      '@materializecss/materialize': path.resolve(__dirname, './packages/materialize/src/')      
+    }    
+  },  
   plugins: [
     handlebars({
       context(pagePath) {
