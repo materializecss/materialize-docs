@@ -20,7 +20,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "paths": {
-    "packages/*": ["packages/*"]
+    "@materializecss/materialize": ["packages/materialize"],
   },
   "include": ["src"]
 }
