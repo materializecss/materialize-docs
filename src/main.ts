@@ -3,6 +3,9 @@ import Prism from "prismjs";
 import "./style.scss";
 import "prismjs/themes/prism.min.css";
 import { config } from "../config.materialize";
+import { argbFromHex, themeFromSourceColor, applyTheme } from "@material/material-color-utilities";
+import { setThemeProperties } from "./themes";
+
 
 globalThis.M = M  
 
@@ -178,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Theme
   const theme = localStorage.getItem("theme");
+  const themeColor = localStorage.getItem('theme-color');
   const themeSwitch = document.querySelector("#theme-switch");
   const setTheme = (isDark) => {
     if (isDark) {
@@ -189,10 +193,37 @@ document.addEventListener("DOMContentLoaded", function() {
       themeSwitch.querySelector("i").innerText = "dark_mode";
       (themeSwitch as any).title = "Switch to dark mode";
     }
+    let themeColor = localStorage.getItem('theme-color');
+    if (!themeColor)
+      themeColor = "#006495"
+    const color = argbFromHex(themeColor)
+    
+    const atheme = themeFromSourceColor(color)
+    applyTheme(atheme, {target: document.body, dark: isDark, brightnessSuffix: true})
+    setThemeProperties(document.body)
   };
+  const setThemeColor = (colorStr) => {
+    localStorage.setItem('theme-color', colorStr)
+    const color = argbFromHex(colorStr)
+    
+    const atheme = themeFromSourceColor(color)
+    
+    // Print out the theme as JSON
+    console.log(JSON.stringify(atheme, null, 2))
+    
+    // Check if the user has dark mode turned on
+    //const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+    const theme = localStorage.getItem("theme");    
+    
+    // Apply the theme to the body by updating custom properties for material tokens
+    //applyTheme(atheme, {target: document.body, dark: true, brightnessSuffix: true})
+    applyTheme(atheme, {target: document.body, dark: theme != null, brightnessSuffix: true})
+    setThemeProperties(document.body)
+  }
   if (themeSwitch) {
     // Load
     if (theme) setTheme(true);
+    if (themeColor) setThemeColor(themeColor)
     // Change
     themeSwitch.addEventListener("click", (e) => {
       e.preventDefault();
@@ -209,6 +240,13 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
+  const toggleColorsButton = <HTMLInputElement> document.getElementById('color-picker');
+  if (toggleColorsButton && themeColor) {
+    toggleColorsButton.value = themeColor
+  }
+  toggleColorsButton?.addEventListener('change', () => {
+    setThemeColor(toggleColorsButton.value)
+  });
 
   // Copy Button
   const copyBtn = Array.prototype.slice.call(
