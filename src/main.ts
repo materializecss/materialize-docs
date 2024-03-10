@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
       description: el.description,
       url: el.url,
     }));
-    M.Autocomplete.init(searchInput, {
+    M.Autocomplete.init(<HTMLInputElement> searchInput, {
       minLength: 1,
       data: pages,
       onAutocomplete: (items) => {
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const offsetTop = Math.floor(
       contentBox.top + window.scrollY - document.documentElement.clientTop
     );
-    M.Pushpin.init(navElem, {
+    M.Pushpin.init(<HTMLElement> navElem, {
       top: offsetTop,
       bottom: offsetTop + contentBox.height - navBox.height,
     });
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
       themeSwitch.classList.remove("is-dark");
       themeSwitch.querySelector("i").innerText = "dark_mode";
       (themeSwitch as any).title = "Switch to dark mode";
-    }
+    }   
     let themeColor = localStorage.getItem('theme-color');
     if (!themeColor)
       themeColor = "#006495"
@@ -1655,8 +1655,7 @@ document.addEventListener("DOMContentLoaded", function() {
   );
 
   M.Chips.init(document.querySelectorAll(".chips"), {});
-  M.Chips.init(document.querySelectorAll(".chips-initial"), {
-    readOnly: true,
+  M.Chips.init(document.querySelectorAll(".chips-initial"), {    
     data: autocompleteDemoData.filter((country) =>
       ["ma", "ta", "er", "ia", "li", "ze"].includes(country.id)
     ),
