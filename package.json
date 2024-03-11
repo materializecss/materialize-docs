@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@material/material-color-utilities": "^0.2.7",
     "@materializecss/materialize": "workspace:*",
     "glob": "^10.3.3",
     "material-icons": "^1.13.8",

@@ -3,10 +3,13 @@ import Prism from "prismjs";
 import "./style.scss";
 import "prismjs/themes/prism.min.css";
 import { config } from "../config.materialize";
+import { argbFromHex, themeFromSourceColor } from "@material/material-color-utilities";
+import { Themes } from "./themes";
 
 globalThis.M = M  
 
 document.addEventListener("DOMContentLoaded", function() {
+  const themes = new Themes(document)
   function rgb2hex(rgb: string) {
     if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
     const rgbMatch = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
@@ -46,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
       description: el.description,
       url: el.url,
     }));
-    M.Autocomplete.init(searchInput, {
+    M.Autocomplete.init(<HTMLInputElement> searchInput, {
       minLength: 1,
       data: pages,
       onAutocomplete: (items) => {
@@ -164,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const offsetTop = Math.floor(
       contentBox.top + window.scrollY - document.documentElement.clientTop
     );
-    M.Pushpin.init(navElem, {
+    M.Pushpin.init(<HTMLElement> navElem, {
       top: offsetTop,
       bottom: offsetTop + contentBox.height - navBox.height,
     });
@@ -176,39 +179,34 @@ document.addEventListener("DOMContentLoaded", function() {
       "auto";
   }
 
-  // Theme
-  const theme = localStorage.getItem("theme");
-  const themeSwitch = document.querySelector("#theme-switch");
-  const setTheme = (isDark) => {
-    if (isDark) {
-      themeSwitch.classList.add("is-dark");
-      themeSwitch.querySelector("i").innerText = "light_mode";
-      (themeSwitch as any).title = "Switch to light mode";
-    } else {
-      themeSwitch.classList.remove("is-dark");
-      themeSwitch.querySelector("i").innerText = "dark_mode";
-      (themeSwitch as any).title = "Switch to dark mode";
-    }
-  };
-  if (themeSwitch) {
-    // Load
-    if (theme) setTheme(true);
-    // Change
+  themes.applyThemeProperties();
+  const themeSwitch = document.querySelector("#theme-switch");  
+ 
+  if (themeSwitch) {    
     themeSwitch.addEventListener("click", (e) => {
       e.preventDefault();
       if (!themeSwitch.classList.contains("is-dark")) {
-        // Dark Theme
-        document.documentElement.setAttribute("theme", "dark");
-        localStorage.setItem("theme", "dark");
-        setTheme(true);
-      } else {
-        // Light Theme
-        document.documentElement.removeAttribute("theme");
-        localStorage.removeItem("theme");
-        setTheme(false);
+        // Dark Theme        
+        themeSwitch.classList.add("is-dark");
+        themeSwitch.querySelector("i").innerText = "light_mode";
+        (themeSwitch as any).title = "Switch to light mode";
+        themes.setDarkMode();
+      } else {        
+        themeSwitch.classList.remove("is-dark");
+        themeSwitch.querySelector("i").innerText = "dark_mode";
+        (themeSwitch as any).title = "Switch to dark mode";
+        themes.setLightMode()    
       }
     });
   }
+  const toggleColorsButton = <HTMLInputElement> document.getElementById('color-picker');
+  const themePrimaryColor = themes.getThemePrimaryColor();
+  if (toggleColorsButton && themePrimaryColor) {
+    toggleColorsButton.value = themePrimaryColor
+  }
+  toggleColorsButton?.addEventListener('change', () => {
+    themes.setThemePrimaryColor(toggleColorsButton.value)
+  });
 
   // Copy Button
   const copyBtn = Array.prototype.slice.call(
@@ -1617,8 +1615,7 @@ document.addEventListener("DOMContentLoaded", function() {
   );
 
   M.Chips.init(document.querySelectorAll(".chips"), {});
-  M.Chips.init(document.querySelectorAll(".chips-initial"), {
-    readOnly: true,
+  M.Chips.init(document.querySelectorAll(".chips-initial"), {    
     data: autocompleteDemoData.filter((country) =>
       ["ma", "ta", "er", "ia", "li", "ze"].includes(country.id)
     ),
