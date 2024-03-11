@@ -3,13 +3,13 @@ import Prism from "prismjs";
 import "./style.scss";
 import "prismjs/themes/prism.min.css";
 import { config } from "../config.materialize";
-import { argbFromHex, themeFromSourceColor, applyTheme } from "@material/material-color-utilities";
-import { downloadCss, setThemeProperties } from "./themes";
+import { argbFromHex, themeFromSourceColor } from "@material/material-color-utilities";
+import { Themes } from "./themes";
 
 globalThis.M = M  
-globalThis.downloadCss = downloadCss
 
 document.addEventListener("DOMContentLoaded", function() {
+  const themes = new Themes(document)
   function rgb2hex(rgb: string) {
     if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
     const rgbMatch = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
@@ -179,73 +179,33 @@ document.addEventListener("DOMContentLoaded", function() {
       "auto";
   }
 
-  // Theme
-  const theme = localStorage.getItem("theme");
-  const themeColor = localStorage.getItem('theme-color');
-  const themeSwitch = document.querySelector("#theme-switch");
-  const setTheme = (isDark) => {
-    if (isDark) {
-      themeSwitch.classList.add("is-dark");
-      themeSwitch.querySelector("i").innerText = "light_mode";
-      (themeSwitch as any).title = "Switch to light mode";
-    } else {
-      themeSwitch.classList.remove("is-dark");
-      themeSwitch.querySelector("i").innerText = "dark_mode";
-      (themeSwitch as any).title = "Switch to dark mode";
-    }   
-    let themeColor = localStorage.getItem('theme-color');
-    if (!themeColor)
-      themeColor = "#006495"
-    const color = argbFromHex(themeColor)
-    
-    const atheme = themeFromSourceColor(color)
-    applyTheme(atheme, {target: document.body, dark: isDark, brightnessSuffix: true})
-    setThemeProperties(document.body)
-  };
-  const setThemeColor = (colorStr) => {
-    localStorage.setItem('theme-color', colorStr)
-    const color = argbFromHex(colorStr)
-    
-    const atheme = themeFromSourceColor(color)
-    
-    // Print out the theme as JSON
-    console.log(JSON.stringify(atheme, null, 2))
-    
-    // Check if the user has dark mode turned on
-    //const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-    const theme = localStorage.getItem("theme");    
-    
-    // Apply the theme to the body by updating custom properties for material tokens
-    //applyTheme(atheme, {target: document.body, dark: true, brightnessSuffix: true})
-    applyTheme(atheme, {target: document.body, dark: theme != null, brightnessSuffix: true})
-    setThemeProperties(document.body)
-  }
-  if (themeSwitch) {
-    // Load
-    if (theme) setTheme(true);
-    if (themeColor) setThemeColor(themeColor)
-    // Change
+  themes.applyThemeProperties();
+  const themeSwitch = document.querySelector("#theme-switch");  
+ 
+  if (themeSwitch) {    
     themeSwitch.addEventListener("click", (e) => {
       e.preventDefault();
       if (!themeSwitch.classList.contains("is-dark")) {
-        // Dark Theme
-        document.documentElement.setAttribute("theme", "dark");
-        localStorage.setItem("theme", "dark");
-        setTheme(true);
-      } else {
-        // Light Theme
-        document.documentElement.removeAttribute("theme");
-        localStorage.removeItem("theme");
-        setTheme(false);
+        // Dark Theme        
+        themeSwitch.classList.add("is-dark");
+        themeSwitch.querySelector("i").innerText = "light_mode";
+        (themeSwitch as any).title = "Switch to light mode";
+        themes.setDarkMode();
+      } else {        
+        themeSwitch.classList.remove("is-dark");
+        themeSwitch.querySelector("i").innerText = "dark_mode";
+        (themeSwitch as any).title = "Switch to dark mode";
+        themes.setLightMode()    
       }
     });
   }
   const toggleColorsButton = <HTMLInputElement> document.getElementById('color-picker');
-  if (toggleColorsButton && themeColor) {
-    toggleColorsButton.value = themeColor
+  const themePrimaryColor = themes.getThemePrimaryColor();
+  if (toggleColorsButton && themePrimaryColor) {
+    toggleColorsButton.value = themePrimaryColor
   }
   toggleColorsButton?.addEventListener('change', () => {
-    setThemeColor(toggleColorsButton.value)
+    themes.setThemePrimaryColor(toggleColorsButton.value)
   });
 
   // Copy Button
