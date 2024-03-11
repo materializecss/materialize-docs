@@ -4,10 +4,10 @@ import "./style.scss";
 import "prismjs/themes/prism.min.css";
 import { config } from "../config.materialize";
 import { argbFromHex, themeFromSourceColor, applyTheme } from "@material/material-color-utilities";
-import { setThemeProperties } from "./themes";
-
+import { downloadCss, setThemeProperties } from "./themes";
 
 globalThis.M = M  
+globalThis.downloadCss = downloadCss
 
 document.addEventListener("DOMContentLoaded", function() {
   function rgb2hex(rgb: string) {

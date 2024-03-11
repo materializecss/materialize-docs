@@ -1,3 +1,6 @@
+import { argbFromHex, themeFromSourceColor } from "@material/material-color-utilities";
+import { CssGenerator } from "./css-generator";
+
 function setThemeProperty(target: HTMLElement, targetProp:string, sourceProp: string)
 {
   const color = target.style.getPropertyValue(sourceProp);
@@ -66,3 +69,32 @@ export function setThemeProperties(target: HTMLElement)
   
     // --md_sys_color_on-surface: 28, 27, 31;
   }
+
+  
+export function downloadCss()
+{
+  let themeColor = localStorage.getItem('theme-color');
+  if (!themeColor)
+    themeColor = "#006495"
+  const color = argbFromHex(themeColor)
+    
+  const generator = new CssGenerator(themeFromSourceColor(color))
+  var fileLines = generator.tokens();  
+  downloadFile('tokens.module.scss', fileLines.join('\n'));
+
+}
+
+
+function downloadFile(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
