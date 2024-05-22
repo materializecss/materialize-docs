@@ -20,7 +20,7 @@
               <h2>Reading Theme Setting</h2>
               <p>
                 Make sure you include this short code snippet before the
-                <code><xmp></head></xmp></code> tag.
+                <code>&lt;/head></code> tag.
               </p>
               <p>
                 It has to be loaded as soon as possible (therefore put it as first script) to avoid flickering of the page. Also it is recommended to directly write it into the
@@ -88,7 +88,10 @@
               <p>
                 To create or overwrite a theme, you have to set the variables of the Theme. This variables can be defined in a seperate CSS-File and included before the
                 Materialize-CSS File inside of the
-                <code><xmp><head></head></xmp></code> tags.
+                <code>
+                  <xmp><head></head></xmp>
+                </code>
+                tags.
               </p>
               <p>Here is an example of the standard Dark-Theme:</p>
               <pre><code class="language-css">
