@@ -1,12 +1,11 @@
 <header>
-  <div class="search-results card"></div>
+    <div class="search-results card"></div>
 
-  <!-- Top Nav -->
-  <div class="navbar-fixed">
-    <nav class="primary">
-      <div class="nav-wrapper">
-        <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-          ><i class="material-icons">menu</i></a
+    <!-- Top Nav -->
+    <div class="navbar-fixed">
+        <nav class="primary">
+            <div class="nav-wrapper">
+                <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a
         >
 
         <ul>
@@ -15,8 +14,11 @@
 
         <ul class="right">
           <li>
-            <a id="theme-switch" href="#"
-              ><i class="material-icons">dark_mode</i></a
+            <a id="select-palette" class="modal-trigger" href="#palette-selector">
+              <i class="material-icons">palette</i>
+            </a>
+                <li>
+                    <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a
             >
           </li>
           <li>
@@ -27,30 +29,20 @@
               title="Check out our GitHub"
               ><img src="images/github.svg" style="transform: scale(0.8);"
             /></a>
-          </li>
-          <li>
-            <a
-              class="ext-link"
-              href="https://opencollective.com/materialize"
-              target="_blank"
-              title="Support us via OpenCollective"
-              ><img src="images/opencollective.svg"
-            /></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+                </li>
+                <li>
+                    <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
-  <!-- Sidenav -->
-  <ul class="sidenav sidenav-fixed" id="nav-mobile">
-    <li class="logo">
-      <a class="brand-logo" id="logo-container" href="/">
-        <object
-          id="front-page-logo"
-          type="image/svg+xml"
-          data="images/materialize.svg"
-          >Your browser does not support SVG</object
+    <!-- Sidenav -->
+    <ul class="sidenav sidenav-fixed" id="nav-mobile">
+        <li class="logo">
+            <a class="brand-logo" id="logo-container" href="/">
+                <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object
         >Materialize</a
       >
     </li>
@@ -118,3 +110,20 @@
     </li>
   </ul>
 </header>
+<div id="palette-selector" class="modal">
+  <div class="modal-content">
+    <h4>Color Scheme</h4>
+    <div class="color-row">
+      <label>Primary Color</label>      
+      <input type="color" id="color-picker" value="#0000ff">
+    </div>
+    <button type="button" class="btn" onclick="downloadCss()">    
+      Download css style
+    </button>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect btn-flat"
+      >Close</a
+    >
+  </div>
+</div>
