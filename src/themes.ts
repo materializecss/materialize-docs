@@ -2,65 +2,60 @@ import { applyTheme, argbFromHex, themeFromSourceColor } from "@material/materia
 import { CssGenerator } from "./css-generator";
 
 export class Themes {
-  static themePrimaryColorStorageKey: string = 'theme-primary-color';
-  static themeModeStorageKey: string = 'theme-mode';
+  static themePrimaryColorStorageKey: string = "theme-primary-color";
+  static themeModeStorageKey: string = "theme-mode";
 
-  constructor(private document: Document)
-  {
+  constructor(private document: Document) {}
 
-  } 
-  
-  setThemePrimaryColor(value: string) {    
+  setThemePrimaryColor(value: string) {
     localStorage.setItem(Themes.themePrimaryColorStorageKey, value);
     this.applyThemeProperties();
   }
 
   getThemePrimaryColor(): string {
     let themeColor = localStorage.getItem(Themes.themePrimaryColorStorageKey);
-    if (!themeColor)
-      themeColor = "#006495"
+    if (!themeColor) themeColor = "#006495";
     return themeColor;
   }
 
   setLightMode() {
     this.document.documentElement.setAttribute("theme", "light");
     localStorage.setItem(Themes.themeModeStorageKey, "light");
-    this.applyThemeProperties()    
+    this.applyThemeProperties();
   }
   setDarkMode() {
     this.document.documentElement.setAttribute("theme", "dark");
     localStorage.setItem("theme-mode", "dark");
-    this.applyThemeProperties()    
+    this.applyThemeProperties();
   }
 
   public applyThemeProperties() {
-    const mode = localStorage.getItem(Themes.themeModeStorageKey);    
-    const isDark = mode == "dark"
+    const mode = localStorage.getItem(Themes.themeModeStorageKey);
+    const isDark = mode == "dark";
 
     let themeColor = this.getThemePrimaryColor();
-    const color = argbFromHex(themeColor)
-    
-    const atheme = themeFromSourceColor(color)
+    const color = argbFromHex(themeColor);
+
+    const atheme = themeFromSourceColor(color);
     const target = this.document.body;
-    applyTheme(atheme, {target: target, dark: isDark, brightnessSuffix: true})
-    this.setThemeProperties(target)
+    applyTheme(atheme, { target: target, dark: isDark, brightnessSuffix: true });
+    this.setThemeProperties(target);
   }
 
-  downloadCss() {    
-    const color = argbFromHex(this.getThemePrimaryColor())
+  downloadCss() {
+    const color = argbFromHex(this.getThemePrimaryColor());
 
-    const generator = new CssGenerator(themeFromSourceColor(color))
+    const generator = new CssGenerator(themeFromSourceColor(color));
     var fileLines = generator.tokens();
-    this.downloadFile('tokens.module.scss', fileLines.join('\n'));
-
+    this.downloadFile("tokens.module.scss", fileLines.join("\n"));
   }
 
   downloadFile(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
+    var element = document.createElement("a");
+    element.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(text));
+    element.setAttribute("download", filename);
 
-    element.style.display = 'none';
+    element.style.display = "none";
     document.body.appendChild(element);
 
     element.click();
@@ -69,6 +64,7 @@ export class Themes {
   }
 
   public setThemeProperties(target: HTMLElement) {
+    /*
     this.setThemeProperty(target, '--surface-color', '--md-sys-color-surface')
     this.setThemeProperty(target, '--background-color', '--md-sys-color-background')
     this.setThemeProperty(target, '--font-color-main', '--md-sys-color-on-background')
@@ -99,7 +95,7 @@ export class Themes {
     // --tooltip-background-color: #313033;
     // --tooltip-font-color: rgba(255, 255, 255, 0.77);
 
-    // --separator-color: #DDDDDD; /* borders between components */
+    // --separator-color: #DDDDDD;
 
     // --error-color: #F44336;
 
@@ -128,13 +124,11 @@ export class Themes {
 
 
     // --md_sys_color_on-surface: 28, 27, 31;
+    */
   }
-
 
   setThemeProperty(target: HTMLElement, targetProp: string, sourceProp: string) {
     const color = target.style.getPropertyValue(sourceProp);
     target.style.setProperty(targetProp, color);
   }
-
-
 }

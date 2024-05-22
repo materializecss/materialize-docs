@@ -12,10 +12,8 @@
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
             <div id="introduction" class="section scrollspy">
               <p>
-                Select allows user input through specified options. Make sure
-                you wrap it in a
-                <code class="language-markup">.input-field</code> for proper
-                alignment with other text fields.
+                Select allows user input through specified options. Make sure you wrap it in a
+                <code class="language-markup">.input-field</code> for proper alignment with other text fields.
               </p>
 
               <div class="row">
@@ -23,9 +21,7 @@
                   <div class="row">
                     <div class="input-field outlined col s12 m6">
                       <select id="select-example-1">
-                        <option value="" disabled selected
-                          >Choose your option</option
-                        >
+                        <option value="" disabled selected>Choose your option</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
@@ -36,23 +32,18 @@
                     <div class="col s12">
                       <p>
                         You can add the property
-                        <code class="language-markup">multiple</code> to get the
-                        multiple select and select several options.
+                        <code class="language-markup">multiple</code> to get the multiple select and select several options.
                       </p>
                     </div>
 
                     <div class="input-field col s12 m6">
                       <select id="select-example-2" multiple>
-                        <option value="" disabled selected
-                          >Choose your option</option
-                        >
+                        <option value="" disabled selected>Choose your option</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
                       </select>
-                      <label for="select-example-2"
-                        >Materialize Multiple Select</label
-                      >
+                      <label for="select-example-2">Materialize Multiple Select</label>
                     </div>
 
                     <div class="col s12">
@@ -73,68 +64,39 @@
                     </div>
                     <div class="col s12">
                       <p>
-                        You can add icons to your options in any type of select.
-                        In the option you add the image source with the
+                        You can add icons to your options in any type of select. In the option you add the image source with the
                         <code class="language-markup">data-icon</code>
                         attribute.
                       </p>
                     </div>
                     <div class="input-field col s12 m6">
                       <select id="select-example-4" class="icons">
-                        <option value="" disabled selected
-                          >Choose your option</option
-                        >
-                        <option value="" data-icon="images/sample-1.jpg"
-                          >example 1</option
-                        >
-                        <option value="" data-icon="images/office.jpg"
-                          >example 2</option
-                        >
-                        <option value="" data-icon="images/yuna.jpg"
-                          >example 3</option
-                        >
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="" data-icon="images/sample-1.jpg">example 1</option>
+                        <option value="" data-icon="images/office.jpg">example 2</option>
+                        <option value="" data-icon="images/yuna.jpg">example 3</option>
                       </select>
                       <label for="select-example-4">Images in select</label>
                     </div>
                     <div class="input-field col s12 m6">
                       <select id="select-example-5" class="icons">
-                        <option value="" disabled selected
-                          >Choose your option</option
-                        >
-                        <option
-                          value=""
-                          data-icon="images/sample-1.jpg"
-                          class="left"
-                          >example 1</option
-                        >
-                        <option
-                          value=""
-                          data-icon="images/office.jpg"
-                          class="left"
-                          >example 2</option
-                        >
-                        <option
-                          value=""
-                          data-icon="images/yuna.jpg"
-                          class="left"
-                          >example 3</option
-                        >
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="" data-icon="images/sample-1.jpg" class="left">example 1</option>
+                        <option value="" data-icon="images/office.jpg" class="left">example 2</option>
+                        <option value="" data-icon="images/yuna.jpg" class="left">example 3</option>
                       </select>
                       <label for="select-example-5">Images in select</label>
                     </div>
                     <div class="col s12">
                       <p>
                         You can add the class
-                        <code class="language-markup">browser-default</code> to
-                        get the browser default.
+                        <code class="language-markup">browser-default</code> to get the browser default.
                       </p>
                     </div>
                     <div class="col s12 m6">
                       <label for="select-example-6">Browser Select</label>
                       <select id="select-example-6" class="browser-default">
-                        <option value="" disabled selected
-                          >Choose your option</option
-                        >
+                        <option value="" disabled selected>Choose your option</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
@@ -144,66 +106,68 @@
                 </form>
                 <div class="col s12">
                   <pre><code class="language-markup">
-  &lt;div class="input-field col s12">
-    &lt;select id="form-select-1">
-      &lt;option value="" disabled selected>Choose your option&lt;/option>
-      &lt;option value="1">Option 1&lt;/option>
-      &lt;option value="2">Option 2&lt;/option>
-      &lt;option value="3">Option 3&lt;/option>
-    &lt;/select>
-    &lt;label for="form-select-1">Materialize Select&lt;/label>
-  &lt;/div>
+<xmp>
+<div class="input-field col s12">
+  <select id="form-select-1">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+  <label for="form-select-1">Materialize Select</label>
+</div>
 
-  &lt;div class="input-field col s12">
-    &lt;select id="form-select-2" multiple>
-      &lt;option value="" disabled selected>Choose your option&lt;/option>
-      &lt;option value="1">Option 1&lt;/option>
-      &lt;option value="2">Option 2&lt;/option>
-      &lt;option value="3">Option 3&lt;/option>
-    &lt;/select>
-    &lt;label for="form-select-2">Materialize Multiple Select&lt;/label>
-  &lt;/div>
+<div class="input-field col s12">
+  <select id="form-select-2" multiple>
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+  <label for="form-select-2">Materialize Multiple Select</label>
+</div>
 
-  &lt;div class="input-field col s12">
-    &lt;select id="form-select-3">
-      &lt;optgroup label="team 1">
-        &lt;option value="1">Option 1&lt;/option>
-        &lt;option value="2">Option 2&lt;/option>
-      &lt;/optgroup>
-      &lt;optgroup label="team 2">
-        &lt;option value="3">Option 3&lt;/option>
-        &lt;option value="4">Option 4&lt;/option>
-      &lt;/optgroup>
-    &lt;/select>
-    &lt;label for="form-select-3">Optgroups&lt;/label>
-  &lt;/div>
+<div class="input-field col s12">
+  <select id="form-select-3">
+    <optgroup label="team 1">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+    </optgroup>
+    <optgroup label="team 2">
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+    </optgroup>
+  </select>
+  <label for="form-select-3">Optgroups</label>
+</div>
 
-  &lt;div class="input-field col s12 m6">
-    &lt;select id="form-select-4" class="icons">
-      &lt;option value="" disabled selected>Choose your option&lt;/option>
-      &lt;option value="" data-icon="images/sample-1.jpg">example 1&lt;/option>
-      &lt;option value="" data-icon="images/office.jpg">example 2&lt;/option>
-      &lt;option value="" data-icon="images/yuna.jpg">example 3&lt;/option>
-    &lt;/select>
-    &lt;label for="form-select-4">Images in select&lt;/label>
-  &lt;/div>
-  &lt;div class="input-field col s12 m6">
-    &lt;select id="form-select-5" class="icons">
-      &lt;option value="" disabled selected>Choose your option&lt;/option>
-      &lt;option value="" data-icon="images/sample-1.jpg" class="left">example 1&lt;/option>
-      &lt;option value="" data-icon="images/office.jpg" class="left">example 2&lt;/option>
-      &lt;option value="" data-icon="images/yuna.jpg" class="left">example 3&lt;/option>
-    &lt;/select>
-    &lt;label for="form-select-5">Images in select&lt;/label>
-  &lt;/div>
+<div class="input-field col s12 m6">
+  <select id="form-select-4" class="icons">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="" data-icon="images/sample-1.jpg">example 1</option>
+    <option value="" data-icon="images/office.jpg">example 2</option>
+    <option value="" data-icon="images/yuna.jpg">example 3</option>
+  </select>
+  <label for="form-select-4">Images in select</label>
+</div>
+<div class="input-field col s12 m6">
+  <select id="form-select-5" class="icons">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="" data-icon="images/sample-1.jpg" class="left">example 1</option>
+    <option value="" data-icon="images/office.jpg" class="left">example 2</option>
+    <option value="" data-icon="images/yuna.jpg" class="left">example 3</option>
+  </select>
+  <label for="form-select-5">Images in select</label>
+</div>
 
-  &lt;label for="form-select-6">Browser Select&lt;/label>
-  &lt;select id="form-select-6" class="browser-default">
-    &lt;option value="" disabled selected>Choose your option&lt;/option>
-    &lt;option value="1">Option 1&lt;/option>
-    &lt;option value="2">Option 2&lt;/option>
-    &lt;option value="3">Option 3&lt;/option>
-  &lt;/select>
+<label for="form-select-6">Browser Select</label>
+<select id="form-select-6" class="browser-default">
+  <option value="" disabled selected>Choose your option</option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+</select>
+</xmp>
             </code></pre>
                 </div>
               </div>
@@ -212,10 +176,8 @@
             <div id="initialization" class="scrollspy section">
               <h3 class="header">Initialization</h3>
               <p>
-                You must initialize the select element as shown below. In
-                addition, you will need a separate call to init() for any
-                dynamically generated select or any changes to an existing
-                select.
+                You must initialize the select element as shown below. In addition, you will need a separate call to init() for any dynamically generated select or any changes to
+                an existing select.
               </p>
 
               <pre><code class="language-javascript">
@@ -251,9 +213,7 @@
                     <td>dropdownOptions</td>
                     <td>Object</td>
                     <td>{}</td>
-                    <td>
-                      Pass options object to select dropdown initialization.
-                    </td>
+                    <td>Pass options object to select dropdown initialization.</td>
                   </tr>
                 </tbody>
               </table>
@@ -262,18 +222,13 @@
             <div id="methods" class="scrollspy section">
               <h3 class="header">Methods</h3>
               <blockquote>
-                <p>
-                  All the methods are called on the plugin instance. You can get
-                  the plugin instance like this:
-                </p>
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
   var instance = M.FormSelect.getInstance(elem);
         </code></pre>
               </blockquote>
 
-              <h5 class="method-header">
-                .getSelectedValues();
-              </h5>
+              <h5 class="method-header">.getSelectedValues();</h5>
               <p>Get selected values in an array.</p>
               <h6>Return Value</h6>
               <p><b>Array:</b> Array of selected values.</p>
@@ -281,9 +236,7 @@
 instance.getSelectedValues();
       </code></pre>
 
-              <h5 class="method-header">
-                .destroy();
-              </h5>
+              <h5 class="method-header">.destroy();</h5>
               <p>Destroy plugin instance and teardown</p>
               <pre><code class="language-javascript col s12">
 instance.destroy();
@@ -330,10 +283,7 @@ instance.destroy();
                   <tr>
                     <td>labelEl</td>
                     <td>Element</td>
-                    <td>
-                      Label associated with the current select element. Is
-                      "null", if not detected.
-                    </td>
+                    <td>Label associated with the current select element. Is "null", if not detected.</td>
                   </tr>
                   <tr>
                     <td>input</td>
@@ -355,19 +305,15 @@ instance.destroy();
                   <h3 class="header">Disabled Styles</h3>
                   <p>
                     You can also add
-                    <code class="language-markup">disabled</code> to the select
-                    element to make the whole thing disabled. Or if you add
-                    <code class="language-markup">disabled</code> to the
-                    options, the individual options will be unselectable.
+                    <code class="language-markup">disabled</code> to the select element to make the whole thing disabled. Or if you add
+                    <code class="language-markup">disabled</code> to the options, the individual options will be unselectable.
                   </p>
                 </div>
                 <form class="col s12 m6">
                   <div class="row">
                     <div class="col s12 input-field">
                       <select id="select-example-7" disabled>
-                        <option value="" disabled selected
-                          >Choose your option</option
-                        >
+                        <option value="" disabled selected>Choose your option</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
@@ -378,14 +324,8 @@ instance.destroy();
                   <div class="row">
                     <div class="col s12">
                       <label for="select-example-8">Browser Disabled</label>
-                      <select
-                        id="select-example-8"
-                        class="browser-default"
-                        disabled
-                      >
-                        <option value="" disabled selected
-                          >Choose your option</option
-                        >
+                      <select id="select-example-8" class="browser-default" disabled>
+                        <option value="" disabled selected>Choose your option</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
@@ -395,23 +335,25 @@ instance.destroy();
                 </form>
                 <div class="col s12">
                   <pre><code class="language-markup">
-  &lt;div class="input-field">
-    &lt;select id="form-select-7" disabled>
-      &lt;option value="" disabled selected>Choose your option&lt;/option>
-      &lt;option value="1">Option 1&lt;/option>
-      &lt;option value="2">Option 2&lt;/option>
-      &lt;option value="3">Option 3&lt;/option>
-    &lt;/select>
-    &lt;label for="form-select-7">Materialize Disabled&lt;/label>
-  &lt;/div>
+<xmp>
+<div class="input-field">
+  <select id="form-select-7" disabled>
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+  <label for="form-select-7">Materialize Disabled</label>
+</div>
 
-  &lt;label for="form-select-8">Browser Disabled&lt;/label>
-  &lt;select id="form-select-8" class="browser-default" disabled>
-    &lt;option value="" disabled selected>Choose your option&lt;/option>
-    &lt;option value="1">Option 1&lt;/option>
-    &lt;option value="2">Option 2&lt;/option>
-    &lt;option value="3">Option 3&lt;/option>
-  &lt;/select>
+<label for="form-select-8">Browser Disabled</label>
+<select id="form-select-8" class="browser-default" disabled>
+  <option value="" disabled selected>Choose your option</option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+</select>
+</xmp>
             </code></pre>
                 </div>
               </div>
@@ -419,7 +361,7 @@ instance.destroy();
           </div>
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li>
                     <a href="#introduction">Introduction</a>

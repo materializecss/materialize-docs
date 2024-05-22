@@ -20,16 +20,19 @@
               <h2>Reading Theme Setting</h2>
               <p>
                 Make sure you include this short code snippet before the
-                <code>&lt;/head&gt;</code> tag.
+                <code><xmp></head></xmp></code> tag.
               </p>
               <p>
                 It has to be loaded as soon as possible (therefore put it as first script) to avoid flickering of the page. Also it is recommended to directly write it into the
                 HTML code, then it is also faster (no additional request).
               </p>
-              <pre><code class="language-javascript">&lt;script&gt;
+              <pre><code class="language-javascript">
+<xmp>
+<script>
   const theme = localStorage.getItem('theme');
   if (theme) document.documentElement.setAttribute('theme', theme);
-&lt;/script&gt;
+</script>
+</xmp>
 </code></pre>
 
               <p>This Script loads the users settings from the local storage and sets a parameter which can be then used to set variables in the CSS.</p>
@@ -85,7 +88,7 @@
               <p>
                 To create or overwrite a theme, you have to set the variables of the Theme. This variables can be defined in a seperate CSS-File and included before the
                 Materialize-CSS File inside of the
-                <code>&lt;head&gt;&lt;/head&gt;</code> tags.
+                <code><xmp><head></head></xmp></code> tags.
               </p>
               <p>Here is an example of the standard Dark-Theme:</p>
               <pre><code class="language-css">
