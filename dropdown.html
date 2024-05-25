@@ -13,11 +13,7 @@
             <div id="introduction" class="scrollspy section">
               <p class="caption">
                 Add a dropdown list to any button. Make sure that the
-                <code class="language-markup">data-target</code> attribute matches the id in the
-                <code class="language-markup">
-                  <xmp><ul></ul></xmp>
-                </code>
-                tag. You can add a divider with the
+                <code class="language-markup">data-target</code> attribute matches the id in the <code class="language-markup">ul</code> tag. You can add a divider with the
                 <code class="language-markup">
                   <xmp><li class="divider"></li></xmp>
                 </code>
@@ -47,9 +43,7 @@
               <pre style="padding-top: 0px">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-<xmp>
-<!-- Dropdown Trigger -->
+<code class="language-markup copiedText"><xmp><!-- Dropdown Trigger -->
 <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
 <!-- Dropdown Structure -->
 <ul id='dropdown1' class='dropdown-content'>
@@ -60,9 +54,7 @@
   <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
   <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
 </ul>
-</xmp>
-          </code>
-        </pre>
+</xmp></code></pre>
             </div>
 
             <div id="initialization" class="section scrollspy">
@@ -71,15 +63,13 @@
               <pre style="padding-top: 0px">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-javascript copiedText">
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, {
-      // specify options here
-    });
+<code class="language-javascript copiedText">
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  var instances = M.Dropdown.init(elems, {
+    // specify options here
   });
-          </code>
-        </pre>
+});</code></pre>
             </div>
 
             <div id="options" class="section scrollspy">
@@ -237,17 +227,16 @@
                 </script>
 
                 <pre>
-            <code class="language-javascript copiedText">
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger')[0];
-    var instances = M.Dropdown.init(elems, {
-      // the dropdown is aligned to left
-      alignment: 'left',
-      // enabled for example to be visible
-      constrainWidth: false,
-    });
-  });</code>
-          </pre>
+<code class="language-javascript copiedText">
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.dropdown-trigger')[0];
+  var instances = M.Dropdown.init(elems, {
+    // the dropdown is aligned to left
+    alignment: 'left',
+    // enabled for example to be visible
+    constrainWidth: false,
+  });
+});</code></pre>
               </div>
             </div>
 
@@ -258,34 +247,24 @@
                 <pre style="padding-top: 0px">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-javascript copiedText">
-    var instance = M.Dropdown.getInstance(elem);
-              </code>
+              <code class="language-javascript copiedText">var instance = M.Dropdown.getInstance(elem);</code>
             </pre>
               </blockquote>
               <h5 class="method-header">.open();</h5>
               <p>Open dropdown.</p>
-              <pre><code class="language-javascript col s12">
-  instance.open();
-        </code></pre>
+              <pre><code class="language-javascript col s12">instance.open();</code></pre>
 
               <h5 class="method-header">.close();</h5>
               <p>Close dropdown.</p>
-              <pre><code class="language-javascript col s12">
-  instance.close();
-        </code></pre>
+              <pre><code class="language-javascript col s12">instance.close();</code></pre>
 
               <h5 class="method-header">.recalculateDimensions();</h5>
               <p>While dropdown is open, you can recalculate its dimensions if its contents have changed.</p>
-              <pre><code class="language-javascript col s12">
-  instance.recalculateDimensions();
-        </code></pre>
+              <pre><code class="language-javascript col s12">instance.recalculateDimensions();</code></pre>
 
               <h5 class="method-header">.destroy();</h5>
               <p>Destroy plugin instance and teardown</p>
-              <pre><code class="language-javascript col s12">
-  instance.destroy();
-        </code></pre>
+              <pre><code class="language-javascript col s12">instance.destroy();</code></pre>
             </div>
 
             <div id="properties" class="scrollspy section">

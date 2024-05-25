@@ -1,12 +1,11 @@
 <header>
-    <div class="search-results card"></div>
+  <div class="search-results card"></div>
 
-    <!-- Top Nav -->
-    <div class="navbar-fixed">
-        <nav class="primary">
-            <div class="nav-wrapper">
-                <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a
-        >
+  <!-- Top Nav -->
+  <div class="navbar-fixed">
+    <nav class="primary">
+      <div class="nav-wrapper">
+        <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
 
         <ul>
           <li>{{page.name}}</li>
@@ -17,46 +16,35 @@
             <a id="select-palette" class="modal-trigger" href="#palette-selector">
               <i class="material-icons">palette</i>
             </a>
-                <li>
-                    <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a
-            >
+          </li>
+
+          <li>
+            <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
           </li>
           <li>
-            <a
-              class="ext-link"
-              href="https://github.com/materializecss/materialize"
-              target="_blank"
-              title="Check out our GitHub"
-              ><img src="images/github.svg" style="transform: scale(0.8);"
+            <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+              ><img src="images/github.svg" style="transform: scale(0.8)"
             /></a>
-                </li>
-                <li>
-                    <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
-                </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+          </li>
+          <li>
+            <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-    <!-- Sidenav -->
-    <ul class="sidenav sidenav-fixed" id="nav-mobile">
-        <li class="logo">
-            <a class="brand-logo" id="logo-container" href="/">
-                <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object
-        >Materialize</a
+  <!-- Sidenav -->
+  <ul class="sidenav sidenav-fixed" id="nav-mobile">
+    <li class="logo">
+      <a class="brand-logo" id="logo-container" href="/">
+        <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
       >
     </li>
 
     <li class="search">
       <div class="search-wrapper">
-        <input
-          class="search-docs"
-          id="search"
-          type="search"
-          placeholder="Search"
-          autocomplete="off"
-          autofocus
-        /><i class="material-icons">search</i>
+        <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
       </div>
     </li>
 
@@ -65,13 +53,7 @@
     <li class="version">
       <a class="dropdown-trigger" href="#" data-target="version-dropdown">
         <!-- svg -->
-        2.0.3-alpha<svg
-          class="caret"
-          height="24"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        2.0.3-alpha<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
           <path d="M7 10l5 5 5-5z"></path>
           <path d="M0 0h24v24H0z" fill="none"></path>
         </svg>
@@ -79,34 +61,9 @@
       <ul class="dropdown-content" id="version-dropdown">
         <li><a>2.0.3-alpha</a></li>
         <li>
-          <a
-            href="https://materializecss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >1.0.0 (not maintained)</a
-          >
+          <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
         </li>
       </ul>
-    </li>
-
-    <!-- Ad Placements -->
-    <li
-      class="surface"
-      style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-    >
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-        crossorigin="anonymous"
-      ></script>
-      <ins
-        class="adsbygoogle"
-        style="display:block"
-        data-ad-format="fluid"
-        data-ad-layout-key="-fb+5w+4e-db+86"
-        data-ad-client="ca-pub-9412332535613378"
-        data-ad-slot="4127762940"
-      ></ins>
     </li>
   </ul>
 </header>
@@ -114,16 +71,12 @@
   <div class="modal-content">
     <h4>Color Scheme</h4>
     <div class="color-row">
-      <label>Primary Color</label>      
-      <input type="color" id="color-picker" value="#0000ff">
+      <label>Primary Color</label>
+      <input type="color" id="color-picker" value="#0000ff" />
     </div>
-    <button type="button" class="btn" onclick="downloadCss()">    
-      Download css style
-    </button>
+    <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect btn-flat"
-      >Close</a
-    >
+    <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
   </div>
 </div>
