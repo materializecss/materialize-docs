@@ -1,10 +1,8 @@
 import { config } from "../config.materialize";
 import { M } from "@materializecss/materialize";
 import "./style.scss";
-//import Prism from "prismjs";
-//import "prismjs/themes/prism.min.css";
 import { argbFromHex, themeFromSourceColor } from "@material/material-color-utilities";
-import { Themes } from "./themes";
+//import { Themes } from "./themes";
 import { autocompleteDemoData } from "./data-autocomplete";
 import hljs from "highlight.js";
 
@@ -36,7 +34,7 @@ function is_touch_device() {
 globalThis.M = M;
 
 document.addEventListener("DOMContentLoaded", async function () {
-  const themes = new Themes(document);
+  //const themes = new Themes(document);
 
   // CSS > Colors
   document.querySelectorAll(".dynamic-color .col > div").forEach((el) => {
@@ -165,6 +163,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     (document.querySelector("#nav-mobile") as HTMLElement).style.overflow = "auto";
   }
 
+  /*
   themes.applyThemeProperties();
   const themeSwitch = document.querySelector("#theme-switch");
 
@@ -193,6 +192,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   toggleColorsButton?.addEventListener("change", () => {
     themes.setThemePrimaryColor(toggleColorsButton.value);
   });
+  */
 
   // Copy Button
   const copyBtn = Array.prototype.slice.call(document.querySelectorAll(".copyButton"));

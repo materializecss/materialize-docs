@@ -1,19 +1,16 @@
 @import "material-icons/iconfont/material-icons.css";
 @import "@materializecss/materialize/sass/materialize.scss";
-$border-color: $divider-color;
+
+/*
+$border-color: var(--md-sys-color-outline-variant);
 $font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-/***************
-  HTML Styles
-***************/
-
 body {
-  //background-color: #fcfcfc;
-  color: $text-color;
+  //color: $text-color;
+  //background-color: var(--md-sys-color-background);
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--background-color);
 }
 
 p.box {
@@ -81,9 +78,7 @@ footer.example {
   }
 }
 
-/********************
-  Index Page Styles
-********************/
+// Index Page Styles
 
 #logo-container {
   margin: 0;
@@ -111,7 +106,6 @@ footer.example {
 }
 
 .intro {
-  //background-color: color-mix(in srgb, var(--primary-color) 30%, var(--background-color));
   padding: 6rem 0;
 }
 
@@ -314,9 +308,7 @@ a.sidenav-trigger.top-nav {
   overflow: hidden;
 }
 
-/*******************
-  Flat Site Mockup
-*******************/
+// Flat Site Mockup
 
 #site-layout-example-left {
   background-color: color("blue-grey", "lighten-2");
@@ -357,12 +349,7 @@ a.sidenav-trigger.top-nav {
   }
 }
 
-/**********************
-**********************/
-
-/*****************
-  Chrome Browser
-*****************/
+// Chrome Browser
 
 $bottomColor: #e2e2e1;
 $topColor: lighten($bottomColor, 2%);
@@ -427,9 +414,6 @@ $height: auto;
 .clear {
   clear: both;
 }
-
-/**********************
-**********************/
 
 // Color Wheel
 .dynamic-color {
@@ -576,46 +560,8 @@ pre:has(code) {
 
 :not(pre) > code[class*="language-"] {
   padding: 0.1em 0.25em;
-  border: solid 1px $divider-color;
+  border: solid 1px var(--md-sys-color-outline-variant);
 }
-
-// Styles code blocks
-/*
-pre[class*="language-"] {
-  &:before {
-    position: absolute;
-    padding: 1px 5px;
-    background: var(--background-color-level-16dp-solid);
-    top: 0;
-    left: 0;
-    font-family: $font-stack;
-    -webkit-font-smoothing: antialiased;
-    color: $font-color-medium;
-    content: attr(class);
-    font-size: 0.9rem;
-    border: solid 1px $divider-color;
-    border-top: none;
-    border-left: none;
-  }
-  padding: 25px 12px 7px 12px;
-  border: solid 1px $divider-color;
-  background: var(--background-color-slight-emphasis);
-}
-*/
-
-.token.operator {
-  background: transparent;
-}
-
-/*
-pre[class*="language-"],
-code[class*="language-"] {
-  line-height: 1.3;
-}
-code[class*="language-"] {
-  color: $font-color-main;
-}
-*/
 
 // Styles one-liners
 :not(pre) > code[class*="language-"] {
@@ -645,8 +591,6 @@ code[class*="language-"] {
   cursor: pointer;
 }
 
-/**********************************/
-
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -667,8 +611,6 @@ code[class*="language-"] {
   animation: rotate var(--speed) var(--easing) alternate infinite;
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
-
-/***************************************/
 
 .toc-wrapper {
   &.pin-bottom {
@@ -892,3 +834,5 @@ body.parallax-demo footer {
     }
   }
 }
+
+*/
