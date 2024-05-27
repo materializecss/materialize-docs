@@ -163,10 +163,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     (document.querySelector("#nav-mobile") as HTMLElement).style.overflow = "auto";
   }
 
-  /*
-  themes.applyThemeProperties();
-  const themeSwitch = document.querySelector("#theme-switch");
+  // Theme
+  const isDarkModeByCss = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const isDarkModeManual = localStorage.getItem("theme-mode") === "dark";
+  const isDarkMode = isDarkModeManual || isDarkModeByCss;
+  importCodeStyle(isDarkMode);
 
+  //themes.applyThemeProperties();
+  const themeSwitch = document.querySelector("#theme-switch");
   if (themeSwitch) {
     themeSwitch.addEventListener("click", (e) => {
       e.preventDefault();
@@ -175,15 +179,20 @@ document.addEventListener("DOMContentLoaded", async function () {
         themeSwitch.classList.add("is-dark");
         themeSwitch.querySelector("i").innerText = "light_mode";
         (themeSwitch as any).title = "Switch to light mode";
-        themes.setDarkMode();
+        document.documentElement.setAttribute("theme", "dark");
+        localStorage.setItem("theme", "dark");
+        //themes.setDarkMode();
       } else {
         themeSwitch.classList.remove("is-dark");
         themeSwitch.querySelector("i").innerText = "dark_mode";
         (themeSwitch as any).title = "Switch to dark mode";
-        themes.setLightMode();
+        //themes.setLightMode();
+        document.documentElement.setAttribute("theme", "light");
+        localStorage.setItem("theme", "light");
       }
     });
   }
+  /*
   const toggleColorsButton = <HTMLInputElement>document.getElementById("color-picker");
   const themePrimaryColor = themes.getThemePrimaryColor();
   if (toggleColorsButton && themePrimaryColor) {
@@ -194,7 +203,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   });
   */
 
-  // Copy Button
+  //------ Copy Button
+
   const copyBtn = Array.prototype.slice.call(document.querySelectorAll(".copyButton"));
   const copiedText = Array.prototype.slice.call(document.querySelectorAll(".copiedText"));
   const copyMsg = Array.prototype.slice.call(document.querySelectorAll(".copyMessage"));
@@ -208,13 +218,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
   });
 
-  // Theme
-  const isDarkModeByCss = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const isDarkModeManual = localStorage.getItem("theme-mode") === "dark";
-  const isDarkMode = isDarkModeManual || isDarkModeByCss;
-  importCodeStyle(isDarkMode);
+  //------ Code Highlighting
 
-  //---------- Code Highlighting
   document.querySelectorAll("pre code").forEach((el: HTMLElement) => {
     const xmp = el.querySelector("xmp");
     if (xmp) {
@@ -225,7 +230,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     hljs.highlightElement(el);
   });
 
-  // Materialize Components
+  //------  Materialize Components
 
   M.Carousel.init(document.querySelectorAll(".carousel"), {});
   M.Carousel.init(document.querySelectorAll(".carousel.carousel-slider"), {
@@ -251,7 +256,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   M.Parallax.init(document.querySelectorAll(".parallax"), {});
 
-  // Media
   M.Materialbox.init(document.querySelectorAll(".materialboxed"), {});
   M.Slider.init(document.querySelectorAll(".slider"), {});
 

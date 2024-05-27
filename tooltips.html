@@ -19,15 +19,21 @@
 
               <div>
                 <a href="#" class="btn tooltipped" data-html="true" data-position="bottom" data-tooltip-id="tooltip-content"> Bottom</a>
-                <div id="tooltip-content" style="display: none">
+                <div id="tooltip-content" style="display: grid; align-content: center">
                   This is a tooltip with a
                   <a href="https://github.com/materializecss">link</a> and a
                   <i class="material-icons icon-demo">insert_chart</i>
                 </div>
-
-                <a href="#" class="btn tooltipped" data-position="top" data-tooltip="I am a tooltip"> Top</a>
-                <a href="#" class="btn tooltipped" data-position="left" data-tooltip="I am a tooltip"> Left</a>
-                <a href="#" class="btn tooltipped" data-position="right" data-tooltip="I am a tooltip"> Right</a>
+                <a href="#" class="btn tooltipped" data-position="top" data-tooltip="I am a top tooltip"> Top</a>
+                <a href="#" class="btn tooltipped" data-position="left" data-tooltip="I am a left tooltip"> Left</a>
+                <a
+                  href="#"
+                  class="btn tooltipped"
+                  data-position="right"
+                  data-tooltip="I am a right tooltip. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ducimus possimus quidem voluptatem soluta ex dignissimos, itaque magnam aspernatur eum deleniti delectus, vitae rerum, distinctio quam? Quas sapiente sunt blanditiis?"
+                >
+                  Right</a
+                >
               </div>
 
               <p>Add the Tooltipped class to your element and add either top, bottom, left, right on data-tooltip to control the position.</p>

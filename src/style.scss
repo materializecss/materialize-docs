@@ -49,13 +49,23 @@ th {
   margin-top: 15px;
   padding-top: 30px;
 }
+*/
 
+//--- Sidnav
 header,
 main,
 footer {
   padding-left: 300px;
 }
+@media #{$medium-and-down} {
+  header,
+  main,
+  footer {
+    padding-left: 0;
+  }
+}
 
+/*
 .parallax-demo header,
 .parallax-demo main,
 .parallax-demo footer {
@@ -78,7 +88,7 @@ footer.example {
   }
 }
 
-// Index Page Styles
+//--- Index Page Styles
 
 #logo-container {
   margin: 0;
@@ -591,6 +601,8 @@ pre:has(code) {
   cursor: pointer;
 }
 
+*/
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -612,6 +624,7 @@ pre:has(code) {
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
+/*
 .toc-wrapper {
   &.pin-bottom {
     margin-top: 84px;
