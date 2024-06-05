@@ -2,6 +2,78 @@
 <html lang="en">
   <head>
     {{> head }}
+    <style>
+      .current-version-number {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--font-color-medium);
+      }
+
+      .intro {
+        padding: 6rem 0;
+      }
+
+      .intro #logo {
+        height: 150px;
+      }
+
+      .intro h2 {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 2rem;
+      }
+
+      .slogan {
+        font-size: 1.75rem;
+        line-height: 1.25;
+        margin: 0;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      .materialize-benefits .card {
+        padding: 1.5rem;
+      }
+
+      .materialize-benefits h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-top: 0;
+      }
+
+      .materialize-benefits p {
+        font-size: 1rem;
+      }
+
+      .sponsors h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+      }
+      /*
+      @media #{$medium-and-down} {
+        .intro {
+          padding: 3rem 0;
+        }
+        footer.page-footer .container {
+          text-align: center;
+        }
+         .github-commit {
+          text-align: center;
+        }
+      }
+      */
+      .github-commit {
+        color: var(--font-color-medium);
+        /*border-top: 1px solid $border-color;*/
+        padding: 14px 0;
+        height: 64px;
+        line-height: 36px;
+        font-size: 0.9rem;
+      }
+      .github-commit .sha {
+        margin: 0 6px 0 6px;
+      }
+    </style>
   </head>
   <body>
     {{> navbar }}
@@ -31,7 +103,7 @@
         </div>
       </div>
 
-      <div class="container" style="background-color: var(--md-sys-color-background)">
+      <div class="container">
         <!-- Ads -->
         <div class="row center">
           <div class="s12 m4 offset-m2">
@@ -125,15 +197,15 @@
             <div class="s12 m10 offset-m1">
               <h3>Materialize is free and open-source. This is made possible by our awesome sponsors.</h3>
 
-              <div class="row my-5">
+              <div class="row my-5" style="gap: 2rem; align-items: center">
                 <div class="s6 m2 offset-m4 center">
                   <a href="https://www.rumya.ch" target="_blank">
-                    <img src="https://www.rumya.ch/Mods/Website/Front/Ui/RumyaLogo.png" style="height: 50px" alt="Rumya Logo" />
+                    <img class="responsive-img" style="max-height: 42px" src="https://www.rumya.ch/Mods/Website/Front/Ui/RumyaLogo.png" alt="Rumya Logo" />
                   </a>
                 </div>
                 <div class="s6 m2 center">
                   <a href="https://wuda.io" target="_blank">
-                    <img src="https://www.wuda.io/img/wuda-logo.png" style="height: 50px" alt="Wuda Software Logo" />
+                    <img class="responsive-img" style="max-height: 42px" src="https://www.wuda.io/img/wuda-logo.png" alt="Wuda Software Logo" />
                   </a>
                 </div>
               </div>

@@ -21,11 +21,11 @@
               <h3 class="header">Input fields</h3>
               <p>
                 Text fields allow user input. The border should light up simply and clearly indicating which field the user is currently editing. You must have a
-                <code class="language-markup">.input-field</code> div wrapping your input and label. This is only used in our Input and Textarea form elements.
+                <code class="language-html">.input-field</code> div wrapping your input and label. This is only used in our Input and Textarea form elements.
               </p>
               <p>
-                The validate class leverages HTML5 validation and will add a <code class="language-markup">valid</code> and <code class="language-markup">invalid</code> class
-                accordingly. If you don't want the Green and Red validation states, just remove the <code class="language-markup">validate</code> class from your inputs.
+                The validate class leverages HTML5 validation and will add a <code class="language-html">valid</code> and <code class="language-html">invalid</code> class
+                accordingly. If you don't want the Green and Red validation states, just remove the <code class="language-html">validate</code> class from your inputs.
               </p>
 
               <form class="row" style="gap: 1em">
@@ -67,7 +67,7 @@
                 </div>
               </form>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <form class="row" style="gap: 1em;">
   <div class="s12 m6 input-field">
@@ -127,7 +127,7 @@
                 </div>
               </form>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <form class="row" style="gap: 1em;">
   <div class="s12 m6 input-field">
@@ -158,7 +158,7 @@
                 </div>
               </form>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <form class="row">
   <div class="s12">
@@ -198,7 +198,7 @@
                 </div>
               </div>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <div class="row">
   <div class="col s12 m6">
@@ -220,8 +220,8 @@
               <!-- Section -->
               <h5>Icon Prefixes</h5>
               <p>
-                You can add an icon prefix to make the form input label even more clear. Just add an icon with the class <code class="language-markup">prefix</code> before the
-                input and label.
+                You can add an icon prefix to make the form input label even more clear. Just add an icon with the class <code class="language-html">prefix</code> before the input
+                and label.
               </p>
               <div class="row">
                 <form class="col s12">
@@ -240,7 +240,7 @@
                 </form>
               </div>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <div class="row">
   <form class="col s12">
@@ -262,7 +262,7 @@
         </code></pre>
 
               <h5>Icon Suffixes</h5>
-              <p>You can also add an icon suffix. Just add an icon with the class <code class="language-markup">suffix</code> before the input and label.</p>
+              <p>You can also add an icon suffix. Just add an icon with the class <code class="language-html">suffix</code> before the input and label.</p>
               <div class="row">
                 <form class="col s12">
                   <div class="row">
@@ -280,7 +280,7 @@
                 </form>
               </div>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <div class="row">
   <form class="col s12">
@@ -303,8 +303,8 @@
 
               <h5>Custom Error or Success Messages</h5>
               <p>
-                You can add custom validation messages by adding either <code class="language-markup">data-error</code> or
-                <code class="language-markup">data-success</code> attributes to your helper text element.
+                You can add custom validation messages by adding either <code class="language-html">data-error</code> or <code class="language-html">data-success</code> attributes
+                to your helper text element.
               </p>
               <div class="row">
                 <form class="col s12">
@@ -318,7 +318,7 @@
                 </form>
               </div>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <div class="row">
   <form class="col s12">
@@ -375,7 +375,7 @@
               <h3 class="header">Textarea</h3>
               <p>
                 Textareas allow larger expandable user input. The border should light up simply and clearly indicating which field the user is currently editing. You must have a
-                <code class="language-markup">.input-field</code> div wrapping your input and label. This is only used in our Input and Textarea form elements.
+                <code class="language-html">.input-field</code> div wrapping your input and label. This is only used in our Input and Textarea form elements.
               </p>
               <p><strong>Textareas will auto resize to the text inside.</strong></p>
 
@@ -395,7 +395,7 @@
                   </div>
                 </form>
               </div>
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <div class="row">
   <form class="col s12">
@@ -421,8 +421,8 @@
               <p>If you are adding Textarea form elements dynamically, you can use this to initialize them.</p>
               <pre><code class="language-javascript">  M.Forms.InitTextarea(document.querySelector('#textarea1'));</code></pre>
               <p>
-                When dynamically changing the value of a textarea like setting <code class="language-markup">HTMLElement#value</code> attribute, you must trigger an autoresize on
-                it afterwords because simply updating the element's value does not automatically trigger the events we've binded to the textarea.
+                When dynamically changing the value of a textarea like setting <code class="language-html">HTMLElement#value</code> attribute, you must trigger an autoresize on it
+                afterwords because simply updating the element's value does not automatically trigger the events we've binded to the textarea.
               </p>
               <pre><code class="language-javascript">
   document.querySelector("#textarea1").value = 'New Text';
@@ -431,8 +431,8 @@
 
               <h5>Icon Prefixes</h5>
               <p>
-                You can add an icon prefix to make the form input label even more clear. Just add an icon with the class <code class="language-markup">prefix</code> before the
-                input and label.
+                You can add an icon prefix to make the form input label even more clear. Just add an icon with the class <code class="language-html">prefix</code> before the input
+                and label.
               </p>
               <div class="row">
                 <form class="col s12">
@@ -446,7 +446,7 @@
                 </form>
               </div>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <div class="row">
   <form class="col s12">
@@ -477,7 +477,7 @@
                   </div>
                 </div>
               </form>
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <form action="#">
   <div class="file-field input-field">
@@ -493,7 +493,7 @@
 </xmp>
         </code></pre>
 
-              <p>You can also use the <code class="language-markup">multiple</code> attribute to allow multiple file uploads.</p>
+              <p>You can also use the <code class="language-html">multiple</code> attribute to allow multiple file uploads.</p>
               <form action="#">
                 <div class="file-field input-field">
                   <div class="btn">
@@ -505,7 +505,7 @@
                   </div>
                 </div>
               </form>
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <form action="#">
   <div class="file-field input-field">
@@ -554,7 +554,7 @@
                   </div>
                 </form>
               </div>
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <div class="row">
   <form class="col s12">

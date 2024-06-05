@@ -21,7 +21,7 @@
   M.toast({text: 'I am a toast!'})
         </code></pre>
               <p>One way to add this into your application is to add this as an onclick event to a button.</p>
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <button type="button" onclick="M.toast({text: 'I am a toast'})" class="btn">Toast!</button>
 </xmp>
@@ -144,7 +144,7 @@
               </template>
               <button type="button" class="waves-effect waves-light btn" onclick="M.toast({toastId: 'my-toast-2', classes: 'primary'})">Toast 2!</button>
               <div id="my-toast-2" style="display: none">This is toast nº2 with a <i class="material-icons icon-demo">insert_chart</i></div>
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <button type="button" class="btn" onclick="M.toast({toastId: 'my-toast-1'})">Toast 1!</button>
 <template id="my-toast-1">
@@ -159,7 +159,7 @@
               <h3 class="header">Callback</h3>
               <p>You can have the toast callback a function when it has been dismissed.</p>
               <button type="button" class="btn" onclick="M.toast({text: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})">Toast!</button>
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
   <button type="button" class="btn" onclick="M.toast({text: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})">Toast!</button>
         </code></pre>
             </div>

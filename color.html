@@ -2,6 +2,43 @@
 <html lang="en">
   <head>
     {{> head }}
+    <style>
+      .dynamic-color .red,
+      .dynamic-color .pink,
+      .dynamic-color .purple,
+      .dynamic-color .deep-purple,
+      .dynamic-color .indigo,
+      .dynamic-color .blue,
+      .dynamic-color .light-blue,
+      .dynamic-color .cyan,
+      .dynamic-color .teal,
+      .dynamic-color .green,
+      .dynamic-color .light-green,
+      .dynamic-color .lime,
+      .dynamic-color .yellow,
+      .dynamic-color .amber,
+      .dynamic-color .orange,
+      .dynamic-color .deep-orange,
+      .dynamic-color .brown,
+      .dynamic-color .grey,
+      .dynamic-color .blue-grey,
+      .dynamic-color .black,
+      .dynamic-color .white,
+      .dynamic-color .transparent {
+        height: 55px;
+        width: 100%;
+        padding: 0 15px;
+        font-weight: 500;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+      .dynamic-color .col {
+        margin-bottom: 55px;
+      }
+    </style>
   </head>
   <body>
     {{> navbar }}
@@ -16,25 +53,28 @@
                 Here is a color palette based on the material design base colors. Each of these colors is defined with a base color class and an optional lighten or darken class.
               </p>
 
-              <div class="row section">
-                <h5 class="col s12 m3">Background Color</h5>
-                <div class="col s12 m9">
-                  <p>To apply a background color, just add the color name and light/darkness as a class to the element.</p>
-                  <div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
-                  <pre style="padding-top: 0px">
+              <section class="section">
+                <h4>Background Color</h4>
+                <div class="row">
+                  <div class="col s12 m9">
+                    <p>To apply a background color, just add the color name and light/darkness as a class to the element.</p>
+                    <div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
+                    <pre style="padding-top: 0px">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-markup copiedText">
+              <code class="language-html copiedText">
 <xmp>
 <div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
 </xmp>
               </code>
             </pre>
+                  </div>
                 </div>
-              </div>
+              </section>
 
+              <section class="section">
+              <h4>Text Color</h4>
               <div class="row section">
-                <h5 class="col s12 m3">Text Color</h5>
                 <div class="col s12 m9">
                   <p>
                     To apply a text color, just append
@@ -46,7 +86,7 @@
                   <pre style="padding-top: 0px">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-markup copiedText">
+              <code class="language-html copiedText">
 <xmp>
 <div class="card-panel">
   <span class="blue-text text-darken-2">This is a card panel with dark blue text</span>
@@ -57,6 +97,7 @@
                 </div>
               </div>
             </div>
+          </section>
 
             <div id="sass" class="section scrollspy">
               <h3 class="header">Sass</h3>

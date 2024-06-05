@@ -1,7 +1,7 @@
 import { config } from "../config.materialize";
 import { M } from "@materializecss/materialize";
 import "./style.scss";
-import { argbFromHex, themeFromSourceColor } from "@material/material-color-utilities";
+//import { argbFromHex, themeFromSourceColor } from "@material/material-color-utilities";
 //import { Themes } from "./themes";
 import { autocompleteDemoData } from "./data-autocomplete";
 import hljs from "highlight.js";
@@ -29,6 +29,10 @@ function is_touch_device() {
   } catch (e) {
     return false;
   }
+}
+
+function escapeHtml(unsafe) {
+  return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 }
 
 globalThis.M = M;
@@ -74,8 +78,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     fetch("https://api.github.com/repos/materializecss/materialize/commits/main")
       .then((resp) => resp.json())
       .then((data) => {
+        console.log(data);
         const url = data.html_url;
-        const sha = data.sha;
+        const sha = data.sha.substring(0, 7);
         const date = data.commit.author.date;
         (githubCommitElem.querySelector(".date") as HTMLElement).innerText = date;
         (githubCommitElem.querySelector(".sha") as HTMLElement).innerText = sha;
@@ -222,11 +227,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   document.querySelectorAll("pre code").forEach((el: HTMLElement) => {
     const xmp = el.querySelector("xmp");
-    if (xmp) {
-      const html = hljs.highlightAuto(xmp.innerText);
-      el.innerHTML = html.value;
-      return;
-    }
+    if (xmp) el.innerHTML = escapeHtml(xmp.innerHTML);
     hljs.highlightElement(el);
   });
 

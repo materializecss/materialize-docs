@@ -14,7 +14,7 @@
               <p class="caption">
                 The tabs structure consists of an unordered list of tabs that have hashes corresponding to tab ids. Then when you click on each tab, only the container with the
                 corresponding tab id will become visible. You can add the class
-                <code class="language-markup">.disabled</code> to make a tab inaccessible.
+                <code class="language-html">.disabled</code> to make a tab inaccessible.
               </p>
 
               <ul class="tabs tab-demo z-depth-1">
@@ -59,7 +59,7 @@
             <div id="test15" class="col s12"><p>Test 11</p></div>
 
             <div id="structure" class="section scrollspy">
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <div class="row">
   <div class="col s12">
@@ -186,11 +186,11 @@
               <h3 class="header">Preselecting a tab</h3>
               <p>
                 By default, the first tab is selected. But if this is not what you want, you can preselect a tab by either passing in the hash in the url ex:<code
-                  class="language-markup"
+                  class="language-html"
                   >#test2</code
-                >. Or you can add the class <code class="language-markup">active</code> to the <code class="language-markup">a</code> tag.
+                >. Or you can add the class <code class="language-html">active</code> to the <code class="language-html">a</code> tag.
               </p>
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
   <li class="tab"><a class="active" href="#test3">Test 3</a></li>
         </code></pre>
             </div>
@@ -199,10 +199,10 @@
               <h3 class="header">Linking to an External Page</h3>
               <p>
                 By default, Materialize tabs will ignore their default anchor behaviour. To force a tab to behave as a regular hyperlink, just specify the
-                <code class="language-markup">target</code> property of that link! A list of <code class="language-markup">target</code> values may be
+                <code class="language-html">target</code> property of that link! A list of <code class="language-html">target</code> values may be
                 <a href="https://www.w3schools.com/tags/att_a_target.asp">found here</a>.
               </p>
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <li class="tab col s2">
   <a target="_blank" href="https://github.com/materializecss/materialize">External link in new window</a>
@@ -218,7 +218,7 @@
               <h3 class="header">Swipeable Tabs</h3>
               <p>
                 By setting the
-                <code class="language-javascript">swipeable</code> option to <code class="language-markup">true</code>, you can enable tabs where you can swipe on touch enabled
+                <code class="language-javascript">swipeable</code> option to <code class="language-html">true</code>, you can enable tabs where you can swipe on touch enabled
                 devices to switch tabs. Make sure you keep the tab content divs in the same wrapping container. You can also set the
                 <code class="language-javascript">responsiveThreshold</code>
                 option to a screen width in pixels where the swipeable functionality will activate.
@@ -235,7 +235,7 @@
               <div id="test-swipe-2" class="col s12 red">Test 2</div>
               <div id="test-swipe-3" class="col s12 green">Test 3</div>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <ul id="tabs-swipe-demo" class="tabs">
   <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
@@ -253,7 +253,7 @@
               <h3 class="header">Fixed Width Tabs</h3>
               <p>
                 Add the
-                <code class="language-markup">.tabs-fixed-width</code> class to the tabs container
+                <code class="language-html">.tabs-fixed-width</code> class to the tabs container
               </p>
               <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
                 <li class="tab"><a href="#test1">Test 1</a></li>
@@ -268,7 +268,7 @@
               <div id="test4" class="col s12"><p>Test 4</p></div>
               <div id="test0" class="col s12"><p>Test 5</p></div>
 
-              <pre><code class="language-markup">
+              <pre><code class="language-html">
 <xmp>
 <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
   <li class="tab"><a href="#test1">Test 1</a></li>

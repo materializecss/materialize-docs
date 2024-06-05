@@ -2,6 +2,18 @@
 <html lang="en">
   <head>
     {{> head }}
+    <style>
+      .waves-color-demo .collection-item {
+        height: 37px;
+        line-height: 37px;
+        box-sizing: content-box;
+      }
+      .waves-color-demo .btn:not(.waves-light) {
+        /*background-color: color("shades", "white");
+        color: #212121;
+        */
+      }
+    </style>
   </head>
   <body>
     {{> navbar }}
@@ -20,11 +32,11 @@
               <h4>Applying Waves</h4>
               <p>
                 The waves effect can be applied to any element. To put the waves effect on buttons, you just have to put the class
-                <code class="language-markup">waves-effect</code> on to the buttons. If you want the waves effect to be white instead, add both
-                <code class="language-markup">waves-effect waves-light</code> as classes.
+                <code class="language-html">waves-effect</code> on to the buttons. If you want the waves effect to be white instead, add both
+                <code class="language-html">waves-effect waves-light</code> as classes.
               </p>
               <pre>
-                <code class="language-markup">
+                <code class="language-html">
 <xmp><a class="waves-effect waves-light btn-large" href="#">Wave</a></xmp>
                 </code>
               </pre>
@@ -42,13 +54,13 @@
                     something cool!
                   </p>
                   <pre>
-                    <code class="language-markup">
+                    <code class="language-html">
 <xmp><a href="#!" class="btn waves-effect">Send</a></xmp>
                     </code>
                   </pre>
                   <div class="collection waves-color-demo">
                     <div class="collection-item">Default<a href="#!" class="waves-effect btn secondary-content">Send</a></div>
-                    <div class="collection-item"><code class="language-markup">waves-light</code><a href="#!" class="waves-effect waves-light btn secondary-content">Send</a></div>
+                    <div class="collection-item"><code class="language-html">waves-light</code><a href="#!" class="waves-effect waves-light btn secondary-content">Send</a></div>
                   </div>
                 </div>
               </div>
@@ -87,12 +99,12 @@ M.Waves.renderWaveEffect(
               <h4>Circle</h4>
               <p>
                 If you want waves to form to a non rectangular shape, there is an option for circular waves. Just add the
-                <code class="language-markup">waves-circle</code> in addition to <code class="language-markup">waves-effect</code>.
+                <code class="language-html">waves-circle</code> in addition to <code class="language-html">waves-effect</code>.
               </p>
               <div class="row">
                 <div class="col s12">
                   <h5 class="light">HTML Markup</h5>
-                  <pre><code class="language-markup">
+                  <pre><code class="language-html">
 <xmp>
 <a href="#!" class="waves-effect waves-circle waves-light btn-floating secondary-content">
   <i class="material-icons">add</i>
@@ -104,7 +116,7 @@ M.Waves.renderWaveEffect(
                       Default<a href="#!" class="waves-effect waves-circle btn-floating secondary-content"><i class="material-icons">add</i></a>
                     </div>
                     <div class="collection-item">
-                      <code class="language-markup">waves-light</code
+                      <code class="language-html">waves-light</code
                       ><a href="#!" class="waves-effect waves-circle waves-light btn-floating secondary-content"><i class="material-icons">add</i></a>
                     </div>
                   </div>
