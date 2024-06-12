@@ -5,12 +5,13 @@
     <style>
       .promo {
         width: 100%;
-        i {
-          margin: 30px 0;
-          color: var(--secondary-color);
-          font-size: 5rem;
-          display: block;
-        }
+      }
+
+      .promo i {
+        margin: 30px 0;
+        color: var(--secondary-color);
+        font-size: 5rem;
+        display: block;
       }
 
       .promo-caption {
@@ -374,47 +375,42 @@
               <!-- Gaps -->
               <div id="grid-gaps" class="section scrollspy">
                 <h2 class="header">Gaps</h2>
-                <p class="green-text">New in V2.0.0, since CSS Grid is used.</p>
                 <p>
-                  You can easily change the Gap between the Grid. Simply add
-                  <code class="language-html">style="gap:5px;"</code> to the row element to change the gap.
+                  There is a default gap between the rows (g-3). You can easily change the Gap between the Grid with the Gap-Classes. Simply add
+                  <code class="language-html">g-0</code> to <code class="language-html">g-5</code> to the element with the "row" class, to change the gap size.
                 </p>
 
-                <p>Without Gaps (standard):</p>
+                <p>Standard Gaps (g-3)</p>
                 <div class="row">
                   <div class="s3 grid-example">1</div>
                   <div class="s3 grid-example">2</div>
                   <div class="s3 grid-example">3</div>
                   <div class="s3 grid-example">4</div>
-                  <div class="s3 grid-example">5</div>
-                  <div class="s3 grid-example">6</div>
-                  <div class="s3 grid-example">7</div>
-                  <div class="s3 grid-example">8</div>
                 </div>
 
-                <p>Grid with Gapsize 5px:</p>
-                <div class="row" style="gap: 5px">
-                  <div class="s3 grid-example">1</div>
-                  <div class="s3 grid-example">2</div>
-                  <div class="s3 grid-example">3</div>
-                  <div class="s3 grid-example">4</div>
-                  <div class="s3 grid-example">5</div>
-                  <div class="s3 grid-example">6</div>
-                  <div class="s3 grid-example">7</div>
-                  <div class="s3 grid-example">8</div>
+                <p>No Gap (g-0)</p>
+                <div class="row g-0">
+                  <div class="s4 grid-example">1</div>
+                  <div class="s4 grid-example">2</div>
+                  <div class="s4 grid-example">3</div>
+                </div>
+
+                <p>Bigger Gap (g-4)</p>
+                <div class="row g-4">
+                  <div class="s4 grid-example">1</div>
+                  <div class="s4 grid-example">2</div>
+                  <div class="s4 grid-example">3</div>
                 </div>
 
                 <pre><code class="language-html">
 <xmp>
-<div class="row" style="gap: 5px;">
+<div class="row g-4">
   <div class="s3">1</div>
   <div class="s3">2</div>
   <div class="s3">3</div>
   <div class="s3">4</div>
-  ...
 </div>
-</xmp>
-          </code></pre>
+</xmp></code></pre>
               </div>
 
               <!-- Grid push and pull -->

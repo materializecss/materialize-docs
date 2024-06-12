@@ -73,12 +73,40 @@
       .github-commit .sha {
         margin: 0 6px 0 6px;
       }
+
+      #index-banner {
+        position: relative;
+        background-color: var(--md-sys-color-background);
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .gradient {
+        --size: 100vh;
+        --speed: 9s;
+        --easing: cubic-bezier(0.8, 0.2, 0.6, 0.8);
+        --bg-color: color-mix(in srgb, var(--md-sys-color-secondary) 20%, var(--md-sys-color-background));
+
+        width: var(--size);
+        height: var(--size);
+        filter: blur(calc(var(--size) / 5));
+        background-image: linear-gradient(var(--bg-color), var(--md-sys-color-primary)); /* hsl(252, 59%, 63%) */
+        animation: rotate var(--speed) var(--easing) alternate infinite;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      }
     </style>
   </head>
   <body>
     {{> navbar }}
     <main>
-      <div id="index-banner" style="position: relative; background-color: color-mix(in srgb, var(--primary-color) 30%, var(--md-sys-color-background))">
+      <div id="index-banner">
         <!-- Background -->
         <div style="position: absolute; top: 0; height: 100%; overflow: hidden; width: 100%; z-index: 0">
           <div class="gradient"></div>

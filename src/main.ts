@@ -2,7 +2,7 @@ import { config } from "../config.materialize";
 import { M } from "@materializecss/materialize";
 import "./style.scss";
 //import { argbFromHex, themeFromSourceColor } from "@material/material-color-utilities";
-//import { Themes } from "./themes";
+import { Themes } from "./themes";
 import { autocompleteDemoData } from "./data-autocomplete";
 import hljs from "highlight.js";
 
@@ -38,7 +38,7 @@ function escapeHtml(unsafe) {
 globalThis.M = M;
 
 document.addEventListener("DOMContentLoaded", async function () {
-  //const themes = new Themes(document);
+  const themes = new Themes(document);
 
   // CSS > Colors
   document.querySelectorAll(".dynamic-color .col > div").forEach((el) => {
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       onAutocomplete: (items) => {
         if (items.length === 1) {
           const targetItem = items[0];
-          document.location.href = targetItem.url;
+          document.location.href = targetItem["url"];
         }
       },
     });
@@ -78,7 +78,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     fetch("https://api.github.com/repos/materializecss/materialize/commits/main")
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
         const url = data.html_url;
         const sha = data.sha.substring(0, 7);
         const date = data.commit.author.date;
@@ -168,36 +167,38 @@ document.addEventListener("DOMContentLoaded", async function () {
     (document.querySelector("#nav-mobile") as HTMLElement).style.overflow = "auto";
   }
 
+  //---------------------------------------------------------------
   // Theme
-  const isDarkModeByCss = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const isDarkModeManual = localStorage.getItem("theme-mode") === "dark";
-  const isDarkMode = isDarkModeManual || isDarkModeByCss;
+  const isDarkMode = themes.isDarkMode();
   importCodeStyle(isDarkMode);
+  themes.applyThemeProperties(isDarkMode);
 
-  //themes.applyThemeProperties();
-  const themeSwitch = document.querySelector("#theme-switch");
-  if (themeSwitch) {
-    themeSwitch.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (!themeSwitch.classList.contains("is-dark")) {
-        // Dark Theme
-        themeSwitch.classList.add("is-dark");
-        themeSwitch.querySelector("i").innerText = "light_mode";
-        (themeSwitch as any).title = "Switch to light mode";
-        document.documentElement.setAttribute("theme", "dark");
-        localStorage.setItem("theme", "dark");
-        //themes.setDarkMode();
-      } else {
-        themeSwitch.classList.remove("is-dark");
-        themeSwitch.querySelector("i").innerText = "dark_mode";
-        (themeSwitch as any).title = "Switch to dark mode";
-        //themes.setLightMode();
-        document.documentElement.setAttribute("theme", "light");
-        localStorage.setItem("theme", "light");
-      }
-    });
+  function setBtnState(isDark: boolean) {
+    const themeSwitch = document.querySelector("#theme-switch");
+    if (isDark) {
+      themeSwitch.classList.add("is-dark");
+      themeSwitch.querySelector("i").innerText = "light_mode";
+      (themeSwitch as any).title = "Switch to light mode";
+      return;
+    }
+    themeSwitch.classList.remove("is-dark");
+    themeSwitch.querySelector("i").innerText = "dark_mode";
+    (themeSwitch as any).title = "Switch to dark mode";
   }
-  /*
+  setBtnState(isDarkMode);
+
+  const themeSwitch = document.querySelector("#theme-switch");
+  themeSwitch.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (!themeSwitch.classList.contains("is-dark")) {
+      setBtnState(true);
+      themes.setDarkMode();
+    } else {
+      setBtnState(false);
+      themes.setLightMode();
+    }
+  });
+
   const toggleColorsButton = <HTMLInputElement>document.getElementById("color-picker");
   const themePrimaryColor = themes.getThemePrimaryColor();
   if (toggleColorsButton && themePrimaryColor) {
@@ -206,7 +207,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   toggleColorsButton?.addEventListener("change", () => {
     themes.setThemePrimaryColor(toggleColorsButton.value);
   });
-  */
+
+  //---------------------------------------------------------------
 
   //------ Copy Button
 
