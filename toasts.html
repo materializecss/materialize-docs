@@ -12,40 +12,25 @@
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
             <div id="introduction" class="section scrollspy">
               <p>
-                Materialize provides an easy way for you to send unobtrusive
-                alerts to your users through toasts. These toasts are also
-                placed and sized responsively, try it out by clicking the button
-                below on different device sizes.
+                Materialize provides an easy way for you to send unobtrusive alerts to your users through toasts. These toasts are also placed and sized responsively, try it out by
+                clicking the button below on different device sizes.
               </p>
-              <button
-                type="button"
-                class="waves-effect waves-light btn"
-                onclick="M.toast({text: 'I am a toast', classes: 'primary'})"
-              >
-                Toast!
-              </button>
-              <p>
-                To do this, call the M.toast() function programmatically in
-                JavaScript.
-              </p>
+              <button type="button" class="waves-effect waves-light btn" onclick="M.toast({text: 'I am a toast', classes: 'primary'})">Toast!</button>
+              <p>To do this, call the M.toast() function programmatically in JavaScript.</p>
               <pre><code class="language-javascript">
   M.toast({text: 'I am a toast!'})
         </code></pre>
-              <p>
-                One way to add this into your application is to add this as an
-                onclick event to a button.
-              </p>
-              <pre><code class="language-markup">
-  &lt;button type="button" onclick="M.toast({text: 'I am a toast'})" class="btn">Toast!&lt;/button>
+              <p>One way to add this into your application is to add this as an onclick event to a button.</p>
+              <pre><code class="language-html">
+<xmp>
+<button type="button" onclick="M.toast({text: 'I am a toast'})" class="btn">Toast!</button>
+</xmp>
         </code></pre>
             </div>
 
             <div id="options" class="scrollspy section">
               <h3 class="header">Options</h3>
-              <p>
-                You can customize the behavior of each Toast using these
-                options.
-              </p>
+              <p>You can customize the behavior of each Toast using these options.</p>
               <table class="striped">
                 <thead>
                   <tr>
@@ -68,9 +53,7 @@
                     <td>String</td>
                     <td>''</td>
                     <td>
-                      <p>
-                        Id of an HTML element that will be used as tootip content.
-                      </p>
+                      <p>Id of an HTML Template element that will be used as tootip content.</p>
                     </td>
                   </tr>
                   <tr>
@@ -107,10 +90,7 @@
                     <td>activationPercent</td>
                     <td>Number</td>
                     <td>0.8</td>
-                    <td>
-                      The percentage of the toast's width it takes for a drag to
-                      dismiss a Toast.
-                    </td>
+                    <td>The percentage of the toast's width it takes for a drag to dismiss a Toast.</td>
                   </tr>
                 </tbody>
               </table>
@@ -146,10 +126,7 @@
                   <tr>
                     <td>timeRemaining</td>
                     <td>Number</td>
-                    <td>
-                      The remaining amount of time in ms that the toast will
-                      stay before dismissal.
-                    </td>
+                    <td>The remaining amount of time in ms that the toast will stay before dismissal.</td>
                   </tr>
                 </tbody>
               </table>
@@ -157,70 +134,44 @@
 
             <div id="custom-html" class="section scrollspy">
               <h3 class="header">Custom HTML</h3>
-              <p>
-                You can pass in an toastId as the argument as well.
-                This toastId should refer to some element in the HTML that will be used as toast content.
-              </p>              
-              <button
-                  type="button"
-                  class="waves-effect waves-light btn"
-                  onclick="M.toast({toastId: 'my-toast-1'})"
-                >Toast 1!
-              </button>
-              <div id="my-toast-1" style="display: none;">
+              <p>You can pass in an toastId as the argument as well. This toastId should refer to some template in the HTML that will be used as toast content.</p>
+              <button type="button" class="waves-effect waves-light btn" onclick="M.toast({toastId: 'my-toast-1'})">Toast 1!</button>
+              <template id="my-toast-1">
+                <div>
                   This is toast nº1 with a
                   <a href="https://github.com/materializecss"> link </a>
-              </div>
-              <button
-                  type="button"
-                  class="waves-effect waves-light btn"
-                  onclick="M.toast({toastId: 'my-toast-2', classes: 'primary'})"
-                >Toast 2!
-              </button>
-              <div id="my-toast-2" style="display: none;">
-                  This is toast nº2 with a <i class="material-icons icon-demo">insert_chart</i>
-              </div>
-              <pre><code class="language-markup">
-<xmp><button type="button" class="btn" onclick="M.toast({toastId: 'my-toast-1'})">Toast 2!</button>
-<div id="my-toast-1" style="display: none;">
-  This is toast nº1 with a <a href="https://github.com/materializecss">link</a>
-</div></xmp></code></pre>
+                </div>
+              </template>
+              <button type="button" class="waves-effect waves-light btn" onclick="M.toast({toastId: 'my-toast-2', classes: 'primary'})">Toast 2!</button>
+              <div id="my-toast-2" style="display: none">This is toast nº2 with a <i class="material-icons icon-demo">insert_chart</i></div>
+              <pre><code class="language-html">
+<xmp>
+<button type="button" class="btn" onclick="M.toast({toastId: 'my-toast-1'})">Toast 1!</button>
+<template id="my-toast-1">
+  <div>
+    This is toast nº1 with a  <a href="https://github.com/materializecss"> link </a>
+  </div>                  
+</template>
+</xmp>
+</code></pre>
             </div>
             <div id="callback" class="scrollspy section">
               <h3 class="header">Callback</h3>
-              <p>
-                You can have the toast callback a function when it has been
-                dismissed.
-              </p>
-              <button
-                type="button"
-                class="btn"
-                onclick="M.toast({text: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})"
-              >
-                Toast!
-              </button>
-              <pre><code class="language-markup">
-  &lt;button type="button" class="btn" onclick="M.toast({text: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})">Toast!&lt;/button>
+              <p>You can have the toast callback a function when it has been dismissed.</p>
+              <button type="button" class="btn" onclick="M.toast({text: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})">Toast!</button>
+              <pre><code class="language-html">
+  <button type="button" class="btn" onclick="M.toast({text: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})">Toast!</button>
         </code></pre>
             </div>
 
             <div id="styling" class="scrollspy section">
               <h3 class="header">Styling Toasts</h3>
               <p>
-                We've added the ability to customize your toasts easily. You can
-                pass in classes as an optional parameter into the toast
-                function. We've added a rounded class for you, but you can
-                create your own CSS classes and apply them to toasts. Checkout
-                out our full example below.
+                We've added the ability to customize your toasts easily. You can pass in classes as an optional parameter into the toast function. We've added a rounded class for
+                you, but you can create your own CSS classes and apply them to toasts. Checkout out our full example below.
               </p>
 
-              <button
-                type="button"
-                class="waves-effect waves-light btn"
-                onclick="M.toast({text: 'I am a toast!', classes: 'rounded'})"
-              >
-                Round Toast!
-              </button>
+              <button type="button" class="waves-effect waves-light btn" onclick="M.toast({text: 'I am a toast!', classes: 'rounded'})">Round Toast!</button>
 
               <pre><code class="language-javascript">
   // 'rounded' is the class I'm applying to the toast
@@ -232,8 +183,7 @@
               <h3 class="header">Dismiss a Toast Programmatically</h3>
               <p>
                 To remove a specific toast using JavaScript, access the
-                <code class="language-javascript">M_Toast</code> toast HTML
-                element and call the dismiss function
+                <code class="language-javascript">M_Toast</code> toast HTML element and call the dismiss function
               </p>
 
               <pre><code class="language-javascript">
@@ -253,7 +203,7 @@
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li><a href="#introduction">Introduction</a></li>
                   <li><a href="#options">Options</a></li>
@@ -273,9 +223,8 @@
     <script type="module" src="/src/main.ts"></script>
   </body>
   <script type="text/javascript">
-    var displayCustomHTMLToast = function() {
-      var toastHTML =
-        '<span>I am toast content</span><button class="btn-flat toast-action">Undo</button>';
+    var displayCustomHTMLToast = function () {
+      var toastHTML = '<span>I am toast content</span><button class="btn-flat toast-action">Undo</button>';
       M.toast({ html: toastHTML });
     };
   </script>

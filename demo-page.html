@@ -7,9 +7,9 @@
     <script>
       function toggleTheme() {
         const prefersColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        const state = localStorage.getItem("theme") || prefersColorSchemeDark;
+        const state = localStorage.getItem("theme-mode") || prefersColorSchemeDark;
         const newState = state === "light" ? "dark" : "light";
-        localStorage.setItem("theme", newState);
+        localStorage.setItem("theme-mode", newState);
         document.documentElement.setAttribute("theme", newState);
       }
     </script>
@@ -30,7 +30,6 @@
         asperiores nihil similique minima voluptas.
       </p>
       <button onclick="toggleTheme()">Toggle Theme</button>
-      <br />
       <p class="error-text">This is an Error</p>
 
       <p>

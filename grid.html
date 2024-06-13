@@ -2,6 +2,138 @@
 <html lang="en">
   <head>
     {{> head }}
+    <style>
+      .promo {
+        width: 100%;
+      }
+
+      .promo i {
+        margin: 30px 0;
+        color: var(--secondary-color);
+        font-size: 5rem;
+        display: block;
+      }
+
+      .promo-caption {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-top: 5px;
+        margin-bottom: 0;
+      }
+
+      .grid-example {
+        border: 1px solid #888;
+        text-align: center;
+        font-size: 26px;
+        background-color: lightcoral;
+        color: white;
+      }
+      .grid-example span {
+        line-height: 50px;
+      }
+
+      .promo-example {
+        overflow: hidden;
+      }
+
+      #site-layout-example-left {
+        height: 300px;
+      }
+      #site-layout-example-right {
+        background-color: #0008; /*
+        color-mix(in srgb, var(--md-sys-color-primary) 60%, transparent);
+        */
+        height: 300px;
+      }
+      #site-layout-example-top {
+        background-color: var(--md-sys-color-primary);
+        height: 42px;
+      }
+
+      .flat-text-header {
+        height: 35px;
+        width: 80%;
+        display: block;
+        margin: 27px auto;
+      }
+
+      .flat-text {
+        height: 25px;
+        width: 80%;
+        background-color: var(--md-sys-color-on-secondary-container);
+        display: block;
+        margin: 27px auto;
+      }
+      .flat-text.small {
+        width: 25%;
+        height: 25px;
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+      .flat-text.full-width {
+        width: 100%;
+      }
+
+      /* Chrome Browser */
+      /*
+      $bottomColor: #e2e2e1;
+      $topColor: lighten($bottomColor, 2%);
+      */
+      .browser-window {
+        text-align: left;
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        border-radius: 5px 5px 2px 2px;
+        background-color: var(--background-color-level-4dp);
+        margin: 20px 0px;
+        overflow: hidden;
+      }
+      .browser-window .top-bar {
+        height: 30px;
+        border-radius: 5px 5px 0 0;
+        /*
+        border-top: thin solid lighten($topColor, 1%);
+        border-bottom: thin solid darken($bottomColor, 1%);
+        background: linear-gradient($topColor, $bottomColor);
+        */
+      }
+
+      .browser-window .circle {
+        height: 10px;
+        width: 10px;
+        display: inline-block;
+        border-radius: 50%;
+        /*
+        background-color: lighten($topColor, 10%);
+        */
+        margin-right: 1px;
+      }
+
+      #close-circle {
+        background-color: #ff5c5a;
+      }
+      #minimize-circle {
+        background-color: #ffbb50;
+      }
+      #maximize-circle {
+        background-color: #1bc656;
+      }
+
+      .browser-window .circles {
+        margin: 5px 12px;
+      }
+      .browser-window .content {
+        margin: 0;
+        width: 100%;
+        /* min-height: 100%;*/
+        display: inline-block;
+        border-radius: 0 0 5px 5px;
+        background-color: #fafafa;
+      }
+      .browser-window .row {
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     {{> navbar }}
@@ -12,32 +144,17 @@
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
             <div>
               <div id="grid-container" class="section scrollspy">
-                <p class="caption">
-                  We are using a standard 12 column fluid responsive grid
-                  system. The grid helps you layout your page in an ordered,
-                  easy fashion.
-                </p>
+                <p class="caption">We are using a standard 12 column fluid responsive grid system. The grid helps you layout your page in an ordered, easy fashion.</p>
                 <h3 class="header">Container</h3>
                 <p>
-                  The container class is not strictly part of the grid but is
-                  important in laying out content. It allows you to center your
-                  page content. The
-                  <code class="language-markup">container</code> class is set to
-                  ~70% of the window width. It helps you center and contain your
-                  page content. We use the container to contain our body
-                  content.
+                  The container class is not strictly part of the grid but is important in laying out content. It allows you to center your page content. The
+                  <code class="language-html">container</code> class is set to ~70% of the window width. It helps you center and contain your page content. We use the container to
+                  contain our body content.
                 </p>
 
                 <h5>Demo</h5>
-                <p>
-                  Try the button below to see what the page looks like without
-                  containers.
-                </p>
-                <a
-                  id="container-toggle-button"
-                  class="btn waves-effect waves-light"
-                  >Turn off Containers</a
-                >
+                <p>Try the button below to see what the page looks like without containers.</p>
+                <a id="container-toggle-button" class="btn waves-effect waves-light">Turn off Containers</a>
 
                 <!-- Container Visual Demo -->
                 <div class="row">
@@ -71,33 +188,29 @@
 
                 <p>
                   To add a container just put your content inside a
-                  <code class="language-markup">&lt;div></code> tag with a
-                  <code class="language-markup">container</code> class. Here's
-                  an example of how your page might be set up.
+                  <code class="language-html">
+                    <xmp><div></div></xmp>
+                  </code>
+                  tag with a <code class="language-html">container</code> class. Here's an example of how your page might be set up.
                 </p>
 
-                <pre><code class="language-markup">
-    &lt;body>
-      &lt;div class="container">
-        &lt;!-- Page Content goes here -->
-      &lt;/div>
-    &lt;/body>
+                <pre><code class="language-html">
+<xmp>
+<body>
+  <div class="container">
+    <!-- Page Content goes here -->
+  </div>
+</body>
+</xmp>
           </code></pre>
               </div>
 
               <!-- Grid visual demo -->
               <div id="grid-intro" class="scrollspy">
                 <h3 class="header">Introduction</h3>
-                <p>
-                  Take a look at this section to quickly understand how the grid
-                  works!
-                </p>
+                <p>Take a look at this section to quickly understand how the grid works!</p>
                 <h5>12 Columns</h5>
-                <p>
-                  Our standard grid has 12 columns. No matter the size of the
-                  browser, each of these columns will always have an equal
-                  width.
-                </p>
+                <p>Our standard grid has 12 columns. No matter the size of the browser, each of these columns will always have an equal width.</p>
                 <div class="row">
                   <div class="col s1 grid-example">
                     <span class="flow-text">1</span>
@@ -136,45 +249,38 @@
                     <span class="flow-text">12</span>
                   </div>
                 </div>
-                <p>
-                  To get a feel of how the grid is used in HTML, take a look at
-                  the code below which will produce a similar result to the one
-                  above.
-                </p>
-                <pre><code class="language-markup">
-    &lt;div class="row">
-      &lt;div class="col s1">1&lt;/div>
-      &lt;div class="col s1">2&lt;/div>
-      &lt;div class="col s1">3&lt;/div>
-      &lt;div class="col s1">4&lt;/div>
-      &lt;div class="col s1">5&lt;/div>
-      &lt;div class="col s1">6&lt;/div>
-      &lt;div class="col s1">7&lt;/div>
-      &lt;div class="col s1">8&lt;/div>
-      &lt;div class="col s1">9&lt;/div>
-      &lt;div class="col s1">10&lt;/div>
-      &lt;div class="col s1">11&lt;/div>
-      &lt;div class="col s1">12&lt;/div>
-    &lt;/div>
+                <p>To get a feel of how the grid is used in HTML, take a look at the code below which will produce a similar result to the one above.</p>
+                <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <div class="col s1">1</div>
+  <div class="col s1">2</div>
+  <div class="col s1">3</div>
+  <div class="col s1">4</div>
+  <div class="col s1">5</div>
+  <div class="col s1">6</div>
+  <div class="col s1">7</div>
+  <div class="col s1">8</div>
+  <div class="col s1">9</div>
+  <div class="col s1">10</div>
+  <div class="col s1">11</div>
+  <div class="col s1">12</div>
+</div>
+</xmp>
           </code></pre>
                 <p>
                   Note: For now, just know that the
-                  <code class="language-markup">s1</code> stands for small-1
-                  which in plain English means "1 column on small screens".
+                  <code class="language-html">s1</code> stands for small-1 which in plain English means "1 column on small screens".
                 </p>
 
                 <h5>Columns live inside Rows</h5>
                 <p>
-                  Remember when you are creating your layout that all columns
-                  must be contained inside a row and that you must add the
-                  <code class="language-markup">col</code> class to your inner
-                  divs to make them into columns
+                  Remember when you are creating your layout that all columns must be contained inside a row and that you must add the
+                  <code class="language-html">col</code> class to your inner divs to make them into columns
                 </p>
                 <div class="row">
                   <div class="col s12 grid-example">
-                    <span class="flow-text"
-                      >This div is 12-columns wide on all screen sizes</span
-                    >
+                    <span class="flow-text">This div is 12-columns wide on all screen sizes</span>
                   </div>
                   <div class="col s6 grid-example">
                     <span class="flow-text">6-columns (one-half)</span>
@@ -183,12 +289,14 @@
                     <span class="flow-text">6-columns (one-half)</span>
                   </div>
                 </div>
-                <pre><code class="language-markup">
-    &lt;div class="row">
-      &lt;div class="col s12">This div is 12-columns wide on all screen sizes&lt;/div>
-      &lt;div class="col s6">6-columns (one-half)&lt;/div>
-      &lt;div class="col s6">6-columns (one-half)&lt;/div>
-    &lt;/div>
+                <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <div class="col s12">This div is 12-columns wide on all screen sizes</div>
+  <div class="col s6">6-columns (one-half)</div>
+  <div class="col s6">6-columns (one-half)</div>
+</div>
+</xmp>
           </code></pre>
               </div>
 
@@ -197,23 +305,17 @@
                 <h2 class="header">Offsets</h2>
                 <p>
                   To offset, simply add
-                  <code class="language-markup">offset-s2</code> to the class
-                  where <code class="language-markup">s</code> signifies the
-                  screen class-prefix (s = small, m = medium, l = large) and the
-                  number after is the number of columns you want to offset by.
+                  <code class="language-html">offset-s2</code> to the class where <code class="language-html">s</code> signifies the screen class-prefix (s = small, m = medium, l =
+                  large) and the number after is the number of columns you want to offset by.
                 </p>
                 <p class="red-text">
-                  Attention! This changed with v2! since we are using grid now,
-                  the offset is always calculated absolutely starting from left!
-                  If you need relative offsets, then just add empty columns to
-                  the row.
+                  Attention! This changed with v2! since we are using grid now, the offset is always calculated absolutely starting from left! If you need relative offsets, then
+                  just add empty columns to the row.
                 </p>
 
                 <div class="row">
                   <div class="col s12 grid-example">
-                    <span class="flow-text"
-                      >This div is 12-columns wide on all screen sizes</span
-                    >
+                    <span class="flow-text">This div is 12-columns wide on all screen sizes</span>
                   </div>
                   <div class="col s6 offset-s6 grid-example">
                     <span class="flow-text">6-columns (offset-by-6)</span>
@@ -246,101 +348,86 @@
                   </div>
                 </div>
 
-                <pre><code class="language-markup">
-&lt;div class="row">
-  &lt;div class="col s12"> &lt;span class="flow-text">This div is 12-columns wide on all screen sizes &lt;/span> &lt;/div>
-  &lt;div class="col s6 offset-s6"> &lt;span class="flow-text">6-columns (offset-by-6) &lt;/span> &lt;/div>
-&lt;/div>
-&lt;div class="row">
-  &lt;div class="l6"> &lt;span class="flow-text">l6 column &lt;/span> &lt;/div>
-  &lt;div class="l4 offset-l8"> &lt;span class="flow-text">l4 column (offset-l8) &lt;/span> &lt;/div>
-&lt;/div>
-&lt;div class="row">
-  &lt;div class="l2 offset-l3"> &lt;span>offset-l3 &lt;/span> &lt;/div>
-  &lt;div class="l2 offset-l6"> &lt;span>offset-l6 &lt;/span> &lt;/div>
-  &lt;div class="l2 offset-l9"> &lt;span>offset-l9 &lt;/span> &lt;/div>
-&lt;/div>
-&lt;div class="row">
-  &lt;div class="l2"> &lt;span>col &lt;/span> &lt;/div>
-  &lt;div class="l2"> &lt;/div>
-  &lt;div class="l2"> &lt;span>relative offset 2 &lt;/span> &lt;/div>
-&lt;/div>
+                <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <div class="col s12"> <span class="flow-text">This div is 12-columns wide on all screen sizes </span> </div>
+  <div class="col s6 offset-s6"> <span class="flow-text">6-columns (offset-by-6) </span> </div>
+</div>
+<div class="row">
+  <div class="l6"> <span class="flow-text">l6 column </span> </div>
+  <div class="l4 offset-l8"> <span class="flow-text">l4 column (offset-l8) </span> </div>
+</div>
+<div class="row">
+  <div class="l2 offset-l3"> <span>offset-l3 </span> </div>
+  <div class="l2 offset-l6"> <span>offset-l6 </span> </div>
+  <div class="l2 offset-l9"> <span>offset-l9 </span> </div>
+</div>
+<div class="row">
+  <div class="l2"> <span>col </span> </div>
+  <div class="l2"> </div>
+  <div class="l2"> <span>relative offset 2 </span> </div>
+</div>
+</xmp>
 </code></pre>
               </div>
 
               <!-- Gaps -->
               <div id="grid-gaps" class="section scrollspy">
                 <h2 class="header">Gaps</h2>
-                <p class="green-text">New in V2.0.0, since CSS Grid is used.</p>
                 <p>
-                  You can easily change the Gap between the Grid. Simply add
-                  <code class="language-markup">style="gap:5px;"</code> to the
-                  row element to change the gap.
+                  There is a default gap between the rows (g-3). You can easily change the Gap between the Grid with the Gap-Classes. Simply add
+                  <code class="language-html">g-0</code> to <code class="language-html">g-5</code> to the element with the "row" class, to change the gap size.
                 </p>
 
-                <p>Without Gaps (standard):</p>
+                <p>Standard Gaps (g-3)</p>
                 <div class="row">
                   <div class="s3 grid-example">1</div>
                   <div class="s3 grid-example">2</div>
                   <div class="s3 grid-example">3</div>
                   <div class="s3 grid-example">4</div>
-                  <div class="s3 grid-example">5</div>
-                  <div class="s3 grid-example">6</div>
-                  <div class="s3 grid-example">7</div>
-                  <div class="s3 grid-example">8</div>
                 </div>
 
-                <p>Grid with Gapsize 5px:</p>
-                <div class="row" style="gap: 5px;">
-                  <div class="s3 grid-example">1</div>
-                  <div class="s3 grid-example">2</div>
-                  <div class="s3 grid-example">3</div>
-                  <div class="s3 grid-example">4</div>
-                  <div class="s3 grid-example">5</div>
-                  <div class="s3 grid-example">6</div>
-                  <div class="s3 grid-example">7</div>
-                  <div class="s3 grid-example">8</div>
+                <p>No Gap (g-0)</p>
+                <div class="row g-0">
+                  <div class="s4 grid-example">1</div>
+                  <div class="s4 grid-example">2</div>
+                  <div class="s4 grid-example">3</div>
                 </div>
 
-                <pre><code class="language-markup">
-  &lt;div class="row" style="gap: 5px;">
-    &lt;div class="s3">1&lt;/div>
-    &lt;div class="s3">2&lt;/div>
-    &lt;div class="s3">3&lt;/div>
-    &lt;div class="s3">4&lt;/div>
-    ...
-  &lt;/div>
-          </code></pre>
+                <p>Bigger Gap (g-4)</p>
+                <div class="row g-4">
+                  <div class="s4 grid-example">1</div>
+                  <div class="s4 grid-example">2</div>
+                  <div class="s4 grid-example">3</div>
+                </div>
+
+                <pre><code class="language-html">
+<xmp>
+<div class="row g-4">
+  <div class="s3">1</div>
+  <div class="s3">2</div>
+  <div class="s3">3</div>
+  <div class="s3">4</div>
+</div>
+</xmp></code></pre>
               </div>
 
               <!-- Grid push and pull -->
               <div id="grid-push" class="section scrollspy">
                 <h2 class="header">Push and Pull</h2>
-                <p class="red-text">
-                  Deprecated in V2.0.0, since CSS Grid is used. You can use left
-                  and right (see offsets).
-                </p>
+                <p class="red-text">Deprecated in V2.0.0, since CSS Grid is used. You can use left and right (see offsets).</p>
                 <p>
-                  You can easily change the order of your columns with push and
-                  pull. Simply add
-                  <code class="language-markup">push-s2</code> or
-                  <code class="language-markup">pull-s2</code> to the class
-                  where <code class="language-markup">s</code> signifies the
-                  screen class-prefix (s = small, m = medium, l = large) and the
-                  number after is the number of columns you want to push or pull
-                  by.
+                  You can easily change the order of your columns with push and pull. Simply add
+                  <code class="language-html">push-s2</code> or <code class="language-html">pull-s2</code> to the class where <code class="language-html">s</code> signifies the
+                  screen class-prefix (s = small, m = medium, l = large) and the number after is the number of columns you want to push or pull by.
                 </p>
                 <div class="row">
                   <div class="col s7 push-s5 grid-example">
-                    <span style="font-size: 14px;"
-                      >This div is 7-columns wide on pushed to the right by
-                      5-columns.</span
-                    >
+                    <span style="font-size: 14px">This div is 7-columns wide on pushed to the right by 5-columns.</span>
                   </div>
                   <div class="col s5 pull-s7 grid-example">
-                    <span style="font-size: 14px;"
-                      >5-columns wide pulled to the left by 7-columns.</span
-                    >
+                    <span style="font-size: 14px">5-columns wide pulled to the left by 7-columns.</span>
                   </div>
                 </div>
               </div>
@@ -349,28 +436,22 @@
               <div id="grid-layouts" class="scrollspy">
                 <h3 class="header">Creating Layouts</h3>
                 <p>
-                  Here we will show you how to create some commonly used layouts
-                  with our grid system. Hopefully these will get you more
-                  comfortable with laying out elements. To keep these demos
-                  simple, the ones here will not be responsive.
+                  Here we will show you how to create some commonly used layouts with our grid system. Hopefully these will get you more comfortable with laying out elements. To
+                  keep these demos simple, the ones here will not be responsive.
                 </p>
                 <div class="row">
                   <div class="col s12 m6">
                     <h5>Section</h5>
                     <p>
-                      The section class is used for simple top and bottom
-                      padding. Just add the
-                      <code class="language-markup">section</code> class to your
-                      div's containing large blocks of content.
+                      The section class is used for simple top and bottom padding. Just add the
+                      <code class="language-html">section</code> class to your div's containing large blocks of content.
                     </p>
                   </div>
                   <div class="col s12 m6">
                     <h5>Divider</h5>
                     <p>
-                      Dividers are 1 pixel lines that help break up your
-                      content. Just add the
-                      <code class="language-markup">divider</code> to a div in
-                      between your content.
+                      Dividers are 1 pixel lines that help break up your content. Just add the
+                      <code class="language-html">divider</code> to a div in between your content.
                     </p>
                   </div>
                 </div>
@@ -392,31 +473,30 @@
                   <p>Stuff</p>
                 </div>
                 <div class="divider"></div>
-                <pre><code class="language-markup">
-  &lt;div class="divider">&lt;/div>
-  &lt;div class="section">
-    &lt;h5>Section 1&lt;/h5>
-    &lt;p>Stuff&lt;/p>
-  &lt;/div>
-  &lt;div class="divider">&lt;/div>
-  &lt;div class="section">
-    &lt;h5>Section 2&lt;/h5>
-    &lt;p>Stuff&lt;/p>
-  &lt;/div>
-  &lt;div class="divider">&lt;/div>
-  &lt;div class="section">
-    &lt;h5>Section 3&lt;/h5>
-    &lt;p>Stuff&lt;/p>
-  &lt;/div>
+                <pre><code class="language-html">
+<xmp>
+<div class="divider"></div>
+<div class="section">
+  <h5>Section 1</h5>
+  <p>Stuff</p>
+</div>
+<div class="divider"></div>
+<div class="section">
+  <h5>Section 2</h5>
+  <p>Stuff</p>
+</div>
+<div class="divider"></div>
+<div class="section">
+  <h5>Section 3</h5>
+  <p>Stuff</p>
+</div>
+</xmp>
           </code></pre>
 
                 <h5>Example Promotion Table</h5>
                 <p>
-                  If we want 3 divs that are equal size, we define the divs with
-                  a width of 4-columns, as 4+4+4 nicely adds up to 12. Inside
-                  those divs, we can put our content. Take our front page
-                  content for example. We've modified it slightly for the sake
-                  of this example.
+                  If we want 3 divs that are equal size, we define the divs with a width of 4-columns, as 4+4+4 nicely adds up to 12. Inside those divs, we can put our content.
+                  Take our front page content for example. We've modified it slightly for the sake of this example.
                 </p>
                 <div class="row">
                   <div class="col s4">
@@ -424,10 +504,8 @@
                       <i class="material-icons">flash_on</i>
                       <p class="promo-caption">Speeds up development</p>
                       <p class="light center">
-                        Most of the heavy lifting is done for you to provide a
-                        default stylings that incorporate our custom components.
-                        We also refined animations and transitions to provide a
-                        smoother experience for developers.
+                        Most of the heavy lifting is done for you to provide a default stylings that incorporate our custom components. We also refined animations and transitions
+                        to provide a smoother experience for developers.
                       </p>
                     </div>
                   </div>
@@ -435,47 +513,36 @@
                     <div class="center promo promo-example">
                       <i class="material-icons">group</i>
                       <p class="promo-caption">User Experience Focused</p>
-                      <p class="light center">
-                        By utilizing elements and principles of Material Design,
-                        we were able to create a framework that focuses on User
-                        Experience.
-                      </p>
+                      <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
                     </div>
                   </div>
                   <div class="col s4">
                     <div class="center promo promo-example">
                       <i class="material-icons">settings</i>
                       <p class="promo-caption">Easy to work with</p>
-                      <p class="light center">
-                        We have provided detailed documentation as well as
-                        specific code examples to help new users get started.
-                      </p>
+                      <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
                     </div>
                   </div>
                 </div>
 
-                <pre><code class="language-markup">
-    &lt;div class="row">
-
-      &lt;div class="col s4">
-        &lt;!-- Promo Content 1 goes here -->
-      &lt;/div>
-      &lt;div class="col s4">
-        &lt;!-- Promo Content 2 goes here -->
-      &lt;/div>
-      &lt;div class="col s4">
-        &lt;!-- Promo Content 3 goes here -->
-      &lt;/div>
-
-    &lt;/div>
+                <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <div class="col s4">
+    <!-- Promo Content 1 goes here -->
+  </div>
+  <div class="col s4">
+    <!-- Promo Content 2 goes here -->
+  </div>
+  <div class="col s4">
+    <!-- Promo Content 3 goes here -->
+  </div>
+</div>
+</xmp>
           </code></pre>
 
                 <h5>Example Side Navigation Layout</h5>
-                <p>
-                  You can see how easy it is to create layouts using the grid
-                  system. Just remember to make sure your column numbers add up
-                  to 12 for an even layout.
-                </p>
+                <p>You can see how easy it is to create layouts using the grid system. Just remember to make sure your column numbers add up to 12 for an even layout.</p>
 
                 <div class="row">
                   <div class="col s12">
@@ -509,52 +576,44 @@
                   </div>
                 </div>
 
-                <pre><code class="language-markup">
-    &lt;!-- Navbar goes here -->
-
-    &lt;!-- Page Layout here -->
-    &lt;div class="row">
-
-      &lt;div class="col s3">
-        &lt;!-- Grey navigation panel -->
-      &lt;/div>
-
-      &lt;div class="col s9">
-        &lt;!-- Teal page content  -->
-      &lt;/div>
-
-    &lt;/div>
+                <pre><code class="language-html">
+<xmp>
+<!-- Navbar goes here -->
+<!-- Page Layout here -->
+<div class="row">
+  <div class="col s3">
+    <!-- Grey navigation panel -->
+  </div>
+  <div class="col s9">
+    <!-- Teal page content  -->
+  </div>
+</div>
+</xmp>
           </code></pre>
               </div>
 
               <!-- Creating Responsive Layouts -->
               <div id="grid-responsive" class="scrollspy">
                 <h3 class="header">Creating Responsive Layouts</h3>
-                <p>
-                  Above we showed you how to layout elements using our grid
-                  system. Now we'll show you how to design your layouts so that
-                  they look great on all screen sizes.
-                </p>
+                <p>Above we showed you how to layout elements using our grid system. Now we'll show you how to design your layouts so that they look great on all screen sizes.</p>
                 <h5>Screen Sizes</h5>
                 <table class="highlight">
                   <thead>
                     <tr>
                       <th></th>
-                      <th data-field="id">Mobile Devices &lt;= 600px</th>
+                      <th data-field="id"><xmp>Mobile Devices <= 600px</xmp></th>
                       <th data-field="name">Tablet Devices &gt; 600px</th>
                       <th data-field="price">Desktop Devices &gt; 992px</th>
-                      <th data-field="price">
-                        Large Desktop Devices &gt; 1200px
-                      </th>
+                      <th data-field="price">Large Desktop Devices &gt; 1200px</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td><strong>Class Prefix</strong></td>
-                      <td><code class="language-markup">.s</code></td>
-                      <td><code class="language-markup">.m</code></td>
-                      <td><code class="language-markup">.l</code></td>
-                      <td><code class="language-markup">.xl</code></td>
+                      <td><code class="language-html">.s</code></td>
+                      <td><code class="language-html">.m</code></td>
+                      <td><code class="language-html">.l</code></td>
+                      <td><code class="language-html">.xl</code></td>
                     </tr>
                     <tr>
                       <td><strong>Container Width</strong></td>
@@ -575,40 +634,32 @@
 
                 <h5>Adding Responsiveness</h5>
                 <p>
-                  In the previous examples, we only defined the size for small
-                  screens using <code class="language-markup">"col s12"</code>.
-                  This is fine if we want a fixed layout since the rules
-                  propagate upwards. By just saying s12, we are essentially
-                  saying <code class="language-markup">"col s12 m12 l12"</code>.
-                  But by explicitly defining the size we can make our website
-                  more responsive.
+                  In the previous examples, we only defined the size for small screens using <code class="language-html">"col s12"</code>. This is fine if we want a fixed layout
+                  since the rules propagate upwards. By just saying s12, we are essentially saying <code class="language-html">"col s12 m12 l12"</code>. But by explicitly defining
+                  the size we can make our website more responsive.
                 </p>
 
                 <div class="row">
                   <div class="grid-example col s12 teal lighten-2">
-                    <span class="flow-text"
-                      >I am always full-width (col s12)</span
-                    >
+                    <span class="flow-text">I am always full-width (col s12)</span>
                   </div>
                   <div class="grid-example col s12 m6 teal lighten-2">
-                    <span class="flow-text"
-                      >I am full-width on mobile (col s12 m6)</span
-                    >
+                    <span class="flow-text">I am full-width on mobile (col s12 m6)</span>
                   </div>
                 </div>
-                <pre><code class="language-markup">
-    &lt;div class="row">
-      &lt;div class="grid-example col s12">&lt;span class="flow-text">I am always full-width (col s12)&lt;/span>&lt;/div>
-      &lt;div class="grid-example col s12 m6">&lt;span class="flow-text">I am full-width on mobile (col s12 m6)&lt;/span>&lt;/div>
-    &lt;/div>
+                <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <div class="grid-example col s12"><span class="flow-text">I am always full-width (col s12)</span></div>
+  <div class="grid-example col s12 m6"><span class="flow-text">I am full-width on mobile (col s12 m6)</span></div>
+</div>
+</xmp>
           </code></pre>
 
                 <h5>Responsive Side Navigation Layout</h5>
                 <p>
-                  In this example below, we take the same layout from above, but
-                  we make it responsive by defining how many columns the div
-                  should take up on each screen size. Try resizing your browser
-                  and watch the layout change below.
+                  In this example below, we take the same layout from above, but we make it responsive by defining how many columns the div should take up on each screen size. Try
+                  resizing your browser and watch the layout change below.
                 </p>
 
                 <div class="row">
@@ -626,18 +677,12 @@
                           <div id="site-layout-example-top" class="col s12">
                             <!-- <p class="flat-text-logo"></p> -->
                           </div>
-                          <div
-                            id="site-layout-example-left"
-                            class="col s12 m4 l3"
-                          >
+                          <div id="site-layout-example-left" class="col s12 m4 l3">
                             <p class="flat-text-header"></p>
                             <p class="flat-text"></p>
                             <p class="flat-text"></p>
                           </div>
-                          <div
-                            id="site-layout-example-right"
-                            class="col s12 m8 l9"
-                          >
+                          <div id="site-layout-example-right" class="col s12 m8 l9">
                             <p class="flat-text"></p>
                             <p class="flat-text"></p>
                             <p class="flat-text"></p>
@@ -649,33 +694,27 @@
                   </div>
                 </div>
 
-                <pre><code class="language-markup">
-    &lt;!-- Navbar goes here -->
-
-    &lt;!-- Page Layout here -->
-    &lt;div class="row">
-
-      &lt;div class="col s12 m4 l3"> &lt;!-- Note that "m4 l3" was added -->
-        &lt;!-- Grey navigation panel
-
-              This content will be:
-          3-columns-wide on large screens,
-          4-columns-wide on medium screens,
-          12-columns-wide on small screens  -->
-
-      &lt;/div>
-
-      &lt;div class="col s12 m8 l9"> &lt;!-- Note that "m8 l9" was added -->
-        &lt;!-- Teal page content
-
-              This content will be:
-          9-columns-wide on large screens,
-          8-columns-wide on medium screens,
-          12-columns-wide on small screens  -->
-
-      &lt;/div>
-
-    &lt;/div>
+                <pre><code class="language-html">
+<xmp>
+<!-- Navbar goes here -->
+<!-- Page Layout here -->
+<div class="row">
+  <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+    <!-- Grey navigation panel
+          This content will be:
+      3-columns-wide on large screens,
+      4-columns-wide on medium screens,
+      12-columns-wide on small screens  -->
+  </div>
+  <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+    <!-- Teal page content
+          This content will be:
+      9-columns-wide on large screens,
+      8-columns-wide on medium screens,
+      12-columns-wide on small screens  -->
+  </div>
+</div>
+</xmp>
           </code></pre>
 
                 <h5>More Responsive Grid Examples</h5>
@@ -707,19 +746,21 @@
                 </div>
 
                 <div>
-                  <pre><code class="language-markup">
-  &lt;div class="row">
-    &lt;div class="col s12">&lt;p>s12&lt;/p>&lt;/div>
-    &lt;div class="col s12 m4 l2">&lt;p>s12 m4&lt;/p>&lt;/div>
-    &lt;div class="col s12 m4 l8">&lt;p>s12 m4&lt;/p>&lt;/div>
-    &lt;div class="col s12 m4 l2">&lt;p>s12 m4&lt;/p>&lt;/div>
-  &lt;/div>
-  &lt;div class="row">
-    &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
-    &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
-    &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
-    &lt;div class="col s12 m6 l3">&lt;p>s12 m6 l3&lt;/p>&lt;/div>
-  &lt;/div>
+                  <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <div class="col s12"><p>s12</p></div>
+  <div class="col s12 m4 l2"><p>s12 m4</p></div>
+  <div class="col s12 m4 l8"><p>s12 m4</p></div>
+  <div class="col s12 m4 l2"><p>s12 m4</p></div>
+</div>
+<div class="row">
+  <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+  <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+  <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+  <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+</div>
+</xmp>
             </code></pre>
                 </div>
               </div>
@@ -728,7 +769,7 @@
 
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li><a href="#grid-container">Container</a></li>
                   <li><a href="#grid-intro">Introduction</a></li>

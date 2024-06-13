@@ -2,60 +2,136 @@
 <html lang="en">
   <head>
     {{> head }}
+    <style>
+      .current-version-number {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--font-color-medium);
+      }
+
+      .intro {
+        padding: 6rem 0;
+      }
+
+      .intro #logo {
+        height: 150px;
+      }
+
+      .intro h2 {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 2rem;
+      }
+
+      .slogan {
+        font-size: 1.75rem;
+        line-height: 1.25;
+        margin: 0;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      .materialize-benefits .card {
+        padding: 1.5rem;
+      }
+
+      .materialize-benefits h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-top: 0;
+      }
+
+      .materialize-benefits p {
+        font-size: 1rem;
+      }
+
+      .sponsors h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+      }
+      /*
+      @media #{$medium-and-down} {
+        .intro {
+          padding: 3rem 0;
+        }
+        footer.page-footer .container {
+          text-align: center;
+        }
+         .github-commit {
+          text-align: center;
+        }
+      }
+      */
+      .github-commit {
+        color: var(--font-color-medium);
+        /*border-top: 1px solid $border-color;*/
+        padding: 14px 0;
+        height: 64px;
+        line-height: 36px;
+        font-size: 0.9rem;
+      }
+      .github-commit .sha {
+        margin: 0 6px 0 6px;
+      }
+
+      #index-banner {
+        position: relative;
+        background-color: var(--md-sys-color-background);
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .gradient {
+        --size: 100vh;
+        --speed: 9s;
+        --easing: cubic-bezier(0.8, 0.2, 0.6, 0.8);
+        --bg-color: color-mix(in srgb, var(--md-sys-color-secondary) 20%, var(--md-sys-color-background));
+
+        width: var(--size);
+        height: var(--size);
+        filter: blur(calc(var(--size) / 5));
+        background-image: linear-gradient(var(--bg-color), var(--md-sys-color-primary)); /* hsl(252, 59%, 63%) */
+        animation: rotate var(--speed) var(--easing) alternate infinite;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      }
+    </style>
   </head>
   <body>
     {{> navbar }}
     <main>
-      <div
-        id="index-banner"
-        style="position: relative; background-color: color-mix(in srgb, var(--primary-color) 30%, var(--background-color));"
-      >
+      <div id="index-banner">
         <!-- Background -->
-        <div
-          style="position: absolute; top: 0; height: 100%; overflow: hidden; width: 100%; z-index: 0;"
-        >
+        <div style="position: absolute; top: 0; height: 100%; overflow: hidden; width: 100%; z-index: 0">
           <div class="gradient"></div>
         </div>
         <!-- Intro -->
-        <div class="intro" style="z-index: 1;">
-          <div class="container">
+        <div class="intro py-5" style="z-index: 1">
+          <div class="container py-5">
             <!-- Hero -->
             <div class="center">
-              <img
-                id="logo"
-                src="images/materialize.svg"
-                style="height: 100px;"
-                alt="Materialize"
-              />
+              <img id="logo" src="images/materialize.svg" style="height: 100px" alt="Materialize" />
               <h1 class="header mb-0">Materialize</h1>
-              <p class="slogan">
-                Simple. Built on open source. The responsive front-end library
-                based on Material Design from Google.
-              </p>
+              <p class="slogan">Simple. Built on open source. The responsive front-end library based on Material Design from Google.</p>
             </div>
             <!-- Call to Action -->
-            <div
-              style="justify-content: center; display: flex; gap: 0.5rem; flex-wrap: wrap;"
-            >
-              <a
-                class="btn rounded btn-large z-depth-1 waves-effect waves-light"
-                href="getting-started.html"
-                id="download-button"
-                >Get started</a
-              >
-              <a
-                class="btn rounded outlined btn-large waves-effect waves-light"
-                href="https://github.com/materializecss/materialize"
-                target="_blank"
-                id="github-button"
-                >View on GitHub</a
+            <div style="justify-content: center; display: flex; gap: 0.5rem; flex-wrap: wrap">
+              <a tabindex="0" class="btn filled rounded btn-large z-depth-1 waves-effect waves-light" href="getting-started.html" id="download-button">Get started</a>
+              <a tabindex="0" class="btn outlined rounded btn-large waves-effect waves-light" href="https://github.com/materializecss/materialize" target="_blank">
+                View on GitHub</a
               >
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container" style="background-color: var(--background-color);">
+      <div class="container">
         <!-- Ads -->
         <div class="row center">
           <div class="s12 m4 offset-m2">
@@ -73,12 +149,7 @@
               <div class="s12 m10 offset-m1">
                 <div class="commit">
                   Latest Commit on Github:&nbsp;
-                  <a
-                    href=""
-                    class="sha"
-                    title="Click here to see changes"
-                    target="_blank"
-                  ></a>
+                  <a href="" class="sha" title="Click here to see changes" target="_blank"></a>
                   &nbsp;
                   <span class="date"></span>
                 </div>
@@ -93,71 +164,51 @@
         <div class="section">
           <div class="row">
             <div class="s12 m10 offset-m1">
-              <div class="row materialize-benefits" style="gap: 1rem;">
+              <div class="row materialize-benefits" style="gap: 1rem">
                 <div class="s12 m6 l4 card">
                   <h2>Ultra Fast</h2>
                   <p>
-                    Using VanillaJS and as less dependecies as possible to keep
-                    it fast and simple. We use TypeScript since it builds upon
-                    JavaScript and it enhances the type- and code safety.
+                    Using VanillaJS and as less dependecies as possible to keep it fast and simple. We use TypeScript since it builds upon JavaScript and it enhances the type- and
+                    code safety.
                   </p>
                 </div>
 
                 <div class="s12 m6 l4 card">
                   <h2>Quick integration</h2>
                   <p>
-                    You dont have to learn or integrate any new or crappy stuff.
-                    Goal here is to stick to the roots. Just copy and paste from
-                    the documentation and you are good to go!
+                    You dont have to learn or integrate any new or crappy stuff. Goal here is to stick to the roots. Just copy and paste from the documentation and you are good to
+                    go!
                   </p>
                 </div>
 
                 <div class="s12 m6 l4 card">
                   <h2>Responsive and accessible</h2>
-                  <p>
-                    Most of the Features which work event without JavaScript.
-                    Components should be useable by mobile devices and easily
-                    accessible by keyboard too. Try it out!
-                  </p>
+                  <p>Most of the Features which work event without JavaScript. Components should be useable by mobile devices and easily accessible by keyboard too. Try it out!</p>
                 </div>
 
                 <div class="s12 m6 l4 card">
                   <h2>Simple and clean Design</h2>
                   <p>
-                    User centric approach with established design principles
-                    mainly from
-                    <a target="_blank" href="https://m3.material.io"
-                      >Googles Material guidelines</a
-                    >. Our Components should work on nearly every device with a
-                    monitor.
+                    User centric approach with established design principles mainly from
+                    <a target="_blank" href="https://m3.material.io">Googles Material guidelines</a>. Our Components should work on nearly every device with a monitor.
                   </p>
                 </div>
 
                 <div class="s12 m6 l4 card">
                   <h2>Awesome Community</h2>
                   <p>
-                    User centric approach with many members all around the
-                    world, which help bring Materialize forward and improve
-                    usability for everyone on the web. You can be a part too!
+                    User centric approach with many members all around the world, which help bring Materialize forward and improve usability for everyone on the web. You can be a
+                    part too!
                   </p>
                 </div>
 
                 <div class="s12 m6 l4 card">
                   <h2>Extensible</h2>
                   <p>
-                    Component cutsomization should be possible by yourself. To
-                    help growing this project, you can
-                    <a
-                      href="https://github.com/materializecss/materialize"
-                      target="_blank"
-                      >join the community</a
-                    >
+                    Component cutsomization should be possible by yourself. To help growing this project, you can
+                    <a href="https://github.com/materializecss/materialize" target="_blank">join the community</a>
                     and ask for support or you can easily
-                    <a
-                      target="_blank"
-                      href="https://github.com/materializecss/materialize/issues"
-                      >create an issue</a
-                    >
+                    <a target="_blank" href="https://github.com/materializecss/materialize/issues">create an issue</a>
                     to move Materialize forward.
                   </p>
                 </div>
@@ -172,35 +223,24 @@
         <div class="section">
           <div class="row">
             <div class="s12 m10 offset-m1">
-              <h3>
-                Materialize is free and open-source. This is made possible by
-                our awesome sponsors.
-              </h3>
+              <h3>Materialize is free and open-source. This is made possible by our awesome sponsors.</h3>
 
-              <div class="row mb-3" style="gap:1rem;">
-                <div class="s6 m2 offset-m5 center">
+              <div class="row my-5" style="gap: 2rem; align-items: center">
+                <div class="s6 m2 offset-m4 center">
+                  <a href="https://www.rumya.ch" target="_blank">
+                    <img class="responsive-img" style="max-height: 42px" src="https://www.rumya.ch/Mods/Website/Front/Ui/RumyaLogo.png" alt="Rumya Logo" />
+                  </a>
+                </div>
+                <div class="s6 m2 center">
                   <a href="https://wuda.io" target="_blank">
-                    <img
-                      src="https://www.wuda.io/img/wuda-logo.png"
-                      style="height:50px"
-                      alt="Wuda Software Logo"
-                    />
-                    <div>Wuda Software</div>
+                    <img class="responsive-img" style="max-height: 42px" src="https://www.wuda.io/img/wuda-logo.png" alt="Wuda Software Logo" />
                   </a>
                 </div>
               </div>
               <div class="center">
-                <a
-                  class="btn"
-                  target="_blank"
-                  href="https://opencollective.com/materialize"
-                  >Become a sponsor</a
-                >
+                <a tabindex="0" class="btn tonal" target="_blank" href="https://opencollective.com/materialize">Become a sponsor</a>
               </div>
-              <p class="center">
-                Materialize development is provided by an international team.
-                Thanks for supporting us! ❤️
-              </p>
+              <p class="center">Materialize development is provided by an international team. Thanks for supporting us! ❤️</p>
             </div>
           </div>
         </div>

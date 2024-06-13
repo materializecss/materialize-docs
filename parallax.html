@@ -13,23 +13,17 @@
             <!--  Parallax Section  -->
             <div id="introduction" class="scrollspy section">
               <p class="caption">
-                Parallax is an effect where the background content or image in
-                this case, is moved at a different speed than the foreground
-                content while scrolling. Check out the demo to get a better idea
-                of it.
+                Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Check out the
+                demo to get a better idea of it.
               </p>
-              <a
-                href="parallax-demo.html"
-                target="_blank"
-                class="btn-large waves-effect waves-light"
-                >Open Demo</a
-              >
+              <a href="parallax-demo.html" target="_blank" class="btn-large waves-effect waves-light">Open Demo</a>
             </div>
-
-            <pre><code class="language-markup">
-    &lt;div class="parallax-container">
-      &lt;div class="parallax">&lt;img src="images/parallax1.jpg">&lt;/div>
-    &lt;/div>
+            <pre><code class="language-html">
+<xmp>
+<div class="parallax-container">
+  <div class="parallax"><img src="images/parallax1.jpg"></div>
+</div>
+</xmp>
         </code></pre>
 
             <div id="initialization" class="scrollspy section">
@@ -61,10 +55,7 @@
                     <td>responsiveThreshold</td>
                     <td>Number</td>
                     <td>0</td>
-                    <td>
-                      The minimum width of the screen, in pixels, where the
-                      parallax functionality starts working.
-                    </td>
+                    <td>The minimum width of the screen, in pixels, where the parallax functionality starts working.</td>
                   </tr>
                 </tbody>
               </table>
@@ -73,18 +64,13 @@
             <div id="methods" class="scrollspy section">
               <h3 class="header">Methods</h3>
               <blockquote>
-                <p>
-                  All the methods are called on the plugin instance. You can get
-                  the plugin instance like this:
-                </p>
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
   var instance = M.Parallax.getInstance(elem);
         </code></pre>
               </blockquote>
 
-              <h5 class="method-header">
-                .destroy();
-              </h5>
+              <h5 class="method-header">.destroy();</h5>
               <p>Destroy plugin instance and teardown</p>
               <pre><code class="language-javascript col s12">
 instance.destroy();
@@ -120,9 +106,7 @@ instance.destroy();
             <div id="customization" class="scrollspy section">
               <h3 class="header">Parallax Customization</h3>
               <p>
-                The parallax container height is what defines how much of the
-                image can be seen. This is set to a default of 500px. You can
-                add your own style to override this.
+                The parallax container height is what defines how much of the image can be seen. This is set to a default of 500px. You can add your own style to override this.
               </p>
               <pre><code class="language-css">
     .parallax-container {
@@ -135,7 +119,7 @@ instance.destroy();
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li>
                     <a href="#introduction">Introduction</a>

@@ -44,14 +44,16 @@
               <pre style="padding-top: 0px;">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-  &lt;div class="carousel">
-    &lt;a class="carousel-item" href="#one!">&lt;img src="images/placeholder/250x250_a.png">&lt;/a>
-    &lt;a class="carousel-item" href="#two!">&lt;img src="images/placeholder/250x250_b.png">&lt;/a>
-    &lt;a class="carousel-item" href="#three!">&lt;img src="images/placeholder/250x250_c.png">&lt;/a>
-    &lt;a class="carousel-item" href="#four!">&lt;img src="images/placeholder/250x250_d.png">&lt;/a>
-    &lt;a class="carousel-item" href="#five!">&lt;img src="images/placeholder/250x250_e.png">&lt;/a>
-  &lt;/div>
+          <code class="language-html copiedText">
+</xmp>
+<div class="carousel">
+  <a class="carousel-item" href="#one!"><img src="images/placeholder/250x250_a.png"></a>
+  <a class="carousel-item" href="#two!"><img src="images/placeholder/250x250_b.png"></a>
+  <a class="carousel-item" href="#three!"><img src="images/placeholder/250x250_c.png"></a>
+  <a class="carousel-item" href="#four!"><img src="images/placeholder/250x250_d.png"></a>
+  <a class="carousel-item" href="#five!"><img src="images/placeholder/250x250_e.png"></a>
+</div>
+</xmp>
           </code>
         </pre>
             </div>
@@ -159,9 +161,7 @@
                 <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-javascript copiedText">
-  var instance = M.Carousel.getInstance(elem);
-              </code>
+              <code class="language-javascript copiedText">var instance = M.Carousel.getInstance(elem);</code>
             </pre>
               </blockquote>
               <h5 class="method-header">
@@ -175,10 +175,10 @@
               <p>
                 <b>Integer (optional):</b> How many times the carousel slides.
               </p>
-              <pre><code class="language-javascript col s12">
-instance.next();
+              <pre>
+<code class="language-javascript col s12">instance.next();
 instance.next(3); // Move next n times.
-      </code></pre>
+</code></pre>
 
               <h5 class="method-header">
                 .prev();
@@ -191,10 +191,9 @@ instance.next(3); // Move next n times.
               <p>
                 <b>Integer (optional):</b> How many times the carousel slides.
               </p>
-              <pre><code class="language-javascript col s12">
-instance.prev();
+              <pre><code class="language-javascript col s12">instance.prev();
 instance.prev(3); // Move previous n times.
-      </code></pre>
+</code></pre>
 
               <h5 class="method-header">
                 .set();
@@ -202,18 +201,15 @@ instance.prev(3); // Move previous n times.
               <p>Move carousel to nth slide</p>
               <h6>Arguments</h6>
               <p><b>Integer:</b> Index of slide.</p>
-              <pre><code class="language-javascript col s12">
-instance.set();
+              <pre><code class="language-javascript col s12">instance.set();
 instance.set(3); // Set to nth slide.
-      </code></pre>
+</code></pre>
 
               <h5 class="method-header">
                 .destroy();
               </h5>
               <p>Destroy plugin instance and teardown</p>
-              <pre><code class="language-javascript col s12">
-instance.destroy();
-      </code></pre>
+              <pre><code class="language-javascript col s12">instance.destroy();</code></pre>
             </div>
 
             <div id="properties" class="scrollspy section">
@@ -288,13 +284,15 @@ instance.destroy();
               <pre style="padding-top: 0px;">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-  &lt;div class="carousel carousel-slider">
-    &lt;a class="carousel-item" href="#one!">&lt;img src="images/placeholder/800x400_a.jpg">&lt;/a>
-    &lt;a class="carousel-item" href="#two!">&lt;img src="images/placeholder/800x400_b.jpg">&lt;/a>
-    &lt;a class="carousel-item" href="#three!">&lt;img src="images/placeholder/800x400_c.jpg">&lt;/a>
-    &lt;a class="carousel-item" href="#four!">&lt;img src="images/placeholder/800x400_d.jpg">&lt;/a>
-  &lt;/div>
+          <code class="language-html copiedText">
+<xmp>
+<div class="carousel carousel-slider">
+  <a class="carousel-item" href="#one!"><img src="images/placeholder/800x400_a.jpg"></a>
+  <a class="carousel-item" href="#two!"><img src="images/placeholder/800x400_b.jpg"></a>
+  <a class="carousel-item" href="#three!"><img src="images/placeholder/800x400_c.jpg"></a>
+  <a class="carousel-item" href="#four!"><img src="images/placeholder/800x400_d.jpg"></a>
+</div>
+</xmp>
           </code>
         </pre>
 
@@ -316,7 +314,7 @@ instance.destroy();
                 The carousel doesn't only support images but also allows you to
                 make content carousels. You can add fixed items to your carousel
                 by adding a div with the class
-                <code class="language-markup">carousel-fixed-item</code> and
+                <code class="language-html">carousel-fixed-item</code> and
                 adding your fixed content in there.
               </p>
               <p>
@@ -351,28 +349,30 @@ instance.destroy();
               <pre style="padding-top: 0px;">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-  &lt;div class="carousel carousel-slider center">
-    &lt;div class="carousel-fixed-item center">
-      &lt;a class="btn waves-effect white grey-text darken-text-2">button&lt;/a>
-    &lt;/div>
-    &lt;div class="carousel-item red white-text" href="#one!">
-      &lt;h2>First Panel&lt;/h2>
-      &lt;p class="white-text">This is your first panel&lt;/p>
-    &lt;/div>
-    &lt;div class="carousel-item amber white-text" href="#two!">
-      &lt;h2>Second Panel&lt;/h2>
-      &lt;p class="white-text">This is your second panel&lt;/p>
-    &lt;/div>
-    &lt;div class="carousel-item green white-text" href="#three!">
-      &lt;h2>Third Panel&lt;/h2>
-      &lt;p class="white-text">This is your third panel&lt;/p>
-    &lt;/div>
-    &lt;div class="carousel-item blue white-text" href="#four!">
-      &lt;h2>Fourth Panel&lt;/h2>
-      &lt;p class="white-text">This is your fourth panel&lt;/p>
-    &lt;/div>
-  &lt;/div>
+          <code class="language-html copiedText">
+<xmp>
+<div class="carousel carousel-slider center">
+  <div class="carousel-fixed-item center">
+    <a class="btn waves-effect white grey-text darken-text-2">button</a>
+  </div>
+  <div class="carousel-item red white-text" href="#one!">
+    <h2>First Panel</h2>
+    <p class="white-text">This is your first panel</p>
+  </div>
+  <div class="carousel-item amber white-text" href="#two!">
+    <h2>Second Panel</h2>
+    <p class="white-text">This is your second panel</p>
+  </div>
+  <div class="carousel-item green white-text" href="#three!">
+    <h2>Third Panel</h2>
+    <p class="white-text">This is your third panel</p>
+  </div>
+  <div class="carousel-item blue white-text" href="#four!">
+    <h2>Fourth Panel</h2>
+    <p class="white-text">This is your fourth panel</p>
+  </div>
+</div>
+</xmp>
           </code>
         </pre>
               <pre style="padding-top: 0px;">

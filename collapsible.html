@@ -53,21 +53,23 @@
           <pre style="padding-top: 0px;">
             <span class="copyMessage">Copied!</span>
             <i class="material-icons copyButton">content_copy</i>
-            <code class="language-markup copiedText">
-  &lt;ul class="collapsible">
-    &lt;li>
-      &lt;div class="collapsible-header">&lt;i class="material-icons">filter_drama&lt;/i>First&lt;/div>
-      &lt;div class="collapsible-body">&lt;span>Lorem ipsum dolor sit amet.&lt;/span>&lt;/div>
-    &lt;/li>
-    &lt;li>
-      &lt;div class="collapsible-header">&lt;i class="material-icons">place&lt;/i>Second&lt;/div>
-      &lt;div class="collapsible-body">&lt;span>Lorem ipsum dolor sit amet.&lt;/span>&lt;/div>
-    &lt;/li>
-    &lt;li>
-      &lt;div class="collapsible-header">&lt;i class="material-icons">whatshot&lt;/i>Third&lt;/div>
-      &lt;div class="collapsible-body">&lt;span>Lorem ipsum dolor sit amet.&lt;/span>&lt;/div>
-    &lt;/li>
-  &lt;/ul>
+            <code class="language-html copiedText">
+<xmp>
+<ul class="collapsible">
+  <li>
+    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+  </li>
+  <li>
+    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+  </li>
+  <li>
+    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+  </li>
+</ul>
+</xmp>
           </code>
         </pre>
       </div>
@@ -90,7 +92,7 @@
         
         
         <h5>Preselected Section</h5>
-        <span>If you want a collapsible with a preopened section just add the <code class="language-markup">active</code> class to the <code class="language-markup">li</code> wrapping the collapsible-header. </span>
+        <span>If you want a collapsible with a preopened section just add the <code class="language-html">active</code> class to the <code class="language-html">li</code> wrapping the collapsible-header. </span>
         <ul class="collapsible collapsible-accordion">
           <li>
             <div class="collapsible-header">
@@ -129,10 +131,12 @@
         <pre style="padding-top: 0px;">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-  &lt;li class="active">
-    &lt;div class="collapsible-header">&lt;i class="material-icons">place&lt;/i>Second&lt;/div>
-  &lt;/li>
+          <code class="language-html copiedText">
+<xmp>
+<li class="active">
+  <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+</li>
+</xmp>
           </code>
         </pre>
       </div>
@@ -141,7 +145,7 @@
         <h3 class="header">Options</h3>
         <span>You can customize the behavior of each collapsible using these options. For example, you can call a custom function
           to run when a collapsbile is opened or closed. The function passes the
-          <span class="language-markup">li</span> element that was opened or closed as an argument.</span>
+          <span class="language-html">li</span> element that was opened or closed as an argument.</span>
 
         <table class="striped">
           <thead>
@@ -360,8 +364,8 @@ instance.destroy();
             </ul>
           </div>
           <div class="col s12 m9 offset-m3">
-            <pre><code class="language-markup">
-  &lt;ul class="collapsible expandable">
+            <pre><code class="language-html">
+<xmp><ul class="collapsible expandable"></xmp>
             </code></pre>
             <pre><code class="language-javascript">
 var elem = document.querySelector('.collapsible.expandable');
@@ -410,8 +414,8 @@ var instance = M.Collapsible.init(elem, {
             </ul>
           </div>
           <div class="col s12 m9 offset-m3">
-            <pre><code class="language-markup">
-  &lt;ul class="collapsible popout">
+            <pre><code class="language-html">
+<xmp><ul class="collapsible popout"></xmp>
             </code></pre>
           </div>
         </div>

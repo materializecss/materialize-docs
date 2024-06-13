@@ -12,36 +12,33 @@
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
             <div id="introduction" class="section scrollspy">
               <p class="caption">
-                Scrollspy tracks certain elements and which element the user's
-                screen is currently centered on. Our main demo of this is our
-                table of contents on every documentation page to the right.
-                Clicking on these links will also scroll the page to that
-                element.
+                Scrollspy tracks certain elements and which element the user's screen is currently centered on. Our main demo of this is our table of contents on every
+                documentation page to the right. Clicking on these links will also scroll the page to that element.
               </p>
 
-              <pre><code class="language-markup">
-  &lt;div class="row">
-    &lt;div class="col s12 m9 l10">
-      &lt;div id="introduction" class="section scrollspy">
-        &lt;p>Content &lt;/p>
-      &lt;/div>
-
-      &lt;div id="structure" class="section scrollspy">
-        &lt;p>Content &lt;/p>
-      &lt;/div>
-
-      &lt;div id="initialization" class="section scrollspy">
-        &lt;p>Content &lt;/p>
-      &lt;/div>
-    &lt;/div>
-    &lt;div class="col hide-on-small-only m3 l2">
-      &lt;ul class="section table-of-contents">
-        &lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#structure">Structure&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#initialization">Initialization&lt;/a>&lt;/li>
-      &lt;/ul>
-    &lt;/div>
-  &lt;/div>
+              <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <div class="col s12 m9 l10">
+    <div id="introduction" class="section scrollspy">
+      <p>Content</p>
+    </div>
+    <div id="structure" class="section scrollspy">
+      <p>Content</p>
+    </div>
+    <div id="initialization" class="section scrollspy">
+      <p>Content</p>
+    </div>
+  </div>
+  <div class="col hide-on-small-only m3 l2">
+    <ul class="section table-of-contents">
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#structure">Structure</a></li>
+      <li><a href="#initialization">Initialization</a></li>
+    </ul>
+  </div>
+</div>
+</xmp>
         </code></pre>
             </div>
 
@@ -98,9 +95,8 @@
               </table>
 
               <h5>getActiveElement</h5>
-              This is the default function used for finding the active element
-              where id is the id of the scrollspy element. It returns a CSS
-              selector of the element you want marked active.
+              This is the default function used for finding the active element where id is the id of the scrollspy element. It returns a CSS selector of the element you want marked
+              active.
               <pre><code class="language-javascript">
   function(id) {
     return 'a[href="#' + id + '"]';
@@ -111,18 +107,13 @@
             <div id="methods" class="scrollspy section">
               <h3 class="header">Methods</h3>
               <blockquote>
-                <p>
-                  All the methods are called on the plugin instance. You can get
-                  the plugin instance like this:
-                </p>
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
   var instance = M.ScrollSpy.getInstance(elem);
           </code></pre>
               </blockquote>
 
-              <h5 class="method-header">
-                .destroy();
-              </h5>
+              <h5 class="method-header">.destroy();</h5>
               <p>Destroy plugin instance and teardown</p>
               <pre><code class="language-javascript col s12">
 instance.destroy();
@@ -159,7 +150,7 @@ instance.destroy();
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li>
                     <a href="#introduction">Introduction</a>
