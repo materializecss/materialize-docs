@@ -35,3 +35,13 @@ Note: when a new page is selected it takes some time to render completely the pa
 pnpm build
 pnpm preview
 ```
+
+### New Release (for Maintainers)
+
+- Execute the release process in the core package incl. releasing on npm
+- Update versions in **getting-started.html**, **partials/navbar.html**
+- Run docs locally and check manually
+- Make commit to dev (message: "chore: release 2.X.X")
+- Make PR in GitHub from dev -> main
+- Merge the PR
+- Party and spread the news via social media channels 🎉
