@@ -38,8 +38,8 @@
   const theme = localStorage.getItem("theme");
   if (theme) document.documentElement.setAttribute("theme", theme);
 </script>
-   <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-   <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+   <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+   <link rel="stylesheet" href="./assets/main-6d943049.css">
  </head>
   <body>
     <header>
@@ -49,37 +49,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Cards</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -90,25 +79,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -355,63 +332,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Cards</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Cards</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
@@ -440,25 +396,25 @@
           </div>
 
             <div class="col s12">
-              
               <pre style="padding-top: 0px;">
                 <span class="copyMessage">Copied!</span>
                 <i class="material-icons copyButton">content_copy</i>
-                <code class="language-markup copiedText">
-&lt;div class="card">
-  &lt;div class="card-content">
-    &lt;span class="card-title">Card Title&lt;/span>
-    &lt;p>I am a very simple card. I am good at containing small bits of information.
-    I am convenient because I require little markup to use effectively.&lt;/p>
-  &lt;/div>
-  &lt;div class="card-action">
-    &lt;a href="#">This is a link&lt;/a>
-    &lt;a href="#">This is a link&lt;/a>
-  &lt;/div>
-&lt;/div>
+                <code class="language-html copiedText">
+<xmp>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Card Title</span>
+    <p>I am a very simple card. I am good at containing small bits of information.
+    I am convenient because I require little markup to use effectively.</p>
+  </div>
+  <div class="card-action">
+    <a href="#">This is a link</a>
+    <a href="#">This is a link</a>
+  </div>
+</div>
+</xmp>
 </code>
             </pre>
-            
           </div>
         </div>
       </div>
@@ -481,7 +437,6 @@
                 <a href="#">This is a link</a>
               </div>
             </div>
-
           </div>
 
           <div class="s12 m5">
@@ -494,30 +449,27 @@
             <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-markup copiedText">
-&lt;div class="card">
-  &lt;div class="card-image">
-    &lt;img src="images/sample-1.jpg">
-    &lt;span class="card-title">Card Title&lt;/span>
-  &lt;/div>
-  &lt;div class="card-content">
-    &lt;p>I am a very simple card. I am good at containing small bits of information.
-    I am convenient because I require little markup to use effectively.&lt;/p>
-  &lt;/div>
-  &lt;div class="card-action">
-    &lt;a href="#">This is a link&lt;/a>
-  &lt;/div>
-&lt;/div>
-</code>
-</pre>
+              <code class="language-html copiedText">
+<xmp>
+<div class="card">
+  <div class="card-image">
+    <img src="images/sample-1.jpg">
+    <span class="card-title">Card Title</span>
+  </div>
+  <div class="card-content">
+    <p>I am a very simple card. I am good at containing small bits of information.
+    I am convenient because I require little markup to use effectively.</p>
+  </div>
+  <div class="card-action">
+    <a href="#">This is a link</a>
+  </div>
+</div>
+</xmp>
+              </code>
+            </pre>
           </div>
         </div>
       </div>
-
-
-
-
-
 
       <div id="fab" class="section scrollspy">
         <div class="row">
@@ -565,35 +517,31 @@
             <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-markup copiedText">
-  &lt;div class="row">
-    &lt;div class="col s12 m6">
-      &lt;div class="card">
-        &lt;div class="card-image">
-          &lt;img src="images/sample-1.jpg">
-          &lt;span class="card-title">Card Title&lt;/span>
-          &lt;a class="btn-floating halfway-fab waves-effect waves-light">&lt;i class="material-icons">add&lt;/i>&lt;/a>
-        &lt;/div>
-        &lt;div class="card-content">
-          &lt;p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.&lt;/p>
-        &lt;/div>
-      &lt;/div>
-    &lt;/div>
-  &lt;/div>
+              <code class="language-html copiedText">
+<xmp>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/sample-1.jpg">
+        <span class="card-title">Card Title</span>
+        <a class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons">add</i></a>
+      </div>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</xmp>
               </code>
-            </pre>
-            
+            </pre>            
           </div>
         </div>
       </div>
 
-
-
-
-
       <div id="horizontal" class="section scrollspy">
         <div class="row">
-
           <!-- Horizontal Card -->
           <div class="col s12 m7">
             <h3 class="header">Horizontal Card</h3>
@@ -622,34 +570,30 @@
             <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-markup copiedText">
-  &lt;div class="col s12 m7">
-    &lt;h2 class="header">Horizontal Card&lt;/h2>
-    &lt;div class="card horizontal">
-      &lt;div class="card-image">
-        &lt;img src="images/placeholder/80x200_a.jpg">
-      &lt;/div>
-      &lt;div class="card-stacked">
-        &lt;div class="card-content">
-          &lt;p>I am a very simple card. I am good at containing small bits of information.&lt;/p>
-        &lt;/div>
-        &lt;div class="card-action">
-          &lt;a href="#">This is a link&lt;/a>
-        &lt;/div>
-      &lt;/div>
-    &lt;/div>
-  &lt;/div>
+              <code class="language-html copiedText">
+<xmp>
+<div class="col s12 m7">
+  <h2 class="header">Horizontal Card</h2>
+  <div class="card horizontal">
+    <div class="card-image">
+      <img src="images/placeholder/80x200_a.jpg">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>
+</xmp>
 </code>
 </pre>
           </div>
-
-          
         </div>
       </div>
-
-
-
-
 
       <div id="reveal" class="section scrollspy">
         <div class="row">
@@ -674,7 +618,7 @@
           <div class="col s12 m5">
             
             <p class="caption">
-             Here you can add a card that reveals more information once clicked. Just add the <code class="language-markup">card-reveal</code> div with a <code class="language-markup">span.card-title</code> inside to make this work. Add the class <code class="language-markup">activator</code> to an element inside the card to allow it to open the card reveal.
+             Here you can add a card that reveals more information once clicked. Just add the <code class="language-html">card-reveal</code> div with a <code class="language-html">span.card-title</code> inside to make this work. Add the class <code class="language-html">activator</code> to an element inside the card to allow it to open the card reveal.
             </p>
           </div>
           <div class="col s12">
@@ -682,21 +626,23 @@
             <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class='language-markup copiedText'>
-  &lt;div class="card">
-    &lt;div class="card-image">
-      &lt;img src="images/office.jpg">
-      &lt;div class="activator waves-effect waves-light" style="position:absolute;top:0;bottom:0;right:0;left:0;">&lt;/div>
-    &lt;/div>
-    &lt;div class="card-content">
-      &lt;span class="card-title activator">Card Title&lt;i class="material-icons right">more_vert&lt;/i>&lt;/span>
-      &lt;p>&lt;a href="#">This is a link&lt;/a>&lt;/p>
-    &lt;/div>
-    &lt;div class="card-reveal">
-      &lt;span class="card-title">&lt;i class="material-icons right">close</i>&lt;/i>Card Title&lt;/span>
-      &lt;p>Here is some more information about this product that is only revealed once clicked on.&lt;/p>
-    &lt;/div>
-  &lt;/div>
+              <code class='language-html copiedText'>
+<xmp>
+<div class="card">
+  <div class="card-image">
+    <img src="images/office.jpg">
+    <div class="activator waves-effect waves-light" style="position:absolute;top:0;bottom:0;right:0;left:0;"></div>
+  </div>
+  <div class="card-content">
+    <span class="card-title activator">Card Title<i class="material-icons right">more_vert</i></span>
+    <p><a href="#">This is a link</a></p>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title"><i class="material-icons right">close</i></i>Card Title</span>
+    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+  </div>
+</div>
+</xmp>
               </code>
             </pre>
           </div>
@@ -758,7 +704,7 @@
           </div>
           <div class="col s12 m6">
             <p class="caption">
-             You can make your card-action always visible by adding the class <code class="language-markup">sticky-action</code> to the overall card.
+             You can make your card-action always visible by adding the class <code class="language-html">sticky-action</code> to the overall card.
             </p>
           </div>
           <div class="col s12">
@@ -766,14 +712,14 @@
             <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-markup copiedText">
-  &lt;div class="card sticky-action">
-    ...
-
-    &lt;div class="card-action">...&lt;/div>
-
-    &lt;div class="card-reveal">...&lt;/div>
-  &lt;/div>
+              <code class="language-html copiedText">
+<xmp>
+<div class="card sticky-action">
+  ...
+  <div class="card-action">...</div>
+  <div class="card-reveal">...</div>
+</div>
+</xmp>
               </code>
             </pre>
           </div>
@@ -786,29 +732,31 @@
           <div class="col s12">
             <h3 class="header">Tabs in Cards</h3>
             <p class="caption">
-             You can add tabs to your cards by adding a dividing <code class="language-markup">cards-tabs</code> div inbetween your header content and your tab content.
+             You can add tabs to your cards by adding a dividing <code class="language-html">cards-tabs</code> div inbetween your header content and your tab content.
             </p>
             <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-markup copiedText">
-  &lt;div class="card">
-    &lt;div class="card-content">
-      &lt;p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.&lt;/p>
-    &lt;/div>
-    &lt;div class="card-tabs">
-      &lt;ul class="tabs tabs-fixed-width">
-        &lt;li class="tab">&lt;a href="#test4">Test 1&lt;/a>&lt;/li>
-        &lt;li class="tab">&lt;a class="active" href="#test5">Test 2&lt;/a>&lt;/li>
-        &lt;li class="tab">&lt;a href="#test6">Test 3&lt;/a>&lt;/li>
-      &lt;/ul>
-    &lt;/div>
-    &lt;div class="card-content">
-      &lt;div id="test4">Test 1&lt;/div>
-      &lt;div id="test5">Test 2&lt;/div>
-      &lt;div id="test6">Test 3&lt;/div>
-    &lt;/div>
-  &lt;/div> 
+              <code class="language-html copiedText">
+<xmp>
+<div class="card">
+  <div class="card-content">
+    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+  </div>
+  <div class="card-tabs">
+    <ul class="tabs tabs-fixed-width">
+      <li class="tab"><a href="#test4">Test 1</a></li>
+      <li class="tab"><a class="active" href="#test5">Test 2</a></li>
+      <li class="tab"><a href="#test6">Test 3</a></li>
+    </ul>
+  </div>
+  <div class="card-content">
+    <div id="test4">Test 1</div>
+    <div id="test5">Test 2</div>
+    <div id="test6">Test 3</div>
+  </div>
+</div>
+</xmp>
               </code>
             </pre>
           </div>
@@ -881,10 +829,12 @@
             <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-markup copiedText">
-  &lt;div class="card small">
-    &lt;!-- Card Content -->
-  &lt;/div>
+              <code class="language-html copiedText">
+<xmp>
+<div class="card small">
+  <!-- Card Content -->
+</div>
+</xmp>
               </code>
             </pre>
           </div>
@@ -984,16 +934,18 @@
             <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-markup copiedText">
-  &lt;div class="row">
-    &lt;div class="col s12 m5">
-      &lt;div class="card-panel teal">
-        &lt;span class="white-text">I am a very simple card. I am good at containing small bits of information.
-        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-        &lt;/span>
-      &lt;/div>
-    &lt;/div>
-  &lt;/div>
+              <code class="language-html copiedText">
+<xmp>
+<div class="row">
+  <div class="col s12 m5">
+    <div class="card-panel teal">
+      <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+      </span>
+    </div>
+  </div>
+</div>
+</xmp>
               </code>
             </pre>
           </div>
@@ -1022,65 +974,44 @@
 </div>
 
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -1100,12 +1031,7 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

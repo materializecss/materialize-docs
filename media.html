@@ -39,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Media</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,97 +333,61 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Media</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Use Box and Slider to present your media content in a cool way.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Media</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Use Box and Slider to present your media content in a cool way.</h4>
           </div>
         </div>
       </section>
       <div class="container">
         <div class="row">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
-            <p class="caption">
-              Media components include things that have to do with large media
-              objects like Images, Video, Audio, etc.
-            </p>
+            <p class="caption">Media components include things that have to do with large media objects like Images, Video, Audio, etc.</p>
 
             <div id="materialbox" class="scrollspy section">
               <h3 class="header">Material Box</h3>
               <p class="caption">
-                Material box is a material design implementation of the Lightbox
-                plugin. When a user clicks on an image that can be enlarged,
-                Material box centers the image and enlarges it in a smooth,
-                non-jarring manner. To dismiss the image, the user can either
-                click on the image again, scroll away, or press the ESC key.
+                Material box is a material design implementation of the Lightbox plugin. When a user clicks on an image that can be enlarged, Material box centers the image and
+                enlarges it in a smooth, non-jarring manner. To dismiss the image, the user can either click on the image again, scroll away, or press the ESC key.
               </p>
-              <img
-                class="materialboxed responsive-img"
-                width="650"
-                alt="Material Box sample image"
-                src="images/sample-1.jpg"
-              />
+              <img class="materialboxed responsive-img" width="650" alt="Material Box sample image" src="images/sample-1.jpg" />
 
-              <p>
-                Creating the above image with the effect is as simple as adding
-                a <code class="language-markup">materialboxed</code> class to
-                the image tag.
-              </p>
-              <pre><code class="language-markup">
-    &lt;img class="materialboxed" width="650" alt="Material Box sample image" src="images/sample-1.jpg">
+              <p>Creating the above image with the effect is as simple as adding a <code class="language-html">materialboxed</code> class to the image tag.</p>
+              <pre><code class="language-html">
+<xmp><img class="materialboxed" width="650" alt="Material Box sample image" src="images/sample-1.jpg"></xmp>
       </code></pre>
 
               <h4>Initialization</h4>
@@ -487,66 +428,49 @@
                     <td>onOpenStart</td>
                     <td>Function</td>
                     <td>null</td>
-                    <td>
-                      Callback function called before materialbox is opened.
-                    </td>
+                    <td>Callback function called before materialbox is opened.</td>
                   </tr>
                   <tr>
                     <td>onOpenEnd</td>
                     <td>Function</td>
                     <td>null</td>
-                    <td>
-                      Callback function called after materialbox is opened.
-                    </td>
+                    <td>Callback function called after materialbox is opened.</td>
                   </tr>
                   <tr>
                     <td>onCloseStart</td>
                     <td>Function</td>
                     <td>null</td>
-                    <td>
-                      Callback function called before materialbox is closed.
-                    </td>
+                    <td>Callback function called before materialbox is closed.</td>
                   </tr>
                   <tr>
                     <td>onCloseEnd</td>
                     <td>Function</td>
                     <td>null</td>
-                    <td>
-                      Callback function called after materialbox is closed.
-                    </td>
+                    <td>Callback function called after materialbox is closed.</td>
                   </tr>
                 </tbody>
               </table>
 
               <h4>Methods</h4>
               <blockquote>
-                <p>
-                  All the methods are called on the plugin instance. You can get
-                  the plugin instance like this:
-                </p>
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
     var instance = M.Materialbox.getInstance(elem);
           </code></pre>
               </blockquote>
-              <h5 class="method-header">
-                .open();
-              </h5>
+              <h5 class="method-header">.open();</h5>
               <p>Open materialbox</p>
               <pre><code class="language-javascript col s12">
   instance.open();
         </code></pre>
 
-              <h5 class="method-header">
-                .close();
-              </h5>
+              <h5 class="method-header">.close();</h5>
               <p>Close materialbox</p>
               <pre><code class="language-javascript col s12">
   instance.close();
         </code></pre>
 
-              <h5 class="method-header">
-                .destroy();
-              </h5>
+              <h5 class="method-header">.destroy();</h5>
               <p>Destroy plugin instance and teardown</p>
               <pre><code class="language-javascript col s12">
   instance.destroy();
@@ -603,18 +527,12 @@
 
               <h4>Captions</h4>
               <p>
-                It is very easy to add a short caption to your photo. Just add
-                the caption as a
-                <code class="language-markup">data-caption</code> attribute.
+                It is very easy to add a short caption to your photo. Just add the caption as a
+                <code class="language-html">data-caption</code> attribute.
               </p>
-              <img
-                class="materialboxed"
-                data-caption="A picture of a way with a group of trees in a park"
-                width="250"
-                src="images/placeholder/800x400_d.jpg"
-              />
-              <pre><code class="language-markup">
-  &lt;img class="materialboxed" data-caption="A picture of a way with a group of trees in a park" width="250" alt="Sample image for Material Box with caption" src="images/placeholder/800x400_d.jpg">
+              <img class="materialboxed" data-caption="A picture of a way with a group of trees in a park" width="250" src="images/placeholder/800x400_d.jpg" />
+              <pre><code class="language-html">
+<xmp><img class="materialboxed" data-caption="A picture of a way with a group of trees in a park" width="250" alt="Sample image for Material Box with caption" src="images/placeholder/800x400_d.jpg"></xmp>
           </code></pre>
             </div>
 
@@ -622,19 +540,14 @@
             <div id="slider" class="scrollspy section">
               <h3 class="header">Slider</h3>
               <p class="caption">
-                Our slider is a simple and elegant image carousel. You can also
-                have captions that will be transitioned on their own depending
-                on their alignment. You can also have indicators that show up on
-                the bottom of the slider.
+                Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have
+                indicators that show up on the bottom of the slider.
               </p>
 
               <div class="slider">
                 <ul class="slides">
                   <li>
-                    <img
-                      src="images/placeholder/800x400_a.jpg"
-                      alt="Sample image for first slide"
-                    />
+                    <img src="images/placeholder/800x400_a.jpg" alt="Sample image for first slide" />
                     <!-- random image -->
                     <div class="caption center-align">
                       <h3>This is our big Tagline!</h3>
@@ -642,10 +555,7 @@
                     </div>
                   </li>
                   <li>
-                    <img
-                      src="images/placeholder/800x400_b.jpg"
-                      alt="Sample image for second slide"
-                    />
+                    <img src="images/placeholder/800x400_b.jpg" alt="Sample image for second slide" />
                     <!-- random image -->
                     <div class="caption left-align">
                       <h3>Left Aligned Caption</h3>
@@ -653,10 +563,7 @@
                     </div>
                   </li>
                   <li>
-                    <img
-                      src="images/placeholder/800x400_c.jpg"
-                      alt="Sample image for third slide"
-                    />
+                    <img src="images/placeholder/800x400_c.jpg" alt="Sample image for third slide" />
                     <!-- random image -->
                     <div class="caption right-align">
                       <h3>Right Aligned Caption</h3>
@@ -664,10 +571,7 @@
                     </div>
                   </li>
                   <li>
-                    <img
-                      src="images/placeholder/800x400_d.jpg"
-                      alt="Sample image for fourth slide"
-                    />
+                    <img src="images/placeholder/800x400_d.jpg" alt="Sample image for fourth slide" />
                     <!-- random image -->
                     <div class="caption center-align">
                       <h3>This is our big Tagline!</h3>
@@ -677,39 +581,41 @@
                 </ul>
               </div>
 
-              <pre><code class="language-markup">
-  &lt;div class="slider">
-    &lt;ul class="slides">
-      &lt;li>
-        &lt;img src="images/placeholder/800x400_a.jpg" alt="Sample image for first slide">
-        &lt;div class="caption center-align">
-          &lt;h3>This is our big Tagline!&lt;/h3>
-          &lt;h5 class="light">Here's our small slogan.&lt;/h5>
-        &lt;/div>
-      &lt;/li>
-      &lt;li>
-        &lt;img src="images/placeholder/800x400_b.jpg" alt="Sample image for second slide">
-        &lt;div class="caption left-align">
-          &lt;h3>Left Aligned Caption&lt;/h3>
-          &lt;h5 class="light">Here's our small slogan.&lt;/h5>
-        &lt;/div>
-      &lt;/li>
-      &lt;li>
-        &lt;img src="images/placeholder/800x400_c.jpg" alt="Sample image for third slide">
-        &lt;div class="caption right-align">
-          &lt;h3>Right Aligned Caption&lt;/h3>
-          &lt;h5 class="light">Here's our small slogan.&lt;/h5>
-        &lt;/div>
-      &lt;/li>
-      &lt;li>
-        &lt;img src="images/placeholder/800x400_d.jpg" alt="Sample image for fourth slide">
-        &lt;div class="caption center-align">
-          &lt;h3>This is our big Tagline!&lt;/h3>
-          &lt;h5 class="light">Here's our small slogan.&lt;/h5>
-        &lt;/div>
-      &lt;/li>
-    &lt;/ul>
-  &lt;/div>
+              <pre><code class="language-html">
+<xmp>
+<div class="slider">
+  <ul class="slides">
+    <li>
+      <img src="images/placeholder/800x400_a.jpg" alt="Sample image for first slide">
+      <div class="caption center-align">
+        <h3>This is our big Tagline!</h3>
+        <h5 class="light">Here's our small slogan.</h5>
+      </div>
+    </li>
+    <li>
+      <img src="images/placeholder/800x400_b.jpg" alt="Sample image for second slide">
+      <div class="caption left-align">
+        <h3>Left Aligned Caption</h3>
+        <h5 class="light">Here's our small slogan.</h5>
+      </div>
+    </li>
+    <li>
+      <img src="images/placeholder/800x400_c.jpg" alt="Sample image for third slide">
+      <div class="caption right-align">
+        <h3>Right Aligned Caption</h3>
+        <h5 class="light">Here's our small slogan.</h5>
+      </div>
+    </li>
+    <li>
+      <img src="images/placeholder/800x400_d.jpg" alt="Sample image for fourth slide">
+      <div class="caption center-align">
+        <h3>This is our big Tagline!</h3>
+        <h5 class="light">Here's our small slogan.</h5>
+      </div>
+    </li>
+  </ul>
+</div>
+</xmp>
       </code></pre>
 
               <h4>Initialization</h4>
@@ -770,92 +676,62 @@
                     <td>pauseOnFocus</td>
                     <td>Boolean</td>
                     <td>true</td>
-                    <td>
-                      If slider should pause when keyboard focus is received.
-                    </td>
+                    <td>If slider should pause when keyboard focus is received.</td>
                   </tr>
                   <tr>
                     <td>pauseOnHover</td>
                     <td>Boolean</td>
                     <td>true</td>
-                    <td>
-                      If slider should pause when is hovered by a pointer.
-                    </td>
+                    <td>If slider should pause when is hovered by a pointer.</td>
                   </tr>
                   <tr>
                     <td>indicatorLabelFunc</td>
                     <td>Function</td>
                     <td>null</td>
                     <td>
-                      <p>
-                        Optional function used to generate ARIA label to
-                        indicators (for accessibility purposes).
-                      </p>
-                      <p>
-                        It receives the current index, starting from "1", and a
-                        boolean indicating whether it is the current element or
-                        not.
-                      </p>
-                      <p>
-                        If not specified, the generated label is going to be the
-                        current index.
-                      </p>
+                      <p>Optional function used to generate ARIA label to indicators (for accessibility purposes).</p>
+                      <p>It receives the current index, starting from "1", and a boolean indicating whether it is the current element or not.</p>
+                      <p>If not specified, the generated label is going to be the current index.</p>
                     </td>
                   </tr>
                 </tbody>
               </table>
 
               <h4>Methods</h4>
-              <p>
-                We have methods to pause, start, move to next and move to
-                previous slide.
-              </p>
+              <p>We have methods to pause, start, move to next and move to previous slide.</p>
 
               <blockquote>
-                <p>
-                  All the methods are called on the plugin instance. You can get
-                  the plugin instance like this:
-                </p>
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
     var instance = M.Slider.getInstance(elem);
           </code></pre>
               </blockquote>
 
-              <h5 class="method-header">
-                .pause();
-              </h5>
+              <h5 class="method-header">.pause();</h5>
               <p>Pause slider autoslide</p>
               <pre><code class="language-javascript col s12">
   instance.pause();
         </code></pre>
 
-              <h5 class="method-header">
-                .start();
-              </h5>
+              <h5 class="method-header">.start();</h5>
               <p>Start slider autoslide</p>
               <pre><code class="language-javascript col s12">
   instance.start();
         </code></pre>
 
-              <h5 class="method-header">
-                .next();
-              </h5>
+              <h5 class="method-header">.next();</h5>
               <p>Move to next slider</p>
               <pre><code class="language-javascript col s12">
   instance.next();
         </code></pre>
 
-              <h5 class="method-header">
-                .prev();
-              </h5>
+              <h5 class="method-header">.prev();</h5>
               <p>Move to prev slider</p>
               <pre><code class="language-javascript col s12">
   instance.prev();
         </code></pre>
 
-              <h5 class="method-header">
-                .destroy();
-              </h5>
+              <h5 class="method-header">.destroy();</h5>
               <p>Destroy plugin instance and teardown</p>
               <pre><code class="language-javascript col s12">
   instance.destroy();
@@ -890,33 +766,21 @@
                   <tr>
                     <td>eventPause</td>
                     <td>Boolean</td>
-                    <td>
-                      Indicates whether the slider is paused by a focus/mouse
-                      event or not.
-                    </td>
+                    <td>Indicates whether the slider is paused by a focus/mouse event or not.</td>
                   </tr>
                 </tbody>
               </table>
 
               <h4>Fullscreen Slider</h4>
-              <p>
-                You can easliy make this slider a fullscreen slider by adding
-                the class <code class="language-markup">fullscreen</code> to the
-                slider div. Here's a quick demo.
-              </p>
-              <a
-                href="fullscreen-slider-demo.html"
-                target="_blank"
-                class="btn-large waves-effect waves-light"
-                >Open Demo</a
-              >
+              <p>You can easliy make this slider a fullscreen slider by adding the class <code class="language-html">fullscreen</code> to the slider div. Here's a quick demo.</p>
+              <a href="fullscreen-slider-demo.html" target="_blank" class="btn-large waves-effect waves-light">Open Demo</a>
             </div>
           </div>
 
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li>
                     <a href="#materialbox">Material Box</a>
@@ -931,65 +795,44 @@
         </div>
       </div>
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -1009,12 +852,7 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

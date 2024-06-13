@@ -39,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Themes</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,63 +333,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Themes</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Themes</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
@@ -421,44 +377,37 @@
           <div class="s12 m8 offset-m1 xl7 offset-xl1">
             <div class="section">
               <p>
-                Materialize supports themeing. Most commonly there is a light
-                and a dark mode theme. You also can customize your own
-                individual theme too. Here is an example for an easy
-                theme-switch.
+                Materialize supports themeing. Most commonly there is a light and a dark mode theme. You also can customize your own individual theme too. Here is an example for an
+                easy theme-switch.
               </p>
             </div>
             <div class="section scrollspy" id="reading-theme">
               <h2>Reading Theme Setting</h2>
               <p>
                 Make sure you include this short code snippet before the
-                <code>&lt;/head&gt;</code> tag.
+                <code>&lt;/head></code> tag.
               </p>
               <p>
-                It has to be loaded as soon as possible (therefore put it as
-                first script) to avoid flickering of the page. Also it is
-                recommended to directly write it into the HTML code, then it is
-                also faster (no additional request).
+                It has to be loaded as soon as possible (therefore put it as first script) to avoid flickering of the page. Also it is recommended to directly write it into the
+                HTML code, then it is also faster (no additional request).
               </p>
-              <pre><code class="language-javascript">&lt;script&gt;
+              <pre><code class="language-javascript">
+<xmp>
+<script>
   const theme = localStorage.getItem('theme');
   if (theme) document.documentElement.setAttribute('theme', theme);
-&lt;/script&gt;
+</script>
+</xmp>
 </code></pre>
 
-              <p>
-                This Script loads the users settings from the local storage and
-                sets a parameter which can be then used to set variables in the
-                CSS.
-              </p>
+              <p>This Script loads the users settings from the local storage and sets a parameter which can be then used to set variables in the CSS.</p>
             </div>
             <div class="section scrollspy" id="changing-theme">
               <h2>Changing Theme Setting</h2>
               <p>The Theme can be switched instantly via click of a button.</p>
               <p>
-                The following example binds a Theme-Switching Function to an
-                HTML-Element, which has an Id of #theme-switch. To test this,
-                you can click on the moon or the sun icon at this page in the
-                top-right corenr to see it in action!
+                The following example binds a Theme-Switching Function to an HTML-Element, which has an Id of #theme-switch. To test this, you can click on the moon or the sun icon
+                at this page in the top-right corenr to see it in action!
               </p>
               <pre><code class="language-javascript">  // Change Theme Setting with a Switch
   const currentTheme = localStorage.getItem('theme');
@@ -502,63 +451,53 @@
             <div class="section scrollspy" id="creating-theme">
               <h2>Creating a Theme</h2>
               <p>
-                To create or overwrite a theme, you have to set the variables of
-                the Theme. This variables can be defined in a seperate CSS-File
-                and included before the Materialize-CSS File inside of the
-                <code>&lt;head&gt;&lt;/head&gt;</code> tags.
+                To create or overwrite a theme, you have to set the variables of the Theme. This variables can be defined in a seperate CSS-File and included before the
+                Materialize-CSS File inside of the
+                <code class="language-html"><strong>head</strong></code>
+                tags.
               </p>
+              <p class="error-text">Deprecated in 2.1.0! Use the Material M3 Variables instead to create a custom Theme!</p>
               <p>Here is an example of the standard Dark-Theme:</p>
-              <pre><code class="language-css">:root[theme='dark'] {
-    --background-color: #121212;
-    --surface-color: #242424;
-
-    --font-color-main: rgba(255, 255, 255, 0.87);
-    --font-color-medium: rgba(255, 255, 255, 0.60);
-    --font-color-disabled: rgba(255, 255, 255, 0.38);
-
-    --font-on-primary-color-main: rgba(0, 0, 0, 0.87);
-    --font-on-primary-color-dark-main: rgba(255, 255, 255, 0.87);
-    --font-on-primary-color-dark-medium: rgba(255, 255, 255, 0.60);
-    --font-on-primary-color-medium: rgba(0, 0, 0, 0.56);
-    --font-on-primary-color-disabled: rgba(0, 0, 0, 0.38);
-
-    --hover-color: rgba(255, 255, 255, 0.04);
-    --focus-color: rgba(255, 255, 255, 0.12);
-    --focus-color-solid: #424242;
-
-    --background-color-disabled: rgba(255, 255, 255, 0.12);
-    --background-color-level-4dp: rgba(255, 255, 255, 0.09);
-    --background-color-level-16dp-solid: #262626;
-    --background-color-card: var(--surface-color);
-    --background-color-slight-emphasis: rgba(255, 255, 255, 0.05);
-
-    --separator-color: #424242; /* borders between components */
-
-    --error-color: #CF6679;
-
-    --slider-track-color: rgba(255, 255, 255, 0.26);
-    --switch-thumb-off-color: #bababa;
-
-    --primary-color: #B39DDB;
-    --primary-color-dark: #9575CD;
-    --primary-color-numeric: 179, 157, 219;
-    --primary-color-raised-hover-solid: #C2ACEA;
-    --primary-color-raised-focus-solid: #DBC5FF;
-
-    --secondary-color: #CDDC39;
-    --secondary-color-hover-solid: #DCEB48;
-    --secondary-color-focus-solid: #F5FF61;
-    --secondary-container-color: #B39DDB;
-    --font-on-secondary-container-color: rgba(255, 255, 255, 0.87);
-
-    --md_sys_color_on-surface: 230, 225, 229;
+              <pre><code class="language-css">
+:root[theme='dark'] {
+  --background-color: #121212;
+  --surface-color: #242424;
+  --font-color-main: rgba(255, 255, 255, 0.87);
+  --font-color-medium: rgba(255, 255, 255, 0.60);
+  --font-color-disabled: rgba(255, 255, 255, 0.38);
+  --font-on-primary-color-main: rgba(0, 0, 0, 0.87);
+  --font-on-primary-color-dark-main: rgba(255, 255, 255, 0.87);
+  --font-on-primary-color-dark-medium: rgba(255, 255, 255, 0.60);
+  --font-on-primary-color-medium: rgba(0, 0, 0, 0.56);
+  --font-on-primary-color-disabled: rgba(0, 0, 0, 0.38);
+  --hover-color: rgba(255, 255, 255, 0.04);
+  --focus-color: rgba(255, 255, 255, 0.12);
+  --focus-color-solid: #424242;
+  --background-color-disabled: rgba(255, 255, 255, 0.12);
+  --background-color-level-4dp: rgba(255, 255, 255, 0.09);
+  --background-color-level-16dp-solid: #262626;
+  --background-color-card: var(--surface-color);
+  --background-color-slight-emphasis: rgba(255, 255, 255, 0.05);
+  --slider-track-color: rgba(255, 255, 255, 0.26);
+  --switch-thumb-off-color: #bababa;
+  --primary-color: #B39DDB;
+  --primary-color-dark: #9575CD;
+  --primary-color-numeric: 179, 157, 219;
+  --primary-color-raised-hover-solid: #C2ACEA;
+  --primary-color-raised-focus-solid: #DBC5FF;
+  --secondary-color: #CDDC39;
+  --secondary-color-hover-solid: #DCEB48;
+  --secondary-color-focus-solid: #F5FF61;
+  --secondary-container-color: #B39DDB;
+  --font-on-secondary-container-color: rgba(255, 255, 255, 0.87);
+  --md_sys_color_on-surface: 230, 225, 229;
 }
 </code></pre>
             </div>
           </div>
           <div class="hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li><a href="#reading-theme">Reading Theme</a></li>
                   <li><a href="#changing-theme">Changing Theme</a></li>
@@ -570,65 +509,44 @@
         </div>
       </div>
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -648,12 +566,7 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

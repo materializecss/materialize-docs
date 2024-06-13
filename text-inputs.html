@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="msapplication-tap-highlight" content="no" />
-<meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google." />
-
-<title>Text Inputs - Materialize</title>
-
-<!-- Favicons-->
-<link
-  rel="apple-touch-icon-precomposed"
-  href="images/favicon/apple-touch-icon-152x152.png"
-/>
-<meta name="msapplication-TileColor" content="#FFFFFF" />
-<meta
-  name="msapplication-TileImage"
-  content="images/favicon/mstile-144x144.png"
-/>
-<link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" />
-<!--  Android 5 Chrome Color-->
-<!--<meta name="theme-color" content="#EE6E73" />-->
-<style>
-  @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i");
-</style>
-
-<!-- CSS-->
-<link
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet"
-/>
-<link
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-  rel="stylesheet"
-/>
-<script>
-  const theme = localStorage.getItem("theme");
-  if (theme) document.documentElement.setAttribute("theme", theme);
-</script>
-   <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-   <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
- </head>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google." />
+    
+    <title>Text Inputs - Materialize</title>
+    
+    <!-- Favicons-->
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/favicon/apple-touch-icon-152x152.png"
+    />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta
+      name="msapplication-TileImage"
+      content="images/favicon/mstile-144x144.png"
+    />
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" />
+    <!--  Android 5 Chrome Color-->
+    <!--<meta name="theme-color" content="#EE6E73" />-->
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i");
+    </style>
+    
+    <!-- CSS-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      const theme = localStorage.getItem("theme");
+      if (theme) document.documentElement.setAttribute("theme", theme);
+    </script>
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
+  </head>
   <body>
     <header>
       <div class="search-results card"></div>
@@ -49,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Text Inputs</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -90,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -355,124 +333,107 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Text Inputs</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Text Inputs</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
       <div class="container">
-  <div class="row">
+        <div class="row">
+          <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+            <div id="input" class="section scrollspy">
+              <p class="caption">
+                Forms are the standard way to receive data from the user. The transitions and smoothness of these elements are very important because of the inherent user
+                interaction associated with forms.
+              </p>
 
-    <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+              <!-- Section -->
 
-      <div id="input" class="section scrollspy">
-        <p class="caption">
-          Forms are the standard way to receive data from the user. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.
-        </p>
+              <h3 class="header">Input fields</h3>
+              <p>
+                Text fields allow user input. The border should light up simply and clearly indicating which field the user is currently editing. You must have a
+                <code class="language-html">.input-field</code> div wrapping your input and label. This is only used in our Input and Textarea form elements.
+              </p>
+              <p>
+                The validate class leverages HTML5 validation and will add a <code class="language-html">valid</code> and <code class="language-html">invalid</code> class
+                accordingly. If you don't want the Green and Red validation states, just remove the <code class="language-html">validate</code> class from your inputs.
+              </p>
 
+              <form class="row" style="gap: 1em">
+                <div class="s12 m6 input-field">
+                  <input id="first_name" type="text" placeholder=" " maxlength="20" />
+                  <label for="first_name">First Name</label>
+                  <span class="supporting-text">Supporting Text</span>
+                </div>
 
-        <!-- Section -->
+                <div class="s12 m6 input-field outlined">
+                  <input id="last_name" type="text" placeholder=" " maxlength="20" />
+                  <label for="last_name">Last Name</label>
+                  <!--<span class="supporting-text">Supporting Text</span>-->
+                </div>
 
-        <h3 class="header">Input fields</h3>
-        <p>Text fields allow user input. The border should light up simply and clearly indicating which field the user is currently editing. You must have a <code class="language-markup">.input-field</code> div wrapping your input and label. This is only used in our Input and Textarea form elements.</p>
-        <p>The validate class leverages HTML5 validation and will add a <code class="language-markup">valid</code> and <code class="language-markup">invalid</code> class accordingly. If you don't want the Green and Red validation states, just remove the <code class="language-markup">validate</code> class from your inputs.</p>
-        
-        <form class="row" style="gap: 1em;">
-          <div class="s12 m6 input-field">
-            <input id="first_name" type="text" placeholder=" " maxlength="20">
-            <label for="first_name">First Name</label>
-            <span class="supporting-text">Supporting Text</span>
-          </div>
+                <div class="s12 m6 input-field">
+                  <input id="disabled" type="text" placeholder=" " value="I am not editable" disabled />
+                  <label for="disabled">Disabled</label>
+                </div>
 
-          <div class="s12 m6 input-field outlined">
-            <input id="last_name" type="text" placeholder=" " maxlength="20">
-            <label for="last_name">Last Name</label>
-            <!--<span class="supporting-text">Supporting Text</span>-->
-          </div>
+                <div class="s12 m6 input-field outlined">
+                  <input id="disabled" type="text" placeholder=" " value="Not editable too" disabled />
+                  <label for="disabled">Disabled</label>
+                </div>
 
-          <div class="s12 m6 input-field">
-            <input id="disabled" type="text" placeholder=" " value="I am not editable" disabled>
-            <label for="disabled">Disabled</label>
-          </div>
+                <div class="s12 m6 input-field">
+                  <div class="prefix"><i class="material-icons">place</i></div>
+                  <div class="suffix"><i class="material-icons">gps_fixed</i></div>
+                  <input id="inp-location" type="text" placeholder=" " value="Planet Earth" />
+                  <label for="inp-location">Location</label>
+                </div>
 
-          <div class="s12 m6 input-field outlined">
-            <input id="disabled" type="text" placeholder=" " value="Not editable too" disabled>
-            <label for="disabled">Disabled</label>
-          </div>
+                <div class="s12 m6 input-field outlined error" maxlength="20">
+                  <div class="prefix"><i class="material-icons">bubble_chart</i></div>
+                  <div class="suffix"><i class="material-icons">error</i></div>
+                  <input id="inp-error" type="text" placeholder=" " value="$%/'#sdf" />
+                  <label for="inp-error">Failing Input</label>
+                  <span class="supporting-text">Invalid characters! Please use 0-9 only.</span>
+                </div>
+              </form>
 
-          <div class="s12 m6 input-field">
-            <div class="prefix"><i class="material-icons">place</i></div>
-            <div class="suffix"><i class="material-icons">gps_fixed</i></div>
-            <input id="inp-location" type="text" placeholder=" " value="Planet Earth">
-            <label for="inp-location">Location</label>
-          </div>
-
-          <div class="s12 m6 input-field outlined error" maxlength="20">
-            <div class="prefix"><i class="material-icons">bubble_chart</i></div>
-            <div class="suffix"><i class="material-icons">error</i></div>
-            <input id="inp-error" type="text" placeholder=" " value="$%/'#sdf">
-            <label for="inp-error">Failing Input</label>
-            <span class="supporting-text">Invalid characters! Please use 0-9 only.</span>
-          </div>
-        </form>
-
-        <pre><code class="language-markup">
-          <xmp>
+              <pre><code class="language-html">
+<xmp>
 <form class="row" style="gap: 1em;">
   <div class="s12 m6 input-field">
     <input id="first_name" type="text" placeholder=" " maxlength="20">
@@ -511,28 +472,28 @@
     <span class="supporting-text">Invalid characters! Please use 0-9 only.</span>
   </div>
 </form>
-          </xmp>
-        </code></pre>
+</xmp>
+</code></pre>
 
-        <!-- Section -->
+              <!-- Section -->
 
-        <h4>Input Types</h4>
-        <p>Alternate Input Types such as email and password are also supported.</p>
+              <h4>Input Types</h4>
+              <p>Alternate Input Types such as email and password are also supported.</p>
 
-        <form class="row" style="gap: 1em;">
-          <div class="s12 m6 input-field">
-            <input id="email" type="email" class="validate" placeholder=" ">
-            <label for="email">Email</label>
-            <span class="supporting-text" data-error="wrong" data-success="right">Supporting text for additional information</span>
-          </div>
-          <div class="s12 m6 input-field">
-            <input id="password" type="password" class="validate" placeholder=" " maxlength="20">
-            <label for="password">Password</label>
-          </div>
-        </form>
+              <form class="row" style="gap: 1em">
+                <div class="s12 m6 input-field">
+                  <input id="email" type="email" class="validate" placeholder=" " />
+                  <label for="email">Email</label>
+                  <span class="supporting-text" data-error="wrong" data-success="right">Supporting text for additional information</span>
+                </div>
+                <div class="s12 m6 input-field">
+                  <input id="password" type="password" class="validate" placeholder=" " maxlength="20" />
+                  <label for="password">Password</label>
+                </div>
+              </form>
 
-        <pre><code class="language-markup">
-          <xmp>
+              <pre><code class="language-html">
+<xmp>
 <form class="row" style="gap: 1em;">
   <div class="s12 m6 input-field">
     <input id="email" type="email" class="validate" placeholder=" ">
@@ -544,26 +505,26 @@
     <label for="password">Password</label>
   </div>
 </form>
-          </xmp>
+</xmp>
         </code></pre>
 
-        <!-- Section -->
-        <h4>Inline Inputs</h4>
-        <p>Also Inline Inputs are supported.</p>
+              <!-- Section -->
+              <h4>Inline Inputs</h4>
+              <p>Also Inline Inputs are supported.</p>
 
-        <form class="row">
-          <div class="s12">
-            This is an inline input field:
-            <div class="input-field inline">
-              <input id="email_inline" type="email" class="validate" placeholder=" ">
-              <label for="email_inline">Email</label>
-              <span class="helper-text" data-error="wrong" data-success="right"></span>
-            </div>
-          </div>
-        </form>
+              <form class="row">
+                <div class="s12">
+                  This is an inline input field:
+                  <div class="input-field inline">
+                    <input id="email_inline" type="email" class="validate" placeholder=" " />
+                    <label for="email_inline">Email</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                  </div>
+                </div>
+              </form>
 
-        <pre><code class="language-markup">
-          <xmp>
+              <pre><code class="language-html">
+<xmp>
 <form class="row">
   <div class="s12">
     This is an inline input field:
@@ -574,164 +535,176 @@
     </div>
   </div>
 </form>
-          </xmp>
+</xmp>
         </code></pre>
 
-        <!-- Section -->
-        <h5 id="floating-labels">Floating Labels</h5>
-        <p>
-          Since <b>MaterializeCSS v2</b>, floating Labels are rendered with CSS only by default.
-          However, it is required to use a placeholder with a single white space (" ") in the HTML
-          (providing an empty string will not work!).
-        </p>
-        <p>
-          <strong><b>Important:</b></strong> If you provide a value different than a single white space,
-          the CSS rules will treat it as a "important" placeholder value and will always render the
-          labels in "active" state.
-        </p>
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="input-field outlined" style="margin: 0 4px;">
-                <input id="first_name2" type="text" class="validate" placeholder=" ">
-                <label class="active" for="first_name2">First Name</label>
+              <!-- Section -->
+              <h5 id="floating-labels">Floating Labels</h5>
+              <p>
+                Since <b>MaterializeCSS v2</b>, floating Labels are rendered with CSS only by default. However, it is required to use a placeholder with a single white space (" ")
+                in the HTML (providing an empty string will not work!).
+              </p>
+              <p>
+                <strong><b>Important:</b></strong> If you provide a value different than a single white space, the CSS rules will treat it as a "important" placeholder value and
+                will always render the labels in "active" state.
+              </p>
+              <div class="row">
+                <div class="col s12 m6">
+                  <div class="input-field outlined" style="margin: 0 4px">
+                    <input id="first_name2" type="text" class="validate" placeholder=" " />
+                    <label class="active" for="first_name2">First Name</label>
+                  </div>
+                </div>
+                <div class="col s12 m6">
+                  <div class="input-field outlined" style="margin: 0 4px">
+                    <input id="last_name2" type="text" class="validate" placeholder="Doe..." />
+                    <label class="active" for="last_name2">Last Name</label>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col s12 m6">
-              <div class="input-field outlined" style="margin: 0 4px;">
-                <input id="last_name2" type="text" class="validate" placeholder="Doe...">
-                <label class="active" for="last_name2">Last Name</label>
-              </div>
-            </div>
-          </div>
 
-        <pre><code class="language-markup">
-&lt;div class="row">
-  &lt;div class="col s12 m6">
-    &lt;div class="input-field outlined" style="margin: 0 4px;">
-      &lt;input id="first_name2" type="text" class="validate" placeholder=" ">
-      &lt;label class="active" for="first_name2">First Name&lt;/label>
-    &lt;/div>
-  &lt;/div>
-  &lt;div class="col s12 m6">
-    &lt;div class="input-field outlined" style="margin: 0 4px;">
-      &lt;input id="last_name2" type="text" class="validate" placeholder="Doe...">
-      &lt;label class="active" for="last_name2">Last Name&lt;/label>
-    &lt;/div>
-  &lt;/div>
-&lt;/div>
+              <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="input-field outlined" style="margin: 0 4px;">
+      <input id="first_name2" type="text" class="validate" placeholder=" ">
+      <label class="active" for="first_name2">First Name</label>
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <div class="input-field outlined" style="margin: 0 4px;">
+      <input id="last_name2" type="text" class="validate" placeholder="Doe...">
+      <label class="active" for="last_name2">Last Name</label>
+    </div>
+  </div>
+</div>
+</xmp>
         </code></pre>
 
-        <!-- Section -->
-        <h5>Icon Prefixes</h5>
-        <p>You can add an icon prefix to make the form input label even more clear. Just add an icon with the class <code class="language-markup">prefix</code> before the input and label.</p>
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">First Name</label>
+              <!-- Section -->
+              <h5>Icon Prefixes</h5>
+              <p>
+                You can add an icon prefix to make the form input label even more clear. Just add an icon with the class <code class="language-html">prefix</code> before the input
+                and label.
+              </p>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="icon_prefix" type="text" class="validate" />
+                      <label for="icon_prefix">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">phone</i>
+                      <input id="icon_telephone" type="tel" class="validate" />
+                      <label for="icon_telephone">Telephone</label>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div class="input-field col s6">
-                <i class="material-icons prefix">phone</i>
-                <input id="icon_telephone" type="tel" class="validate">
-                <label for="icon_telephone">Telephone</label>
-              </div>
-            </div>
-          </form>
-        </div>
 
-        <pre><code class="language-markup">
-  &lt;div class="row">
-    &lt;form class="col s12">
-      &lt;div class="row">
-        &lt;div class="input-field col s6">
-          &lt;i class="material-icons prefix">account_circle</i>&lt;/i>
-          &lt;input id="icon_prefix" type="text" class="validate">
-          &lt;label for="icon_prefix">First Name&lt;/label>
-        &lt;/div>
-        &lt;div class="input-field col s6">
-          &lt;i class="material-icons prefix">phone</i>&lt;/i>
-          &lt;input id="icon_telephone" type="tel" class="validate">
-          &lt;label for="icon_telephone">Telephone&lt;/label>
-        &lt;/div>
-      &lt;/div>
-    &lt;/form>
-  &lt;/div>
+              <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="icon_prefix" type="text" class="validate">
+        <label for="icon_prefix">First Name</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">phone</i>
+        <input id="icon_telephone" type="tel" class="validate">
+        <label for="icon_telephone">Telephone</label>
+      </div>
+    </div>
+  </form>
+</div>
+</xmp>
         </code></pre>
-        
 
-        <h5>Icon Suffixes</h5>
-        <p>You can also add an icon suffix. Just add an icon with the class <code class="language-markup">suffix</code> before the input and label.</p>
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <i class="material-icons suffix">account_circle</i>
-                <input id="icon_suffix" type="text" class="validate">
-                <label for="icon_suffix">First Name</label>
+              <h5>Icon Suffixes</h5>
+              <p>You can also add an icon suffix. Just add an icon with the class <code class="language-html">suffix</code> before the input and label.</p>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <i class="material-icons suffix">account_circle</i>
+                      <input id="icon_suffix" type="text" class="validate" />
+                      <label for="icon_suffix">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <i class="material-icons suffix">phone</i>
+                      <input id="icon_telephone_suffix" type="tel" class="validate" />
+                      <label for="icon_telephone_suffix">Telephone</label>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div class="input-field col s6">
-                <i class="material-icons suffix">phone</i>
-                <input id="icon_telephone_suffix" type="tel" class="validate">
-                <label for="icon_telephone_suffix">Telephone</label>
-              </div>
-            </div>
-          </form>
-        </div>
 
-        <pre><code class="language-markup">
-  &lt;div class="row">
-    &lt;form class="col s12">
-      &lt;div class="row">
-        &lt;div class="input-field col s6">
-          &lt;i class="material-icons suffix">account_circle</i>&lt;/i>
-          &lt;input id="icon_suffix" type="text" class="validate">
-          &lt;label for="icon_suffix">First Name&lt;/label>
-        &lt;/div>
-        &lt;div class="input-field col s6">
-          &lt;i class="material-icons suffix">phone</i>&lt;/i>
-          &lt;input id="icon_telephone_suffix" type="tel" class="validate">
-          &lt;label for="icon_telephone_suffix">Telephone&lt;/label>
-        &lt;/div>
-      &lt;/div>
-    &lt;/form>
-  &lt;/div>
+              <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons suffix">account_circle</i>
+        <input id="icon_suffix" type="text" class="validate">
+        <label for="icon_suffix">First Name</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons suffix">phone</i>
+        <input id="icon_telephone_suffix" type="tel" class="validate">
+        <label for="icon_telephone_suffix">Telephone</label>
+      </div>
+    </div>
+  </form>
+</div>
+</xmp>
         </code></pre>
-        
 
-        <h5>Custom Error or Success Messages</h5>
-        <p>You can add custom validation messages by adding either <code class="language-markup">data-error</code> or <code class="language-markup">data-success</code> attributes to your helper text element.</p>
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email2" type="email" class="validate">
-                <label for="email2">Email</label>
-                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+              <h5>Custom Error or Success Messages</h5>
+              <p>
+                You can add custom validation messages by adding either <code class="language-html">data-error</code> or <code class="language-html">data-success</code> attributes
+                to your helper text element.
+              </p>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email2" type="email" class="validate" />
+                      <label for="email2">Email</label>
+                      <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                    </div>
+                  </div>
+                </form>
               </div>
-            </div>
-          </form>
-        </div>
 
-        <pre><code class="language-markup">
-  &lt;div class="row">
-    &lt;form class="col s12">
-      &lt;div class="row">
-        &lt;div class="input-field col s12">
-          &lt;input id="email" type="email" class="validate">
-          &lt;label for="email">Email&lt;/label>
-          &lt;span class="helper-text" data-error="wrong" data-success="right">Helper text&lt;/span>
-        &lt;/div>
-      &lt;/div>
-    &lt;/form>
-  &lt;/div>
+              <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate">
+        <label for="email">Email</label>
+        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+      </div>
+    </div>
+  </form>
+</div>
+</xmp>
         </code></pre>
-        
 
-        <h5>Changing colors</h5>
-        <p>Here is a CSS template for modifying input fields in CSS. With Sass, you can achieve this by just changing a variable. The CSS shown below is unprefixed. Depending on what you use, you may have to change the type attribute selector.</p>
-        <pre><code class="language-css">
+              <h5>Changing colors</h5>
+              <p>
+                Here is a CSS template for modifying input fields in CSS. With Sass, you can achieve this by just changing a variable. The CSS shown below is unprefixed. Depending
+                on what you use, you may have to change the type attribute selector.
+              </p>
+              <pre><code class="language-css">
   /* label color */
    .input-field label {
      color: #000;
@@ -760,284 +733,276 @@
      color: #000;
    }
         </code></pre>
+            </div>
+
+            <!-- Textarea Section -->
+            <div id="textarea" class="section scrollspy">
+              <h3 class="header">Textarea</h3>
+              <p>
+                Textareas allow larger expandable user input. The border should light up simply and clearly indicating which field the user is currently editing. You must have a
+                <code class="language-html">.input-field</code> div wrapping your input and label. This is only used in our Input and Textarea form elements.
+              </p>
+              <p><strong>Textareas will auto resize to the text inside.</strong></p>
+
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="textarea1" class="materialize-textarea" placeholder=" "></textarea>
+                      <label for="textarea1">Textarea</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="textarea2" class="materialize-textarea" placeholder="A custom placeholder :)"></textarea>
+                      <label for="textarea2">Textarea with placeholder</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea" placeholder=" "></textarea>
+        <label for="textarea1">Textarea</label>
       </div>
-
-
-      <!-- Textarea Section -->
-      <div id="textarea" class="section scrollspy">
-        <h3 class="header">Textarea</h3>
-        <p>Textareas allow larger expandable user input. The border should light up simply and clearly indicating which field the user is currently editing. You must have a <code class="language-markup">.input-field</code> div wrapping your input and label. This is only used in our Input and Textarea form elements.</p>
-        <p><strong>Textareas will auto resize to the text inside.</strong></p>
-
-
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea" placeholder=" "></textarea>
-                <label for="textarea1">Textarea</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="textarea2" class="materialize-textarea" placeholder="A custom placeholder :)"></textarea>
-                <label for="textarea2">Textarea with placeholder</label>
-              </div>
-            </div>
-          </form>
-        </div>
-        <pre><code class="language-markup">
-  &lt;div class="row">
-    &lt;form class="col s12">
-      &lt;div class="row">
-        &lt;div class="input-field col s12">
-          &lt;textarea id="textarea1" class="materialize-textarea" placeholder=" ">&lt;/textarea>
-          &lt;label for="textarea1">Textarea&lt;/label>
-        &lt;/div>
-      &lt;/div>
-      &lt;div class="row">
-        &lt;div class="input-field col s12">
-          &lt;textarea id="textarea2" class="materialize-textarea" placeholder="A custom placeholder :)">&lt;/textarea>
-          &lt;label for="textarea2">Textarea with placeholder&lt;/label>
-        &lt;/div>
-      &lt;/div>
-    &lt;/form>
-  &lt;/div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea2" class="materialize-textarea" placeholder="A custom placeholder :)"></textarea>
+        <label for="textarea2">Textarea with placeholder</label>
+      </div>
+    </div>
+  </form>
+</div>
+</xmp>
         </code></pre>
-        <p><strong><b>Advanced notes:</b></strong> </p>
-        <p>If you are adding Textarea form elements dynamically, you can use this to initialize them.</p>
-        <pre><code class="language-javascript">  M.Forms.InitTextarea(document.querySelector('#textarea1'));</code></pre>
-        <p>When dynamically changing the value of a textarea like setting <code class="language-markup">HTMLElement#value</code> attribute, you must trigger an autoresize on it afterwords because simply updating the element's value does not automatically trigger the events we've binded to the textarea.</p>
-        <pre><code class="language-javascript">
+              <p>
+                <strong><b>Advanced notes:</b></strong>
+              </p>
+              <p>If you are adding Textarea form elements dynamically, you can use this to initialize them.</p>
+              <pre><code class="language-javascript">  M.Forms.InitTextarea(document.querySelector('#textarea1'));</code></pre>
+              <p>
+                When dynamically changing the value of a textarea like setting <code class="language-html">HTMLElement#value</code> attribute, you must trigger an autoresize on it
+                afterwords because simply updating the element's value does not automatically trigger the events we've binded to the textarea.
+              </p>
+              <pre><code class="language-javascript">
   document.querySelector("#textarea1").value = 'New Text';
   M.Forms.textareaAutoResize(document.querySelector('#textarea1'));
         </code></pre>
-        
 
-        <h5>Icon Prefixes</h5>
-        <p>You can add an icon prefix to make the form input label even more clear. Just add an icon with the class <code class="language-markup">prefix</code> before the input and label.</p>
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <i class="material-icons prefix">mode_edit</i>
-                <textarea id="icon_prefix2" class="materialize-textarea" placeholder=" "></textarea>
-                <label for="icon_prefix2">Message</label>
+              <h5>Icon Prefixes</h5>
+              <p>
+                You can add an icon prefix to make the form input label even more clear. Just add an icon with the class <code class="language-html">prefix</code> before the input
+                and label.
+              </p>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">mode_edit</i>
+                      <textarea id="icon_prefix2" class="materialize-textarea" placeholder=" "></textarea>
+                      <label for="icon_prefix2">Message</label>
+                    </div>
+                  </div>
+                </form>
               </div>
-            </div>
-          </form>
-        </div>
 
-        <pre><code class="language-markup">
-  &lt;div class="row">
-    &lt;form class="col s12">
-      &lt;div class="row">
-        &lt;div class="input-field col s6">
-          &lt;i class="material-icons prefix">mode_edit&lt;/i>
-          &lt;textarea id="icon_prefix2" class="materialize-textarea">&lt;/textarea>
-          &lt;label for="icon_prefix2">First Name&lt;/label>
-        &lt;/div>
-      &lt;/div>
-    &lt;/form>
-  &lt;/div>
-        </code></pre>
+              <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mode_edit</i>
+        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+        <label for="icon_prefix2">First Name</label>
       </div>
-
-
-      <div id="file" class="section scrollspy">
-        <h3 class="header">File Input</h3>
-        <p>If you want to style an input button with a path input we provide this structure.</p>
-        <form action="#">
-          <div class="file-field input-field">
-            <div class="btn">
-              <span>File</span>
-              <input type="file">
+    </div>
+  </form>
+</div>
+</xmp>
+        </code></pre>
             </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text">
-            </div>
-          </div>
-        </form>
-        <pre><code class="language-markup">
-  &lt;form action="#">
-    &lt;div class="file-field input-field">
-      &lt;div class="btn">
-        &lt;span>File&lt;/span>
-        &lt;input type="file">
-      &lt;/div>
-      &lt;div class="file-path-wrapper">
-        &lt;input class="file-path validate" type="text">
-      &lt;/div>
-    &lt;/div>
-  &lt;/form>
+
+            <div id="file" class="section scrollspy">
+              <h3 class="header">File Input</h3>
+              <p>If you want to style an input button with a path input we provide this structure.</p>
+              <form action="#">
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <span>File</span>
+                    <input type="file" />
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" />
+                  </div>
+                </div>
+              </form>
+              <pre><code class="language-html">
+<xmp>
+<form action="#">
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <input type="file">
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
+  </div>
+</form>
+</xmp>
         </code></pre>
 
-        <p>You can also use the <code class="language-markup">multiple</code> attribute to allow multiple file uploads. </p>
-        <form action="#">
-          <div class="file-field input-field">
-            <div class="btn">
-              <span>File</span>
-              <input type="file" multiple>
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text" placeholder="Upload one or more files">
-            </div>
-          </div>
-        </form>
-        <pre><code class="language-markup">
-  &lt;form action="#">
-    &lt;div class="file-field input-field">
-      &lt;div class="btn">
-        &lt;span>File&lt;/span>
-        &lt;input type="file" multiple>
-      &lt;/div>
-      &lt;div class="file-path-wrapper">
-        &lt;input class="file-path validate" type="text" placeholder="Upload one or more files">
-      &lt;/div>
-    &lt;/div>
-  &lt;/form>
+              <p>You can also use the <code class="language-html">multiple</code> attribute to allow multiple file uploads.</p>
+              <form action="#">
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <span>File</span>
+                    <input type="file" multiple />
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload one or more files" />
+                  </div>
+                </div>
+              </form>
+              <pre><code class="language-html">
+<xmp>
+<form action="#">
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <input type="file" multiple>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text" placeholder="Upload one or more files">
+    </div>
+  </div>
+</form>
+</xmp>
         </code></pre>
 
-      <p><strong><b>Advanced note:</b></strong> </p>
-        <p>If you are adding File Input form elements dynamically, you can use this to initialize them.</p>
-        <pre><code class="language-javascript">  M.Forms.InitFileInputPath(document.querySelector('#fileinput1'));</code></pre>
+              <p>
+                <strong><b>Advanced note:</b></strong>
+              </p>
+              <p>If you are adding File Input form elements dynamically, you can use this to initialize them.</p>
+              <pre><code class="language-javascript">  M.Forms.InitFileInputPath(document.querySelector('#fileinput1'));</code></pre>
+            </div>
+
+            <div id="character-counter" class="section scrollspy">
+              <h3 class="header">Character Counter</h3>
+              <p class="caption">Use a character counter in fields where a character restriction is in place.</p>
+              <div class="row">
+                <div class="col s12">
+                  <div class="card-panel yellow black-text">
+                    <strong><b>Important:</b></strong> The "data-length" attribute has been depracated in favour of "maxlength" in v2.x.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="input_text" type="text" maxlength="10" placeholder=" " />
+                      <label for="input_text">Input text</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="textarea2" class="materialize-textarea" maxlength="120" placeholder=" "></textarea>
+                      <label for="textarea2">Textarea</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <pre><code class="language-html">
+<xmp>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="input_text" type="text" maxlength="10" placeholder=" ">
+        <label for="input_text">Input text</label>
       </div>
-
-
-      <div id="character-counter" class="section scrollspy">
-        <h3 class="header">Character Counter</h3>
-        <p class="caption">Use a character counter in fields where a character restriction is in place.</p>
-        <div class="row">
-          <div class="col s12">
-            <div class="card-panel yellow black-text">
-              <strong><b>Important:</b></strong> The "data-length" attribute has been depracated in favour of "maxlength" in v2.x.
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <input id="input_text" type="text" maxlength="10" placeholder=" ">
-                <label for="input_text">Input text</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="textarea2" class="materialize-textarea" maxlength="120" placeholder=" "></textarea>
-                <label for="textarea2">Textarea</label>
-              </div>
-            </div>
-          </form>
-        </div>
-        <pre><code class="language-markup">
-    &lt;div class="row">
-      &lt;form class="col s12">
-        &lt;div class="row">
-          &lt;div class="input-field col s6">
-            &lt;input id="input_text" type="text" maxlength="10" placeholder=" ">
-            &lt;label for="input_text">Input text&lt;/label>
-          &lt;/div>
-        &lt;/div>
-        &lt;div class="row">
-          &lt;div class="input-field col s12">
-            &lt;textarea id="textarea2" class="materialize-textarea" maxlength="120" placeholder=" ">&lt;/textarea>
-            &lt;label for="textarea2">Textarea&lt;/label>
-          &lt;/div>
-        &lt;/div>
-      &lt;/form>
-    &lt;/div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea2" class="materialize-textarea" maxlength="120" placeholder=" "></textarea>
+        <label for="textarea2">Textarea</label>
+      </div>
+    </div>
+  </form>
+</div>
+</xmp>
           </code></pre>
-        
 
-        <h5>Initialization</h5>
-        <p>There are no options for this plugin, but if you are adding these dynamically, you can use this to initialize them.</p>
-        <pre><code class="language-javascript">
+              <h5>Initialization</h5>
+              <p>There are no options for this plugin, but if you are adding these dynamically, you can use this to initialize them.</p>
+              <pre><code class="language-javascript">
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('input#input_text, textarea#textarea2');
     var instances = M.CharacterCounter.init(elems);
   });
         </code></pre>
-      </div>
-
-    </div>
-    <div class="col hide-on-small-only m3 xl3">
-      <div class="toc-wrapper">
-
-        <div style="height: 1px;">
-          <ul class="section table-of-contents">
-            <li><a href="#input">Input Fields</a></li>
-            <li><a href="#textarea">Textareas</a></li>
-            <li><a href="#file">File Input Button</a></li>
-            <li><a href="#character-counter">Character Counter</a></li>
-          </ul>
+            </div>
+          </div>
+          <div class="col hide-on-small-only m3 xl3">
+            <div class="toc-wrapper">
+              <div style="height: 1px">
+                <ul class="section table-of-contents">
+                  <li><a href="#input">Input Fields</a></li>
+                  <li><a href="#textarea">Textareas</a></li>
+                  <li><a href="#file">File Input Button</a></li>
+                  <li><a href="#character-counter">Character Counter</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</div>
-
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -1057,17 +1022,12 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>
       </div>
     </footer>
-      
+    
   </body>
 </html>

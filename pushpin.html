@@ -39,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Pushpin</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,63 +333,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Pushpin</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Pushpin</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
@@ -421,18 +377,11 @@
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
             <div id="introduction" class="section scrollspy">
               <p class="caption">
-                Pushpin is our fixed positioning plugin. Use this to pin
-                elements to your page during specific scroll ranges. You can
-                check out our live example: the fixed table of contents on the
-                right.
+                Pushpin is our fixed positioning plugin. Use this to pin elements to your page during specific scroll ranges. You can check out our live example: the fixed table of
+                contents on the right.
               </p>
 
-              <a
-                href="pushpin-demo.html"
-                target="_blank"
-                class="btn-large waves-effect waves-light"
-                >Open Demo</a
-              >
+              <a href="pushpin-demo.html" target="_blank" class="btn-large waves-effect waves-light">Open Demo</a>
 
               <h5>Demo Code</h5>
               <pre><code class="language-javascript">
@@ -460,10 +409,7 @@ pushPinDemoNavElems.forEach(navElem => {
 
             <div id="initialization" class="section scrollspy">
               <h3 class="header">Initialization</h3>
-              <p>
-                Here is a sample initialization of pushpin. Take a look at what
-                the options are and customize them to your needs.
-              </p>
+              <p>Here is a sample initialization of pushpin. Take a look at what the options are and customize them to your needs.</p>
               <pre><code class="language-javascript col s12">
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.pushpin');
@@ -491,36 +437,25 @@ pushPinDemoNavElems.forEach(navElem => {
                     <td>top</td>
                     <td>Number</td>
                     <td>0</td>
-                    <td>
-                      The distance in pixels from the top of the page where the
-                      element becomes fixed.
-                    </td>
+                    <td>The distance in pixels from the top of the page where the element becomes fixed.</td>
                   </tr>
                   <tr>
                     <td>bottom</td>
                     <td>Number</td>
                     <td>Infinity</td>
-                    <td>
-                      The distance in pixels from the top of the page where the
-                      elements stops being fixed.
-                    </td>
+                    <td>The distance in pixels from the top of the page where the elements stops being fixed.</td>
                   </tr>
                   <tr>
                     <td>offset</td>
                     <td>Number</td>
                     <td>0</td>
-                    <td>
-                      The offset from the top the element will be fixed at.
-                    </td>
+                    <td>The offset from the top the element will be fixed at.</td>
                   </tr>
                   <tr>
                     <td>onPositionChange</td>
                     <td>Function</td>
                     <td>null</td>
-                    <td>
-                      Callback function called when pushpin position changes.
-                      You are provided with a position string.
-                    </td>
+                    <td>Callback function called when pushpin position changes. You are provided with a position string.</td>
                   </tr>
                 </tbody>
               </table>
@@ -529,18 +464,13 @@ pushPinDemoNavElems.forEach(navElem => {
             <div id="methods" class="scrollspy section">
               <h3 class="header">Methods</h3>
               <blockquote>
-                <p>
-                  All the methods are called on the plugin instance. You can get
-                  the plugin instance like this:
-                </p>
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
   var instance = M.Pushpin.getInstance(elem);
         </code></pre>
               </blockquote>
 
-              <h5 class="method-header">
-                .destroy();
-              </h5>
+              <h5 class="method-header">.destroy();</h5>
               <p>Destroy plugin instance and teardown</p>
               <pre><code class="language-javascript col s12">
 instance.destroy();
@@ -581,11 +511,8 @@ instance.destroy();
             <div id="classes" class="section scrollspy">
               <h3 class="header">CSS Classes</h3>
               <p class="caption">
-                A pushpinned element has 3 states. One above and below the
-                scrolling threshold, and the pinned state where the element
-                becomes fixed. Because pushpin changes positioning, chances are
-                your element will look different when the states change. Use
-                these css classes to correctly style your 3 states.
+                A pushpinned element has 3 states. One above and below the scrolling threshold, and the pinned state where the element becomes fixed. Because pushpin changes
+                positioning, chances are your element will look different when the states change. Use these css classes to correctly style your 3 states.
               </p>
               <pre><code class="language-css col s12">
   // Class for when element is above threshold
@@ -609,7 +536,7 @@ instance.destroy();
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li>
                     <a href="#introduction">Introduction</a>
@@ -636,65 +563,44 @@ instance.destroy();
         </div>
       </div>
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -714,12 +620,7 @@ instance.destroy();
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="msapplication-tap-highlight" content="no" />
-<meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google." />
-
-<title>Autocomplete - Materialize</title>
-
-<!-- Favicons-->
-<link
-  rel="apple-touch-icon-precomposed"
-  href="images/favicon/apple-touch-icon-152x152.png"
-/>
-<meta name="msapplication-TileColor" content="#FFFFFF" />
-<meta
-  name="msapplication-TileImage"
-  content="images/favicon/mstile-144x144.png"
-/>
-<link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" />
-<!--  Android 5 Chrome Color-->
-<!--<meta name="theme-color" content="#EE6E73" />-->
-<style>
-  @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i");
-</style>
-
-<!-- CSS-->
-<link
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet"
-/>
-<link
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-  rel="stylesheet"
-/>
-<script>
-  const theme = localStorage.getItem("theme");
-  if (theme) document.documentElement.setAttribute("theme", theme);
-</script>
-   <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-   <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
- </head>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google." />
+    
+    <title>Autocomplete - Materialize</title>
+    
+    <!-- Favicons-->
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/favicon/apple-touch-icon-152x152.png"
+    />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta
+      name="msapplication-TileImage"
+      content="images/favicon/mstile-144x144.png"
+    />
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" />
+    <!--  Android 5 Chrome Color-->
+    <!--<meta name="theme-color" content="#EE6E73" />-->
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i");
+    </style>
+    
+    <!-- CSS-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      const theme = localStorage.getItem("theme");
+      if (theme) document.documentElement.setAttribute("theme", theme);
+    </script>
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
+  </head>
   <body>
     <header>
       <div class="search-results card"></div>
@@ -49,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Autocomplete</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -90,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -355,153 +333,132 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
-        </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
         </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Autocomplete</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Autocomplete</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
-      
+
       <div class="container">
-  <div class="row">
+        <div class="row">
+          <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+            <div id="introduction" class="section scrollspy">
+              <div>
+                <p class="caption">
+                  Add an autocomplete dropdown below your input to suggest possible values in your form. You can populate the list of autocomplete options dynamically as well.
+                </p>
 
-    <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+                <div class="input-field outlined">
+                  <i class="material-icons prefix">textsms</i>
+                  <input type="text" id="autocomplete-input" class="autocomplete" placeholder=" " />
+                  <label for="autocomplete-input">Autocomplete</label>
+                  <span class="supporting-text">Select a single item</span>
+                </div>
 
-      <div id="introduction" class="section scrollspy">
-        <p class="caption">
-          Add an autocomplete dropdown below your input to suggest possible values in your form. You can populate the list of autocomplete
-          options dynamically as well.
-          <div class="input-field outlined">
-            <i class="material-icons prefix">textsms</i>
-            <input type="text" id="autocomplete-input" class="autocomplete" placeholder=" ">
-            <label for="autocomplete-input">Autocomplete</label>
-            <span class="supporting-text">Select a single item</span>
-          </div>
-  
-          <div class="col s12">
-            <p>You can initialize the Autocomplete with isMultiSelect for multiple selections</p>
-          </div>        
-          <div class="input-field">
-            <i class="material-icons prefix">textsms</i>
-            <input type="text" id="autocomplete-input-multi" class="autocomplete-multiple"  placeholder=" ">
-            <label for="autocomplete-input-multi">Multiple Autocomplete</label>
-          </div>
-        </p>
+                <div class="col s12">
+                  <p>You can initialize the Autocomplete with isMultiSelect for multiple selections</p>
+                </div>
 
-        <!-- Update Info -->
-        <div class="col s12">
-          <p class="red-text"><strong>ATTENTION:</strong> Data-Format has changed from version 1.X.X to 2.0.0! Please update option 'data'.</p>
-        </div>
+                <div class="input-field">
+                  <i class="material-icons prefix">textsms</i>
+                  <input type="text" id="autocomplete-input-multi" class="autocomplete-multiple" placeholder=" " />
+                  <label for="autocomplete-input-multi">Multiple Autocomplete</label>
+                </div>
+              </div>
 
+              <!-- Update Info -->
+              <div class="col s12">
+                <p class="red-text"><strong>ATTENTION:</strong> Data-Format has changed from version 1.X.X to 2.0.0! Please update option 'data'.</p>
+              </div>
 
-        <pre style="padding-top: 0px;">
+              <pre style="padding-top: 0px">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-  &lt;div class="row">
-    &lt;div class="col s12">
-      &lt;div class="row">
-        &lt;div class="input-field col s12">
-          &lt;i class="material-icons prefix">textsms&lt;/i>
-          &lt;input type="text" id="autocomplete-input" class="autocomplete">
-          &lt;label for="autocomplete-input">Autocomplete&lt;/label>
-        &lt;/div>
-      &lt;/div>
-    &lt;/div>
-  &lt;/div>
+          <code class="language-html copiedText">
+<xmp>
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">textsms</i>
+        <input type="text" id="autocomplete-input" class="autocomplete">
+        <label for="autocomplete-input">Autocomplete</label>
+      </div>
+    </div>
+  </div>
+</div>
+</xmp>
           </code>
         </pre>
-      </div>
+            </div>
 
-      <div id="initialization" class="scrollspy section">
-        <h3 class="header">Initialization</h3>
-        <p>The data is an array of option objects, which supports three different attributes:</p>
-        <p>
-          <ul class="collection">
-            <li class="collection-item">
-              <p style="margin: 0;">
-                <b>id</b>: This is the only mandatory attribute: it must be a primitive value that can be
-                  converted to string. If "text" is not provided, it will also be used as "option text" as well;
+            <div id="initialization" class="scrollspy section">
+              <h3 class="header">Initialization</h3>
+              <p>The data is an array of option objects, which supports three different attributes:</p>
+
+              <ul class="collection">
+                <li class="collection-item">
+                  <p style="margin: 0">
+                    <b>id</b>: This is the only mandatory attribute: it must be a primitive value that can be converted to string. If "text" is not provided, it will also be used
+                    as "option text" as well;
+                  </p>
+                </li>
+                <li class="collection-item">
+                  <p style="margin: 0">
+                    <b>text</b>: This optional attribute is used as "display value" for the current entry. When provided, it will also be taken into consideration by the standard
+                    search function.
+                  </p>
+                  <p style="margin: 0">
+                    If you trust your data or have properly sanitized your user input, you may use use HTML by setting the option
+                    <code class="language-javascript">allowUnsafeHTML: true</code>;
+                  </p>
+                </li>
+                <li class="collection-item">
+                  <p style="margin: 0">
+                    <b>image</b>: This optional attribute is used to provide a valid image URL to the current option. This attribute is ignored by the standard search function.
+                  </p>
+                </li>
+              </ul>
+
+              <p>
+                You may also provide additional attributes to an option object but they will not be taken into consideration by the standard search function. If you want to use
+                them for option filtering, you must specify a custom function in "<b>onSearch</b>" option.
               </p>
-            </li>
-            <li class="collection-item">
-              <p style="margin: 0;">
-                <b>text</b>: This optional attribute is used as "display value" for the current entry.
-                  When provided, it will also be taken into consideration by the standard search function.
-              </p>
-              <P style="margin: 0;">
-                If you trust your data or have properly sanitized your user input, you may use
-                  use HTML by setting the option <code class="language-javascript">allowUnsafeHTML: true</code>;
-              </P>
-            </li>
-            <li class="collection-item">
-              <p style="margin: 0;">
-                <b>image</b>: This optional attribute is used to provide a valid image URL to the current option.
-                  This attribute is ignored by the standard search function.
-              </p>
-            </li>
-          </ul>
-        </p>
-        <p>
-          You may also provide additional attributes to an option object but they will not be taken into
-          consideration by the standard search function. If you want to use them for option filtering, you
-          must specify a custom function in "<b>onSearch</b>" option.
-        </p>
-          <pre style="padding-top: 0px;">
+              <pre style="padding-top: 0px">
             <span class="copyMessage">Copied!</span>
             <i class="material-icons copyButton">content_copy</i>
             <code class="language-javascript copiedText">
@@ -559,80 +516,84 @@
   });
           </code>
         </pre>
-      </div>
+            </div>
 
-      <div id="options" class="scrollspy section">
-        <h3 class="header">Options</h3>
-        <table class="striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Description</th>
-            </tr>
-          </thead>
+            <div id="options" class="scrollspy section">
+              <h3 class="header">Options</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
 
-          <tbody>
-            <tr>
-              <td>data</td>
-              <td>Array</td>
-              <td>[]</td>
-              <td>Array with Data-Objects defining autocomplete options with optional icon (image). The Property <u>id</u> is required which can be string or integer. It is also possible to use the properties <u>text</u> and <u>image</u>.</td>
-            </tr>
-            <tr>
-              <td>isMultiSelect</td>
-              <td>boolean</td>
-              <td>false</td>
-              <td>Flag which can be set if multiple values can be selected. The Result will be an Array.</td>
-            </tr>
-            <tr>
-              <td>maxDropDownHeight</td>
-              <td>string</td>
-              <td>'300px'</td>
-              <td>The height of the Menu which can be set via css-property.</td>
-            </tr>
-            <tr>
-              <td>onAutocomplete</td>
-              <td>Function</td>
-              <td>null</td>
-              <td>Callback for when autocompleted. After a Selection was made this Function is called. This is also called when a default value is set.</td>
-            </tr>
-            <tr>
-              <td>onSearch</td>
-              <td>Function(text, el)</td>
-              <td>&nbsp;</td>
-              <td>Function is called when the input text is altered and data can also be loaded asynchronously. If the results are collected the items in the list can be updated via the function setMenuItems(collectedItems).</td>
-            </tr>
-            <tr>
-              <td>minLength</td>
-              <td>Number</td>
-              <td>1</td>
-              <td>Minimum number of characters before autocomplete starts. When set to 0, the Options are shown on click or focus.</td>
-            </tr>
-            <tr>
-              <td>dropdownOptions</td>
-              <td>Object</td>
-              <td>{}</td>
-              <td>Pass options object for the dropdown initialization.</td>
-            </tr>
-            <tr>
-              <td>allowUnsafeHTML</td>
-              <td>Boolean</td>
-              <td>false</td>
-              <td>If true will render the key from each item directly as HTML. User input MUST be properly sanitized first.</td>
-            </tr>
-          </tbody>
-        </table>
+                <tbody>
+                  <tr>
+                    <td>data</td>
+                    <td>Array</td>
+                    <td>[]</td>
+                    <td>
+                      Array with Data-Objects defining autocomplete options with optional icon (image). The Property <u>id</u> is required which can be string or integer. It is
+                      also possible to use the properties <u>text</u> and <u>image</u>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>isMultiSelect</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Flag which can be set if multiple values can be selected. The Result will be an Array.</td>
+                  </tr>
+                  <tr>
+                    <td>maxDropDownHeight</td>
+                    <td>string</td>
+                    <td>'300px'</td>
+                    <td>The height of the Menu which can be set via css-property.</td>
+                  </tr>
+                  <tr>
+                    <td>onAutocomplete</td>
+                    <td>Function</td>
+                    <td>null</td>
+                    <td>Callback for when autocompleted. After a Selection was made this Function is called. This is also called when a default value is set.</td>
+                  </tr>
+                  <tr>
+                    <td>onSearch</td>
+                    <td>Function(text, el)</td>
+                    <td>&nbsp;</td>
+                    <td>
+                      Function is called when the input text is altered and data can also be loaded asynchronously. If the results are collected the items in the list can be
+                      updated via the function setMenuItems(collectedItems).
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>minLength</td>
+                    <td>Number</td>
+                    <td>1</td>
+                    <td>Minimum number of characters before autocomplete starts. When set to 0, the Options are shown on click or focus.</td>
+                  </tr>
+                  <tr>
+                    <td>dropdownOptions</td>
+                    <td>Object</td>
+                    <td>{}</td>
+                    <td>Pass options object for the dropdown initialization.</td>
+                  </tr>
+                  <tr>
+                    <td>allowUnsafeHTML</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>If true will render the key from each item directly as HTML. User input MUST be properly sanitized first.</td>
+                  </tr>
+                </tbody>
+              </table>
 
-        <h5 class="method-header">
-          onSearch
-        </h5>
-        <p>This is the default Search Function. You can write your own search function by passing in a function with the same
-          parameters. You can load asynchronously data in this function or filter an existing list or dictionary. When the data is loaded
-          you can use setMenuItems() to update the content of the Menu.
-        </p>
-          <pre style="padding-top: 0px;">
+              <h5 class="method-header">onSearch</h5>
+              <p>
+                This is the default Search Function. You can write your own search function by passing in a function with the same parameters. You can load asynchronously data in
+                this function or filter an existing list or dictionary. When the data is loaded you can use setMenuItems() to update the content of the Menu.
+              </p>
+              <pre style="padding-top: 0px">
             <span class="copyMessage">Copied!</span>
             <i class="material-icons copyButton">content_copy</i>
             <code class="language-javascript copiedText">
@@ -647,15 +608,14 @@ onSearch: (text, autocomplete) => {
 }
 </code>
           </pre>
-        <p>To disable sorting and use the values as they appear in the data object, use a falsy value.</p>
-      </div>
+              <p>To disable sorting and use the values as they appear in the data object, use a falsy value.</p>
+            </div>
 
-
-      <div id="methods" class="scrollspy section">
-        <h3 class="header">Methods</h3>
-        <blockquote>
-          <p>All the methods are called on the plugin instance. You can get the plugin instance like this: </p>
-            <pre style="padding-top: 0px;">
+            <div id="methods" class="scrollspy section">
+              <h3 class="header">Methods</h3>
+              <blockquote>
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
+                <pre style="padding-top: 0px">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
               <code class="language-javascript copiedText">
@@ -663,45 +623,32 @@ onSearch: (text, autocomplete) => {
   instance.open();
               </code>
             </pre>
-        </blockquote>
-        <h5 class="method-header">
-          .open();
-        </h5>
-        <p>Open autocomplete dropdown.</p>
-        <pre><code class="language-javascript col s12">
+              </blockquote>
+              <h5 class="method-header">.open();</h5>
+              <p>Open autocomplete dropdown.</p>
+              <pre><code class="language-javascript col s12">
 instance.open();
       </code></pre>
-        
 
-        <h5 class="method-header">
-          .close();
-        </h5>
-        <p>Close autocomplete dropdown.</p>
-        <pre><code class="language-javascript col s12">
+              <h5 class="method-header">.close();</h5>
+              <p>Close autocomplete dropdown.</p>
+              <pre><code class="language-javascript col s12">
 instance.close();
       </code></pre>
-        
 
-        <h5 class="method-header">
-          .selectOption(id);
-        </h5>
-        <p>Select a specific autocomplete option via id-property.</p>
-        <h6>Arguments</h6>
-        <p>
-          <b>id:</b> The id of a data-entry.</p>
-        <pre><code class="language-javascript col s12">
+              <h5 class="method-header">.selectOption(id);</h5>
+              <p>Select a specific autocomplete option via id-property.</p>
+              <h6>Arguments</h6>
+              <p><b>id:</b> The id of a data-entry.</p>
+              <pre><code class="language-javascript col s12">
 instance.selectOption(42);
       </code></pre>
-        
 
-        <h5 class="method-header">
-          .setMenuItems(items);
-        </h5>
-        <p>Updates the visible or selectable items shown in the menu.</p>
-        <h6>Arguments</h6>
-        <p>
-          <b>items:</b> .</p>
-        <pre><code class="language-javascript col s12">
+              <h5 class="method-header">.setMenuItems(items);</h5>
+              <p>Updates the visible or selectable items shown in the menu.</p>
+              <h6>Arguments</h6>
+              <p><b>items:</b> .</p>
+              <pre><code class="language-javascript col s12">
 instance.setMenuItems([
   {id: "Test"},
   {id: 12, text: "Apple"},
@@ -709,155 +656,124 @@ instance.setMenuItems([
   {id: 42, text: "Google", image: 'http://placehold.it/250x250'}
 ]);
       </code></pre>
-        
 
-        <h5 class="method-header">
-          .destroy();
-        </h5>
-        <p>Destroy plugin instance and teardown</p>
-        <pre><code class="language-javascript col s12">
+              <h5 class="method-header">.destroy();</h5>
+              <p>Destroy plugin instance and teardown</p>
+              <pre><code class="language-javascript col s12">
 instance.destroy();
       </code></pre>
-      </div>
+            </div>
 
+            <div id="properties" class="scrollspy section">
+              <h3 class="header">Properties</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
 
-
-
-      <div id="properties" class="scrollspy section">
-        <h3 class="header">Properties</h3>
-        <table class="striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>el</td>
-              <td>Element</td>
-              <td>The DOM element the plugin was initialized with.</td>
-            </tr>
-            <tr>
-              <td>options</td>
-              <td>Object</td>
-              <td>The options the instance was initialized with.</td>
-            </tr>
-            <tr>
-              <td>isOpen</td>
-              <td>Boolean</td>
-              <td>If the autocomplete is open.</td>
-            </tr>
-            <tr>
-              <td>count</td>
-              <td>Number</td>
-              <td>Number of matching autocomplete options.</td>
-            </tr>
-            <tr>
-              <td>activeIndex</td>
-              <td>Integer</td>
-              <td>Index of the current selected option.</td>
-            </tr>
-            <tr>
-              <td>dropdown</td>
-              <td>Dropdown</td>
-              <td>Instance of the dropdown plugin for this autocomplete.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-
-    </div>
-    <div class="col hide-on-small-only m3 xl3">
-      <div class="toc-wrapper">
-        <div style="height: 1px;">
-          <ul class="section table-of-contents">
-            <li>
-              <a href="#introduction">Introduction</a>
-            </li>
-            <li>
-              <a href="#initialization">Initialization</a>
-            </li>
-            <li>
-              <a href="#options">Options</a>
-            </li>
-            <li>
-              <a href="#methods">Methods</a>
-            </li>
-            <li>
-              <a href="#properties">Properties</a>
-            </li>
-          </ul>
+                <tbody>
+                  <tr>
+                    <td>el</td>
+                    <td>Element</td>
+                    <td>The DOM element the plugin was initialized with.</td>
+                  </tr>
+                  <tr>
+                    <td>options</td>
+                    <td>Object</td>
+                    <td>The options the instance was initialized with.</td>
+                  </tr>
+                  <tr>
+                    <td>isOpen</td>
+                    <td>Boolean</td>
+                    <td>If the autocomplete is open.</td>
+                  </tr>
+                  <tr>
+                    <td>count</td>
+                    <td>Number</td>
+                    <td>Number of matching autocomplete options.</td>
+                  </tr>
+                  <tr>
+                    <td>activeIndex</td>
+                    <td>Integer</td>
+                    <td>Index of the current selected option.</td>
+                  </tr>
+                  <tr>
+                    <td>dropdown</td>
+                    <td>Dropdown</td>
+                    <td>Instance of the dropdown plugin for this autocomplete.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col hide-on-small-only m3 xl3">
+            <div class="toc-wrapper">
+              <div style="height: 1px">
+                <ul class="section table-of-contents">
+                  <li>
+                    <a href="#introduction">Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#initialization">Initialization</a>
+                  </li>
+                  <li>
+                    <a href="#options">Options</a>
+                  </li>
+                  <li>
+                    <a href="#methods">Methods</a>
+                  </li>
+                  <li>
+                    <a href="#properties">Properties</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</div>
-
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -877,17 +793,12 @@ instance.destroy();
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>
       </div>
     </footer>
-      
+    
   </body>
 </html>

@@ -39,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Modals</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,63 +333,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Modals</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Modals</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
@@ -421,91 +377,72 @@
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
             <div id="introduction" class="section scrollspy">
               <p class="caption">
-                Use a modal for dialog boxes, confirmation messages, or other
-                content that can be called up. In order for the modal to work
-                you have to add the Modal ID to the link of the trigger. To add
-                a close button, just add the class
+                Use a modal for dialog boxes, confirmation messages, or other content that can be called up. In order for the modal to work you have to add the Modal ID to the link
+                of the trigger. To add a close button, just add the class
                 <code class="language-css">.modal-close</code> to your button.
               </p>
-              <a
-                class="waves-effect waves-light btn modal-trigger"
-                href="#modal1"
-                >Modal</a
-              >
+              <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
               <div id="modal1" class="modal">
                 <div class="modal-content">
                   <h4>Modal Header</h4>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                   </p>
                 </div>
                 <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect btn-flat"
-                    >Disagree</a
-                  >
-                  <a href="#!" class="modal-close waves-effect btn-flat"
-                    >Agree</a
-                  >
+                  <a href="#!" class="modal-close waves-effect btn-flat">Disagree</a>
+                  <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
                 </div>
               </div>
               <div id="modal2" class="modal modal-fixed-footer">
                 <div class="modal-content">
                   <h4>Modal Header</h4>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                   </p>
                 </div>
                 <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect btn-flat"
-                    >Disagree</a
-                  >
-                  <a href="#!" class="modal-close waves-effect btn-flat"
-                    >Agree</a
-                  >
+                  <a href="#!" class="modal-close waves-effect btn-flat">Disagree</a>
+                  <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
                 </div>
               </div>
               <div id="modal3" class="modal bottom-sheet">
@@ -549,56 +486,52 @@
               </div>
             </div>
 
-            <pre><code class="language-markup">
-  &lt;!-- Modal Trigger -->
-  &lt;a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal&lt;/a>
-
-  &lt;!-- Modal Structure -->
-  &lt;div id="modal1" class="modal">
-    &lt;div class="modal-content">
-      &lt;h4>Modal Header&lt;/h4>
-      &lt;p>A bunch of text&lt;/p>
-    &lt;/div>
-    &lt;div class="modal-footer">
-      &lt;a href="#!" class="modal-close waves-effect btn-flat">Agree&lt;/a>
-    &lt;/div>
-  &lt;/div>
+            <pre><code class="language-html">
+<xmp>
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
+  </div>
+</div>
+</xmp>
           </code></pre>
 
             <div id="button-trigger" class="scrollspy section">
               <h3 class="header">Modals with Button trigger</h3>
-              <p>
-                If you prefer to use a button to open a modal specify the Modal
-                ID in <code class="language-markup">data-target</code> rather
-                than the href attribute.
-              </p>
-
-              <pre><code class="language-markup">
-  &lt;!-- Modal Trigger -->
-  &lt;button data-target="modal1" class="btn modal-trigger">Modal&lt;/button>
-          </code></pre>
+              <p>If you prefer to use a button to open a modal specify the Modal ID in <code class="language-html">data-target</code> rather than the href attribute.</p>
+              <pre><code class="language-html">
+<xmp>
+<!-- Modal Trigger -->
+<button data-target="modal1" class="btn modal-trigger">Modal</button>
+</xmp>
+</code></pre>
             </div>
 
             <div id="initialization" class="scrollspy section">
               <h3 class="header">Initialization</h3>
               <p>To open a modal using a trigger:</p>
               <pre><code class="language-javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, {
-      // specify options here
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, {
+    // specify options here
   });
+});
           </code></pre>
             </div>
 
             <div id="options" class="scrollspy section">
               <h3 class="header">Options</h3>
               <p>
-                You can customize the behavior of each modal using these
-                options. For example, you can call a custom function to run when
-                a modal is dismissed. To do this, just place your function in
-                the initialization code as shown below.
+                You can customize the behavior of each modal using these options. For example, you can call a custom function to run when a modal is dismissed. To do this, just
+                place your function in the initialization code as shown below.
               </p>
               <table class="striped">
                 <thead>
@@ -663,9 +596,7 @@
                     <td>dismissible</td>
                     <td>Boolean</td>
                     <td>true</td>
-                    <td>
-                      Allow modal to be dismissed by keyboard or overlay click.
-                    </td>
+                    <td>Allow modal to be dismissed by keyboard or overlay click.</td>
                   </tr>
                   <tr>
                     <td>startingTop</td>
@@ -686,33 +617,24 @@
             <div id="methods" class="scrollspy section">
               <h3 class="header">Methods</h3>
               <blockquote>
-                <p>
-                  All the methods are called on the plugin instance. You can get
-                  the plugin instance like this:
-                </p>
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
   var instance = M.Modal.getInstance(elem);
         </code></pre>
               </blockquote>
-              <h5 class="method-header">
-                .open();
-              </h5>
+              <h5 class="method-header">.open();</h5>
               <p>Open modal</p>
               <pre><code class="language-javascript col s12">
 instance.open();
       </code></pre>
 
-              <h5 class="method-header">
-                .close();
-              </h5>
+              <h5 class="method-header">.close();</h5>
               <p>Close modal</p>
               <pre><code class="language-javascript col s12">
 instance.close();
       </code></pre>
 
-              <h5 class="method-header">
-                .destroy();
-              </h5>
+              <h5 class="method-header">.destroy();</h5>
               <p>Destroy plugin instance and teardown</p>
               <pre><code class="language-javascript col s12">
 instance.destroy();
@@ -757,60 +679,49 @@ instance.destroy();
 
             <div id="fixed-footer" class="scrollspy section">
               <h3 class="header">Modals with Fixed Footer</h3>
-              <a
-                class="waves-effect waves-light btn modal-trigger"
-                href="#modal2"
-                >Modal With Fixed Footer</a
-              >
+              <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Modal With Fixed Footer</a>
               <p>
-                If you have content that is very long and you want the action
-                buttons to be visible all the time, you can add the
-                <code class="language-markup">modal-fixed-footer</code> class to
-                the modal.
+                If you have content that is very long and you want the action buttons to be visible all the time, you can add the
+                <code class="language-html">modal-fixed-footer</code> class to the modal.
               </p>
-              <pre><code class="language-markup">
-  &lt;!-- Modal Trigger -->
-  &lt;a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal&lt;/a>
 
-  &lt;!-- Modal Structure -->
-  &lt;div id="modal1" class="modal modal-fixed-footer">
-    &lt;div class="modal-content">
-      &lt;h4>Modal Header&lt;/h4>
-      &lt;p>A bunch of text&lt;/p>
-    &lt;/div>
-    &lt;div class="modal-footer">
-      &lt;a href="#!" class="modal-close waves-effect btn-flat">Agree&lt;/a>
-    &lt;/div>
-  &lt;/div>
-          </code></pre>
+              <pre><code class="language-html">
+<xmp>
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+<!-- Modal Structure -->
+<div id="modal1" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
+  </div>
+</div>
+</xmp>
+            </code></pre>
             </div>
 
             <div id="bottom-sheet" class="scrollspy section">
               <h3 class="header">Bottom Sheet Modals</h3>
-              <a
-                class="waves-effect waves-light btn modal-trigger"
-                href="#modal3"
-                >Modal Bottom Sheet Style</a
-              >
-              <p>
-                Bottom Sheet Modals are good for displaying actions to the user
-                on the bottom of a screen. They still act the same as regular
-                modals.
-              </p>
-              <pre><code class="language-markup">
-  &lt;!-- Modal Trigger -->
-  &lt;a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal&lt;/a>
-
-  &lt;!-- Modal Structure -->
-  &lt;div id="modal1" class="modal bottom-sheet">
-    &lt;div class="modal-content">
-      &lt;h4>Modal Header&lt;/h4>
-      &lt;p>A bunch of text&lt;/p>
-    &lt;/div>
-    &lt;div class="modal-footer">
-      &lt;a href="#!" class="modal-close waves-effect btn-flat">Agree&lt;/a>
-    &lt;/div>
-  &lt;/div>
+              <a class="waves-effect waves-light btn modal-trigger" href="#modal3">Modal Bottom Sheet Style</a>
+              <p>Bottom Sheet Modals are good for displaying actions to the user on the bottom of a screen. They still act the same as regular modals.</p>
+              <pre><code class="language-html">
+<xmp>
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
+  </div>
+</div>
+</xmp>
           </code></pre>
             </div>
           </div>
@@ -818,7 +729,7 @@ instance.destroy();
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li>
                     <a href="#introduction">Introduction</a>
@@ -851,65 +762,44 @@ instance.destroy();
         </div>
       </div>
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -929,12 +819,7 @@ instance.destroy();
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

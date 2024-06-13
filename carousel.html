@@ -39,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Carousel</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,63 +333,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Carousel</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Carousel</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
@@ -453,14 +409,16 @@
               <pre style="padding-top: 0px;">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-  &lt;div class="carousel">
-    &lt;a class="carousel-item" href="#one!">&lt;img src="images/placeholder/250x250_a.png">&lt;/a>
-    &lt;a class="carousel-item" href="#two!">&lt;img src="images/placeholder/250x250_b.png">&lt;/a>
-    &lt;a class="carousel-item" href="#three!">&lt;img src="images/placeholder/250x250_c.png">&lt;/a>
-    &lt;a class="carousel-item" href="#four!">&lt;img src="images/placeholder/250x250_d.png">&lt;/a>
-    &lt;a class="carousel-item" href="#five!">&lt;img src="images/placeholder/250x250_e.png">&lt;/a>
-  &lt;/div>
+          <code class="language-html copiedText">
+</xmp>
+<div class="carousel">
+  <a class="carousel-item" href="#one!"><img src="images/placeholder/250x250_a.png"></a>
+  <a class="carousel-item" href="#two!"><img src="images/placeholder/250x250_b.png"></a>
+  <a class="carousel-item" href="#three!"><img src="images/placeholder/250x250_c.png"></a>
+  <a class="carousel-item" href="#four!"><img src="images/placeholder/250x250_d.png"></a>
+  <a class="carousel-item" href="#five!"><img src="images/placeholder/250x250_e.png"></a>
+</div>
+</xmp>
           </code>
         </pre>
             </div>
@@ -568,9 +526,7 @@
                 <pre style="padding-top: 0px;">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-javascript copiedText">
-  var instance = M.Carousel.getInstance(elem);
-              </code>
+              <code class="language-javascript copiedText">var instance = M.Carousel.getInstance(elem);</code>
             </pre>
               </blockquote>
               <h5 class="method-header">
@@ -584,10 +540,10 @@
               <p>
                 <b>Integer (optional):</b> How many times the carousel slides.
               </p>
-              <pre><code class="language-javascript col s12">
-instance.next();
+              <pre>
+<code class="language-javascript col s12">instance.next();
 instance.next(3); // Move next n times.
-      </code></pre>
+</code></pre>
 
               <h5 class="method-header">
                 .prev();
@@ -600,10 +556,9 @@ instance.next(3); // Move next n times.
               <p>
                 <b>Integer (optional):</b> How many times the carousel slides.
               </p>
-              <pre><code class="language-javascript col s12">
-instance.prev();
+              <pre><code class="language-javascript col s12">instance.prev();
 instance.prev(3); // Move previous n times.
-      </code></pre>
+</code></pre>
 
               <h5 class="method-header">
                 .set();
@@ -611,18 +566,15 @@ instance.prev(3); // Move previous n times.
               <p>Move carousel to nth slide</p>
               <h6>Arguments</h6>
               <p><b>Integer:</b> Index of slide.</p>
-              <pre><code class="language-javascript col s12">
-instance.set();
+              <pre><code class="language-javascript col s12">instance.set();
 instance.set(3); // Set to nth slide.
-      </code></pre>
+</code></pre>
 
               <h5 class="method-header">
                 .destroy();
               </h5>
               <p>Destroy plugin instance and teardown</p>
-              <pre><code class="language-javascript col s12">
-instance.destroy();
-      </code></pre>
+              <pre><code class="language-javascript col s12">instance.destroy();</code></pre>
             </div>
 
             <div id="properties" class="scrollspy section">
@@ -697,13 +649,15 @@ instance.destroy();
               <pre style="padding-top: 0px;">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-  &lt;div class="carousel carousel-slider">
-    &lt;a class="carousel-item" href="#one!">&lt;img src="images/placeholder/800x400_a.jpg">&lt;/a>
-    &lt;a class="carousel-item" href="#two!">&lt;img src="images/placeholder/800x400_b.jpg">&lt;/a>
-    &lt;a class="carousel-item" href="#three!">&lt;img src="images/placeholder/800x400_c.jpg">&lt;/a>
-    &lt;a class="carousel-item" href="#four!">&lt;img src="images/placeholder/800x400_d.jpg">&lt;/a>
-  &lt;/div>
+          <code class="language-html copiedText">
+<xmp>
+<div class="carousel carousel-slider">
+  <a class="carousel-item" href="#one!"><img src="images/placeholder/800x400_a.jpg"></a>
+  <a class="carousel-item" href="#two!"><img src="images/placeholder/800x400_b.jpg"></a>
+  <a class="carousel-item" href="#three!"><img src="images/placeholder/800x400_c.jpg"></a>
+  <a class="carousel-item" href="#four!"><img src="images/placeholder/800x400_d.jpg"></a>
+</div>
+</xmp>
           </code>
         </pre>
 
@@ -725,7 +679,7 @@ instance.destroy();
                 The carousel doesn't only support images but also allows you to
                 make content carousels. You can add fixed items to your carousel
                 by adding a div with the class
-                <code class="language-markup">carousel-fixed-item</code> and
+                <code class="language-html">carousel-fixed-item</code> and
                 adding your fixed content in there.
               </p>
               <p>
@@ -760,28 +714,30 @@ instance.destroy();
               <pre style="padding-top: 0px;">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-  &lt;div class="carousel carousel-slider center">
-    &lt;div class="carousel-fixed-item center">
-      &lt;a class="btn waves-effect white grey-text darken-text-2">button&lt;/a>
-    &lt;/div>
-    &lt;div class="carousel-item red white-text" href="#one!">
-      &lt;h2>First Panel&lt;/h2>
-      &lt;p class="white-text">This is your first panel&lt;/p>
-    &lt;/div>
-    &lt;div class="carousel-item amber white-text" href="#two!">
-      &lt;h2>Second Panel&lt;/h2>
-      &lt;p class="white-text">This is your second panel&lt;/p>
-    &lt;/div>
-    &lt;div class="carousel-item green white-text" href="#three!">
-      &lt;h2>Third Panel&lt;/h2>
-      &lt;p class="white-text">This is your third panel&lt;/p>
-    &lt;/div>
-    &lt;div class="carousel-item blue white-text" href="#four!">
-      &lt;h2>Fourth Panel&lt;/h2>
-      &lt;p class="white-text">This is your fourth panel&lt;/p>
-    &lt;/div>
-  &lt;/div>
+          <code class="language-html copiedText">
+<xmp>
+<div class="carousel carousel-slider center">
+  <div class="carousel-fixed-item center">
+    <a class="btn waves-effect white grey-text darken-text-2">button</a>
+  </div>
+  <div class="carousel-item red white-text" href="#one!">
+    <h2>First Panel</h2>
+    <p class="white-text">This is your first panel</p>
+  </div>
+  <div class="carousel-item amber white-text" href="#two!">
+    <h2>Second Panel</h2>
+    <p class="white-text">This is your second panel</p>
+  </div>
+  <div class="carousel-item green white-text" href="#three!">
+    <h2>Third Panel</h2>
+    <p class="white-text">This is your third panel</p>
+  </div>
+  <div class="carousel-item blue white-text" href="#four!">
+    <h2>Fourth Panel</h2>
+    <p class="white-text">This is your fourth panel</p>
+  </div>
+</div>
+</xmp>
           </code>
         </pre>
               <pre style="padding-top: 0px;">
@@ -831,65 +787,44 @@ instance.destroy();
       </div>
     </main>
 
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -909,12 +844,7 @@ instance.destroy();
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

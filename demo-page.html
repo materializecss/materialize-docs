@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <script>
+      function toggleTheme() {
+        const prefersColorSchemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const state = localStorage.getItem("theme-mode") || prefersColorSchemeDark;
+        const newState = state === "light" ? "dark" : "light";
+        localStorage.setItem("theme-mode", newState);
+        document.documentElement.setAttribute("theme", newState);
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
+  </head>
+  <body>
+    <main class="container">
+      <h1>Test</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nobis odit officiis officia optio nam id corporis! Consequatur, hic minima porro totam, quidem et
+        laboriosam neque vitae voluptatibus, maxime laborum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit rerum pariatur sed omnis quam iusto adipisci eveniet.
+        Incidunt eaque a alias, voluptas illum sequi, exercitationem, obcaecati excepturi accusantium voluptate hic. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Quisquam consectetur ab a obcaecati? Exercitationem dolore incidunt, fuga corporis distinctio harum vitae iure consectetur odio eaque. Voluptatem quod provident totam
+        nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quo quia eum a! Minima nulla ex nisi id error temporibus! Omnis a quibusdam eaque itaque
+        asperiores odit quasi at quis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ullam sapiente autem, earum, quas ea, quam cupiditate illo laudantium ratione
+        voluptatem culpa commodi iure dicta! Animi, eaque optio! Reprehenderit, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error velit in veritatis
+        ducimus quod molestiae at deserunt beatae nam ad perferendis sed quibusdam fugiat necessitatibus amet, natus vero! Labore, nobis? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Recusandae veniam, quaerat ab expedita necessitatibus, distinctio sequi itaque quibusdam sint sit, magnam excepturi. Provident commodi repellendus,
+        asperiores nihil similique minima voluptas.
+      </p>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+      <p class="error-text">This is an Error</p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nihil ut explicabo provident aut, nisi sint atque fugiat aliquid nam tenetur beatae debitis dolore nemo,
+        consequatur natus temporibus vitae cum.
+      </p>
+      <div class="divider"></div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere exercitationem aperiam nostrum corrupti. Soluta cum alias, assumenda dolorem perspiciatis mollitia aliquam
+        nemo amet corporis, sapiente dignissimos. Quas voluptatibus sunt a!
+      </p>
+
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Desicion</h4>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
+            repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect btn-flat">Disagree</a>
+          <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
+        </div>
+      </div>
+    </main>
+    
+  </body>
+</html>

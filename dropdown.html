@@ -39,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Dropdown</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,63 +333,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Dropdown</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Dropdown</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
@@ -422,19 +378,14 @@
             <div id="introduction" class="scrollspy section">
               <p class="caption">
                 Add a dropdown list to any button. Make sure that the
-                <code class="language-markup">data-target</code> attribute
-                matches the id in the
-                <code class="language-markup">&lt;ul></code> tag. You can add a
-                divider with the
-                <code class="language-markup"
-                  >&lt;li class="divider">&lt;/li></code
-                >
+                <code class="language-html">data-target</code> attribute matches the id in the <code class="language-html">ul</code> tag. You can add a divider with the
+                <code class="language-html">
+                  <xmp><li class="divider"></li></xmp>
+                </code>
                 tag. You can also add icons. Just add the icon inside the
-                <code class="language-markup">anchor</code> tag.
+                <code class="language-html">anchor</code> tag.
               </p>
-              <a class="dropdown-trigger btn" href="#" data-target="dropdown1"
-                >Drop Me!</a
-              >
+              <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Drop Me!</a>
               <ul id="dropdown1" class="dropdown-content">
                 <li>
                   <a href="#!">one</a>
@@ -447,50 +398,43 @@
                   <a href="#!">three</a>
                 </li>
                 <li>
-                  <a href="#!">
-                    <i class="material-icons">view_module</i>four</a
-                  >
+                  <a href="#!"> <i class="material-icons">view_module</i>four</a>
                 </li>
                 <li>
                   <a href="#!"> <i class="material-icons">cloud</i>five</a>
                 </li>
               </ul>
 
-              <pre style="padding-top: 0px;">
+              <pre style="padding-top: 0px">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-markup copiedText">
-  &lt;!-- Dropdown Trigger -->
-  &lt;a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!&lt;/a>
-
-  &lt;!-- Dropdown Structure -->
-  &lt;ul id='dropdown1' class='dropdown-content'>
-    &lt;li>&lt;a href="#!">one&lt;/a>&lt;/li>
-    &lt;li>&lt;a href="#!">two&lt;/a>&lt;/li>
-    &lt;li class="divider" tabindex="-1">&lt;/li>
-    &lt;li>&lt;a href="#!">three&lt;/a>&lt;/li>
-    &lt;li>&lt;a href="#!">&lt;i class="material-icons">view_module&lt;/i>four&lt;/a>&lt;/li>
-    &lt;li>&lt;a href="#!">&lt;i class="material-icons">cloud&lt;/i>five&lt;/a>&lt;/li>
-  &lt;/ul>
-          </code>
-        </pre>
+<code class="language-html copiedText"><xmp><!-- Dropdown Trigger -->
+<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider" tabindex="-1"></li>
+  <li><a href="#!">three</a></li>
+  <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+  <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+</ul>
+</xmp></code></pre>
             </div>
 
             <div id="initialization" class="section scrollspy">
               <h3 class="header">Initialization</h3>
 
-              <pre style="padding-top: 0px;">
+              <pre style="padding-top: 0px">
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
-          <code class="language-javascript copiedText">
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, {
-      // specify options here
-    });
+<code class="language-javascript copiedText">
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  var instances = M.Dropdown.init(elems, {
+    // specify options here
   });
-          </code>
-        </pre>
+});</code></pre>
             </div>
 
             <div id="options" class="section scrollspy">
@@ -516,27 +460,19 @@
                     <td>autoTrigger</td>
                     <td>Boolean</td>
                     <td>true</td>
-                    <td>
-                      If true, automatically focus dropdown el for keyboard.
-                    </td>
+                    <td>If true, automatically focus dropdown el for keyboard.</td>
                   </tr>
                   <tr>
                     <td>constrainWidth</td>
                     <td>Boolean</td>
                     <td>true</td>
-                    <td>
-                      If true, constrainWidth to the size of the dropdown
-                      activator.
-                    </td>
+                    <td>If true, constrainWidth to the size of the dropdown activator.</td>
                   </tr>
                   <tr>
                     <td>container</td>
                     <td>Element</td>
                     <td>null</td>
-                    <td>
-                      Provide an element that will be the bounding container of
-                      the dropdown.
-                    </td>
+                    <td>Provide an element that will be the bounding container of the dropdown.</td>
                   </tr>
                   <tr>
                     <td>coverTrigger</td>
@@ -560,9 +496,7 @@
                     <td>inDuration</td>
                     <td>Number</td>
                     <td>150</td>
-                    <td>
-                      The duration of the transition enter in milliseconds.
-                    </td>
+                    <td>The duration of the transition enter in milliseconds.</td>
                   </tr>
                   <tr>
                     <td>outDuration</td>
@@ -602,14 +536,7 @@
                 <div class="row">
                   <div class="col s12 m6">
                     <!-- Dropdown Trigger 1 -->
-                    <a
-                      id="dropdown-demo-left"
-                      class="dropdown-trigger btn"
-                      href="#"
-                      data-target="dropdown2"
-                      style="width: 100%"
-                      >Left DropDown!</a
-                    >
+                    <a id="dropdown-demo-left" class="dropdown-trigger btn" href="#" data-target="dropdown2" style="width: 100%">Left DropDown!</a>
                     <!-- Dropdown Structure 1 -->
                     <ul id="dropdown2" class="dropdown-content">
                       <li><a href="#!">one</a></li>
@@ -617,9 +544,7 @@
                       <li class="divider" tabindex="-1"></li>
                       <li><a href="#!">three</a></li>
                       <li>
-                        <a href="#!"
-                          ><i class="material-icons">view_module</i>four</a
-                        >
+                        <a href="#!"><i class="material-icons">view_module</i>four</a>
                       </li>
                       <li>
                         <a href="#!"><i class="material-icons">cloud</i>five</a>
@@ -628,14 +553,7 @@
                   </div>
                   <div class="col s12 m6">
                     <!-- Dropdown Trigger 2 -->
-                    <a
-                      id="dropdown-demo-right"
-                      class="dropdown-trigger btn"
-                      href="#"
-                      data-target="dropdown3"
-                      style="width: 100%"
-                      >Right DropDown!</a
-                    >
+                    <a id="dropdown-demo-right" class="dropdown-trigger btn" href="#" data-target="dropdown3" style="width: 100%">Right DropDown!</a>
                     <!-- Dropdown Structure 2 -->
                     <ul id="dropdown3" class="dropdown-content">
                       <li><a href="#!">one</a></li>
@@ -643,9 +561,7 @@
                       <li class="divider" tabindex="-1"></li>
                       <li><a href="#!">three</a></li>
                       <li>
-                        <a href="#!"
-                          ><i class="material-icons">view_module</i>four</a
-                        >
+                        <a href="#!"><i class="material-icons">view_module</i>four</a>
                       </li>
                       <li>
                         <a href="#!"><i class="material-icons">cloud</i>five</a>
@@ -655,10 +571,8 @@
                 </div>
 
                 <script>
-                  document.addEventListener("DOMContentLoaded", function() {
-                    var elems = document.querySelectorAll(
-                      ".dropdown-trigger"
-                    )[0];
+                  document.addEventListener("DOMContentLoaded", function () {
+                    var elems = document.querySelectorAll(".dropdown-trigger")[0];
                     var instances = M.Dropdown.init(elems, {
                       // the dropdown is aligned to left
                       alignment: "left",
@@ -666,10 +580,8 @@
                       constrainWidth: false,
                     });
                   });
-                  document.addEventListener("DOMContentLoaded", function() {
-                    var elems = document.querySelectorAll(
-                      ".dropdown-trigger"
-                    )[1];
+                  document.addEventListener("DOMContentLoaded", function () {
+                    var elems = document.querySelectorAll(".dropdown-trigger")[1];
                     var instances = M.Dropdown.init(elems, {
                       // the dropdown is aligned to left
                       alignment: "right",
@@ -680,69 +592,44 @@
                 </script>
 
                 <pre>
-            <code class="language-javascript copiedText">
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger')[0];
-    var instances = M.Dropdown.init(elems, {
-      // the dropdown is aligned to left
-      alignment: 'left',
-      // enabled for example to be visible
-      constrainWidth: false,
-    });
-  });</code>
-          </pre>
+<code class="language-javascript copiedText">
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.dropdown-trigger')[0];
+  var instances = M.Dropdown.init(elems, {
+    // the dropdown is aligned to left
+    alignment: 'left',
+    // enabled for example to be visible
+    constrainWidth: false,
+  });
+});</code></pre>
               </div>
             </div>
 
             <div id="methods" class="scrollspy section">
               <h3 class="header">Methods</h3>
               <blockquote>
-                <p>
-                  All the methods are called on the plugin instance. You can get
-                  the plugin instance like this:
-                </p>
-                <pre style="padding-top: 0px;">
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
+                <pre style="padding-top: 0px">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-javascript copiedText">
-    var instance = M.Dropdown.getInstance(elem);
-              </code>
+              <code class="language-javascript copiedText">var instance = M.Dropdown.getInstance(elem);</code>
             </pre>
               </blockquote>
-              <h5 class="method-header">
-                .open();
-              </h5>
+              <h5 class="method-header">.open();</h5>
               <p>Open dropdown.</p>
-              <pre><code class="language-javascript col s12">
-  instance.open();
-        </code></pre>
+              <pre><code class="language-javascript col s12">instance.open();</code></pre>
 
-              <h5 class="method-header">
-                .close();
-              </h5>
+              <h5 class="method-header">.close();</h5>
               <p>Close dropdown.</p>
-              <pre><code class="language-javascript col s12">
-  instance.close();
-        </code></pre>
+              <pre><code class="language-javascript col s12">instance.close();</code></pre>
 
-              <h5 class="method-header">
-                .recalculateDimensions();
-              </h5>
-              <p>
-                While dropdown is open, you can recalculate its dimensions if
-                its contents have changed.
-              </p>
-              <pre><code class="language-javascript col s12">
-  instance.recalculateDimensions();
-        </code></pre>
+              <h5 class="method-header">.recalculateDimensions();</h5>
+              <p>While dropdown is open, you can recalculate its dimensions if its contents have changed.</p>
+              <pre><code class="language-javascript col s12">instance.recalculateDimensions();</code></pre>
 
-              <h5 class="method-header">
-                .destroy();
-              </h5>
+              <h5 class="method-header">.destroy();</h5>
               <p>Destroy plugin instance and teardown</p>
-              <pre><code class="language-javascript col s12">
-  instance.destroy();
-        </code></pre>
+              <pre><code class="language-javascript col s12">instance.destroy();</code></pre>
             </div>
 
             <div id="properties" class="scrollspy section">
@@ -800,7 +687,7 @@
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li>
                     <a href="#introduction">Introduction</a>
@@ -824,65 +711,44 @@
         </div>
       </div>
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -902,12 +768,7 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

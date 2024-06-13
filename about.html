@@ -39,8 +39,13 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <style>
+      .promo {
+        width: 100%;
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +55,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>About</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +85,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,63 +338,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">About</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Learn about Material Design and our Project Team.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">About</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Learn about Material Design and our Project Team.</h4>
           </div>
         </div>
       </section>
@@ -425,20 +386,11 @@
             <div id="materialdesign" class="section scrollspy">
               <h2 class="header">Material Design</h2>
               <p class="caption">
-                Created and designed by Google, Material Design is a design
-                language that combines the classic principles of successful
-                design along with innovation and technology. Google's goal is to
-                develop a system of design that allows for a unified user
-                experience across all their products on any platform.
+                Created and designed by Google, Material Design is a design language that combines the classic principles of successful design along with innovation and technology.
+                Google's goal is to develop a system of design that allows for a unified user experience across all their products on any platform.
               </p>
               <div class="video-container">
-                <iframe
-                  width="853"
-                  height="480"
-                  src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
+                <iframe width="853" height="480" src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
               </div>
               <div class="section">
                 <h3 class="header light">Principles</h3>
@@ -447,12 +399,9 @@
                     <img class="promo" src="images/metaphor.png" />
                     <h4 class="center">Material is the metaphor</h4>
                     <p>
-                      The metaphor of material defines the relationship between
-                      space and motion. The idea is that the technology is
-                      inspired by paper and ink and is utilized to facilitate
-                      creativity and innovation. Surfaces and edges provide
-                      familiar visual cues that allow users to quickly
-                      understand the technology beyond the physical world.
+                      The metaphor of material defines the relationship between space and motion. The idea is that the technology is inspired by paper and ink and is utilized to
+                      facilitate creativity and innovation. Surfaces and edges provide familiar visual cues that allow users to quickly understand the technology beyond the
+                      physical world.
                     </p>
                   </div>
 
@@ -460,11 +409,8 @@
                     <img class="promo" src="images/bold.png" />
                     <h4 class="center">Bold, graphic, intentional</h4>
                     <p>
-                      Elements and components such as grids, typography, color,
-                      and imagery are not only visually pleasing, but also
-                      create a sense of hierarchy, meaning, and focus. Emphasis
-                      on different actions and components create a visual guide
-                      for users.
+                      Elements and components such as grids, typography, color, and imagery are not only visually pleasing, but also create a sense of hierarchy, meaning, and
+                      focus. Emphasis on different actions and components create a visual guide for users.
                     </p>
                   </div>
 
@@ -472,13 +418,9 @@
                     <img class="promo" src="images/motion.png" />
                     <h4 class="center">Motion provides meaning</h4>
                     <p>
-                      Motion allows the user to draw a parallel between what
-                      they see on the screen and in real life. By providing both
-                      feedback and familiarity, this allows the user to fully
-                      immerse him or herself into unfamiliar technology. Motion
-                      contains consistency and continuity in addition to giving
-                      users additional subconscious information about objects
-                      and transformations.
+                      Motion allows the user to draw a parallel between what they see on the screen and in real life. By providing both feedback and familiarity, this allows the
+                      user to fully immerse him or herself into unfamiliar technology. Motion contains consistency and continuity in addition to giving users additional
+                      subconscious information about objects and transformations.
                     </p>
                   </div>
                 </div>
@@ -492,11 +434,8 @@
               <h5>The community</h5>
 
               <p class="caption">
-                Due to inactivity of the original developers, MaterializeCSS has
-                been forked by a community of enthusiasts, which continues to be
-                fully maintained by open source principes since 2021. Without
-                the many contributors who participated in this fork, this
-                project would probably not have received any updates anymore.
+                Due to inactivity of the original developers, MaterializeCSS has been forked by a community of enthusiasts, which continues to be fully maintained by open source
+                principes since 2021. Without the many contributors who participated in this fork, this project would probably not have received any updates anymore.
               </p>
 
               <div class="center">
@@ -512,18 +451,14 @@
 
               <h5>The original team</h5>
               <p class="caption">
-                <a href="https://www.materializecss.com" target="_blank"
-                  >MaterializeCSS</a
-                >
-                was originally launched in 2014 by a team of students from
-                Carnegie Mellon University. After 4 years of development, the
-                latest official release was released in September 2018 and
-                received more than 38K stars on GitHub.
+                <a href="https://www.materializecss.com" target="_blank">MaterializeCSS</a>
+                was originally launched in 2014 by a team of students from Carnegie Mellon University. After 4 years of development, the latest official release was released in
+                September 2018 and received more than 38K stars on GitHub.
               </p>
 
               <div class="center">
                 <div class="image-container">
-                  <img src="images/materialize_team.jpeg" style="width:100%;" />
+                  <img src="images/materialize_team.jpeg" style="width: 100%" />
                 </div>
               </div>
             </div>
@@ -532,7 +467,7 @@
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li><a href="#materialdesign">Material Design</a></li>
                   <li><a href="#team">Meet the Team</a></li>
@@ -544,65 +479,44 @@
       </div>
       <!-- End Container -->
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -622,12 +536,7 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

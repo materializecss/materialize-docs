@@ -39,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Pickers</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,63 +333,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Pickers</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Pickers</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
@@ -421,22 +377,12 @@
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
             <div id="date-picker" class="section scrollspy">
               <h3 class="header">Date Picker</h3>
-              <p>
-                The datepicker allows users to select a date from an interactive
-                calendar.
-              </p>
+              <p>The datepicker allows users to select a date from an interactive calendar.</p>
               <div class="input-field">
-                <input
-                  id="birthdate"
-                  type="text"
-                  class="datepicker"
-                  placeholder=" "
-                />
+                <input id="birthdate" type="text" class="datepicker" placeholder=" " />
                 <label for="birthdate">Birthdate</label>
               </div>
-              <pre><code class="language-markup">
-  &lt;input type="text" class="datepicker">
-        </code></pre>
+              <pre><code class="language-html"><xmp><input type="text" class="datepicker"></xmp></code></pre>
 
               <div class="section">
                 <h5>Initialization</h5>
@@ -473,19 +419,13 @@
                       <td>format</td>
                       <td>String || Function</td>
                       <td>'mmm dd, yyyy'</td>
-                      <td>
-                        The date output format for the input field value or a
-                        function taking the date and outputting the formatted
-                        date string.
-                      </td>
+                      <td>The date output format for the input field value or a function taking the date and outputting the formatted date string.</td>
                     </tr>
                     <tr>
                       <td>parse</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>
-                        Used to create date object from current input string.
-                      </td>
+                      <td>Used to create date object from current input string.</td>
                     </tr>
                     <tr>
                       <td>defaultDate</td>
@@ -533,10 +473,7 @@
                       <td>yearRange</td>
                       <td>Number || Array</td>
                       <td>10</td>
-                      <td>
-                        Number of years either side, or array of upper/lower
-                        range.
-                      </td>
+                      <td>Number of years either side, or array of upper/lower range.</td>
                     </tr>
                     <tr>
                       <td>yearRangeReverse</td>
@@ -560,20 +497,13 @@
                       <td>showDaysInNextAndPreviousMonths</td>
                       <td>Boolean</td>
                       <td>false</td>
-                      <td>
-                        Render days of the calendar grid that fall in the next
-                        or previous month.
-                      </td>
+                      <td>Render days of the calendar grid that fall in the next or previous month.</td>
                     </tr>
                     <tr>
                       <td>container</td>
                       <td>Element || String</td>
                       <td>null</td>
-                      <td>
-                        Specify a DOM element OR selector for a DOM element to
-                        render the calendar in, by default it will be placed
-                        before the input.
-                      </td>
+                      <td>Specify a DOM element OR selector for a DOM element to render the calendar in, by default it will be placed before the input.</td>
                     </tr>
                     <tr>
                       <td>showClearBtn</td>
@@ -591,19 +521,13 @@
                       <td>events</td>
                       <td>Array</td>
                       <td>[]</td>
-                      <td>
-                        An array of string returned by `Date.toDateString()`,
-                        indicating there are events in the specified days.
-                      </td>
+                      <td>An array of string returned by `Date.toDateString()`, indicating there are events in the specified days.</td>
                     </tr>
                     <tr>
                       <td>onSelect</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>
-                        Callback function when date is selected, first parameter
-                        is the newly selected date.
-                      </td>
+                      <td>Callback function when date is selected, first parameter is the newly selected date.</td>
                     </tr>
                     <tr>
                       <td>onOpen</td>
@@ -621,9 +545,7 @@
                       <td>onDraw</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>
-                        Callback function when Datepicker HTML is refreshed.
-                      </td>
+                      <td>Callback function when Datepicker HTML is refreshed.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -631,9 +553,7 @@
 
               <div class="section">
                 <h5>Date format options</h5>
-                <p>
-                  Use these in the format option to customize your date string.
-                </p>
+                <p>Use these in the format option to customize your date string.</p>
                 <table class="striped">
                   <thead>
                     <tr>
@@ -656,16 +576,12 @@
                     </tr>
                     <tr>
                       <td>ddd</td>
-                      <td>
-                        Day of the week in short form set by the i18n option.
-                      </td>
+                      <td>Day of the week in short form set by the i18n option.</td>
                       <td>Sun-Sat</td>
                     </tr>
                     <tr>
                       <td>dddd</td>
-                      <td>
-                        Day of the week in full form set by the i18n option.
-                      </td>
+                      <td>Day of the week in full form set by the i18n option.</td>
                       <td>Sunday-Saturday</td>
                     </tr>
                     <tr>
@@ -680,16 +596,12 @@
                     </tr>
                     <tr>
                       <td>mmm</td>
-                      <td>
-                        Month of the year in short form set by the i18n option.
-                      </td>
+                      <td>Month of the year in short form set by the i18n option.</td>
                       <td>Jan-Dec</td>
                     </tr>
                     <tr>
                       <td>mmmm</td>
-                      <td>
-                        Month of the year in full form set by the i18n option.
-                      </td>
+                      <td>Month of the year in full form set by the i18n option.</td>
                       <td>January-December</td>
                     </tr>
                     <tr>
@@ -839,9 +751,7 @@
                     <tr>
                       <td>el</td>
                       <td>Element</td>
-                      <td>
-                        The input element the plugin was initialized with.
-                      </td>
+                      <td>The input element the plugin was initialized with.</td>
                     </tr>
                     <tr>
                       <td>options</td>
@@ -866,41 +776,30 @@
                 <h5>Methods</h5>
 
                 <blockquote>
-                  <p>
-                    All the methods are called on the plugin instance. You can
-                    get the plugin instance like this:
-                  </p>
+                  <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                   <pre><code class="language-javascript col s12">
   var instance = M.Datepicker.getInstance(elem);
             </code></pre>
                 </blockquote>
-                <h5 class="method-header">
-                  .open();
-                </h5>
+                <h5 class="method-header">.open();</h5>
                 <p>Open datepicker</p>
                 <pre><code class="language-javascript col s12">
 instance.open();
           </code></pre>
 
-                <h5 class="method-header">
-                  .close();
-                </h5>
+                <h5 class="method-header">.close();</h5>
                 <p>Close datepicker</p>
                 <pre><code class="language-javascript col s12">
 instance.close();
           </code></pre>
 
-                <h5 class="method-header">
-                  .toString();
-                </h5>
+                <h5 class="method-header">.toString();</h5>
                 <p>Gets a string representation of the selected date</p>
                 <pre><code class="language-javascript col s12">
 instance.toString();
           </code></pre>
 
-                <h5 class="method-header">
-                  .setDate();
-                </h5>
+                <h5 class="method-header">.setDate();</h5>
                 <p>Set a date on the datepicker</p>
                 <h6>Arguments</h6>
                 <p><b>Date (optional):</b> Date to set on the datepicker.</p>
@@ -908,9 +807,7 @@ instance.toString();
 instance.setDate(new Date());
           </code></pre>
 
-                <h5 class="method-header">
-                  .gotoDate();
-                </h5>
+                <h5 class="method-header">.gotoDate();</h5>
                 <p>Change date view to a specific date on the datepicker</p>
                 <h6>Arguments</h6>
                 <p><b>Date:</b> Date to show on the datepicker.</p>
@@ -918,9 +815,7 @@ instance.setDate(new Date());
 instance.gotoDate(new Date());
           </code></pre>
 
-                <h5 class="method-header">
-                  .destroy();
-                </h5>
+                <h5 class="method-header">.destroy();</h5>
                 <p>Destroy plugin instance and teardown</p>
                 <pre><code class="language-javascript col s12">
 instance.destroy();
@@ -930,16 +825,13 @@ instance.destroy();
 
             <div id="time-picker" class="section scrollspy">
               <h3 class="header">Time Picker</h3>
-              <p>
-                The timepicker allows users to select a date from an interactive
-                clock.
-              </p>
+              <p>The timepicker allows users to select a date from an interactive clock.</p>
               <div class="input-field">
                 <input id="lunchtime" type="text" class="timepicker" />
                 <label for="lunchtime">Lunchtime</label>
               </div>
-              <pre><code class="language-markup">
-  &lt;input type="text" class="timepicker">
+              <pre><code class="language-html">
+  <input type="text" class="timepicker">
         </code></pre>
 
               <div class="section">
@@ -971,20 +863,13 @@ instance.destroy();
                       <td>duration</td>
                       <td>Number</td>
                       <td>350</td>
-                      <td>
-                        Duration of the transition from/to the hours/minutes
-                        view.
-                      </td>
+                      <td>Duration of the transition from/to the hours/minutes view.</td>
                     </tr>
                     <tr>
                       <td>container</td>
                       <td>Element || String</td>
                       <td>null</td>
-                      <td>
-                        Specify a DOM element OR selector for a DOM element to
-                        render the time picker in, by default it will be placed
-                        before the input.
-                      </td>
+                      <td>Specify a DOM element OR selector for a DOM element to render the time picker in, by default it will be placed before the input.</td>
                     </tr>
                     <tr>
                       <td>showClearBtn</td>
@@ -996,9 +881,7 @@ instance.destroy();
                       <td>defaultTime</td>
                       <td>String</td>
                       <td>'now'</td>
-                      <td>
-                        Default time to set on the timepicker 'now' or '13:14'
-                      </td>
+                      <td>Default time to set on the timepicker 'now' or '13:14'</td>
                     </tr>
                     <tr>
                       <td>fromNow</td>
@@ -1016,9 +899,7 @@ instance.destroy();
                       <td>autoClose</td>
                       <td>Boolean</td>
                       <td>false</td>
-                      <td>
-                        Automatically close picker when minute is selected.
-                      </td>
+                      <td>Automatically close picker when minute is selected.</td>
                     </tr>
                     <tr>
                       <td>twelveHour</td>
@@ -1060,10 +941,7 @@ instance.destroy();
                       <td>onSelect</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>
-                        Callback function when a time is selected, first
-                        parameter is the hour and the second is the minute.
-                      </td>
+                      <td>Callback function when a time is selected, first parameter is the hour and the second is the minute.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1112,9 +990,7 @@ instance.destroy();
                     <tr>
                       <td>el</td>
                       <td>Element</td>
-                      <td>
-                        The input element the plugin was initialized with.
-                      </td>
+                      <td>The input element the plugin was initialized with.</td>
                     </tr>
                     <tr>
                       <td>options</td>
@@ -1139,46 +1015,32 @@ instance.destroy();
                 <h5>Methods</h5>
 
                 <blockquote>
-                  <p>
-                    All the methods are called on the plugin instance. You can
-                    get the plugin instance like this:
-                  </p>
+                  <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                   <pre><code class="language-javascript col s12">
   var instance = M.Timepicker.getInstance(elem);
             </code></pre>
                 </blockquote>
-                <h5 class="method-header">
-                  .open();
-                </h5>
+                <h5 class="method-header">.open();</h5>
                 <p>Open timepicker</p>
                 <pre><code class="language-javascript col s12">
 instance.open();
           </code></pre>
 
-                <h5 class="method-header">
-                  .close();
-                </h5>
+                <h5 class="method-header">.close();</h5>
                 <p>Close timepicker</p>
                 <pre><code class="language-javascript col s12">
 instance.close();
           </code></pre>
 
-                <h5 class="method-header">
-                  .showView();
-                </h5>
+                <h5 class="method-header">.showView();</h5>
                 <p>Show hours or minutes view on timepicker</p>
                 <h6>Arguments</h6>
-                <p>
-                  <b>String:</b> The name of the view you want to switch to,
-                  'hours' or 'minutes'.
-                </p>
+                <p><b>String:</b> The name of the view you want to switch to, 'hours' or 'minutes'.</p>
                 <pre><code class="language-javascript col s12">
 instance.showView('hours');
           </code></pre>
 
-                <h5 class="method-header">
-                  .destroy();
-                </h5>
+                <h5 class="method-header">.destroy();</h5>
                 <p>Destroy plugin instance and teardown</p>
                 <pre><code class="language-javascript col s12">
 instance.destroy();
@@ -1189,7 +1051,7 @@ instance.destroy();
 
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li>
                     <a href="#date-picker">Date Picker</a>
@@ -1204,65 +1066,44 @@ instance.destroy();
         </div>
       </div>
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -1282,12 +1123,7 @@ instance.destroy();
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

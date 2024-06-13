@@ -39,8 +39,20 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <style>
+      .waves-color-demo .collection-item {
+        height: 37px;
+        line-height: 37px;
+        box-sizing: content-box;
+      }
+      .waves-color-demo .btn:not(.waves-light) {
+        /*background-color: color("shades", "white");
+        color: #212121;
+        */
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +62,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Waves</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +92,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,63 +345,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Waves</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Waves</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
@@ -421,73 +389,43 @@
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
             <div id="introduction" class="section scrollspy">
               <h4>Introduction</h4>
-              <p class="caption">
-                Waves is an external library that we've included in Materialize
-                to allow us to create the ink effect outlined in Material
-                Design.
-              </p>
-              <a
-                class="waves-effect waves-light btn"
-                href="#!"
-                style="height: 70px; line-height: 70px; padding: 0 5em;"
-                >Wave</a
-              >
+              <p class="caption">Waves is an external library that we've included in Materialize to allow us to create the ink effect outlined in Material Design.</p>
+              <a class="waves-effect waves-light btn outlined" href="#!" style="height: 70px; line-height: 70px; padding: 0 5em">Wave</a>
             </div>
 
             <div id="applying-waves" class="section scrollspy">
               <h4>Applying Waves</h4>
               <p>
-                The waves effect can be applied to any element. To put the waves
-                effect on buttons, you just have to put the class
-                <code class="language-markup">waves-effect</code> on to the
-                buttons. If you want the waves effect to be white instead, add
-                both
-                <code class="language-markup">waves-effect waves-light</code> as
-                classes.
+                The waves effect can be applied to any element. To put the waves effect on buttons, you just have to put the class
+                <code class="language-html">waves-effect</code> on to the buttons. If you want the waves effect to be white instead, add both
+                <code class="language-html">waves-effect waves-light</code> as classes.
               </p>
-              <pre><code class="language-markup">
-  &lt;a class="waves-effect waves-light btn-large" href="#">Wave&lt;/a>
-      </code></pre>
+              <pre>
+                <code class="language-html">
+<xmp><a class="waves-effect waves-light btn-large" href="#">Wave</a></xmp>
+                </code>
+              </pre>
             </div>
 
             <!--  Customization  -->
             <div id="customization" class="section scrollspy">
               <h4>Customization</h4>
-              <p>
-                There are several ways to customize waves, you can either use
-                pre-created classes, or you can define your own color by
-                creating a new class.
-              </p>
-
+              <p>There are several ways to customize waves, you can either use pre-created classes, or you can define your own color by creating a new class.</p>
               <div class="row">
                 <div class="col s12">
                   <h5 class="light">Available Classes</h5>
                   <p>
-                    To use these, just add the corresponding class to your
-                    button. Play around with changing the background color of
-                    buttons and the waves effect to create something cool!
+                    To use these, just add the corresponding class to your button. Play around with changing the background color of buttons and the waves effect to create
+                    something cool!
                   </p>
-
-                  <pre><code class="language-markup">
-  &lt;a href="#!" class="btn waves-effect">Send&lt;/a>
-          </code></pre>
-
+                  <pre>
+                    <code class="language-html">
+<xmp><a href="#!" class="btn waves-effect">Send</a></xmp>
+                    </code>
+                  </pre>
                   <div class="collection waves-color-demo">
-                    <div class="collection-item">
-                      Default<a
-                        href="#!"
-                        class="waves-effect btn secondary-content"
-                        >Send</a
-                      >
-                    </div>
-                    <div class="collection-item">
-                      <code class="language-markup">waves-light</code
-                      ><a
-                        href="#!"
-                        class="waves-effect waves-light btn secondary-content"
-                        >Send</a
-                      >
-                    </div>
+                    <div class="collection-item">Default<a href="#!" class="waves-effect btn secondary-content">Send</a></div>
+                    <div class="collection-item"><code class="language-html">waves-light</code><a href="#!" class="waves-effect waves-light btn secondary-content">Send</a></div>
                   </div>
                 </div>
               </div>
@@ -496,28 +434,16 @@
                 <div class="col s12">
                   <h4>Call programmatically</h4>
                   <p>
-                    We've added the ability to create a Wave on a specific
-                    HTMLElement programmatically. Here you can set a custom
-                    color and position. Click on the Button to test it out.
+                    We've added the ability to create a Wave on a specific HTMLElement programmatically. Here you can set a custom color and position. Click on the Button to test
+                    it out.
                   </p>
 
                   <div class="row">
                     <div class="col s6">
-                      <button
-                        type="button"
-                        class="btn"
-                        onclick="M.Waves.renderWaveEffect(document.querySelector('.wave-demo'), null, {r: 255, g: 0, b: 0});"
-                      >
-                        Trigger Wave!
-                      </button>
+                      <button type="button" class="btn" onclick="M.Waves.renderWaveEffect(document.querySelector('.wave-demo'), null, {r: 255, g: 0, b: 0});">Trigger Wave!</button>
                     </div>
                     <div class="col s6">
-                      <div
-                        class="wave-demo card center-align"
-                        style="width: 100%; height: 100px;"
-                      >
-                        .wave-demo
-                      </div>
+                      <div class="wave-demo card center-align" style="width: 100%; height: 100px">.wave-demo</div>
                     </div>
                   </div>
 
@@ -537,34 +463,26 @@ M.Waves.renderWaveEffect(
               <!--  Circle  -->
               <h4>Circle</h4>
               <p>
-                If you want waves to form to a non rectangular shape, there is
-                an option for circular waves. Just add the
-                <code class="language-markup">waves-circle</code> in addition to
-                <code class="language-markup">waves-effect</code>.
+                If you want waves to form to a non rectangular shape, there is an option for circular waves. Just add the
+                <code class="language-html">waves-circle</code> in addition to <code class="language-html">waves-effect</code>.
               </p>
               <div class="row">
                 <div class="col s12">
                   <h5 class="light">HTML Markup</h5>
-                  <pre><code class="language-markup">
-  &lt;a href="#!" class="waves-effect waves-circle waves-light btn-floating secondary-content">
-    &lt;i class="material-icons">add&lt;/i>
-  &lt;/a>
+                  <pre><code class="language-html">
+<xmp>
+<a href="#!" class="waves-effect waves-circle waves-light btn-floating secondary-content">
+  <i class="material-icons">add</i>
+</a>
+</xmp>
           </code></pre>
                   <div class="collection waves-color-demo">
                     <div class="collection-item">
-                      Default<a
-                        href="#!"
-                        class="waves-effect waves-circle btn-floating secondary-content"
-                        ><i class="material-icons">add</i></a
-                      >
+                      Default<a href="#!" class="waves-effect waves-circle btn-floating secondary-content"><i class="material-icons">add</i></a>
                     </div>
                     <div class="collection-item">
-                      <code class="language-markup">waves-light</code
-                      ><a
-                        href="#!"
-                        class="waves-effect waves-circle waves-light btn-floating secondary-content"
-                        ><i class="material-icons">add</i></a
-                      >
+                      <code class="language-html">waves-light</code
+                      ><a href="#!" class="waves-effect waves-circle waves-light btn-floating secondary-content"><i class="material-icons">add</i></a>
                     </div>
                   </div>
                 </div>
@@ -575,7 +493,7 @@ M.Waves.renderWaveEffect(
           <!-- Table of Contents -->
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li><a href="#introduction">Introduction</a></li>
                   <li><a href="#applying-waves">Applying Waves</a></li>
@@ -588,65 +506,44 @@ M.Waves.renderWaveEffect(
         </div>
       </div>
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -666,12 +563,7 @@ M.Waves.renderWaveEffect(
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>

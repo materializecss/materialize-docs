@@ -39,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-a403effa.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d8a7aa2.css">
+    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
+    <link rel="stylesheet" href="./assets/main-6d943049.css">
   </head>
   <body>
     <header>
@@ -50,37 +50,26 @@
       <div class="navbar-fixed">
         <nav class="primary">
           <div class="nav-wrapper">
-            <a class="sidenav-trigger" href="#" data-target="nav-mobile"
-              ><i class="material-icons">menu</i></a
-            >
-    
+            <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
             <ul>
               <li>Icons</li>
             </ul>
-    
             <ul class="right">
               <li>
-                <a id="theme-switch" href="#"
-                  ><i class="material-icons">dark_mode</i></a
-                >
+                <a id="select-palette" class="modal-trigger" href="#palette-selector">
+                  <i class="material-icons">palette</i>
+                </a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://github.com/materializecss/materialize"
-                  target="_blank"
-                  title="Check out our GitHub"
-                  ><img src="images/github.svg" style="transform: scale(0.8);"
+                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+              </li>
+              <li>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
+                  ><img src="images/github.svg" style="height: 20px"
                 /></a>
               </li>
               <li>
-                <a
-                  class="ext-link"
-                  href="https://opencollective.com/materialize"
-                  target="_blank"
-                  title="Support us via OpenCollective"
-                  ><img src="images/opencollective.svg"
-                /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
               </li>
             </ul>
           </div>
@@ -91,25 +80,13 @@
       <ul class="sidenav sidenav-fixed" id="nav-mobile">
         <li class="logo">
           <a class="brand-logo" id="logo-container" href="/">
-            <object
-              id="front-page-logo"
-              type="image/svg+xml"
-              data="images/materialize.svg"
-              >Your browser does not support SVG</object
-            >Materialize</a
+            <object id="front-page-logo" type="image/svg+xml" data="images/materialize.svg">Your browser does not support SVG</object>Materialize</a
           >
         </li>
     
         <li class="search">
           <div class="search-wrapper">
-            <input
-              class="search-docs"
-              id="search"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus
-            /><i class="material-icons">search</i>
+            <input class="search-docs" id="search" type="search" placeholder="Search" autocomplete="off" autofocus /><i class="material-icons">search</i>
           </div>
         </li>
     
@@ -356,63 +333,42 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.0.3-alpha<svg
-              class="caret"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>2.1.0</a></li>
+            <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
             <li>
-              <a
-                href="https://materializecss.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >1.0.0 (not maintained)</a
-              >
+              <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">1.0.0 (not maintained)</a>
             </li>
           </ul>
         </li>
-    
-        <!-- Ad Placements -->
-        <li
-          class="surface"
-          style="height: 100px; width: 100%; left: 0; bottom: 0; position: sticky;"
-        >
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-            crossorigin="anonymous"
-          ></script>
-          <ins
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-fb+5w+4e-db+86"
-            data-ad-client="ca-pub-9412332535613378"
-            data-ad-slot="4127762940"
-          ></ins>
-        </li>
       </ul>
     </header>
+    
+    <div id="palette-selector" class="modal">
+      <div class="modal-content">
+        <h4>Color Scheme</h4>
+        <div class="color-row">
+          <label>Primary Color</label>
+          <input type="color" id="color-picker" value="#0000ff" />
+        </div>
+        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      </div>
+    </div>
     <main>
-      <section
-        class="section primary-container on-primary-text m-2"
-        style="border-radius: 24px;"
-        id="index-banner"
-      >
-        <div class="container row py-5 ">
+      <section class="section primary-container m-2" style="border-radius: 24px" id="index-banner">
+        <div class="container row py-5">
           <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
-            <h1 class="header" style="font-size: 4.20rem;">Icons</h1>
-            <h4 class="light" style="line-height: 1.25;">
-              Materialize is a modern responsive CSS framework based on Material Design by Google.
-            </h4>
+            <h1 class="header" style="font-size: 4.2rem; color: var(--md-sys-color-primary)">Icons</h1>
+            <h4 class="light" style="line-height: 1.25; color: var(--md-sys-color-primary)">Materialize is a modern responsive CSS framework based on Material Design by Google.</h4>
           </div>
         </div>
       </section>
@@ -422,60 +378,48 @@
             <div id="usage" class="scrollspy">
               <p class="caption">
                 We use Google Material Icons by Google. They provide a
-                <a href="https://fonts.google.com/icons?icon.set=Material+Icons"
-                  >searchable list</a
-                >
-                (which we do not include in the documentation here), which will
-                also show you the relevant icon names for the CSS classes. You
-                can download the icons directly from the
-                <a
-                  href="https://google.github.io/material-design-icons/#icon-font-for-the-web"
-                  >Material Design specs</a
-                >.
+                <a href="https://fonts.google.com/icons?icon.set=Material+Icons">searchable list</a>
+                (which we do not include in the documentation here), which will also show you the relevant icon names for the CSS classes. You can download the icons directly from
+                the
+                <a href="https://google.github.io/material-design-icons/#icon-font-for-the-web">Material Design specs</a>.
               </p>
               <p class="caption">
-                In addition to Material Icons, we also provide support to every
-                variation of
-                <a
-                  href="https://fonts.google.com/icons?icon.set=Material+Symbols"
-                  >Material Symbols</a
-                >
+                In addition to Material Icons, we also provide support to every variation of
+                <a href="https://fonts.google.com/icons?icon.set=Material+Symbols">Material Symbols</a>
                 set (outlined, rounded and sharp).
               </p>
               <h3 class="header">Usage</h3>
               <p>
-                To be able to use these icons, you must include one of the
-                following lines in the
-                <code class="language-markup">&lt;head></code>portion of your
-                HTML code
+                To be able to use these icons, you must include one of the following lines in the
+                <code class="language-html">head</code> portion of your HTML code
               </p>
-              <pre><code class="language-markup">
-&lt;!-- Material Icons --&gt;
-&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-&lt;!-- Material Symbols - Outlined Set --&gt;
-&lt;link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-&lt;!-- Material Symbols - Rounded Set --&gt;
-&lt;link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
-&lt;!-- Material Symbols - Sharp Set --&gt;
-&lt;link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" /></code></pre>
+              <pre><code class="language-html">
+<xmp><!-- Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<!-- Material Symbols - Outlined Set -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<!-- Material Symbols - Rounded Set -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+<!-- Material Symbols - Sharp Set -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
+</xmp>
+</code></pre>
               <p>
-                To use these icons, use either the material-icons class or the
-                corresponding material-symbols set class on an element and
-                provide the ligature as the text content.
+                To use these icons, use either the material-icons class or the corresponding material-symbols set class on an element and provide the ligature as the text content.
               </p>
-              <pre><code class="language-markup">
-&lt;i class="material-icons">add&lt;/i>
-&lt;!-- Use one of the following if opted by material symbols --&gt;
-&lt;i class="material-symbols-outlined">add&lt;/i>
-&lt;i class="material-symbols-rounded">add&lt;/i>
-&lt;i class="material-symbols-sharp">add&lt;/i>
+              <pre><code class="language-html">
+<xmp><i class="material-icons">add</i>
+<!-- Use one of the following if opted by material symbols -->
+<i class="material-symbols-outlined">add</i>
+<i class="material-symbols-rounded">add</i>
+<i class="material-symbols-sharp">add</i>
+</xmp>
 </code></pre>
 
               <h5>Icon Sizes</h5>
               <p>
                 To control the size of the icon, change the
-                <code class="language-css">font-size: 30px</code> property of
-                your icon. Optionally you can use preset classes as shown below.
+                <code class="language-css">font-size: 30px</code> property of your icon. Optionally you can use preset classes as shown below.
               </p>
               <div class="row center-align">
                 <div class="s3">
@@ -500,24 +444,16 @@
               <h5>Symbol Sizes</h5>
               <div class="row center-align">
                 <div class="s3">
-                  <i class="material-symbols-outlined tiny icon-demo"
-                    >settings</i
-                  >
+                  <i class="material-symbols-outlined tiny icon-demo">settings</i>
                 </div>
                 <div class="s3">
-                  <i class="material-symbols-outlined small icon-demo"
-                    >settings</i
-                  >
+                  <i class="material-symbols-outlined small icon-demo">settings</i>
                 </div>
                 <div class="s3">
-                  <i class="material-symbols-outlined medium icon-demo"
-                    >settings</i
-                  >
+                  <i class="material-symbols-outlined medium icon-demo">settings</i>
                 </div>
                 <div class="s3">
-                  <i class="material-symbols-outlined large icon-demo"
-                    >settings</i
-                  >
+                  <i class="material-symbols-outlined large icon-demo">settings</i>
                 </div>
 
                 <div class="s3"><p>Tiny</p></div>
@@ -525,40 +461,29 @@
                 <div class="s3"><p>Medium</p></div>
                 <div class="s3"><p>Large</p></div>
               </div>
-              <pre><code class="language-markup">
-&lt;!--
-Sizes:
-tiny: 1rem
-small: 2rem
-medium: 4rem
-large: 6rem
---&gt;
-&lt;!-- Material Icons --&gt;
-&lt;i class="large material-icons">insert_chart&lt;/i>
-&lt;!-- Material Symbols --&gt;
-&lt;i class="large material-symbols-outlined">insert_chart&lt;/i>
-&lt;i class="large material-symbols-rounded">insert_chart&lt;/i>
-&lt;i class="large material-symbols-sharp">insert_chart&lt;/i>
+              <pre><code class="language-html">
+<xmp><!-- Sizes: tiny: 1rem, small: 2rem, medium: 4rem, large: 6rem -->
+<!-- Material Icons -->
+<i class="large material-icons">insert_chart</i>
+<!-- Material Symbols -->
+<i class="large material-symbols-outlined">insert_chart</i>
+<i class="large material-symbols-rounded">insert_chart</i>
+<i class="large material-symbols-sharp">insert_chart</i>
+</xmp>
 </code></pre>
             </div>
           </div>
 
           <div class="col hide-on-small-only m3 xl3">
             <div class="toc-wrapper">
-              <div style="height: 1px;">
+              <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li><a href="#usage">Usage</a></li>
                   <li>
-                    <a
-                      href="https://fonts.google.com/icons?icon.set=Material+Icons"
-                      >Search Google's Material Icons</a
-                    >
+                    <a href="https://fonts.google.com/icons?icon.set=Material+Icons">Search Google's Material Icons</a>
                   </li>
                   <li>
-                    <a
-                      href="https://fonts.google.com/icons?icon.set=Material+Symbols"
-                      >Search Google's Material Symbols</a
-                    >
+                    <a href="https://fonts.google.com/icons?icon.set=Material+Symbols">Search Google's Material Symbols</a>
                   </li>
                 </ul>
               </div>
@@ -567,65 +492,44 @@ large: 6rem
         </div>
       </div>
     </main>
-    <footer class="page-footer docs-footer">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+        <div class="row">
           <div class="s12 m10 offset-m1">
-            <div class="row" style="gap:2rem;">
+            <div class="row" style="gap: 2rem">
               <div class="s12 m6 l4">
                 <h5>Help Materialize Grow</h5>
-                <p class="grey-text text-darken-2">
-                  We hope you have enjoyed using Materialize and if you feel like it
-                  has helped you out and want to support the team you can help us by
-                  opening issues or contributing on GitHub.
+                <p>
+                  We hope you have enjoyed using <a href="https://materializeweb.com">Materialize</a> and if you feel like it has helped you out and want to support the team you can
+                  help us by opening issues or contributing on GitHub.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  target="_blank"
-                  href="https://github.com/materializecss/materialize"
-                  >Contribute</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" target="_blank" href="https://github.com/materializecss/materialize">Contribute</a>
               </div>
     
               <div class="s12 m6 l4">
                 <h5>Join the Discussion</h5>
-                <p class="grey-text text-darken-2">
-                  We have a Gitter chat room set up where you can talk directly with
-                  us. Come in and discuss new features, future goals, general
-                  problems or questions, or anything else you can think of.
+                <p>
+                  We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else
+                  you can think of.
                 </p>
-                <a
-                  class="btn waves-effect waves-light"
-                  href="https://gitter.im/materializecss/materialize"
-                  target="_blank"
-                  >Chat</a
-                >
+                <a tabindex="0" class="btn tonal btn-small waves-effect waves-light" href="https://gitter.im/materializecss/materialize" target="_blank">Chat</a>
               </div>
     
-              <div class="s12 m6 l4" style="overflow: hidden;">
+              <div class="s12 m6 l4" style="overflow: hidden">
                 <h5>Star us</h5>
                 <div>
-                  <iframe
-                    src="https://ghbtns.com/github-btn.html?user=materializecss&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large"
-                    allowtransparency="true"
-                    frameborder="0"
-                    scrolling="0"
-                    width="170"
-                    height="30"
-                  ></iframe>
+                  <a href="https://github.com/materializecss/materialize" target="_blank">
+                    <img style="width: 42%" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/materializecss/materialize" />
+                  </a>
                 </div>
     
                 <!-- Ad Placements -->
-                <div style="width: 100%;">
-                  <div style="height: 90px; width: 100%; ">
-                    <script
-                      async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378"
-                      crossorigin="anonymous"
-                    ></script>
+                <div style="width: 100%; background-color: #f883">
+                  <div style="height: 90px; width: 100%">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9412332535613378" crossorigin="anonymous"></script>
                     <ins
                       class="adsbygoogle"
-                      style="display:block"
+                      style="display: block"
                       data-ad-format="fluid"
                       data-ad-layout-key="-fb+5w+4e-db+86"
                       data-ad-client="ca-pub-9412332535613378"
@@ -645,12 +549,7 @@ large: 6rem
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              &nbsp;Materialize, All rights reserved.<a
-                class="right"
-                target="_blank"
-                href="https://github.com/materializecss/materialize/blob/main/LICENSE"
-                >MIT License</a
-              >
+              &nbsp;Materialize, All rights reserved.<a class="right" target="_blank" href="https://github.com/materializecss/materialize/blob/main/LICENSE">MIT License</a>
             </div>
           </div>
         </div>
