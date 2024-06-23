@@ -207,6 +207,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   toggleColorsButton?.addEventListener("change", () => {
     themes.setThemePrimaryColor(toggleColorsButton.value);
   });
+  const downloadCssButton = document.querySelector("#downloadCss");
+  downloadCssButton.addEventListener("click", (e) => {   
+      themes.downloadCss();    
+  });
 
   //---------------------------------------------------------------
 
