@@ -39,8 +39,8 @@
       const theme = localStorage.getItem("theme");
       if (theme) document.documentElement.setAttribute("theme", theme);
     </script>
-    <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
-    <link rel="stylesheet" href="./assets/main-6d943049.css">
+    <script type="module" crossorigin src="./assets/main-0ae769f3.js"></script>
+    <link rel="stylesheet" href="./assets/main-2afc8c3e.css">
   </head>
   <body>
     <header>
@@ -333,12 +333,13 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            v2.1.1<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>v2.1.1</a></li>
             <li><a>2.1.0</a></li>
             <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
@@ -357,10 +358,10 @@
           <label>Primary Color</label>
           <input type="color" id="color-picker" value="#0000ff" />
         </div>
-        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+        <button id="downloadCss" type="button" class="btn tonal">Download css style</button>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+        <a href="#!" class="modal-close waves-effect btn text">Close</a>
       </div>
     </div>
     <main>
@@ -396,7 +397,7 @@
                     tabindex="0"
                     id="download-source"
                     class="btn filled waves-effect waves-light icon-right"
-                    href="https://github.com/materializecss/materialize/releases/download/2.1.0/materialize-v2.1.0.zip"
+                    href="https://github.com/materializecss/materialize/releases/download/v2.1.1/materialize-v2.1.1.zip"
                   >
                     Materialize<i class="material-icons">file_download</i>
                   </a>
@@ -411,7 +412,7 @@
                     tabindex="0"
                     id="download-sass"
                     class="btn outlined waves-effect waves-light icon-right"
-                    href="https://github.com/materializecss/materialize/releases/download/2.1.0/materialize-src-v2.1.0.zip"
+                    href="https://github.com/materializecss/materialize/releases/download/v2.1.1/materialize-src-v2.1.1.zip"
                   >
                     Source<i class="material-icons right">file_download</i>
                   </a>
@@ -420,10 +421,10 @@
 
               <div class="is-closed" id="download-thanks">
                 <div class="card p-3 mt-3">
-                  <p class="primary-text"><b>Thank you for downloading!</b></p>
+                  <p class="m-0 primary-text"><b>Support our work</b></p>
                   <p class="caption">
-                    We hope you find Materialize useful in your next project. We would appreciate if you help us spread the word about Materialize by giving us a star or support
-                    our work.
+                    Thank you for downloading. We hope you find Materialize useful in your next project. We would appreciate if you help us spread the word about Materialize by
+                    giving us a star or support our work.
                   </p>
                   <div class="row">
                     <a href="https://github.com/materializecss/materialize" target="_blank">
@@ -445,9 +446,9 @@
 <span class="copyMessage">Copied!</span>
 <i class="material-icons copyButton">content_copy</i>
 <code class="language-html copiedText"><xmp><!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.1/dist/css/materialize.min.css">
 <!-- Compiled and minified JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.1/dist/js/materialize.min.js"></script>
 </xmp></code></pre>
                 </div>
                 <div class="col s12">

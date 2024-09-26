@@ -38,8 +38,8 @@
   const theme = localStorage.getItem("theme");
   if (theme) document.documentElement.setAttribute("theme", theme);
 </script>
-   <script type="module" crossorigin src="./assets/main-9610a014.js"></script>
-   <link rel="stylesheet" href="./assets/main-6d943049.css">
+   <script type="module" crossorigin src="./assets/main-0ae769f3.js"></script>
+   <link rel="stylesheet" href="./assets/main-2afc8c3e.css">
  </head>
   <body>
     <header>
@@ -332,12 +332,13 @@
         <li class="version">
           <a class="dropdown-trigger" href="#" data-target="version-dropdown">
             <!-- svg -->
-            2.1.0<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            v2.1.1<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 10l5 5 5-5z"></path>
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </a>
           <ul class="dropdown-content" id="version-dropdown">
+            <li><a>v2.1.1</a></li>
             <li><a>2.1.0</a></li>
             <li><a>2.0.4</a></li>
             <li><a>2.0.3-alpha</a></li>
@@ -356,10 +357,10 @@
           <label>Primary Color</label>
           <input type="color" id="color-picker" value="#0000ff" />
         </div>
-        <button type="button" class="btn" onclick="downloadCss()">Download css style</button>
+        <button id="downloadCss" type="button" class="btn tonal">Download css style</button>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+        <a href="#!" class="modal-close waves-effect btn text">Close</a>
       </div>
     </div>
     <main>
