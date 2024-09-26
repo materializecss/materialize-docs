@@ -13,14 +13,15 @@
             <div id="introduction" class="scrollspy section">
               <p class="caption">
                 Add a dropdown list to any button. Make sure that the
-                <code class="language-html">data-target</code> attribute matches the id in the <code class="language-html">ul</code> tag. You can add a divider with the
-                <code class="language-html">
-                  <xmp><li class="divider"></li></xmp>
-                </code>
-                tag. You can also add icons. Just add the icon inside the
+                <code class="language-html">data-target</code> attribute matches the id in the <code class="language-html">ul</code> tag. You can add a divider with an empty li
+                element and a
+                <code class="language-html">divider</code>
+                class. You can also add icons. Just add the icon inside the
                 <code class="language-html">anchor</code> tag.
               </p>
-              <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Drop Me!</a>
+
+              <a class="dropdown-trigger btn tonal" href="#" data-target="dropdown1">Drop Me!</a>
+
               <ul id="dropdown1" class="dropdown-content">
                 <li>
                   <a href="#!">one</a>
