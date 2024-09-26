@@ -1,10 +1,31 @@
 import { config } from "../config.materialize";
-import { M } from "@materializecss/materialize";
 import "./style.scss";
 //import { argbFromHex, themeFromSourceColor } from "@material/material-color-utilities";
 import { Themes } from "./themes";
 import { autocompleteDemoData } from "./data-autocomplete";
 import hljs from "highlight.js";
+import {
+  Autocomplete,
+  Carousel,
+  CharacterCounter,
+  Chips,
+  Collapsible,
+  Datepicker,
+  Dropdown,
+  FloatingActionButton,
+  FormSelect,
+  Materialbox,
+  Modal,
+  Parallax,
+  Pushpin,
+  ScrollSpy,
+  Sidenav,
+  Slider,
+  Tabs,
+  TapTarget,
+  Timepicker,
+  Tooltip,
+} from "@materializecss/materialize";
 
 function importCodeStyle(isDarkMode) {
   if (isDarkMode) import("highlight.js/styles/atom-one-dark.min.css");
@@ -35,9 +56,7 @@ function escapeHtml(unsafe) {
   return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 }
 
-globalThis.M = M;
-
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", () => {
   const themes = new Themes(document);
 
   // CSS > Colors
@@ -59,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       description: el.description,
       url: el.url,
     }));
-    M.Autocomplete.init(<HTMLInputElement>searchInput, {
+    Autocomplete.init(<HTMLInputElement>searchInput, {
       minLength: 1,
       data: pages,
       onAutocomplete: (items) => {
@@ -102,18 +121,18 @@ document.addEventListener("DOMContentLoaded", async function () {
   const indexBanner = document.querySelector("#index-banner");
   const tocWrappers = document.querySelectorAll(".toc-wrapper");
 
-  if (M.Pushpin) {
+  if (Pushpin) {
     if (nav)
-      M.Pushpin.init(tocWrappers, {
+      Pushpin.init(tocWrappers, {
         top: nav.getBoundingClientRect().height,
         bottom: bottomOffset,
       });
     else if (indexBanner)
-      M.Pushpin.init(tocWrappers, {
+      Pushpin.init(tocWrappers, {
         top: indexBanner.getBoundingClientRect().height,
         bottom: bottomOffset,
       });
-    else M.Pushpin.init(tocWrappers, { top: 0, bottom: bottomOffset });
+    else Pushpin.init(tocWrappers, { top: 0, bottom: bottomOffset });
   }
 
   // Toggle Flow Text
@@ -156,7 +175,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const contentElem = document.querySelector("#" + navElem.getAttribute("data-target"));
     const contentBox = contentElem.getBoundingClientRect();
     const offsetTop = Math.floor(contentBox.top + window.scrollY - document.documentElement.clientTop);
-    M.Pushpin.init(<HTMLElement>navElem, {
+    Pushpin.init(<HTMLElement>navElem, {
       top: offsetTop,
       bottom: offsetTop + contentBox.height - navBox.height,
     });
@@ -208,8 +227,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     themes.setThemePrimaryColor(toggleColorsButton.value);
   });
   const downloadCssButton = document.querySelector("#downloadCss");
-  downloadCssButton.addEventListener("click", (e) => {   
-      themes.downloadCss();    
+  downloadCssButton.addEventListener("click", () => {
+    themes.downloadCss();
   });
 
   //---------------------------------------------------------------
@@ -239,91 +258,91 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   //------  Materialize Components
 
-  M.Carousel.init(document.querySelectorAll(".carousel"), {});
-  M.Carousel.init(document.querySelectorAll(".carousel.carousel-slider"), {
+  Carousel.init(document.querySelectorAll(".carousel"), {});
+  Carousel.init(document.querySelectorAll(".carousel.carousel-slider"), {
     fullWidth: true,
     indicators: true,
     onCycleTo: () => {},
   });
 
-  M.Collapsible.init(document.querySelectorAll(".collapsible"), {});
-  M.Collapsible.init(document.querySelectorAll(".collapsible.expandable"), {
+  Collapsible.init(document.querySelectorAll(".collapsible"), {});
+  Collapsible.init(document.querySelectorAll(".collapsible.expandable"), {
     accordion: false,
   });
 
-  M.Dropdown.init(document.querySelectorAll(".dropdown-trigger"), {});
-  M.Dropdown.init(document.querySelector("#dropdown-demo-left"), {
+  Dropdown.init(document.querySelectorAll(".dropdown-trigger"), {});
+  Dropdown.init(document.querySelector("#dropdown-demo-left"), {
     alignment: "left",
     constrainWidth: false,
   });
-  M.Dropdown.init(document.querySelector("#dropdown-demo-right"), {
+  Dropdown.init(document.querySelector("#dropdown-demo-right"), {
     alignment: "right",
     constrainWidth: false,
   });
 
-  M.Parallax.init(document.querySelectorAll(".parallax"), {});
+  Parallax.init(document.querySelectorAll(".parallax"), {});
 
-  M.Materialbox.init(document.querySelectorAll(".materialboxed"), {});
-  M.Slider.init(document.querySelectorAll(".slider"), {});
+  Materialbox.init(document.querySelectorAll(".materialboxed"), {});
+  Slider.init(document.querySelectorAll(".slider"), {});
 
-  M.Modal.init(document.querySelectorAll(".modal"), {});
+  Modal.init(document.querySelectorAll(".modal"), {});
 
-  M.ScrollSpy.init(document.querySelectorAll(".scrollspy"), {});
+  ScrollSpy.init(document.querySelectorAll(".scrollspy"), {});
 
-  M.Datepicker.init(document.querySelectorAll(".datepicker"), {});
+  Datepicker.init(document.querySelectorAll(".datepicker"), {});
 
-  M.Tabs.init(document.querySelectorAll(".tabs"), {});
-  M.Tabs.init(document.querySelectorAll("#tabs-swipe-demo"), {
+  Tabs.init(document.querySelectorAll(".tabs"), {});
+  Tabs.init(document.querySelectorAll("#tabs-swipe-demo"), {
     swipeable: true,
   });
 
-  M.Timepicker.init(document.querySelectorAll(".timepicker"), {});
+  Timepicker.init(document.querySelectorAll(".timepicker"), {});
 
-  M.Tooltip.init(document.querySelectorAll(".tooltipped"), {});
+  Tooltip.init(document.querySelectorAll(".tooltipped"), {});
 
-  M.Sidenav.init(document.querySelectorAll(".sidenav"), {});
+  Sidenav.init(document.querySelectorAll(".sidenav"), {});
 
-  const tts = M.TapTarget.init(document.querySelectorAll(".tap-target"), {});
+  const tts = TapTarget.init(document.querySelectorAll(".tap-target"), {});
   document.querySelector("#open-taptarget")?.addEventListener("click", () => tts[0].open());
   document.querySelector("#close-taptarget")?.addEventListener("click", () => tts[0].close());
 
-  M.FormSelect.init(document.querySelectorAll("select:not(.disabled)"), {});
+  FormSelect.init(document.querySelectorAll("select:not(.disabled)"), {});
 
-  M.CharacterCounter.init(document.querySelectorAll("[maxlength]"), {});
+  CharacterCounter.init(document.querySelectorAll("[maxlength]"), {});
 
-  M.Autocomplete.init(document.querySelectorAll("input.autocomplete"), {
+  Autocomplete.init(document.querySelectorAll("input.autocomplete"), {
     minLength: 0,
     data: autocompleteDemoData,
   });
-  M.Autocomplete.init(document.querySelectorAll("input.autocomplete-multiple"), {
+  Autocomplete.init(document.querySelectorAll("input.autocomplete-multiple"), {
     isMultiSelect: true,
     minLength: 1,
     data: autocompleteDemoData,
   });
 
-  M.Chips.init(document.querySelectorAll(".chips"), {});
-  M.Chips.init(document.querySelectorAll(".chips-initial"), {
+  Chips.init(document.querySelectorAll(".chips"), {});
+  Chips.init(document.querySelectorAll(".chips-initial"), {
     data: autocompleteDemoData.filter((country) => ["ma", "ta", "er", "ia", "li", "ze"].includes(country.id)),
   });
-  M.Chips.init(document.querySelectorAll(".chips-placeholder"), {
+  Chips.init(document.querySelectorAll(".chips-placeholder"), {
     placeholder: "Enter a tag",
     secondaryPlaceholder: "+Tag",
   });
-  M.Chips.init(document.querySelectorAll(".chips-autocomplete"), {
+  Chips.init(document.querySelectorAll(".chips-autocomplete"), {
     autocompleteOptions: {
       data: autocompleteDemoData,
     },
   });
 
-  M.FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn"), {});
-  M.FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn.horizontal"), {
+  FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn"), {});
+  FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn.horizontal"), {
     direction: "left",
   });
-  M.FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn.click-to-toggle"), {
+  FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn.click-to-toggle"), {
     direction: "left",
     hoverEnabled: false,
   });
-  M.FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn.toolbar"), {
+  FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn.toolbar"), {
     toolbarEnabled: true,
   });
 });
