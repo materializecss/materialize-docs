@@ -25,8 +25,9 @@ jobs:
         run: |
           git submodule init
           git submodule update
-          npm i
-          npm run build
+          npm install -g pnpm
+          pnpm i
+          pnpm run build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
