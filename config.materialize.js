@@ -4,8 +4,7 @@ export const config = {
       id: "index",
       url: "index.html",
       name: "Documentation",
-      description:
-        "Materialize is a modern responsive CSS framework based on Material Design by Google.",
+      description: "Materialize is a modern responsive CSS framework based on Material Design by Google.",
     },
     {
       id: "about",
@@ -17,18 +16,31 @@ export const config = {
       id: "gettingstarted",
       url: "getting-started.html",
       name: "Getting started",
-      description:
-        "Learn how to easily start using Materialize and integrate it into your project.",
+      description: "Learn how to easily start using Materialize and integrate it into your project.",
     },
-    { id: "color", url: "color.html", name: "Color" },
-    { id: "grid", url: "grid.html", name: "Grid" },
-    { id: "helpers", url: "helpers.html", name: "Helpers" },
+    {
+      id: "color",
+      url: "color.html",
+      name: "Color",
+      description: "Materialize offers a lot of colors which can be used in your next project.",
+    },
+    {
+      id: "grid",
+      url: "grid.html",
+      name: "Grid",
+      description: "Use Materializes powerful grid system which uses CSS Grid to make formatting your web project easier and more comfortable.",
+    },
+    {
+      id: "helpers",
+      url: "helpers.html",
+      name: "Helpers",
+      description: "Get an overview of all helper classes for visibility and common css properties.",
+    },
     {
       id: "mediacss",
       url: "media-css.html",
       name: "Media Styles",
-      description:
-        "Responsive images and videos ready to be seen on many devices.",
+      description: "Responsive images and videos ready to be seen on many devices.",
     },
     { id: "pulse", url: "pulse.html", name: "Pulse" },
     { id: "sass", url: "sass.html", name: "Sass" },
@@ -66,8 +78,7 @@ export const config = {
       id: "media",
       url: "media.html",
       name: "Media",
-      description:
-        "Use Box and Slider to present your media content in a cool way.",
+      description: "Use Box and Slider to present your media content in a cool way.",
     },
     { id: "modals", url: "modals.html", name: "Modals" },
     { id: "parallax", url: "parallax.html", name: "Parallax" },
