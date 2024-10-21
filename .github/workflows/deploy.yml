@@ -10,16 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # - name: Setup
-      #   uses: actions/setup-node@v3
-      # - uses: actions/checkout@v4
-      # - uses: pnpm/action-setup@v2
-      #   with:
-      #     version: 8
-      #     run_install: |
-      #       - recursive: true
-      #         args: [--frozen-lockfile, --strict-peer-dependencies]
-      #       - args: [--global, prettier, typescript]
 
       - name: Build
         run: |
