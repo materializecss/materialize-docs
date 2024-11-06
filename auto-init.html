@@ -13,14 +13,24 @@
           <div class="col s12 m8 offset-m1 xl7 offset-xl1">
             <div id="introduction" class="section scrollspy">
               <p class="caption">
-                Auto Init allows you to initialize all of the Materialize Components with a single function call. It is important to note that you cannot pass in options using this
-                method.
+                Auto Init allows you to initialize all of the Materialize Components with a single function call.
               </p>
             </div>
 
             <div id="initialization" class="scrollspy section">
               <h3 class="header">Initialization</h3>
               <pre><code class="language-javascript">M.AutoInit();</code></pre>
+
+              <p>Or with options to configure each components:</p>
+              <pre><code class="language-javascript">M.AutoInit(document.body, {
+  Dropdown: {
+    // pass options for Dropdown here
+  },
+  FloatingActionButtonOptions: {
+    // pass options for FloatingActionButtonOptions here
+  },
+  // Component: { ... }
+});</code></pre>
             </div>
 
             <div id="options" class="scrollspy section">
@@ -41,6 +51,12 @@
                     <td>Element</td>
                     <td>document.body</td>
                     <td>DOM Element to search within for components.</td>
+                  </tr>
+                  <tr>
+                    <td>options</td>
+                    <td>Object</td>
+                    <td><pre><code>{}</code></pre></td>
+                    <td>Options for each component (see components respective documentation for more information).</td>
                   </tr>
                 </tbody>
               </table>
