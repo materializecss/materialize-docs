@@ -12,9 +12,7 @@ function getMenuItem(item) {
     // active kids?
     const kidsIds = item.items.map((el) => el.id);
     const kidsPages = config.pages.filter((page) => kidsIds.includes(page.id));
-    const hasActiveKid = kidsPages.some(
-      (kid) => currentRoute === "/" + kid.url
-    );
+    const hasActiveKid = kidsPages.some((kid) => currentRoute === "/" + kid.url);
 
     const activeClass = hasActiveKid ? "active" : "";
     return `<li>
@@ -52,13 +50,14 @@ function getMenuItem(item) {
 }
 
 export default {
-  base: "./",
+  root: "./src",
+  //base: "./",
   resolve: {
     alias: {
-      '@materializecss/materialize/sass': path.resolve(__dirname, './packages/materialize/sass/'),   
-      '@materializecss/materialize': path.resolve(__dirname, './packages/materialize/src/')      
-    }    
-  },  
+      "@materializecss/materialize/sass": path.resolve(__dirname, "./packages/materialize/sass/"),
+      "@materializecss/materialize": path.resolve(__dirname, "./packages/materialize/src/"),
+    },
+  },
   plugins: [
     handlebars({
       context(pagePath) {
@@ -71,9 +70,7 @@ export default {
         return { page, config };
       },
       helpers: {
-        getmenu: function(item) {
-          return getMenuItem(item);
-        },
+        getmenu: (item) => getMenuItem(item),
       },
       partialDirectory: resolve(__dirname, "partials"),
     }),
