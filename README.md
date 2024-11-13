@@ -39,9 +39,10 @@ pnpm preview
 ### New Release (for Maintainers)
 
 - Execute the release process in the core package incl. releasing on npm
-- Update versions in **getting-started.html**, **partials/navbar.html**
+- Switch to branch **v2-dev** and also pull newest package in [packages/materialize]()
+- Update versions in [src/getting-started.html](), [partials/navbar.html]()
 - Run docs locally and check manually
 - Make commit to dev (message: "chore: release 2.X.X")
-- Make PR in GitHub from dev -> main
+- Make PR from dev -> main
 - Merge the PR
-- Party and spread the news via social media channels 🎉
+- Spread news via social media channels
