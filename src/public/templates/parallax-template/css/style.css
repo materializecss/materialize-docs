@@ -7,10 +7,6 @@ nav .brand-logo {
   width: 90%;
 }
 
-h1 {
-  color: #4db6ac;
-}
-
 h2 {
   color: #795548;
 }
@@ -27,7 +23,7 @@ p {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .parallax-container .section {
