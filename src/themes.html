@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -23,14 +23,24 @@
                 <code>&lt;/head></code> tag.
               </p>
               <p>
-                It has to be loaded as soon as possible (therefore put it as first script) to avoid flickering of the page. Also it is recommended to directly write it into the
-                HTML code, then it is also faster (no additional request).
+                It has to be loaded as soon as possible (therefore put it as first script) to avoid flickering of the page. It is also recommended to put this code directly into
+                into the HTML code to load faster (no additional requests).
               </p>
               <pre><code class="language-javascript">
 <xmp>
 <script>
-  const theme = localStorage.getItem('theme');
-  if (theme) document.documentElement.setAttribute('theme', theme);
+  function getTheme() {
+    const isDarkModeEnabledViaCss = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = localStorage.getItem('theme');
+    const isDark = currentTheme ? currentTheme === 'dark' : isDarkModeEnabledViaCss;
+    return isDark;
+  }
+  function setTheme(enableDark) {
+    document.documentElement.setAttribute('theme', enableDark ? 'dark' : 'light');
+    localStorage.setItem('theme', enableDark ? 'dark' : 'light');
+  }
+  const currentState = getTheme();
+  setTheme(currentState);
 </script>
 </xmp>
 </code></pre>
@@ -41,46 +51,42 @@
               <h2>Changing Theme Setting</h2>
               <p>The Theme can be switched instantly via click of a button.</p>
               <p>
-                The following example binds a Theme-Switching Function to an HTML-Element, which has an Id of #theme-switch. To test this, you can click on the moon or the sun icon
-                at this page in the top-right corenr to see it in action!
+                The following example binds a Theme-Switching Function to an HTML-Element, which has a class of `btn-switch-theme`. To test this, you can click on the moon or the
+                sun icon at this page in the top-right corenr to see it in action!
               </p>
               <pre><code class="language-javascript">  // Change Theme Setting with a Switch
-  const currentTheme = localStorage.getItem('theme');
-  const switchElem = document.querySelector('#theme-switch');
-
-  const setTheme = (isDark) =&gt; {
-    if (isDark) {
-      switchElem.classList.add('is-dark');
-      switchElem.querySelector('i').innerText = 'light_mode';
-      switchElem.title = 'Switch to light mode';
-    }
-    else {
-      switchElem.classList.remove('is-dark');
-      switchElem.querySelector('i').innerText = 'dark_mode';
-      switchElem.title = 'Switch to dark mode';
-    }
+  function getTheme() {
+    const isDarkModeEnabledViaCss = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = localStorage.getItem('theme');
+    const isDark = currentTheme ? currentTheme === 'dark' : isDarkModeEnabledViaCss;
+    return isDark;
   }
 
-  if (switchElem) {
-    // Load
-    if (currentTheme) setTheme(true);
-    // Change
-    switchElem.addEventListener('click', e =&gt; {
-      e.preventDefault();
-      if (!switchElem.classList.contains('is-dark')) {
-        // Dark Theme
-        document.documentElement.setAttribute('theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        setTheme(true);
-      }
-      else {
-        // Light Theme
-        document.documentElement.removeAttribute('theme');
-        localStorage.removeItem('theme');
-        setTheme(false);
-      }
-    });
+  function setTheme(enableDark) {
+    document.documentElement.setAttribute('theme', enableDark ? 'dark' : 'light');
+    localStorage.setItem('theme', enableDark ? 'dark' : 'light');
   }
+
+  function updateDarkModeButtonState(isCurrentlyDarkModeEnabled) {
+    const element = document.querySelector('.btn-switch-theme');
+    element.classList.remove('is-dark');
+    if (isCurrentlyDarkModeEnabled) element.classList.add('is-dark');
+    element.querySelector('span').innerText = isCurrentlyDarkModeEnabled ? 'light_mode' : 'dark_mode';
+    element.title = 'Switch to ' + (isCurrentlyDarkModeEnabled ? 'light' : 'dark') + ' mode';
+  }
+
+  // Init Theme and Button
+  const darkModeButton = document.querySelector('.btn-switch-theme');
+  darkModeButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const nextState = !getTheme(); // toggle
+    setTheme(nextState);
+    updateDarkModeButtonState(nextState);
+  });
+  const currentState = getTheme();
+  setTheme(currentState);
+  updateDarkModeButtonState(currentState);
+
 </code></pre>
             </div>
             <div class="section scrollspy" id="creating-theme">
