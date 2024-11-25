@@ -4,8 +4,6 @@ import handlebars from "vite-plugin-handlebars";
 import { fileURLToPath } from "node:url";
 import { config } from "./config.materialize";
 
-const version = "v2.1.1";
-
 let currentRoute = "";
 
 function getMenuItem(item) {
@@ -93,6 +91,6 @@ export default {
         })
       ),
     },
-    outDir: "./../dist" + ("/" + version), // relative to rootDir
+    outDir: "./../dist/version/latest", // relative to rootDir
   },
 };

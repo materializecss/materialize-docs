@@ -40,9 +40,9 @@ pnpm preview
 
 - Execute the release process in the core package incl. releasing on npm
 - Switch to branch **v2-dev** and also pull newest package in [packages/materialize]()
-- Update versions in [src/getting-started.html](), [partials/navbar.html]()
-- Run docs locally and check manually
-- Make commit to dev (message: "chore: release 2.X.X")
-- Make PR from dev -> main
-- Merge the PR
+- Update version string in **package.json**, **src/getting-started.html**, **partials/navbar.html**
+- Run docs locally and check manually with `pnpm dev`
+- Make commit to v2-dev (message: "chore: release 2.X.X")
+- Make PR from v2-dev -> main
+- Merge the PR (The deploy step to gh-pages should be executed)
 - Spread news via social media channels
