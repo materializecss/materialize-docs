@@ -17,23 +17,18 @@
                 <code class="language-html">.disabled</code> to make a tab inaccessible.
               </p>
 
-              <ul class="tabs tab-demo z-depth-1">
-                <li class="tab"><a href="#test16">Test 1</a></li>
-                <li class="tab">
-                  <a class="active" href="#test17">Another Tab</a>
-                </li>
-                <li class="tab"><a href="#test18">Test 3</a></li>
-                <li class="tab"><a href="#test19">Test 4</a></li>
+              <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+                <li class="tab"><a href="#image-test1"><i class="material-icons">flight</i>Flight</a></li>
+                <li class="tab"><a class="active" href="#image-test2"><i class="material-icons">luggage</i>Luggage</a></li>
+                <li class="tab"><a href="#image-test3"><i class="material-icons">explore</i>Explore</a></li>
               </ul>
-
-              <div id="test16" class="col s12"><p>Test 1</p></div>
-              <div id="test17" class="col s12"><p>Another Tab content</p></div>
-              <div id="test18" class="col s12"><p>Test 3</p></div>
-              <div id="test19" class="col s12"><p>Test 4</p></div>
+              <div id="image-test1" class="col s12"><p>Flight</p></div>
+              <div id="image-test2" class="col s12"><p>Luggage</p></div>
+              <div id="image-test3" class="col s12"><p>Explore</p></div>   
             </div>
 
             <p>Tabs automatically become scrollable when there are too many to fit on screen</p>
-            <ul class="tabs tab-demo z-depth-1">
+            <ul class="tabs tab-demo z-depth-1 ">
               <li class="tab"><a href="#test5">Test 1</a></li>
               <li class="tab"><a class="active" href="#test6">Test 2</a></li>
               <li class="tab"><a href="#test7">Test 3</a></li>
@@ -284,6 +279,44 @@
 <div id="test0" class="col s12"><p>Test 5</p></div>
 </xmp>
         </code></pre>
+            </div>
+
+            <div id="icon-tabs" class="scrollspy section">
+              <h3 class="header">Icons</h3>   
+              <p>
+                By default icons appear vertically centered. To diplay icons horizontally add <code class="language-html">.tabs-horizontal</code> 
+                class to the tabs container to indicate text position.     
+              </p>
+              
+              <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+                <li class="tab"><a href="#image-test1"><i class="material-icons">flight</i></a></li>
+                <li class="tab"><a class="active" href="#image-test2"><i class="material-icons">luggage</i></a></li>
+                <li class="tab"><a href="#image-test3"><i class="material-icons">explore</i></a></li>
+              </ul>
+              <p></p>  
+              <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+                <li class="tab"><a href="#image-test1"><i class="material-icons">flight</i>Flight</a></li>
+                <li class="tab"><a class="active" href="#image-test2"><i class="material-icons">luggage</i>Luggage</a></li>
+                <li class="tab"><a href="#image-test3"><i class="material-icons">explore</i>Explore</a></li>
+              </ul>                
+              <p></p>
+              <ul class="tabs tabs-fixed-width tab-demo tabs-horizontal z-depth-1">
+                <li class="tab"><a href="#image-test1"><i class="material-icons">flight</i>Flight</a></li>
+                <li class="tab"><a class="active" href="#image-test2"><i class="material-icons">luggage</i>Luggage</a></li>
+                <li class="tab"><a href="#image-test3"><i class="material-icons">explore</i>Explore</a></li>
+              </ul>                             
+              <pre><code class="language-markup">    
+<xmp>
+  <ul class="tabs tabs-fixed-width tab-demo tabs-horizontal z-depth-1">
+    <li class="tab"><a href="#image-test1"><i class="material-icons">flight</i>Flight</a></li>
+    <li class="tab"><a class="active" href="#image-test2"><i class="material-icons">luggage</i>Luggage</a></li>
+    <li class="tab"><a href="#image-test3"><i class="material-icons">explore</i>Explore</a></li>
+  </ul>              
+  <div id="image-test1" class="col s12"><p>Flight</p></div>
+  <div id="image-test2" class="col s12"><p>Luggage</p></div>
+  <div id="image-test3" class="col s12"><p>Explore</p></div>    
+</xmp>
+              </code></pre>
             </div>
           </div>
 
