@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -156,8 +156,8 @@
               <p>To open a modal using a trigger:</p>
               <pre><code class="language-javascript">
 document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.modal');
-  var instances = M.Modal.init(elems, {
+  const elems = document.querySelectorAll('.modal');
+  const instances = M.Modal.init(elems, {
     // specify options here
   });
 });
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <blockquote>
                 <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
-  var instance = M.Modal.getInstance(elem);
+                  const instance = M.Modal.getInstance(elem);
         </code></pre>
               </blockquote>
               <h5 class="method-header">.open();</h5>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -98,8 +98,8 @@
             <i class="material-icons copyButton">content_copy</i>
             <code class="language-javascript copiedText">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, {
+    const elems = document.querySelectorAll('.autocomplete');
+    const instances = M.Autocomplete.init(elems, {
       // specify options here
       minLength: 0, // shows instantly
       data: [
@@ -113,8 +113,8 @@
   // With Mutlti Select
 
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, {
+    const elems = document.querySelectorAll('.autocomplete');
+    const instances = M.Autocomplete.init(elems, {
       // specify options here
       minLength: 0, // shows instantly
       isMultiSelect: true,
@@ -129,8 +129,8 @@
   // With Mutlti Select and custom search function
 
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, {
+    const elems = document.querySelectorAll('.autocomplete');
+    const instances = M.Autocomplete.init(elems, {
       // specify options here
       isMultiSelect: true,
       data: [
@@ -254,7 +254,7 @@ onSearch: (text, autocomplete) => {
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
               <code class="language-javascript copiedText">
-  var instance = M.Autocomplete.getInstance(elem);
+  const instance = M.Autocomplete.getInstance(elem);
   instance.open();
               </code>
             </pre>

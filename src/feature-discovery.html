@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -60,8 +60,8 @@
           <i class="material-icons copyButton">content_copy</i>
           <code class="language-javascript copiedText">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.tap-target');
-    var instances = M.TapTarget.init(elems, {
+    const elems = document.querySelectorAll('.tap-target');
+    const instances = M.TapTarget.init(elems, {
       // specify options here
     });
   });
@@ -106,7 +106,7 @@
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
               <code class="language-javascript copiedText">
-  var instance = M.TapTarget.getInstance(elem);
+                const instance = M.TapTarget.getInstance(elem);
               </code>
             </pre>
               </blockquote>

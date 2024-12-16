@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -579,8 +579,8 @@
               <p>There are no options for this plugin, but if you are adding these dynamically, you can use this to initialize them.</p>
               <pre><code class="language-javascript">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('input#input_text, textarea#textarea2');
-    var instances = M.CharacterCounter.init(elems);
+    const elems = document.querySelectorAll('input#input_text, textarea#textarea2');
+    const instances = M.CharacterCounter.init(elems);
   });
         </code></pre>
             </div>

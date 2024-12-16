@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -188,8 +188,8 @@
 
               <pre><code class="language-javascript">
   // Get toast DOM Element, get instance, then call dismiss function
-  var toastElement = document.querySelector('.toast');
-  var toastInstance = M.Toast.getInstance(toastElement);
+  const toastElement = document.querySelector('.toast');
+  const toastInstance = M.Toast.getInstance(toastElement);
   toastInstance.dismiss();
         </code></pre>
 
@@ -223,8 +223,8 @@
     <script type="module" src="/main.ts"></script>
   </body>
   <script type="text/javascript">
-    var displayCustomHTMLToast = function () {
-      var toastHTML = '<span>I am toast content</span><button class="btn-flat toast-action">Undo</button>';
+    const displayCustomHTMLToast = function () {
+      const toastHTML = '<span>I am toast content</span><button class="btn-flat toast-action">Undo</button>';
       M.toast({ html: toastHTML });
     };
   </script>

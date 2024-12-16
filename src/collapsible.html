@@ -81,8 +81,8 @@
           <i class="material-icons copyButton">content_copy</i>
           <code class="language-javascript copiedText">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems, {
+    const elems = document.querySelectorAll('.collapsible');
+    const instances = M.Collapsible.init(elems, {
       // specify options here
     });
   });
@@ -215,7 +215,7 @@
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
               <code class="language-javascript copiedText">
-  var instance = M.Collapsible.getInstance(elem);
+                const instance = M.Collapsible.getInstance(elem);
               </code>
             </pre>
         </blockquote>
@@ -368,8 +368,8 @@ instance.destroy();
 <xmp><ul class="collapsible expandable"></xmp>
             </code></pre>
             <pre><code class="language-javascript">
-var elem = document.querySelector('.collapsible.expandable');
-var instance = M.Collapsible.init(elem, {
+const elem = document.querySelector('.collapsible.expandable');
+const instance = M.Collapsible.init(elem, {
   accordion: false
 });
             </code></pre>

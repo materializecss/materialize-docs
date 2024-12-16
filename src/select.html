@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -182,8 +182,8 @@
 
               <pre><code class="language-javascript">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, {
+    const elems = document.querySelectorAll('select');
+    const instances = M.FormSelect.init(elems, {
       // specify options here
     });
   });
@@ -224,7 +224,7 @@
               <blockquote>
                 <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
-  var instance = M.FormSelect.getInstance(elem);
+                  const instance = M.FormSelect.getInstance(elem);
         </code></pre>
               </blockquote>
 

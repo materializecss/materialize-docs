@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -33,8 +33,8 @@
               <h3 class="header">Initialization</h3>
               <pre><code class="language-javascript">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(elems, {
+    const elems = document.querySelectorAll('.parallax');
+    const instances = M.Parallax.init(elems, {
       // specify options here
     });
   });
@@ -69,7 +69,7 @@
               <blockquote>
                 <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
-  var instance = M.Parallax.getInstance(elem);
+                  const instance = M.Parallax.getInstance(elem);
         </code></pre>
               </blockquote>
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -23,8 +23,8 @@
                 <h5>Initialization</h5>
                 <pre><code class="language-javascript">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, {
+    const elems = document.querySelectorAll('.datepicker');
+    const instances = M.Datepicker.init(elems, {
       // specify options here
     });
   });
@@ -413,7 +413,7 @@
                 <blockquote>
                   <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                   <pre><code class="language-javascript col s12">
-  var instance = M.Datepicker.getInstance(elem);
+                    const instance = M.Datepicker.getInstance(elem);
             </code></pre>
                 </blockquote>
                 <h5 class="method-header">.open();</h5>
@@ -473,8 +473,8 @@ instance.destroy();
                 <h5>Initialization</h5>
                 <pre><code class="language-javascript">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.timepicker');
-    var instances = M.Timepicker.init(elems, {
+    const elems = document.querySelectorAll('.timepicker');
+    const instances = M.Timepicker.init(elems, {
       // specify options here
     });
   });
@@ -652,7 +652,7 @@ instance.destroy();
                 <blockquote>
                   <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                   <pre><code class="language-javascript col s12">
-  var instance = M.Timepicker.getInstance(elem);
+                    const instance = M.Timepicker.getInstance(elem);
             </code></pre>
                 </blockquote>
                 <h5 class="method-header">.open();</h5>

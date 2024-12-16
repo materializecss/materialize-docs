@@ -160,8 +160,8 @@
           <i class="material-icons copyButton">content_copy</i>
           <code class="language-javascript copiedText">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.chips');
-    var instances = M.Chips.init(elems, {
+    const elems = document.querySelectorAll('.chips');
+    const instances = M.Chips.init(elems, {
       // specify options here
       autocompleteOptions: {
         data: [
@@ -181,7 +181,7 @@
           <span class="copyMessage">Copied!</span>
           <i class="material-icons copyButton">content_copy</i>
           <code class="language-javascript copiedText">
-  var chip = {
+  const chip = {
     id: '4711', // unique identifier (can be a string too)
     text: 'Title' // optional Text
     image: '', // optional Image-Url
@@ -278,7 +278,7 @@
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
               <code class="language-javascript copiedText">
-    var instance = M.Chips.getInstance(elem);
+                const instance = M.Chips.getInstance(elem);
               </code>
             </pre>
         </blockquote>

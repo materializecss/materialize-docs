@@ -1,16 +1,12 @@
-(function($){
-  $(function(){
+(function ($) {
+  $(function () {
+    $(".sidenav").sidenav();
 
-    $('.sidenav').sidenav();
-
-
-    var $container = $('#masonry-grid');
+    const $container = $("#masonry-grid");
     // initialize
     $container.masonry({
-      columnWidth: '.col',
-      itemSelector: '.col',
+      columnWidth: ".col",
+      itemSelector: ".col",
     });
-
-
   }); // end of document ready
 })(jQuery); // end of jQuery name space

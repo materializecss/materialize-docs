@@ -84,15 +84,15 @@
         <h3 class="header">Initialization</h3>
         <pre><code class="language-javascript col s12">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, {
+    const elems = document.querySelectorAll('.sidenav');
+    const instances = M.Sidenav.init(elems, {
       // specify options here
     });
   });
 
   // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  // var collapsibleElem = document.querySelector('.collapsible');
-  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, {
+  // const collapsibleElem = document.querySelector('.collapsible');
+  // const collapsibleInstance = M.Collapsible.init(collapsibleElem, {
   //  // specify options here
   // });
         </code></pre>
@@ -183,7 +183,7 @@
         <blockquote>
           <p>All the methods are called on the plugin instance. You can get the plugin instance like this: </p>
           <pre><code class="language-javascript col s12">
-  var instance = M.Sidenav.getInstance(elem);
+            const instance = M.Sidenav.getInstance(elem);
           </code></pre>
         </blockquote>
         <h5 class="method-header">

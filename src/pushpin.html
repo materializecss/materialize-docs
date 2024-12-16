@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -47,8 +47,8 @@ pushPinDemoNavElems.forEach(navElem => {
               <p>Here is a sample initialization of pushpin. Take a look at what the options are and customize them to your needs.</p>
               <pre><code class="language-javascript col s12">
   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.pushpin');
-    var instances = M.Pushpin.init(elems, {
+    const elems = document.querySelectorAll('.pushpin');
+    const instances = M.Pushpin.init(elems, {
       // specify options here
     });
   });
@@ -101,7 +101,7 @@ pushPinDemoNavElems.forEach(navElem => {
               <blockquote>
                 <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
                 <pre><code class="language-javascript col s12">
-  var instance = M.Pushpin.getInstance(elem);
+                  const instance = M.Pushpin.getInstance(elem);
         </code></pre>
               </blockquote>
 
