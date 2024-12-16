@@ -15,13 +15,25 @@
                 Use a modal for dialog boxes, confirmation messages, or other content that can be called up. In order for the modal to work you have to add the Modal ID to the link
                 of the trigger. To add a close button, just add the class
                 <code class="language-css">.modal-close</code> to your button.
+                <div class="red-text">Upgrade from 2.1.1<br>
+                  <ul>
+                    <li>1. search all elements with class="modal" and change the tagName to dialog</li>
+                    <li>2. add <xmp><div class="modal-header"></div></xmp> in front of the modal-content element and place title stuff in there if needed.</li>
+                    <li>3. replace data-target and triggers with onclick event handlers "id.showModal()"</li>
+                    <li>4. replace close-triggers with onclick event handlers "id.close()"</li>
+                  </ul>
+                </div>
               </p>
 
-              <a class="waves-effect waves-light btn tonal modal-trigger" href="#modal1">Show Modal</a>
+              <button class="btn tonal waves-effect waves-light" onclick="modal1.showModal()">Show Modal</button>
+              <button class="btn tonal waves-effect waves-light" onclick="modal2.showModal()">Show Modal with much content</button>
 
-              <div id="modal1" class="modal">
-                <div class="modal-content">
+              <!-- Modal 1 -->
+              <dialog id="modal1" class="modal">
+                <div class="modal-header">
                   <h4>Modal Header</h4>
+                </div>
+                <div class="modal-content">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -29,13 +41,17 @@
                   </p>
                 </div>
                 <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect btn-flat">Disagree</a>
-                  <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
+                  <button tabindex="0" class="btn text waves-effect" onclick="modal1.close()">Disagree</button>
+                  <button tabindex="0" class="btn text waves-effect" onclick="modal1.close()">Agree</button>
                 </div>
-              </div>
-              <div id="modal2" class="modal modal-fixed-footer">
-                <div class="modal-content">
+              </dialog>
+
+              <!-- Modal 2 (Fixed Footer) -->
+              <dialog id="modal2" class="modal">
+                <div class="modal-header">
                   <h4>Modal Header</h4>
+                </div>
+                <div class="modal-content">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -78,13 +94,17 @@
                   </p>
                 </div>
                 <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect btn-flat">Disagree</a>
-                  <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
+                  <button tabindex="0" class="btn text waves-effect" onclick="modal2.close()">Disagree</button>
+                  <button tabindex="0" class="btn text waves-effect" onclick="modal2.close()">Agree</button>
                 </div>
-              </div>
-              <div id="modal3" class="modal bottom-sheet">
-                <div class="modal-content">
+              </dialog>
+
+              <!-- Modal 3 (Bottom Sheet) -->
+              <dialog id="modal3" class="modal bottom-sheet">
+                <div class="modal-header">
                   <h3 class="header">Modal Header</h3>
+                </div>
+                <div class="modal-content">
                   <ul class="collection">
                     <li class="collection-item avatar">
                       <img src="images/yuna.jpg" alt="" class="circle" />
@@ -120,33 +140,36 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </dialog>
+              <!---->
             </div>
 
             <pre><code class="language-html">
 <xmp>
 <!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+<button class="btn waves-effect waves-light" onclick="modal1.showModal()">Show Modal</button>
 <!-- Modal Structure -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
+<dialog id="modal1" class="modal">
+  <div class="modal-header">
     <h4>Modal Header</h4>
+  </div>
+  <div class="modal-content">
     <p>A bunch of text</p>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
+    <a href="#!" tabindex="0" class="modal-close waves-effect btn-flat">Agree</a>
   </div>
-</div>
+</dialog>
 </xmp>
-          </code></pre>
+</code></pre>
 
-            <div id="button-trigger" class="scrollspy section">
-              <h3 class="header">Modals with Button trigger</h3>
-              <p>If you prefer to use a button to open a modal specify the Modal ID in <code class="language-html">data-target</code> rather than the href attribute.</p>
-              <pre><code class="language-html">
+      <div id="button-trigger" class="scrollspy section">
+        <h3 class="header">Modals with Button trigger</h3>
+        <p>You can open the modal by id with <code class="language-html">modal1.showModal()</code> where modal1 is the ElementId.</p>
+        <pre><code class="language-html">
 <xmp>
 <!-- Modal Trigger -->
-<button data-target="modal1" class="btn modal-trigger">Modal</button>
+<button class="btn" onclick="modal1.showModal()">Show Modal</button>
 </xmp>
 </code></pre>
             </div>
@@ -314,52 +337,25 @@ instance.destroy();
               </table>
             </div>
 
-            <div id="fixed-footer" class="scrollspy section">
-              <h3 class="header">Modals with Fixed Footer</h3>
-              <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Modal With Fixed Footer</a>
-              <p>
-                If you have content that is very long and you want the action buttons to be visible all the time, you can add the
-                <code class="language-html">modal-fixed-footer</code> class to the modal.
-              </p>
-
-              <pre><code class="language-html">
-<xmp>
-<!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-<!-- Modal Structure -->
-<div id="modal1" class="modal modal-fixed-footer">
-  <div class="modal-content">
-    <h4>Modal Header</h4>
-    <p>A bunch of text</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
-  </div>
-</div>
-</xmp>
-            </code></pre>
-            </div>
-
             <div id="bottom-sheet" class="scrollspy section">
               <h3 class="header">Bottom Sheet Modals</h3>
 
-              <a class="waves-effect waves-light btn tonal modal-trigger" href="#modal3">Show BottomSheet Modal</a>
+              <button class="btn tonal waves-effect waves-light" onclick="modal3.showModal()">Show BottomSheet-Modal</button>
 
               <p>Bottom Sheet Modals are good for displaying actions to the user on the bottom of a screen. They still act the same as regular modals.</p>
               <pre><code class="language-html">
 <xmp>
 <!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+<a class="btn tonal waves-effect waves-light" href="#" onclick="modal1.showModal(); return false;">Show BottomSheet Modal</a>
 <!-- Modal Structure -->
-<div id="modal1" class="modal bottom-sheet">
-  <div class="modal-content">
+<dialog id="modal1" class="modal bottom-sheet">
+  <div class="modal-header">
     <h4>Modal Header</h4>
+  </div>
+  <div class="modal-content">
     <p>A bunch of text</p>
   </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
-  </div>
-</div>
+</dialog>
 </xmp>
           </code></pre>
             </div>
@@ -387,9 +383,6 @@ instance.destroy();
                   </li>
                   <li>
                     <a href="#properties">Properties</a>
-                  </li>
-                  <li>
-                    <a href="#fixed-footer">Fixed Footer</a>
                   </li>
                   <li>
                     <a href="#bottom-sheet">Bottom Sheet</a>
