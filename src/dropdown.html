@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{> head }}
@@ -66,8 +66,8 @@
           <i class="material-icons copyButton">content_copy</i>
 <code class="language-javascript copiedText">
 document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.dropdown-trigger');
-  var instances = M.Dropdown.init(elems, {
+  const elems = document.querySelectorAll('.dropdown-trigger');
+  const instances = M.Dropdown.init(elems, {
     // specify options here
   });
 });</code></pre>
@@ -208,8 +208,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <script>
                   document.addEventListener("DOMContentLoaded", function () {
-                    var elems = document.querySelectorAll(".dropdown-trigger")[0];
-                    var instances = M.Dropdown.init(elems, {
+                    const elems = document.querySelectorAll(".dropdown-trigger")[0];
+                    const instances = M.Dropdown.init(elems, {
                       // the dropdown is aligned to left
                       alignment: "left",
                       // enabled for example to be visible
@@ -217,8 +217,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                   });
                   document.addEventListener("DOMContentLoaded", function () {
-                    var elems = document.querySelectorAll(".dropdown-trigger")[1];
-                    var instances = M.Dropdown.init(elems, {
+                    const elems = document.querySelectorAll(".dropdown-trigger")[1];
+                    const instances = M.Dropdown.init(elems, {
                       // the dropdown is aligned to left
                       alignment: "right",
                       // enabled for example to be visible
@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <pre>
 <code class="language-javascript copiedText">
 document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.dropdown-trigger')[0];
-  var instances = M.Dropdown.init(elems, {
+  const elems = document.querySelectorAll('.dropdown-trigger')[0];
+  const instances = M.Dropdown.init(elems, {
     // the dropdown is aligned to left
     alignment: 'left',
     // enabled for example to be visible
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <pre style="padding-top: 0px">
               <span class="copyMessage">Copied!</span>
               <i class="material-icons copyButton">content_copy</i>
-              <code class="language-javascript copiedText">var instance = M.Dropdown.getInstance(elem);</code>
+              <code class="language-javascript copiedText">const instance = M.Dropdown.getInstance(elem);</code>
             </pre>
               </blockquote>
               <h5 class="method-header">.open();</h5>
