@@ -13,24 +13,22 @@
             <div id="introduction" class="section scrollspy">
               <p class="caption">
                 Use a modal for dialog boxes, confirmation messages, or other content that can be called up. In order for the modal to work you have to add the Modal ID to the link
-                of the trigger. To add a close button, just add the class
-                <code class="language-css">.modal-close</code> to your button.
+                of the trigger.
                 <div class="red-text">Upgrade > 2.1.1<br>
                   <ul>
-                    <li>1. search all elements with class="modal" and change the tagName to dialog</li>
-                    <li>2. add <xmp><div class="modal-header"></div></xmp> in front of the modal-content element and place title stuff in there if needed.</li>
-                    <li>3. replace data-target and triggers with onclick event handlers like "id.showModal()" for non-dimissible and "element.show()" for dismissible dialogs.</li>
-                    <li>4. replace close-triggers with onclick event handlers "id.close()"</li>
+                    <li>1. search all elements with class="modal" and add "popover" attribute</li>
+                    <li>2. replace `data-target="id"` with `popovertarget="id"`.</li>
+                    <li>3. replace close-triggers with `popovertarget="id"` (toggle)</li>
                   </ul>
                 </div>
               </p>
 
-              <button class="btn tonal waves-effect waves-light" onclick="modal1.showModal()">Show</button>
-              <button class="btn tonal waves-effect waves-light" onclick="modal1.show()">Show (dismissible)</button>
-              <button class="btn tonal waves-effect waves-light" onclick="modal2.showModal()">Show with long content</button>
+              <button class="btn tonal waves-effect waves-light" popovertarget="modal1">Show</button>
+              <button class="btn tonal waves-effect waves-light" popovertarget="modal2">Show with long content</button>
+              <a class="btn tonal waves-effect waves-light" href="javascript:modal3.showPopover()">Show BottomSheet Modal via a-tag</a>
 
               <!-- Modal 1 -->
-              <dialog id="modal1" class="modal">
+              <div id="modal1" class="modal" popover>
                 <div class="modal-header">
                   <h4>Modal Header</h4>
                 </div>
@@ -42,13 +40,13 @@
                   </p>
                 </div>
                 <div class="modal-footer">
-                  <button tabindex="0" class="btn text waves-effect" onclick="modal1.close()">Disagree</button>
-                  <button tabindex="0" class="btn text waves-effect" onclick="modal1.close()">Agree</button>
+                  <button tabindex="0" class="btn text waves-effect" popovertarget="modal1">Disagree</button>
+                  <button tabindex="0" class="btn text waves-effect" popovertarget="modal1">Agree</button>
                 </div>
-              </dialog>
+              </div>
 
               <!-- Modal 2 (Fixed Footer) -->
-              <dialog id="modal2" class="modal">
+              <div id="modal2" class="modal" popover>
                 <div class="modal-header">
                   <h4>Modal Header</h4>
                 </div>
@@ -98,10 +96,10 @@
                   <button tabindex="0" class="btn text waves-effect" onclick="modal2.close()">Disagree</button>
                   <button tabindex="0" class="btn text waves-effect" onclick="modal2.close()">Agree</button>
                 </div>
-              </dialog>
+              </div>
 
               <!-- Modal 3 (Bottom Sheet) -->
-              <dialog id="modal3" class="modal bottom-sheet">
+              <div id="modal3" class="modal bottom-sheet" popover>
                 <div class="modal-header">
                   <h3 class="header">Modal Header</h3>
                 </div>
@@ -141,16 +139,15 @@
                     </li>
                   </ul>
                 </div>
-              </dialog>
+              </div>
               <!---->
             </div>
 
             <pre><code class="language-html">
-<xmp>
-<!-- Modal Trigger -->
-<button class="btn waves-effect waves-light" onclick="modal1.showModal()">Show Modal</button>
-<!-- Modal Structure -->
-<dialog id="modal1" class="modal">
+<xmp><button class="btn waves-effect waves-light" popovertarget="modal1">Show</button>
+<a class="btn tonal" href="javascript:modal1.showPopover()">Show via Link</a>
+
+<div id="modal1" class="modal" popover>
   <div class="modal-header">
     <h4>Modal Header</h4>
   </div>
@@ -158,22 +155,11 @@
     <p>A bunch of text</p>
   </div>
   <div class="modal-footer">
-    <a href="#!" tabindex="0" class="modal-close waves-effect btn-flat">Agree</a>
+    <button tabindex="0" class="waves-effect btn-flat" popovertarget="modal1">Agree</button>
   </div>
-</dialog>
+</div>
 </xmp>
 </code></pre>
-
-      <div id="button-trigger" class="scrollspy section">
-        <h3 class="header">Modals with Button trigger</h3>
-        <p>You can open the modal by id with <code class="language-html">modal1.showModal()</code> where modal1 is the ElementId.</p>
-        <pre><code class="language-html">
-<xmp>
-<!-- Modal Trigger -->
-<button class="btn" onclick="modal1.showModal()">Show Modal</button>
-</xmp>
-</code></pre>
-            </div>
 
             <div id="initialization" class="scrollspy section">
               <h3 class="header">Initialization</h3>
@@ -204,17 +190,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <pre><code class="language-javascript col s12">const modal = document.querySelector('#modal-1');</code></pre>
               </blockquote>
 
-              <h5 class="method-header">.show();</h5>
+              <h5 class="method-header">.showPopover();</h5>
               <p>Open dismissible</p>
-              <pre><code class="language-javascript col s12">modal.show();</code></pre>
+              <pre><code class="language-javascript col s12">modal.showPopover();</code></pre>
 
-              <h5 class="method-header">.showModal();</h5>
-              <p>Open non-dismissible</p>
-              <pre><code class="language-javascript col s12">modal.showModal();</code></pre>
-
-              <h5 class="method-header">.close();</h5>
+              <h5 class="method-header">.hidePopover();</h5>
               <p>Close</p>
-              <pre><code class="language-javascript col s12">modal.close();</code></pre>
+              <pre><code class="language-javascript col s12">modal.hidePopover();</code></pre>
             </div>
 
             <div id="properties" class="scrollspy section">
@@ -231,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <tr>
                     <td>-</td>
                     <td>-</td>
-                    <td>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">Html spec</a> for more details.</td>
+                    <td>Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API" target="_blank">Popover API</a> for more details.</td>
                   </tr>
                 </tbody>
               </table>
@@ -239,21 +221,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <div id="bottom-sheet" class="scrollspy section">
               <h3 class="header">Bottom Sheet Modals</h3>
-              <button class="btn tonal waves-effect waves-light" onclick="modal3.showModal()">Show BottomSheet-Modal</button>
+              <button class="btn tonal waves-effect waves-light" popovertarget="modal3">Show BottomSheet-Modal</button>
               <p>Bottom Sheet Modals are good for displaying actions to the user on the bottom of a screen. They still act the same as regular modals.</p>
               <pre><code class="language-html">
-<xmp>
-<!-- Modal Trigger -->
-<a class="btn tonal waves-effect waves-light" href="#" onclick="modal1.showModal(); return false;">Show BottomSheet Modal</a>
-<!-- Modal Structure -->
-<dialog id="modal1" class="modal bottom-sheet">
+<xmp><a class="btn tonal waves-effect waves-light" href="javascript:modal1.showPopover()">Show BottomSheet Modal</a>
+
+<div id="modal1" class="modal bottom-sheet" popover>
   <div class="modal-header">
     <h4>Modal Header</h4>
   </div>
   <div class="modal-content">
     <p>A bunch of text</p>
   </div>
-</dialog>
+</div>
 </xmp>
           </code></pre>
             </div>
@@ -265,7 +245,6 @@ document.addEventListener('DOMContentLoaded', function() {
               <div style="height: 1px">
                 <ul class="section table-of-contents">
                   <li><a href="#introduction">Introduction</a></li>
-                  <li><a href="#button-trigger">Button Trigger</a></li>
                   <li><a href="#initialization">Initialization</a></li>
                   <li><a href="#options">Options</a></li>
                   <li><a href="#methods">Methods</a></li>
