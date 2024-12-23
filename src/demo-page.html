@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,18 +16,11 @@
   </head>
   <body>
     <main class="container">
-      <h1>Test</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nobis odit officiis officia optio nam id corporis! Consequatur, hic minima porro totam, quidem et
         laboriosam neque vitae voluptatibus, maxime laborum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit rerum pariatur sed omnis quam iusto adipisci eveniet.
         Incidunt eaque a alias, voluptas illum sequi, exercitationem, obcaecati excepturi accusantium voluptate hic. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Quisquam consectetur ab a obcaecati? Exercitationem dolore incidunt, fuga corporis distinctio harum vitae iure consectetur odio eaque. Voluptatem quod provident totam
-        nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quo quia eum a! Minima nulla ex nisi id error temporibus! Omnis a quibusdam eaque itaque
-        asperiores odit quasi at quis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ullam sapiente autem, earum, quas ea, quam cupiditate illo laudantium ratione
-        voluptatem culpa commodi iure dicta! Animi, eaque optio! Reprehenderit, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error velit in veritatis
-        ducimus quod molestiae at deserunt beatae nam ad perferendis sed quibusdam fugiat necessitatibus amet, natus vero! Labore, nobis? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Recusandae veniam, quaerat ab expedita necessitatibus, distinctio sequi itaque quibusdam sint sit, magnam excepturi. Provident commodi repellendus,
-        asperiores nihil similique minima voluptas.
+        Quisquam consectetur ab a obcaecati?
       </p>
       <button onclick="toggleTheme()">Toggle Theme</button>
       <p class="error-text">This is an Error</p>
@@ -43,21 +36,113 @@
       </p>
 
       <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-      <!-- Modal Structure -->
-      <div id="modal1" class="modal modal-fixed-footer">
+      <button class="btn-small" onclick="modal1.showModal()">Open Dialog</button>
+      <button class="btn-small" onclick="modal2.showModal()">Open Dialog 2</button>
+      <button class="btn-small" onclick="modal3.showModal()">Bottom Sheet</button>
+
+      <!-- Modal 1 -->
+      <dialog id="modal1" class="modal">
+        <div class="modal-header">
+          <h5>Short Modal</h5>
+        </div>
         <div class="modal-content">
-          <h4>Desicion</h4>
+          <p class="m-0">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
+            repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect btn outlined" tabindex="0">Cancel</a>
+          <a href="#!" class="modal-close waves-effect btn outlined" tabindex="0">Confirm</a>
+        </div>
+      </dialog>
+      <!-- Modal 2 -->
+      <dialog id="modal2" class="modal">
+        <div class="modal-header">
+          <h5>Long Content Modal</h5>
+        </div>
+        <div class="modal-content">
+          <p class="m-0">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
+            repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
+            repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
+            repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
+            repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
+            repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
+            repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
+            repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
+          </p>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dolores sapiente, dolorum minus amet vel distinctio obcaecati, quod porro esse sit excepturi
             repellat odio exercitationem. Earum nihil eligendi facere voluptatibus.
           </p>
         </div>
         <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect btn-flat">Disagree</a>
-          <a href="#!" class="modal-close waves-effect btn-flat">Agree</a>
+          <a href="#!" class="modal-close waves-effect btn outlined" tabindex="0">Cancel</a>
+          <a href="#!" class="modal-close waves-effect btn outlined" tabindex="0">Confirm</a>
         </div>
-      </div>
+      </dialog>
+      <!-- Modal 3 (Bottom Sheet) -->
+      <dialog id="modal3" class="modal bottom-sheet">
+        <div class="modal-header">
+          <h5>Modal Header</h5>
+        </div>
+        <div class="modal-content">
+          <ul class="collection">
+            <li class="collection-item avatar">
+              <img src="images/yuna.jpg" alt="" class="circle" />
+              <span class="title">Title</span>
+              <p>First Line Second Line</p>
+              <a href="#!" class="secondary-content">
+                <i class="material-icons">grade</i>
+              </a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle">folder</i>
+              <span class="title">Title</span>
+              <p>First Line Second Line</p>
+              <a href="#!" class="secondary-content">
+                <i class="material-icons">grade</i>
+              </a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle green">assessment</i>
+              <span class="title">Title</span>
+              <p>First Line Second Line</p>
+              <a href="#!" class="secondary-content">
+                <i class="material-icons">grade</i>
+              </a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle red">play_arrow</i>
+              <span class="title">Title</span>
+              <p>First Line Second Line</p>
+              <a href="#!" class="secondary-content">
+                <i class="material-icons">grade</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </dialog>
+      <!---->
     </main>
     <script type="module" src="/main.ts"></script>
   </body>

@@ -194,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setBtnState(isDark: boolean) {
     const themeSwitch = document.querySelector("#theme-switch");
+    if (!themeSwitch) return;
     if (isDark) {
       themeSwitch.classList.add("is-dark");
       themeSwitch.querySelector("i").innerText = "light_mode";
@@ -207,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setBtnState(isDarkMode);
 
   const themeSwitch = document.querySelector("#theme-switch");
-  themeSwitch.addEventListener("click", (e) => {
+  themeSwitch?.addEventListener("click", (e) => {
     e.preventDefault();
     if (!themeSwitch.classList.contains("is-dark")) {
       setBtnState(true);
@@ -226,8 +227,8 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleColorsButton?.addEventListener("change", () => {
     themes.setThemePrimaryColor(toggleColorsButton.value);
   });
-  const downloadCssButton = document.querySelector("#downloadCss");
-  downloadCssButton.addEventListener("click", () => {
+
+  document.querySelector("#downloadCss")?.addEventListener("click", () => {
     themes.downloadCss();
   });
 

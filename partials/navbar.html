@@ -11,7 +11,7 @@
         </ul>
         <ul class="right">
           <li>
-            <a id="select-palette" class="modal-trigger" href="#palette-selector">
+            <a href="" onclick="paletteSelectorModal.showModal(); return false;">
               <i class="material-icons">palette</i>
             </a>
           </li>
@@ -68,9 +68,11 @@
   </ul>
 </header>
 
-<div id="palette-selector" class="modal">
-  <div class="modal-content">
+<dialog id="paletteSelectorModal" class="modal">
+  <div class="modal-header">
     <h4>Color Scheme</h4>
+  </div>
+  <div class="modal-content">
     <div class="color-row">
       <label>Primary Color</label>
       <input type="color" id="color-picker" value="#0000ff" />
@@ -78,6 +80,6 @@
     <button id="downloadCss" type="button" class="btn tonal">Download css style</button>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect btn text">Close</a>
+    <button class="btn text waves-effect" onclick="paletteSelectorModal.close()">Close</a>
   </div>
-</div>
+</dialog>
