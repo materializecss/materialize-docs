@@ -57,8 +57,10 @@
         <div class="row">
 
           <!-- Image Card -->
+          <div class="s12">
+            <h3 class="header">Image Card</h3>
+          </div>
           <div class="s12 m7">
-            <h3 class="header">Image Card</h3>            
             <div class="card">
               <div class="card-image">
                 <img src="images/sample-1.jpg">
@@ -108,8 +110,10 @@
       <div id="fab" class="section scrollspy">
         <div class="row">
           <!-- Image Card -->
-          <div class="col s12 m7">
+          <div class="col s12">
             <h3 class="header">FABs in Cards</h3>
+          </div>
+          <div class="col s12 m7">
             <div class="card">
               <div class="card-image">
                 <img src="images/sample-1.jpg">
@@ -128,7 +132,7 @@
             </p>
           </div>
         </div>
-        <div class="row">
+        <div class="row mt-5">
           <div class="col s12 m7">
             <div class="card">
               <div class="card-image">
@@ -141,7 +145,7 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m5">
+          <div class="col s12 m5 mt-">
             <p class="caption">
              Here is an image card with a large Floating Action Button.
             </p>
@@ -177,8 +181,10 @@
       <div id="horizontal" class="section scrollspy">
         <div class="row">
           <!-- Horizontal Card -->
-          <div class="col s12 m7">
+          <div class="col s12">
             <h3 class="header">Horizontal Card</h3>
+          </div>
+          <div class="col s12 m7">
             <div class="card horizontal">
               <div class="card-image">
                 <img src="images/placeholder/80x200_a.jpg">
@@ -232,15 +238,17 @@
       <div id="reveal" class="section scrollspy">
         <div class="row">
           <!-- Pullup Card -->
-          <div class="col s12 m7">
+          <div class="col s12">
             <h3 class="header">Card Reveal</h3>
+          </div>
+          <div class="col s12 m7">
             <div class="card">
               <div class="card-image">
                 <img src="images/office.jpg">
-                <div class="activator waves-effect waves-light" style="position:absolute;top:0;bottom:0;right:0;left:0;"></div>
+                <div class="activator waves-effect waves-light"></div>
               </div>
               <div class="card-content">
-                <span class='card-title activator'>Card Title<i class='material-icons right'>more_vert</i></span>
+                <span class='card-title activator'>Card Title<i class='material-icons right close'>more_vert</i></span>
                 <p><a href="#!">This is a link</a></p>
               </div>
               <div class="card-reveal">
@@ -283,8 +291,10 @@
         </div>
 
         <div class="row">
-          <div class="col s12 m6">
+          <div class="col s12">
             <h5>Card Action Options</h5>
+          </div>
+          <div class="col s12 m6">
             <div class="card">
               <div class="card-image">
                 <img src="images/office.jpg">
@@ -313,7 +323,7 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-5">
           <div class="col s12 m6">
             <div class="card sticky-action">
               <div class="card-image">
@@ -356,6 +366,19 @@
 </xmp>
               </code>
             </pre>
+            <h3 class="header">Initialization</h3>
+            <pre style="padding-top: 0px;">
+          <span class="copyMessage">Copied!</span>
+          <i class="material-icons copyButton">content_copy</i>
+          <code class="language-javascript copiedText">
+  document.addEventListener('DOMContentLoaded', function() {
+    const elems = document.querySelectorAll('.card');
+    const instances = M.Card.init(elems, {
+      // specify options here
+    });
+  });
+          </code>
+        </pre>
           </div>
         </div>
       </div>
@@ -396,9 +419,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col s12 m6">
+          <div class="col s12">
             <h5>White</h5>
-            <div class="card">
+          </div>
+          <div class="col s12 m6">
+          <div class="card">
               <div class="card-content">
                 <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
               </div>
@@ -424,9 +449,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col s12 m6">
+          <div class="col s12">
             <h5>Colored</h5>
-            <div class="card blue">
+          </div>
+          <div class="col s12 m6">
+          <div class="card blue">
               <div class='card-content'>
                 <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
                   require little markup to use effectively.</p>
@@ -474,9 +501,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col s12 m6">
+          <div class="col s12">
             <h5>Small</h5>
-            <div class="card small">
+          </div>
+          <div class="col s12 m6">
+          <div class="card small">
               <div class="card-image">
                 <img src="images/sample-1.jpg">
                 <span class="card-title">Card Title</span>
@@ -499,8 +528,10 @@
         </div>
 
         <div class="row">
-          <div class="col s12 m7">
+          <div class="col s12">
             <h5>Medium</h5>
+          </div>
+          <div class="col s12 m7">
             <div class="card medium">
               <div class="card-image">
                 <img src="images/sample-1.jpg">
@@ -524,8 +555,10 @@
         </div>
 
         <div class="row">
-          <div class="col s12 m8">
+          <div class="col s12">
             <h5>Large</h5>
+          </div>
+          <div class="col s12 m8">
             <div class="card large">
               <div class="card-image">
                 <img src="images/sample-1.jpg">
@@ -552,8 +585,10 @@
       <div id="panel" class="section scrollspy">
         <div class="row">
           <!-- Card Panel -->
-          <div class="col s12 m5">
+          <div class="col s12">
             <h3 class="header">Card Panel</h3>
+          </div>
+          <div class="col s12 m5">
             <div class="card-panel teal"> <span class="white-text">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</span>
             </div>
           </div>
