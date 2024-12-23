@@ -13,22 +13,21 @@
             <div id="date-picker" class="section scrollspy">
               <h3 class="header">Date Picker</h3>
               <p>The datepicker allows users to select a date from an interactive calendar.</p>
+
               <div class="input-field">
                 <input id="birthdate" type="text" class="datepicker" placeholder=" " />
                 <label for="birthdate">Birthdate</label>
               </div>
-              <pre><code class="language-html"><xmp><input type="text" class="datepicker"></xmp></code></pre>
 
+              <pre><code class="language-html"><xmp><input type="text" class="datepicker"></xmp></code></pre>
               <div class="section">
                 <h5>Initialization</h5>
-                <pre><code class="language-javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    const elems = document.querySelectorAll('.datepicker');
-    const instances = M.Datepicker.init(elems, {
-      // specify options here
-    });
+                <pre><code class="language-javascript">document.addEventListener('DOMContentLoaded', function() {
+  const elems = document.querySelectorAll('.datepicker');
+  const instances = M.Datepicker.init(elems, {
+    // specify options here
   });
-          </code></pre>
+});</code></pre>
               </div>
 
               <div class="section">
@@ -48,7 +47,7 @@
                       <td>autoClose</td>
                       <td>Boolean</td>
                       <td>false</td>
-                      <td>Automatically close picker when date is selected.</td>
+                      <td><span class="red-text">DEPRECATED</span> Automatically close picker when date is selected.</td>
                     </tr>
                     <tr>
                       <td>format</td>
@@ -168,13 +167,13 @@
                       <td>onOpen</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>Callback function when Datepicker is opened.</td>
+                      <td><span class="red-text">DEPRECATED</span> Callback function when Datepicker is opened.</td>
                     </tr>
                     <tr>
                       <td>onClose</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>Callback function when Datepicker is closed.</td>
+                      <td><span class="red-text">DEPRECATED</span> Callback function when Datepicker is closed.</td>
                     </tr>
                     <tr>
                       <td>onDraw</td>
@@ -412,51 +411,39 @@
 
                 <blockquote>
                   <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
-                  <pre><code class="language-javascript col s12">
-                    const instance = M.Datepicker.getInstance(elem);
-            </code></pre>
+                  <pre><code class="language-javascript col s12">const instance = M.Datepicker.getInstance(elem);</code></pre>
                 </blockquote>
                 <h5 class="method-header">.open();</h5>
                 <p>Open datepicker</p>
-                <pre><code class="language-javascript col s12">
-instance.open();
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.open();</code></pre>
 
                 <h5 class="method-header">.close();</h5>
                 <p>Close datepicker</p>
-                <pre><code class="language-javascript col s12">
-instance.close();
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.close();</code></pre>
 
                 <h5 class="method-header">.toString();</h5>
                 <p>Gets a string representation of the selected date</p>
-                <pre><code class="language-javascript col s12">
-instance.toString();
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.toString();</code></pre>
 
                 <h5 class="method-header">.setDate();</h5>
                 <p>Set a date on the datepicker</p>
                 <h6>Arguments</h6>
                 <p><b>Date (optional):</b> Date to set on the datepicker.</p>
-                <pre><code class="language-javascript col s12">
-instance.setDate(new Date());
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.setDate(new Date());</code></pre>
 
                 <h5 class="method-header">.gotoDate();</h5>
                 <p>Change date view to a specific date on the datepicker</p>
                 <h6>Arguments</h6>
                 <p><b>Date:</b> Date to show on the datepicker.</p>
-                <pre><code class="language-javascript col s12">
-instance.gotoDate(new Date());
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.gotoDate(new Date());</code></pre>
 
                 <h5 class="method-header">.destroy();</h5>
                 <p>Destroy plugin instance and teardown</p>
-                <pre><code class="language-javascript col s12">
-instance.destroy();
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.destroy();</code></pre>
               </div>
             </div>
+
+            <!----------------------------- TIME PICKER ------------------------------------->
 
             <div id="time-picker" class="section scrollspy">
               <h3 class="header">Time Picker</h3>
@@ -465,20 +452,16 @@ instance.destroy();
                 <input id="lunchtime" type="text" class="timepicker" />
                 <label for="lunchtime">Lunchtime</label>
               </div>
-              <pre><code class="language-html">
-  <input type="text" class="timepicker">
-        </code></pre>
+              <pre><code class="language-html"><xmp><input type="text" class="timepicker"></xmp></code></pre>
 
               <div class="section">
                 <h5>Initialization</h5>
-                <pre><code class="language-javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    const elems = document.querySelectorAll('.timepicker');
-    const instances = M.Timepicker.init(elems, {
-      // specify options here
-    });
+                <pre><code class="language-javascript">document.addEventListener('DOMContentLoaded', function() {
+  const elems = document.querySelectorAll('.timepicker');
+  const instances = M.Timepicker.init(elems, {
+    // specify options here
   });
-          </code></pre>
+});</code></pre>
               </div>
 
               <div class="section">
@@ -534,7 +517,7 @@ instance.destroy();
                       <td>autoClose</td>
                       <td>Boolean</td>
                       <td>false</td>
-                      <td>Automatically close picker when minute is selected.</td>
+                      <td><span class="red-text">DEPRECATED</span> Automatically close picker when minute is selected.</td>
                     </tr>
                     <tr>
                       <td>twelveHour</td>
@@ -552,25 +535,25 @@ instance.destroy();
                       <td>onOpenStart</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>Callback function called before modal is opened.</td>
+                      <td><span class="red-text">DEPRECATED</span> Callback function called before modal is opened.</td>
                     </tr>
                     <tr>
                       <td>onOpenEnd</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>Callback function called after modal is opened.</td>
+                      <td><span class="red-text">DEPRECATED</span> Callback function called after modal is opened.</td>
                     </tr>
                     <tr>
                       <td>onCloseStart</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>Callback function called before modal is closed.</td>
+                      <td><span class="red-text">DEPRECATED</span> Callback function called before modal is closed.</td>
                     </tr>
                     <tr>
                       <td>onCloseEnd</td>
                       <td>Function</td>
                       <td>null</td>
-                      <td>Callback function called after modal is closed.</td>
+                      <td><span class="red-text">DEPRECATED</span> Callback function called after modal is closed.</td>
                     </tr>
                     <tr>
                       <td>onSelect</td>
@@ -651,35 +634,25 @@ instance.destroy();
 
                 <blockquote>
                   <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
-                  <pre><code class="language-javascript col s12">
-                    const instance = M.Timepicker.getInstance(elem);
-            </code></pre>
+                  <pre><code class="language-javascript col s12">const instance = M.Timepicker.getInstance(elem);</code></pre>
                 </blockquote>
                 <h5 class="method-header">.open();</h5>
                 <p>Open timepicker</p>
-                <pre><code class="language-javascript col s12">
-instance.open();
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.open();</code></pre>
 
                 <h5 class="method-header">.close();</h5>
                 <p>Close timepicker</p>
-                <pre><code class="language-javascript col s12">
-instance.close();
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.close();</code></pre>
 
                 <h5 class="method-header">.showView();</h5>
                 <p>Show hours or minutes view on timepicker</p>
                 <h6>Arguments</h6>
                 <p><b>String:</b> The name of the view you want to switch to, 'hours' or 'minutes'.</p>
-                <pre><code class="language-javascript col s12">
-instance.showView('hours');
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.showView('hours');</code></pre>
 
                 <h5 class="method-header">.destroy();</h5>
                 <p>Destroy plugin instance and teardown</p>
-                <pre><code class="language-javascript col s12">
-instance.destroy();
-          </code></pre>
+                <pre><code class="language-javascript col s12">instance.destroy();</code></pre>
               </div>
             </div>
           </div>
