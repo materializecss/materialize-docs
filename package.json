@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && cp -r dist/version/latest/* dist && mv dist/version/latest dist/version/v2.1.1",
+    "build": "tsc && vite build && cp -r dist/version/latest/* dist && mv dist/version/latest dist/version/v2.2.0",
     "preview": "vite preview"
   },
   "dependencies": {
