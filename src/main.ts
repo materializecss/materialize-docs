@@ -6,6 +6,7 @@ import { autocompleteDemoData } from "./data-autocomplete";
 import hljs from "highlight.js";
 import {
   Autocomplete,
+  Cards,
   Carousel,
   CharacterCounter,
   Chips,
@@ -258,6 +259,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //------  Materialize Components
+
+  Cards.init(document.querySelectorAll(".card"));
 
   Carousel.init(document.querySelectorAll(".carousel"), {});
   Carousel.init(document.querySelectorAll(".carousel.carousel-slider"), {
