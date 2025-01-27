@@ -2,32 +2,22 @@ name: Deploy
 on:
   push:
     branches:
-      - v2-dev
+      # - v2-dev
       - main
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-      - name: Setup
-        uses: actions/setup-node@v3
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: |
-            - recursive: true
-              args: [--frozen-lockfile, --strict-peer-dependencies]
-            - args: [--global, prettier, typescript]
 
       - name: Build
         run: |
           git submodule init
           git submodule update
-          pnpm install
-          pnpm build
+          npm install -g pnpm
+          pnpm i
+          pnpm run build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3

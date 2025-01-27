@@ -6,6 +6,7 @@ import { autocompleteDemoData } from "./data-autocomplete";
 import hljs from "highlight.js";
 import {
   Autocomplete,
+  Cards,
   Carousel,
   CharacterCounter,
   Chips,
@@ -194,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setBtnState(isDark: boolean) {
     const themeSwitch = document.querySelector("#theme-switch");
+    if (!themeSwitch) return;
     if (isDark) {
       themeSwitch.classList.add("is-dark");
       themeSwitch.querySelector("i").innerText = "light_mode";
@@ -207,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setBtnState(isDarkMode);
 
   const themeSwitch = document.querySelector("#theme-switch");
-  themeSwitch.addEventListener("click", (e) => {
+  themeSwitch?.addEventListener("click", (e) => {
     e.preventDefault();
     if (!themeSwitch.classList.contains("is-dark")) {
       setBtnState(true);
@@ -226,8 +228,8 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleColorsButton?.addEventListener("change", () => {
     themes.setThemePrimaryColor(toggleColorsButton.value);
   });
-  const downloadCssButton = document.querySelector("#downloadCss");
-  downloadCssButton.addEventListener("click", () => {
+
+  document.querySelector("#downloadCss")?.addEventListener("click", () => {
     themes.downloadCss();
   });
 
@@ -257,6 +259,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //------  Materialize Components
+
+  Cards.init(document.querySelectorAll(".card"));
 
   Carousel.init(document.querySelectorAll(".carousel"), {});
   Carousel.init(document.querySelectorAll(".carousel.carousel-slider"), {

@@ -5,20 +5,21 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && cp -r dist/version/latest/* dist && mv dist/version/latest dist/version/v2.2.0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.2.7",
     "@materializecss/materialize": "workspace:*",
-    "glob": "^10.3.3",
-    "highlight.js": "^11.9.0",
-    "material-icons": "^1.13.8",
+    "glob": "^10.4.5",
+    "highlight.js": "^11.10.0",
+    "material-icons": "^1.13.12",
     "vite-plugin-handlebars": "^1.6.0"
   },
   "devDependencies": {
-    "sass": "^1.35.2",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
-  }
+    "sass": "^1.80.1",
+    "typescript": "^5.6.3",
+    "vite": "^4.5.5"
+  },
+  "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
 }

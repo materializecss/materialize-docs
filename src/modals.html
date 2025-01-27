@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head }}
+  </head>
+  <body>
+    {{> navbar }}
+    <main>
+      {{> intro}}
+      <div class="container bsa">
+        <div class="row">
+          <div class="col s12 m8 offset-m1 xl7 offset-xl1">
+            <div id="introduction" class="section scrollspy">
+              <p class="caption">
+                Use a modal for dialog boxes, confirmation messages, or other content that can be called up. In order for the modal to work you have to add the Modal ID to the link
+                of the trigger.
+                <div class="red-text">Upgrade > 2.1.1<br>
+                  <ul>
+                    <li>1. search all elements with class="modal" and add "popover" attribute</li>
+                    <li>2. replace `data-target="id"` with `popovertarget="id"`.</li>
+                    <li>3. replace close-triggers with `popovertarget="id"` (toggle)</li>
+                  </ul>
+                </div>
+              </p>
+
+              <button class="btn tonal waves-effect waves-light" popovertarget="modal1">Show</button>
+              <button class="btn tonal waves-effect waves-light" popovertarget="modal2">Show with long content</button>
+              <a class="btn tonal waves-effect waves-light" href="javascript:modal3.showPopover()">Show BottomSheet Modal via a-tag</a>
+
+              <!-- Modal 1 -->
+              <div id="modal1" class="modal" popover>
+                <div class="modal-header">
+                  <h4>Modal Header</h4>
+                </div>
+                <div class="modal-content">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button tabindex="0" class="btn text waves-effect" popovertarget="modal1">Disagree</button>
+                  <button tabindex="0" class="btn text waves-effect" popovertarget="modal1">Agree</button>
+                </div>
+              </div>
+
+              <!-- Modal 2 (Fixed Footer) -->
+              <div id="modal2" class="modal" popover>
+                <div class="modal-header">
+                  <h4>Modal Header</h4>
+                </div>
+                <div class="modal-content">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button tabindex="0" class="btn text waves-effect" onclick="modal2.close()">Disagree</button>
+                  <button tabindex="0" class="btn text waves-effect" onclick="modal2.close()">Agree</button>
+                </div>
+              </div>
+
+              <!-- Modal 3 (Bottom Sheet) -->
+              <div id="modal3" class="modal bottom-sheet" popover>
+                <div class="modal-header">
+                  <h3 class="header">Modal Header</h3>
+                </div>
+                <div class="modal-content">
+                  <ul class="collection">
+                    <li class="collection-item avatar">
+                      <img src="images/yuna.jpg" alt="" class="circle" />
+                      <span class="title">Title</span>
+                      <p>First Line Second Line</p>
+                      <a href="#!" class="secondary-content">
+                        <i class="material-icons">grade</i>
+                      </a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <i class="material-icons circle">folder</i>
+                      <span class="title">Title</span>
+                      <p>First Line Second Line</p>
+                      <a href="#!" class="secondary-content">
+                        <i class="material-icons">grade</i>
+                      </a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <i class="material-icons circle green">assessment</i>
+                      <span class="title">Title</span>
+                      <p>First Line Second Line</p>
+                      <a href="#!" class="secondary-content">
+                        <i class="material-icons">grade</i>
+                      </a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <i class="material-icons circle red">play_arrow</i>
+                      <span class="title">Title</span>
+                      <p>First Line Second Line</p>
+                      <a href="#!" class="secondary-content">
+                        <i class="material-icons">grade</i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!---->
+            </div>
+
+            <pre><code class="language-html">
+<xmp><button class="btn waves-effect waves-light" popovertarget="modal1">Show</button>
+<a class="btn tonal" href="javascript:modal1.showPopover()">Show via Link</a>
+
+<div id="modal1" class="modal" popover>
+  <div class="modal-header">
+    <h4>Modal Header</h4>
+  </div>
+  <div class="modal-content">
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <button tabindex="0" class="waves-effect btn-flat" popovertarget="modal1">Agree</button>
+  </div>
+</div>
+</xmp>
+</code></pre>
+
+            <div id="initialization" class="scrollspy section">
+              <h3 class="header">Initialization</h3>
+              <p>To open a modal using a trigger:</p>
+              <pre><code class="language-javascript">
+// No initialization needed in > 2.1.1
+document.addEventListener('DOMContentLoaded', function() {
+  const elems = document.querySelectorAll('.modal');
+  const instances = M.Modal.init(elems, {
+    // specify options here
+  });
+});
+          </code></pre>
+            </div>
+
+            <div id="options" class="scrollspy section">
+              <h3 class="header">Options</h3>
+              <p>
+                Customize behavior of Modals via CSS. For example, you can call a custom function to run when a modal is dismissed. To do this, just
+                place your function in the initialization code as shown below.
+              </p>
+            </div>
+
+            <div id="methods" class="scrollspy section">
+              <h3 class="header">Methods</h3>
+              <blockquote>
+                <p>All the methods are called on the plugin instance. You can get the plugin instance like this:</p>
+                <pre><code class="language-javascript col s12">const modal = document.querySelector('#modal-1');</code></pre>
+              </blockquote>
+
+              <h5 class="method-header">.showPopover();</h5>
+              <p>Open dismissible</p>
+              <pre><code class="language-javascript col s12">modal.showPopover();</code></pre>
+
+              <h5 class="method-header">.hidePopover();</h5>
+              <p>Close</p>
+              <pre><code class="language-javascript col s12">modal.hidePopover();</code></pre>
+            </div>
+
+            <div id="properties" class="scrollspy section">
+              <h3 class="header">Properties</h3>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API" target="_blank">Popover API</a> for more details.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="bottom-sheet" class="scrollspy section">
+              <h3 class="header">Bottom Sheet Modals</h3>
+              <button class="btn tonal waves-effect waves-light" popovertarget="modal3">Show BottomSheet-Modal</button>
+              <p>Bottom Sheet Modals are good for displaying actions to the user on the bottom of a screen. They still act the same as regular modals.</p>
+              <pre><code class="language-html">
+<xmp><a class="btn tonal waves-effect waves-light" href="javascript:modal1.showPopover()">Show BottomSheet Modal</a>
+
+<div id="modal1" class="modal bottom-sheet" popover>
+  <div class="modal-header">
+    <h4>Modal Header</h4>
+  </div>
+  <div class="modal-content">
+    <p>A bunch of text</p>
+  </div>
+</div>
+</xmp>
+          </code></pre>
+            </div>
+          </div>
+
+          <!-- Table of Contents -->
+          <div class="col hide-on-small-only m3 xl3">
+            <div class="toc-wrapper">
+              <div style="height: 1px">
+                <ul class="section table-of-contents">
+                  <li><a href="#introduction">Introduction</a></li>
+                  <li><a href="#initialization">Initialization</a></li>
+                  <li><a href="#options">Options</a></li>
+                  <li><a href="#methods">Methods</a></li>
+                  <li><a href="#properties">Properties</a>
+                  <li><a href="#bottom-sheet">Bottom Sheet</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    {{> footer }}
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

@@ -12,9 +12,7 @@ function getMenuItem(item) {
     // active kids?
     const kidsIds = item.items.map((el) => el.id);
     const kidsPages = config.pages.filter((page) => kidsIds.includes(page.id));
-    const hasActiveKid = kidsPages.some(
-      (kid) => currentRoute === "/" + kid.url
-    );
+    const hasActiveKid = kidsPages.some((kid) => currentRoute === "/" + kid.url);
 
     const activeClass = hasActiveKid ? "active" : "";
     return `<li>
@@ -52,13 +50,14 @@ function getMenuItem(item) {
 }
 
 export default {
-  base: "./",
+  root: "./src",
+  //base: "./",
   resolve: {
     alias: {
-      '@materializecss/materialize/sass': path.resolve(__dirname, './packages/materialize/sass/'),   
-      '@materializecss/materialize': path.resolve(__dirname, './packages/materialize/src/')      
-    }    
-  },  
+      "@materializecss/materialize/sass": path.resolve(__dirname, "./packages/materialize/sass/"),
+      "@materializecss/materialize": path.resolve(__dirname, "./packages/materialize/src/"),
+    },
+  },
   plugins: [
     handlebars({
       context(pagePath) {
@@ -71,9 +70,7 @@ export default {
         return { page, config };
       },
       helpers: {
-        getmenu: function(item) {
-          return getMenuItem(item);
-        },
+        getmenu: (item) => getMenuItem(item),
       },
       partialDirectory: resolve(__dirname, "partials"),
     }),
@@ -82,15 +79,18 @@ export default {
     rollupOptions: {
       //this is needed for "vite publish" to include all html files, not only the index.
       input: Object.fromEntries(
-        globSync("*.html").map((file) => [
-          // This remove the file extension from each
-          // file, so e.g. nested/foo.js becomes nested/foo
-          file.slice(0, file.length - path.extname(file).length),
-          // This expands the relative paths to absolute paths, so e.g.
-          // src/nested/foo becomes /project/src/nested/foo.js
-          fileURLToPath(new URL(file, import.meta.url)),
-        ])
+        globSync("src/*.html").map((file) => {
+          return [
+            // This remove the file extension from each
+            // file, so e.g. nested/foo.js becomes nested/foo
+            file.slice(0, file.length - path.extname(file).length),
+            // This expands the relative paths to absolute paths, so e.g.
+            // src/nested/foo becomes /project/src/nested/foo.js
+            fileURLToPath(new URL(file, import.meta.url)),
+          ];
+        })
       ),
     },
+    outDir: "./../dist/version/latest", // relative to rootDir
   },
 };

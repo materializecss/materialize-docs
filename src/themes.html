@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head }}
+  </head>
+  <body>
+    {{> navbar }}
+    <main>
+      {{> intro}}
+      <div class="container">
+        <div class="row">
+          <div class="s12 m8 offset-m1 xl7 offset-xl1">
+            <div class="section">
+              <p>
+                Materialize supports themeing. Most commonly there is a light and a dark mode theme. You also can customize your own individual theme too. Here is an example for an
+                easy theme-switch.
+              </p>
+            </div>
+            <div class="section scrollspy" id="reading-theme">
+              <h2>Reading Theme Setting</h2>
+              <p>
+                Make sure you include this short code snippet before the
+                <code>&lt;/head></code> tag.
+              </p>
+              <p>
+                It has to be loaded as soon as possible (therefore put it as first script) to avoid flickering of the page. It is also recommended to put this code directly into
+                into the HTML code to load faster (no additional requests).
+              </p>
+              <pre><code class="language-javascript">
+<xmp>
+<script>
+  function getTheme() {
+    const isDarkModeEnabledViaCss = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = localStorage.getItem('theme');
+    const isDark = currentTheme ? currentTheme === 'dark' : isDarkModeEnabledViaCss;
+    return isDark;
+  }
+  function setTheme(enableDark) {
+    document.documentElement.setAttribute('theme', enableDark ? 'dark' : 'light');
+    localStorage.setItem('theme', enableDark ? 'dark' : 'light');
+  }
+  const currentState = getTheme();
+  setTheme(currentState);
+</script>
+</xmp>
+</code></pre>
+
+              <p>This Script loads the users settings from the local storage and sets a parameter which can be then used to set variables in the CSS.</p>
+            </div>
+            <div class="section scrollspy" id="changing-theme">
+              <h2>Changing Theme Setting</h2>
+              <p>The Theme can be switched instantly via click of a button.</p>
+              <p>
+                The following example binds a Theme-Switching Function to an HTML-Element, which has a class of `btn-switch-theme`. To test this, you can click on the moon or the
+                sun icon at this page in the top-right corenr to see it in action!
+              </p>
+              <pre><code class="language-javascript">  // Change Theme Setting with a Switch
+  function getTheme() {
+    const isDarkModeEnabledViaCss = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = localStorage.getItem('theme');
+    const isDark = currentTheme ? currentTheme === 'dark' : isDarkModeEnabledViaCss;
+    return isDark;
+  }
+
+  function setTheme(enableDark) {
+    document.documentElement.setAttribute('theme', enableDark ? 'dark' : 'light');
+    localStorage.setItem('theme', enableDark ? 'dark' : 'light');
+  }
+
+  function updateDarkModeButtonState(isCurrentlyDarkModeEnabled) {
+    const element = document.querySelector('.btn-switch-theme');
+    element.classList.remove('is-dark');
+    if (isCurrentlyDarkModeEnabled) element.classList.add('is-dark');
+    element.querySelector('span').innerText = isCurrentlyDarkModeEnabled ? 'light_mode' : 'dark_mode';
+    element.title = 'Switch to ' + (isCurrentlyDarkModeEnabled ? 'light' : 'dark') + ' mode';
+  }
+
+  // Init Theme and Button
+  const darkModeButton = document.querySelector('.btn-switch-theme');
+  darkModeButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const nextState = !getTheme(); // toggle
+    setTheme(nextState);
+    updateDarkModeButtonState(nextState);
+  });
+  const currentState = getTheme();
+  setTheme(currentState);
+  updateDarkModeButtonState(currentState);
+
+</code></pre>
+            </div>
+            <div class="section scrollspy" id="creating-theme">
+              <h2>Creating a Theme</h2>
+              <p>
+                To create or overwrite a theme, you have to set the variables of the Theme. This variables can be defined in a seperate CSS-File and included before the
+                Materialize-CSS File inside of the
+                <code class="language-html"><strong>head</strong></code>
+                tags.
+              </p>
+              <p class="error-text">Deprecated in 2.1.0! Use the Material M3 Variables instead to create a custom Theme!</p>
+              <p>Here is an example of the standard Dark-Theme:</p>
+              <pre><code class="language-css">
+:root[theme='dark'] {
+  --background-color: #121212;
+  --surface-color: #242424;
+  --font-color-main: rgba(255, 255, 255, 0.87);
+  --font-color-medium: rgba(255, 255, 255, 0.60);
+  --font-color-disabled: rgba(255, 255, 255, 0.38);
+  --font-on-primary-color-main: rgba(0, 0, 0, 0.87);
+  --font-on-primary-color-dark-main: rgba(255, 255, 255, 0.87);
+  --font-on-primary-color-dark-medium: rgba(255, 255, 255, 0.60);
+  --font-on-primary-color-medium: rgba(0, 0, 0, 0.56);
+  --font-on-primary-color-disabled: rgba(0, 0, 0, 0.38);
+  --hover-color: rgba(255, 255, 255, 0.04);
+  --focus-color: rgba(255, 255, 255, 0.12);
+  --focus-color-solid: #424242;
+  --background-color-disabled: rgba(255, 255, 255, 0.12);
+  --background-color-level-4dp: rgba(255, 255, 255, 0.09);
+  --background-color-level-16dp-solid: #262626;
+  --background-color-card: var(--surface-color);
+  --background-color-slight-emphasis: rgba(255, 255, 255, 0.05);
+  --slider-track-color: rgba(255, 255, 255, 0.26);
+  --switch-thumb-off-color: #bababa;
+  --primary-color: #B39DDB;
+  --primary-color-dark: #9575CD;
+  --primary-color-numeric: 179, 157, 219;
+  --primary-color-raised-hover-solid: #C2ACEA;
+  --primary-color-raised-focus-solid: #DBC5FF;
+  --secondary-color: #CDDC39;
+  --secondary-color-hover-solid: #DCEB48;
+  --secondary-color-focus-solid: #F5FF61;
+  --secondary-container-color: #B39DDB;
+  --font-on-secondary-container-color: rgba(255, 255, 255, 0.87);
+  --md_sys_color_on-surface: 230, 225, 229;
+}
+</code></pre>
+            </div>
+          </div>
+          <div class="hide-on-small-only m3 xl3">
+            <div class="toc-wrapper">
+              <div style="height: 1px">
+                <ul class="section table-of-contents">
+                  <li><a href="#reading-theme">Reading Theme</a></li>
+                  <li><a href="#changing-theme">Changing Theme</a></li>
+                  <li><a href="#creating-theme">Creating Theme</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    {{> footer }}
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

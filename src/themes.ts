@@ -52,7 +52,7 @@ export class Themes {
   downloadCss() {
     const color = argbFromHex(this.getThemePrimaryColor());
     const generator = new CssGenerator(themeFromSourceColor(color));
-    var fileLines = generator.tokens();
+    const fileLines = generator.tokens();
     this.downloadFile("tokens.module.scss", fileLines.join("\n"));
   }
 
