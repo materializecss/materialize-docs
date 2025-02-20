@@ -57,8 +57,28 @@ function escapeHtml(unsafe) {
   return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 }
 
+function renderOrganizationMembers() {
+  fetch("https://api.github.com/orgs/materializecss/members")
+  .then((resp) => resp.json())
+  .then((items) => {
+    console.log(items);
+    const elements = items.map(item => {
+      const div = document.createElement('div');
+      div.setAttribute('style', 'text-align: center; width: 150px;')
+      div.innerHTML = `<img src="${item.avatar_url}" alt="" style="width: 100px;" class="circle responsive-img"/>
+        <p>${item.login}</p>`;
+      return div;
+    });
+    document.querySelector('.orga-members').replaceChildren(...elements);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const themes = new Themes(document);
+
+  if (location.pathname.endsWith('about.html')) {
+    renderOrganizationMembers();
+  }
 
   // CSS > Colors
   document.querySelectorAll(".dynamic-color .col > div").forEach((el) => {
