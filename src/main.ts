@@ -59,24 +59,24 @@ function escapeHtml(unsafe) {
 
 function renderOrganizationMembers() {
   fetch("https://api.github.com/orgs/materializecss/members")
-  .then((resp) => resp.json())
-  .then((items) => {
-    console.log(items);
-    const elements = items.map(item => {
-      const div = document.createElement('div');
-      div.setAttribute('style', 'text-align: center; width: 150px;')
-      div.innerHTML = `<img src="${item.avatar_url}" alt="" style="width: 100px;" class="circle responsive-img"/>
+    .then((resp) => resp.json())
+    .then((items) => {
+      console.log(items);
+      const elements = items.map((item) => {
+        const div = document.createElement("div");
+        div.setAttribute("style", "text-align: center; width: 150px;");
+        div.innerHTML = `<img src="${item.avatar_url}" alt="" style="width: 100px;" class="circle responsive-img"/>
         <p>${item.login}</p>`;
-      return div;
+        return div;
+      });
+      document.querySelector(".orga-members").replaceChildren(...elements);
     });
-    document.querySelector('.orga-members').replaceChildren(...elements);
-  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const themes = new Themes(document);
 
-  if (location.pathname.endsWith('about.html')) {
+  if (location.pathname.endsWith("about.html")) {
     renderOrganizationMembers();
   }
 
