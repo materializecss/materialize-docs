@@ -48,12 +48,10 @@
     
       <!-- Top Nav -->
       <div class="navbar-fixed">
-        <nav class="primary">
-          <div class="nav-wrapper">
+        <nav class="nav navbar">
+          <div class="nav-wrapper primary">
+            <a class="brand-logo">Navbar</a>
             <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
-            <ul>
-              <li>Navbar</li>
-            </ul>
             <ul class="right">
               <li>
                 <a href="" onclick="paletteSelectorModal.showModal(); return false;">
@@ -61,15 +59,19 @@
                 </a>
               </li>
               <li>
-                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+                <a id="theme-switch" href="#">
+                  <i class="material-icons">dark_mode</i>
+                </a>
               </li>
               <li>
-                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
-                  ><img src="images/github.svg" style="height: 20px"
-                /></a>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" rel="noopener" title="Check out our GitHub">
+                  <img src="images/github.svg" alt="GitHub logo" style="height: 20px" />
+                </a>
               </li>
               <li>
-                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" rel="noopener" title="Support us via OpenCollective">
+                  <img src="images/opencollective.svg" alt="Open Collective logo" />
+                </a>
               </li>
             </ul>
           </div>
@@ -82,8 +84,7 @@
           <a class="brand-logo" id="logo-container" href="/">
             <img id="front-page-logo" src="images/materialize.svg" alt="Materialize Web Logo"/>
             Materialize
-          </a
-          >
+          </a>
         </li>
     
         <li class="search">
@@ -361,13 +362,13 @@
       </div>
       <div class="modal-content">
         <div class="color-row">
-          <label>Primary Color</label>
-          <input type="color" id="color-picker" value="#0000ff" />
+          <input type="color" id="color-picker" value="#0000ff">
+          <label for="color-picker">Primary Color</label>
         </div>
         <button id="downloadCss" type="button" class="btn tonal">Download css style</button>
       </div>
       <div class="modal-footer">
-        <button class="btn text waves-effect" onclick="paletteSelectorModal.close()">Close</a>
+        <button type="button" class="btn text waves-effect" onclick="paletteSelectorModal.close()">Close</button>
       </div>
     </dialog>
     <main>
@@ -393,7 +394,7 @@
                 <code class="language-html">ul</code>
                 that contains them.
               </p>
-              <nav class="navbar">
+              <nav class="nav navbar">
                 <div class="nav-wrapper">
                   <div class="col s12">
                     <a href="#!" class="brand-logo">Logo</a>
@@ -414,7 +415,7 @@
 
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar">
+<nav class="nav navbar">
   <div class="nav-wrapper">
     <a href="#" class="brand-logo">Logo</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -435,7 +436,7 @@
                 <code class="language-html">ul</code>
                 that contains them.
               </p>
-              <nav class="navbar">
+              <nav class="nav navbar">
                 <div class="nav-wrapper">
                   <div class="col s12">
                     <a href="#!" class="brand-logo right">Logo</a>
@@ -456,7 +457,7 @@
 
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar">
+<nav class="nav navbar">
   <div class="nav-wrapper">
     <a href="#" class="brand-logo right">Logo</a>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -479,7 +480,7 @@
                   &lt;a class=&quot;brand-logo&quot;&gt;&lt;/a&gt;
                 </code>. You will have to make sure yourself that links do not overlap if you use this.
               </p>
-              <nav>
+              <nav clas="nav navbar">
                 <div class="nav-wrapper">
                   <a href="#!" class="brand-logo center">Logo</a>
                   <ul class="left hide-on-med-and-down">
@@ -495,7 +496,7 @@
 
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar">
+<nav class="nav navbar">
   <div class="nav-wrapper">
     <a href="#" class="brand-logo center">Logo</a>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -513,7 +514,7 @@
               <h3 class="header">Active Items</h3>
               <p>Add active class to your li tags to denote the current page.</p>
 
-              <nav class="navbar">
+              <nav class="nav navbar">
                 <div class="nav-wrapper">
                   <a href="#!" class="brand-logo center">Logo</a>
                   <ul class="left hide-on-med-and-down">
@@ -532,7 +533,7 @@
 
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar">
+<nav class="nav navbar">
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo center">Logo</a>
     <ul class="left hide-on-med-and-down">
@@ -554,7 +555,7 @@
                 can just include a tabs component inside the <span class="language-html">nav-wrapper</span>.
               </p>
 
-              <nav class="navbar nav-extended">
+              <nav class="nav navbar nav-extended">
                 <div class="nav-wrapper">
                   <a href="#" class="brand-logo">Logo</a>
                   <a href="#" data-target="mobile-demo" class="sidenav-trigger">
@@ -609,7 +610,7 @@
 
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar nav-extended">
+<nav class="nav navbar nav-extended">
   <div class="nav-wrapper">
     <a href="#" class="brand-logo">Logo</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -654,7 +655,7 @@
               <pre><code class="language-html">
 <xmp>
 <div class="navbar-fixed">
-  <nav class="navbar">
+  <nav class="nav navbar">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo">Logo</a>
       <ul class="right hide-on-med-and-down">
@@ -689,7 +690,7 @@
                   <a href="#!">three</a>
                 </li>
               </ul>
-              <nav class="navbar">
+              <nav class="nav navbar">
                 <div class="nav-wrapper">
                   <a href="#!" class="brand-logo">Logo</a>
                   <ul class="right hide-on-med-and-down">
@@ -719,7 +720,7 @@
   <li class="divider"></li>
   <li><a href="#!">three</a></li>
 </ul>
-<nav class="navbar">
+<nav class="nav navbar">
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">Logo</a>
     <ul class="right hide-on-med-and-down">
@@ -754,7 +755,7 @@
             <div id="icons" class="section scrollspy">
               <h3 class="header">Icon Links</h3>
 
-              <nav class="navbar">
+              <nav class="nav navbar">
                 <div class="nav-wrapper">
                   <a href="#!" class="brand-logo"> <i class="material-icons">cloud</i>Logo</a>
                   <ul class="right hide-on-med-and-down">
@@ -787,7 +788,7 @@
               </p>
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar">
+<nav class="nav navbar">
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
     <ul class="right hide-on-med-and-down">
@@ -801,7 +802,7 @@
 </xmp>
 </code></pre>
 
-              <nav class="navbar">
+              <nav class="nav navbar">
                 <div class="nav-wrapper">
                   <a href="#!" class="brand-logo">Logo</a>
                   <ul class="right hide-on-med-and-down">
@@ -824,7 +825,7 @@
               </p>
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar">
+<nav class="nav navbar">
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">Logo</a>
     <ul class="right hide-on-med-and-down">
@@ -840,7 +841,7 @@
             <div id="buttons" class="section scrollspy">
               <h3 class="header">Buttons</h3>
 
-              <nav class="navbar">
+              <nav class="nav navbar">
                 <div class="nav-wrapper">
                   <a href="#!" class="brand-logo">Logo</a>
                   <ul class="right hide-on-med-and-down">
@@ -866,7 +867,7 @@
               </p>
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar">
+<nav class="nav navbar">
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">Logo</a>
     <ul class="right hide-on-med-and-down">
@@ -882,7 +883,7 @@
               <h5>Halfway FAB in Extended Navbar</h5>
               <p>Add a halfway FAB to your extended navbar.</p>
 
-              <nav class="navbar nav-extended">
+              <nav class="nav navbar nav-extended">
                 <div class="nav-wrapper">
                   <a href="#!" class="brand-logo">Logo</a>
                   <ul class="right hide-on-med-and-down">
@@ -907,7 +908,7 @@
 
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar nav-extended">
+<nav class="nav navbar nav-extended">
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">Logo</a>
     <ul class="right hide-on-med-and-down">
@@ -930,7 +931,7 @@
             <div id="search-docs" class="section scrollspy">
               <h3 class="header">Search Bar</h3>
 
-              <nav class="navbar">
+              <nav class="nav navbar">
                 <div class="nav-wrapper">
                   <form>
                     <div class="input-field">
@@ -965,7 +966,7 @@
             <div id="mobile-collapse" class="section scrollspy">
               <h3 class="header">Mobile Collapse Button</h3>
 
-              <nav class="navbar">
+              <nav class="nav navbar">
                 <div class="nav-wrapper">
                   <a href="#!" class="brand-logo">Logo</a>
                   <a href="#" data-target="mobile-demo" class="sidenav-trigger">
@@ -1015,7 +1016,7 @@
               </p>
               <pre><code class="language-html">
 <xmp>
-<nav class="navbar">
+<nav class="nav navbar">
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">Logo</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>

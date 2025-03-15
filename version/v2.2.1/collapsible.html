@@ -47,12 +47,10 @@
     
       <!-- Top Nav -->
       <div class="navbar-fixed">
-        <nav class="primary">
-          <div class="nav-wrapper">
+        <nav class="nav navbar">
+          <div class="nav-wrapper primary">
+            <a class="brand-logo">Collapsible</a>
             <a class="sidenav-trigger" href="#" data-target="nav-mobile"><i class="material-icons">menu</i></a>
-            <ul>
-              <li>Collapsible</li>
-            </ul>
             <ul class="right">
               <li>
                 <a href="" onclick="paletteSelectorModal.showModal(); return false;">
@@ -60,15 +58,19 @@
                 </a>
               </li>
               <li>
-                <a id="theme-switch" href="#"><i class="material-icons">dark_mode</i></a>
+                <a id="theme-switch" href="#">
+                  <i class="material-icons">dark_mode</i>
+                </a>
               </li>
               <li>
-                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" title="Check out our GitHub"
-                  ><img src="images/github.svg" style="height: 20px"
-                /></a>
+                <a class="ext-link" href="https://github.com/materializecss/materialize" target="_blank" rel="noopener" title="Check out our GitHub">
+                  <img src="images/github.svg" alt="GitHub logo" style="height: 20px" />
+                </a>
               </li>
               <li>
-                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" title="Support us via OpenCollective"><img src="images/opencollective.svg" /></a>
+                <a class="ext-link" href="https://opencollective.com/materialize" target="_blank" rel="noopener" title="Support us via OpenCollective">
+                  <img src="images/opencollective.svg" alt="Open Collective logo" />
+                </a>
               </li>
             </ul>
           </div>
@@ -81,8 +83,7 @@
           <a class="brand-logo" id="logo-container" href="/">
             <img id="front-page-logo" src="images/materialize.svg" alt="Materialize Web Logo"/>
             Materialize
-          </a
-          >
+          </a>
         </li>
     
         <li class="search">
@@ -360,13 +361,13 @@
       </div>
       <div class="modal-content">
         <div class="color-row">
-          <label>Primary Color</label>
-          <input type="color" id="color-picker" value="#0000ff" />
+          <input type="color" id="color-picker" value="#0000ff">
+          <label for="color-picker">Primary Color</label>
         </div>
         <button id="downloadCss" type="button" class="btn tonal">Download css style</button>
       </div>
       <div class="modal-footer">
-        <button class="btn text waves-effect" onclick="paletteSelectorModal.close()">Close</a>
+        <button type="button" class="btn text waves-effect" onclick="paletteSelectorModal.close()">Close</button>
       </div>
     </dialog>
     <main>
