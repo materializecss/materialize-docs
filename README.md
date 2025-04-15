@@ -46,7 +46,7 @@ The versions are managed in dist/version/ to keep different versions. The workfl
 
 This has to be done after release process of the core repo and releasing on npm
 
-- Switch to branch **v2-dev** and also pull newest package in [packages/materialize]()
+- Pull newest package in [packages/materialize]()
 - Update version string in **package.json**, **src/getting-started.html**, **partials/navbar.html**
 - Run docs locally and check manually with `pnpm dev`
 - Make commit to v2-dev (message: "chore: release 2.X.X")
