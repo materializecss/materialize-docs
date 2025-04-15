@@ -48,18 +48,19 @@ footer {
   margin: 0;
   padding: 1rem;
   border-radius: unset;
-  height: 75px;
+  height: 65px;
   display: flex;
   gap: 1rem;
   font-size: 1.5rem;
 }
+
 .sidenav #front-page-logo {
   display: inline-block;
-  height: 42px;
-  width: 90px;
+  height: 24px;
+  //width: 90px;
   object-fit: contain;
   pointer-events: none;
-  margin: 1rem 0;
+  //margin: 1rem 0;
 }
 
 //--------------

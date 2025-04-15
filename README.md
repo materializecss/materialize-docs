@@ -31,6 +31,8 @@ Note: when a new page is selected it takes some time to render completely the pa
 
 ## Instructions to build site
 
+- Pull the newest main branch from the [core repository](https://github.com/materializecss/materialize)
+
 ```
 pnpm build
 pnpm preview
@@ -38,7 +40,12 @@ pnpm preview
 
 ### New Release (for Maintainers)
 
-- Execute the release process in the core package incl. releasing on npm
+The docs should be kept in the core repo as markdown files for quick editing. This repo should then
+collect all the markdown files from the core repo and compile them into a collection of nice html files,
+The versions are managed in dist/version/ to keep different versions. The workflow was removed for now.
+
+This has to be done after release process of the core repo and releasing on npm
+
 - Switch to branch **v2-dev** and also pull newest package in [packages/materialize]()
 - Update version string in **package.json**, **src/getting-started.html**, **partials/navbar.html**
 - Run docs locally and check manually with `pnpm dev`
