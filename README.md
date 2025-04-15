@@ -47,11 +47,9 @@ The versions are managed in docs/version/ to keep different versions. The workfl
 This has to be done after release process of the core repo and releasing on npm
 
 - Pull newest package in [packages/materialize]() (later pull version by tag)
-- Update version string in **src/getting-started.html**, **partials/navbar.html**
+- Update version string in **src/public/info**, **src/getting-started.html**, **partials/navbar.html**
 - Run docs locally and check manually with `pnpm dev` & `pnpm build`
 - run `node release.js` to create new version
 - goto docs folder and run locally via `npx http-server -c-1 -p 8080` and test in browser
-- Make commit to v2-dev (message: "chore: release 2.X.X")
-- Make PR from v2-dev -> main
-- Merge the PR (The deploy step to gh-pages should be executed)
+- Make PR into main
 - Spread news via social media channels
