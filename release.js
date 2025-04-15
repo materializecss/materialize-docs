@@ -7,7 +7,7 @@ import { compareVersions } from "compare-versions";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ! This process has to be idempotent !
+// ! This process has to be idempotent => run multiple times should produce the same result
 
 async function clearDistDirectory() {
   console.log("cleaning default space");
@@ -65,8 +65,3 @@ readFile(path.join(__dirname, "/build/info")).then((content) => {
       });
     });
 });
-
-/*
-// 1.1 Move all the contents from the dist inside this dir.
-// 3. Copy files from
-*/
