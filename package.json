@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && cp -r dist/version/latest/* dist && mv dist/version/latest dist/version/v2.2.1",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "vite-plugin-handlebars": "^1.6.0"
   },
   "devDependencies": {
+    "compare-versions": "^6.1.1",
     "sass": "^1.80.1",
     "typescript": "^5.6.3",
     "vite": "^4.5.5"

@@ -76,6 +76,7 @@ export default {
     }),
   ],
   build: {
+    outDir: "./../build", // ====> relative to root Dir
     rollupOptions: {
       //this is needed for "vite publish" to include all html files, not only the index.
       input: Object.fromEntries(
@@ -91,6 +92,5 @@ export default {
         })
       ),
     },
-    outDir: "./../dist/version/latest", // relative to rootDir
   },
 };
