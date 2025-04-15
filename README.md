@@ -42,7 +42,7 @@ pnpm preview
 
 The docs should be kept in the core repo as markdown files for quick editing. This repo should then
 collect all the markdown files from the core repo and compile them into a collection of nice html files,
-The versions are managed in dist/version/ to keep different versions. The workflow was removed for now.
+The versions are managed in docs/version/ to keep different versions. The workflow was removed for now.
 
 This has to be done after release process of the core repo and releasing on npm
 
@@ -50,7 +50,7 @@ This has to be done after release process of the core repo and releasing on npm
 - Update version string in **src/getting-started.html**, **partials/navbar.html**
 - Run docs locally and check manually with `pnpm dev` & `pnpm build`
 - run `node release.js` to create new version
-- goto dist folder and run locally via `npx http-server -c-1 -p 8080` and test in browser
+- goto docs folder and run locally via `npx http-server -c-1 -p 8080` and test in browser
 - Make commit to v2-dev (message: "chore: release 2.X.X")
 - Make PR from v2-dev -> main
 - Merge the PR (The deploy step to gh-pages should be executed)
