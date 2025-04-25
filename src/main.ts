@@ -179,6 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set checkbox on forms.html to indeterminate
   const indeterminateCheckbox = document.getElementById("indeterminate-checkbox");
   if (indeterminateCheckbox !== null) (indeterminateCheckbox as any).indeterminate = true;
+  const indeterminateCheckbox2 = document.getElementById("indeterminate-checkbox2");
+  if (indeterminateCheckbox2 !== null) (indeterminateCheckbox2 as any).indeterminate = true;
 
   // CSS Transitions Demo Init
   const scaleDemoElem = document.querySelector("#scale-demo");
