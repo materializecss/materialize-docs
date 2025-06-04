@@ -12,15 +12,15 @@
     "@material/material-color-utilities": "^0.2.7",
     "@materializecss/materialize": "workspace:*",
     "glob": "^10.4.5",
-    "highlight.js": "^11.10.0",
-    "material-icons": "^1.13.12",
+    "highlight.js": "^11.11.1",
+    "material-icons": "^1.13.14",
     "vite-plugin-handlebars": "^1.6.0"
   },
   "devDependencies": {
     "compare-versions": "^6.1.1",
-    "sass": "^1.80.1",
-    "typescript": "^5.6.3",
-    "vite": "^4.5.5"
+    "sass": "^1.86.3",
+    "typescript": "^5.8.3",
+    "vite": "^4.5.13"
   },
   "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
 }
